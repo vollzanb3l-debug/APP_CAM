@@ -1,0 +1,20 @@
+# Personal reference images (not tracked in repo)
+docs/references/
+
+# Gradle / Android build
+.gradle/
+build/
+app/build/
+local.properties
+*.apk
+*.aab
+*.ap_
+*.dex
+*.class
+captures/
+
+# IDE / OS
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
