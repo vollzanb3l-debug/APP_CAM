@@ -34,6 +34,6 @@ Dokumen riset **Batch 01** untuk katalog kamera populer lintas era dan jenis. Se
 ## Ringkasan Batch 01
 
 - **Total kamera:** 20 kamera (mencakup seluruh 15 arketipe di `archetypes.md`).
-- **`confidenceSpecs`:** `high` = 12, `medium` = 7, `low` = 1.
+- **`confidenceSpecs`:** `high` = 13, `medium` = 6, `low` = 1.
 - **`confidenceLook`:** `high` = 12, `medium` = 4, `low` = 4 (`Canon AE-1`, `Nikon FM2`, `Polaroid SX-70`, `Apple iPhone 4`).
 - **Yang tidak ditemukan:** halaman spesifikasi produsen resmi untuk Fujifilm FinePix F31fd, Contax T2, Olympus µ[mju:]-II, Olympus Pen EE-3, Holga 120N, Polaroid SX-70, dan Hasselblad 500C/M; tahun rilis pasti varian saat ini Fujifilm QuickSnap Flash 400 dan Holga 120N.
