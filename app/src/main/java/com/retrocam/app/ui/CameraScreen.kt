@@ -39,6 +39,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -46,6 +47,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
@@ -54,7 +56,11 @@ import androidx.lifecycle.LifecycleOwner
 import com.retrocam.app.camera.CameraController
 import com.retrocam.app.effects.CaptureProcessor
 import com.retrocam.app.effects.EffectEngine
+import com.retrocam.app.recipe.CameraSpec
+import com.retrocam.app.recipe.FilmSpec
 import com.retrocam.app.recipe.FinalRecipe
+import com.retrocam.app.recipe.LensSpec
+import com.retrocam.app.recipe.RecipeCatalog
 import com.retrocam.app.storage.PhotoSaver
 import com.retrocam.app.ui.theme.RetroAmber
 import com.retrocam.app.ui.theme.RetroDarkBackground
@@ -68,6 +74,14 @@ import kotlinx.coroutines.delay
 @Composable
 fun CameraScreen(
     lifecycleOwner: LifecycleOwner,
+    catalog: RecipeCatalog,
+    selectedCamera: CameraSpec?,
+    selectedLens: LensSpec?,
+    selectedFilm: FilmSpec?,
+    activeRecipe: FinalRecipe,
+    onSelectCamera: (CameraSpec) -> Unit,
+    onSelectLens: (LensSpec) -> Unit,
+    onSelectFilm: (FilmSpec) -> Unit,
     onOpenGallery: () -> Unit,
     onOpenSettings: () -> Unit,
 ) {
@@ -90,6 +104,7 @@ fun CameraScreen(
     var statusMessage by remember { mutableStateOf<String?>(null) }
     var isCapturing by remember { mutableStateOf(false) }
     var viewportSize by remember { mutableStateOf(IntSize(3, 4)) }
+    var showPicker by rememberSaveable { mutableStateOf(false) }
 
     val permissionLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.RequestMultiplePermissions(),
@@ -117,8 +132,8 @@ fun CameraScreen(
     val photoSaver = remember(context) { PhotoSaver(context) }
     val cameraController = remember(context) { CameraController(context) }
 
-    LaunchedEffect(effectEngine) {
-        effectEngine.setRecipe(M2_TEMP_RECIPE)
+    LaunchedEffect(effectEngine, activeRecipe) {
+        effectEngine.setRecipe(activeRecipe)
     }
 
     DisposableEffect(cameraController, effectEngine) {
@@ -180,185 +195,278 @@ fun CameraScreen(
             return@ComposeSurface
         }
 
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(horizontal = 16.dp, vertical = 12.dp),
-            horizontalAlignment = Alignment.CenterHorizontally,
-        ) {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically,
-            ) {
-                Text(
-                    text = "RetroCam · GL Passthrough",
-                    style = MaterialTheme.typography.labelLarge,
-                    color = RetroAmber,
-                )
-                Spacer(modifier = Modifier.weight(1f))
-                TextButton(onClick = onOpenSettings) {
-                    Text(text = "Pengaturan", color = RetroTextPrimary)
-                }
-            }
-
-            Spacer(modifier = Modifier.height(8.dp))
-
-            Box(
+        Box(modifier = Modifier.fillMaxSize()) {
+            Column(
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .weight(1f),
-                contentAlignment = Alignment.Center,
+                    .fillMaxSize()
+                    .padding(horizontal = 16.dp, vertical = 10.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,
             ) {
-                val viewfinderAspect = if (
-                    configuration.orientation == android.content.res.Configuration.ORIENTATION_LANDSCAPE
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    verticalAlignment = Alignment.CenterVertically,
                 ) {
-                    4f / 3f
-                } else {
-                    3f / 4f
-                }
-
-                Box(
-                    modifier = Modifier
-                        .aspectRatio(viewfinderAspect, matchHeightConstraintsFirst = true)
-                        .clip(RoundedCornerShape(12.dp))
-                        .border(1.dp, RetroSurfaceBorder, RoundedCornerShape(12.dp))
-                        .onSizeChanged { size ->
-                            if (size.width > 0 && size.height > 0) {
-                                viewportSize = size
-                            }
-                        },
-                ) {
-                    AndroidView(
-                        modifier = Modifier.fillMaxSize(),
-                        factory = { ctx ->
-                            SurfaceView(ctx).apply {
-                                holder.addCallback(
-                                    object : SurfaceHolder.Callback {
-                                        override fun surfaceCreated(holder: SurfaceHolder) {
-                                            val frame = holder.surfaceFrame
-                                            if (frame.width() > 0 && frame.height() > 0) {
-                                                effectEngine.attachPreviewSurface(
-                                                    holder.surface,
-                                                    frame.width(),
-                                                    frame.height(),
-                                                )
-                                            }
-                                        }
-
-                                        override fun surfaceChanged(
-                                            holder: SurfaceHolder,
-                                            format: Int,
-                                            width: Int,
-                                            height: Int,
-                                        ) {
-                                            if (width > 0 && height > 0) {
-                                                effectEngine.attachPreviewSurface(
-                                                    holder.surface,
-                                                    width,
-                                                    height,
-                                                )
-                                            }
-                                        }
-
-                                        override fun surfaceDestroyed(holder: SurfaceHolder) {
-                                            effectEngine.detachPreviewSurface()
-                                        }
-                                    },
-                                )
-                            }
-                        },
+                    Text(
+                        text = "RetroCam",
+                        style = MaterialTheme.typography.labelLarge,
+                        color = RetroAmber,
                     )
+                    if (catalog.loadErrors.isNotEmpty()) {
+                        Text(
+                            text = " · ${catalog.loadErrors.size} error JSON",
+                            style = MaterialTheme.typography.labelSmall,
+                            color = RetroError,
+                        )
+                    }
+                    Spacer(modifier = Modifier.weight(1f))
+                    TextButton(onClick = onOpenSettings) {
+                        Text(text = "Pengaturan", color = RetroTextPrimary)
+                    }
                 }
-            }
 
-            statusMessage?.let { msg ->
-                Spacer(modifier = Modifier.height(6.dp))
-                Text(
-                    text = msg,
-                    style = MaterialTheme.typography.bodySmall,
-                    color = RetroAmber,
-                )
-            }
-
-            cameraError?.let { err ->
-                Spacer(modifier = Modifier.height(6.dp))
-                Text(
-                    text = err,
-                    style = MaterialTheme.typography.bodySmall,
-                    color = RetroError,
-                )
-            }
-
-            Spacer(modifier = Modifier.height(16.dp))
-
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(bottom = 12.dp),
-                horizontalArrangement = Arrangement.SpaceEvenly,
-                verticalAlignment = Alignment.CenterVertically,
-            ) {
-                ActionPillButton(
-                    label = "Galeri",
-                    onClick = onOpenGallery,
-                )
+                Spacer(modifier = Modifier.height(4.dp))
 
                 Box(
                     modifier = Modifier
-                        .size(72.dp)
-                        .clip(CircleShape)
-                        .background(RetroSurface)
-                        .border(
-                            width = 3.dp,
-                            color = if (isCapturing) RetroAmber else RetroTextPrimary,
-                            shape = CircleShape,
-                        )
-                        .clickable(enabled = !isCapturing) {
-                            isCapturing = true
-                            cameraError = null
-                            cameraController.capturePhoto(
-                                effectEngine = effectEngine,
-                                captureProcessor = captureProcessor,
-                                photoSaver = photoSaver,
-                            ) { result ->
-                                isCapturing = false
-                                result.fold(
-                                    onSuccess = {
-                                        statusMessage = "Foto tersimpan ke galeri"
-                                    },
-                                    onFailure = { t ->
-                                        cameraError = t.localizedMessage ?: "Gagal menyimpan foto"
-                                    },
-                                )
-                            }
-                        },
+                        .fillMaxWidth()
+                        .weight(1f),
                     contentAlignment = Alignment.Center,
                 ) {
+                    val viewfinderAspect = if (
+                        configuration.orientation == android.content.res.Configuration.ORIENTATION_LANDSCAPE
+                    ) {
+                        4f / 3f
+                    } else {
+                        3f / 4f
+                    }
+
                     Box(
                         modifier = Modifier
-                            .size(54.dp)
-                            .clip(CircleShape)
-                            .background(
-                                if (isCapturing) {
-                                    RetroAmber.copy(alpha = 0.6f)
-                                } else {
-                                    RetroTextPrimary
-                                },
-                            ),
+                            .aspectRatio(viewfinderAspect, matchHeightConstraintsFirst = true)
+                            .clip(RoundedCornerShape(12.dp))
+                            .border(1.dp, RetroSurfaceBorder, RoundedCornerShape(12.dp))
+                            .onSizeChanged { size ->
+                                if (size.width > 0 && size.height > 0) {
+                                    viewportSize = size
+                                }
+                            },
+                    ) {
+                        AndroidView(
+                            modifier = Modifier.fillMaxSize(),
+                            factory = { ctx ->
+                                SurfaceView(ctx).apply {
+                                    holder.addCallback(
+                                        object : SurfaceHolder.Callback {
+                                            override fun surfaceCreated(holder: SurfaceHolder) {
+                                                val frame = holder.surfaceFrame
+                                                if (frame.width() > 0 && frame.height() > 0) {
+                                                    effectEngine.attachPreviewSurface(
+                                                        holder.surface,
+                                                        frame.width(),
+                                                        frame.height(),
+                                                    )
+                                                }
+                                            }
+
+                                            override fun surfaceChanged(
+                                                holder: SurfaceHolder,
+                                                format: Int,
+                                                width: Int,
+                                                height: Int,
+                                            ) {
+                                                if (width > 0 && height > 0) {
+                                                    effectEngine.attachPreviewSurface(
+                                                        holder.surface,
+                                                        width,
+                                                        height,
+                                                    )
+                                                }
+                                            }
+
+                                            override fun surfaceDestroyed(holder: SurfaceHolder) {
+                                                effectEngine.detachPreviewSurface()
+                                            }
+                                        },
+                                    )
+                                }
+                            },
+                        )
+                    }
+                }
+
+                statusMessage?.let { msg ->
+                    Spacer(modifier = Modifier.height(4.dp))
+                    Text(
+                        text = msg,
+                        style = MaterialTheme.typography.bodySmall,
+                        color = RetroAmber,
                     )
                 }
 
-                ActionPillButton(
-                    label = "Balik",
-                    onClick = {
-                        cameraError = null
-                        cameraController.toggleLensFacing(
-                            onError = { cameraError = it.localizedMessage ?: "Gagal ganti kamera" },
+                cameraError?.let { err ->
+                    Spacer(modifier = Modifier.height(4.dp))
+                    Text(
+                        text = err,
+                        style = MaterialTheme.typography.bodySmall,
+                        color = RetroError,
+                    )
+                }
+
+                Spacer(modifier = Modifier.height(10.dp))
+
+                // Three recipe slots: Camera | Lens | Film
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                ) {
+                    RecipeSlotCard(
+                        title = "CAMERA",
+                        value = selectedCamera?.displayName ?: "-",
+                        onClick = { showPicker = true },
+                        modifier = Modifier.weight(1f),
+                    ) {
+                        CameraGlyph(tint = RetroTextPrimary, modifier = Modifier.size(22.dp))
+                    }
+                    RecipeSlotCard(
+                        title = "LENS",
+                        value = selectedLens?.displayName ?: "-",
+                        onClick = { showPicker = true },
+                        modifier = Modifier.weight(1f),
+                    ) {
+                        LensGlyph(tint = RetroTextPrimary, modifier = Modifier.size(22.dp))
+                    }
+                    RecipeSlotCard(
+                        title = "FILM",
+                        value = selectedFilm?.displayName ?: "-",
+                        accentValue = true,
+                        onClick = { showPicker = true },
+                        modifier = Modifier.weight(1f),
+                    ) {
+                        FilmGlyph(tint = RetroAmber, modifier = Modifier.size(22.dp))
+                    }
+                }
+
+                Spacer(modifier = Modifier.height(12.dp))
+
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(bottom = 8.dp),
+                    horizontalArrangement = Arrangement.SpaceEvenly,
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    ActionPillButton(
+                        label = "Galeri",
+                        onClick = onOpenGallery,
+                    )
+
+                    Box(
+                        modifier = Modifier
+                            .size(70.dp)
+                            .clip(CircleShape)
+                            .background(RetroSurface)
+                            .border(
+                                width = 3.dp,
+                                color = if (isCapturing) RetroAmber else RetroTextPrimary,
+                                shape = CircleShape,
+                            )
+                            .clickable(enabled = !isCapturing) {
+                                isCapturing = true
+                                cameraError = null
+                                cameraController.capturePhoto(
+                                    effectEngine = effectEngine,
+                                    captureProcessor = captureProcessor,
+                                    photoSaver = photoSaver,
+                                ) { result ->
+                                    isCapturing = false
+                                    result.fold(
+                                        onSuccess = {
+                                            statusMessage = "Foto tersimpan ke galeri"
+                                        },
+                                        onFailure = { t ->
+                                            cameraError = t.localizedMessage ?: "Gagal menyimpan foto"
+                                        },
+                                    )
+                                }
+                            },
+                        contentAlignment = Alignment.Center,
+                    ) {
+                        Box(
+                            modifier = Modifier
+                                .size(52.dp)
+                                .clip(CircleShape)
+                                .background(
+                                    if (isCapturing) {
+                                        RetroAmber.copy(alpha = 0.6f)
+                                    } else {
+                                        RetroTextPrimary
+                                    },
+                                ),
                         )
-                    },
+                    }
+
+                    ActionPillButton(
+                        label = "Balik",
+                        onClick = {
+                            cameraError = null
+                            cameraController.toggleLensFacing(
+                                onError = { cameraError = it.localizedMessage ?: "Gagal ganti kamera" },
+                            )
+                        },
+                    )
+                }
+            }
+
+            if (showPicker) {
+                PickerSheet(
+                    catalog = catalog,
+                    selectedCamera = selectedCamera,
+                    selectedLens = selectedLens,
+                    selectedFilm = selectedFilm,
+                    onSelectCamera = onSelectCamera,
+                    onSelectLens = onSelectLens,
+                    onSelectFilm = onSelectFilm,
+                    onDismiss = { showPicker = false },
+                    modifier = Modifier.align(Alignment.BottomCenter),
                 )
             }
         }
+    }
+}
+
+@Composable
+private fun RecipeSlotCard(
+    title: String,
+    value: String,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+    accentValue: Boolean = false,
+    icon: @Composable () -> Unit,
+) {
+    Column(
+        modifier = modifier
+            .clip(RoundedCornerShape(10.dp))
+            .background(RetroSurface)
+            .border(1.dp, RetroSurfaceBorder, RoundedCornerShape(10.dp))
+            .clickable(onClick = onClick)
+            .padding(horizontal = 8.dp, vertical = 8.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
+        Text(
+            text = title,
+            style = MaterialTheme.typography.labelSmall,
+            color = RetroTextSecondary,
+        )
+        Spacer(modifier = Modifier.height(4.dp))
+        icon()
+        Spacer(modifier = Modifier.height(4.dp))
+        Text(
+            text = value,
+            style = MaterialTheme.typography.labelMedium,
+            color = if (accentValue) RetroAmber else RetroTextPrimary,
+            maxLines = 1,
+            overflow = TextOverflow.Ellipsis,
+        )
     }
 }
 
@@ -399,17 +507,3 @@ private fun readDisplayRotation(context: Context): Int {
         wm?.defaultDisplay?.rotation ?: Surface.ROTATION_0
     }
 }
-
-// Temporary handwritten recipe for M2 verification only; removed in M3.
-private val M2_TEMP_RECIPE = FinalRecipe(
-    temp = 0.14f,
-    tint = 0.02f,
-    contrast = 1.12f,
-    saturation = 1.15f,
-    highlightRolloff = 0.25f,
-    shadowLift = 0.04f,
-    blackLift = 0.03f,
-    highlightTintHex = "#FFE9C8",
-    shadowTintHex = "#1B2A3A",
-    tintStrength = 0.10f,
-)
