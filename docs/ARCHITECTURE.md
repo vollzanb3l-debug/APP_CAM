@@ -104,12 +104,18 @@ Semua file punya `schemaVersion`. Mengubah skema = naikkan versi + migrasi + per
 
 ```json
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "compact_2003_ccd",
   "displayName": "Kompak 2003",
   "inspiredBy": "(catatan pribadi, tidak ditampilkan di UI publik)",
   "era": "2000s",
   "category": "digital_compact",
+  "archetype": "ccd_compact_2000s",
+  "confidence": "medium",
+  "sources": [
+    "Perkiraan awal berdasarkan arketipe kompak CCD awal 2000-an (belum dikalibrasi dengan foto referensi)."
+  ],
+  "calibrationStatus": "draft",
   "icon": "icons/cameras/compact_generic.png",
   "aspectRatio": "4:3",
   "whiteBalance": { "temp": 0.08, "tint": 0.02 },
@@ -210,7 +216,7 @@ app/src/main/
     recipe/        (models, RecipeRepository, RecipeCompositor, validator)
     storage/       (PhotoSaver)
   assets/
-    cameras/ lenses/ films/ luts/
+    archetypes/ cameras/ lenses/ films/ luts/
     shaders/       (*.glsl)
     icons/
   res/
@@ -241,12 +247,13 @@ Kerjakan berurutan. Jangan mulai tahap berikutnya sebelum pemilik proyek menyetu
 - **M2 – Satu efek**: color grade dari resep yang ditulis tangan di kode (sementara).
   Selesai bila: warna preview dan foto jelas cocok; golden-image test lulus.
 - **M3 – Resep dari JSON**: RecipeRepository, RecipeCompositor (+unit test), 3 camera/3 lens/3 film,
-  PickerSheet, simpan pilihan terakhir.
+  PickerSheet, simpan pilihan terakhir, folder `assets/archetypes/`, serta layar debug kalibrasi
+  sederhana (slider parameter + tampilan berdampingan dengan foto referensi dari galeri).
 - **M4 – Efek lengkap**: grain, vignette, bloom/halation, chromatic aberration, distorsi, softness,
   crop rasio, date stamp. Satu efek per commit, masing-masing dengan uji.
 - **M5 – Pelengkap**: exposure compensation, grid, galeri, label resep di EXIF, favorit.
-- **M6 – Kalibrasi dan konten**: layar debug (slider parameter + simpan kembali ke JSON,
-  tampilan berdampingan dengan foto referensi), optimasi performa/panas, lalu perluasan konten.
+- **M6 – Kalibrasi dan konten**: layar debug lanjutan (simpan kembali ke JSON), optimasi
+  performa/panas, lalu perluasan konten.
 
 ## 12. Aturan kerja untuk agent (WAJIB)
 
@@ -283,3 +290,19 @@ Kerjakan berurutan. Jangan mulai tahap berikutnya sebelum pemilik proyek menyetu
 - Jika suatu hari dipublikasikan: ganti nama tampilan menjadi generik, jangan pakai logo atau
   foto produk resmi, buat ikon sendiri, dan jangan menyebut merek di judul/deskripsi toko.
   Hanya `displayName` dan `icon` yang perlu diganti; mesin efek tidak tersentuh.
+
+## 15. Katalog dan Kalibrasi
+
+- Setiap entri kamera di `assets/cameras/` WAJIB memiliki field berikut:
+  - `archetype`: ID arketipe dasar (mengacu ke `assets/archetypes/<id>.json`).
+  - `confidence`: tingkat keyakinan perkiraan parameter (`high` / `medium` / `low`).
+  - `sources`: daftar catatan sumber/observasi yang mendasari perkiraan awal.
+  - `calibrationStatus`: status kalibrasi (`draft` / `calibrated`).
+- **Kebijakan nilai parameter**: seluruh angka di file JSON awal adalah **perkiraan awal**
+  (`draft`), bukan klaim akurat. Dilarang mengarang angka yang terkesan pasti tanpa proses
+  kalibrasi terhadap foto referensi nyata.
+- **Folder arketipe (`assets/archetypes/`)**: disiapkan untuk menampung sekitar 15 arketipe
+  kamera/sensor sebagai fondasi pengelompokan karakter sebelum perluasan katalog.
+- **Layar debug kalibrasi sederhana (M3)**: menyediakan slider parameter dan tampilan
+  berdampingan dengan foto referensi yang dipilih dari galeri melalui pipeline shader yang
+  sama, agar kalibrasi dapat dimulai lebih awal sejak M3.
