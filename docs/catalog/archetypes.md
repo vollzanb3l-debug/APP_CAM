@@ -1,0 +1,23 @@
+# Daftar Usulan 15 Arketipe Kamera (`docs/catalog/archetypes.md`)
+
+Dokumen ini mengusulkan **15 arketipe tampilan visual** sebagai dasar pengelompokan sekitar 100 kamera populer dari berbagai era dan jenis.
+
+> **Aturan penyusunan:** Seluruh deskripsi di bawah ini bersifat **kualitatif** (tanpa angka parameter shader/resep). Penyetelan angka dilakukan pada tahap kalibrasi menggunakan foto referensi nyata. Tiga ID awal (`ccd_compact_2000s`, `classic_35mm_slr`, `disposable_point_shoot`) dipertahankan agar selaras dengan `app/src/main/assets/archetypes/`.
+
+| No | ID Arketipe | Nama Arketipe | Ciri Khas Visual Utama (Kualitatif) | Contoh Kamera di Batch 01 |
+|---|---|---|---|---|
+| 1 | `ccd_compact_2000s` | Kompak Digital CCD Awal 2000-an | Kontras tegas, warna nostalgia cukup pekat/hangat, rentang dinamis sempit sehingga highlight mudah terbakar di cahaya terik, noise digital meningkat cepat di ISO tinggi, serta flash langsung berkontras kuat. | Canon PowerShot SD1000 |
+| 2 | `ccd_dreamy_pastel` | Kompak Digital CCD Lembut / Periskop | Warna cerah dan pekat khas digicam saku akhir 2000-an, namun detail tampak agak lembut akibat desain optik tipis dan peredaman noise di cahaya redup. | Sony Cyber-shot DSC-T70 |
+| 3 | `pro_ccd_filmic` | CCD Sensor Besar / Pro-Compact Berkarakter Film | Separasi warna dalam dan organik terutama pada merah, biru, dan rona kulit; transisi midtone mulus; ketajaman per-piksel kuat di ISO rendah; pola noise lebih menyerupai butiran film pada sensor Super CCD tertentu atau noise warna di ISO tinggi pada CCD full-frame. | Fujifilm FinePix F31fd, Leica M9 |
+| 4 | `early_cmos_gritty` | Compact CMOS Street Berkontras Tinggi | Ketajaman tinggi dari tengah ke tepi dengan rentang dinamis lebar, namun dikenal lewat profil JPEG langsung berkarakter kontras tinggi (hitam-putih pekat atau warna slide punchy). | Ricoh GR III |
+| 5 | `filmic_digital_mirrorless` | Digital Modern Berkarakter Simulasi Film | Detail tajam dengan rentang dinamis lebar, rona kulit alami, serta profil warna bawaan yang meniru gradasi bayangan dan nuansa hangat/muted emulsi film klasik. | Fujifilm X100V |
+| 6 | `classic_35mm_slr` | SLR / Rangefinder 35mm Klasik Beroptik Kaca | Bodi kamera bersifat netral sehingga warna dan grain sangat ditentukan roll film; dikombinasikan optik kaca 35mm/50mm klasik yang tajam di bidang fokus dengan kontras seimbang dan pemisahan latar lembut. | Canon AE-1, Nikon FM2, Leica M6 |
+| 7 | `premium_point_shoot_35mm` | Point-and-Shoot 35mm Premium | Lensa prima kaca yang tajam dan kontras, memperlihatkan vignette sudut alami pada bukaan lebar, serta flash langsung yang tegas membentuk gaya potret snapshot 90-an. | Contax T2, Olympus µ[mju:]-II |
+| 8 | `half_frame_35mm` | Half-Frame 35mm | Ukuran negatif separuh bingkai 35mm membuat butiran grain tampak jauh lebih kasar saat diperbesar, bingkai bawaan vertikal, dan ruang tajam lebar. | Olympus Pen EE-3 |
+| 9 | `disposable_point_shoot` | Kamera Film Sekali Pakai | Lensa plastik tunggal menghasilkan tepi lembut, vignette ringan, dan kontras lebih rendah dibanding optik kaca; sangat bergantung pada flash di dalam ruangan dan rawan berbutir/gelap bila kurang cahaya. | Fujifilm QuickSnap Flash 400 |
+| 10 | `toy_lomo_vignette` | Kamera Mainan / Lo-Fi | Vignette gelap mencolok di sudut bingkai, ketajaman cepat melunak dengan distorsi ke arah tepi, warna pekat berkontras tinggi atau bocoran cahaya acak dari celah bodi plastik. | Holga 120N, Lomo LC-A |
+| 11 | `instant_integral_vintage` | Instan Integral Klasik | Palet warna lembut cenderung kalem dengan kontras organik tidak sekeras digital, tepi agak lembut, dan rentan blur gerak bila pencahayaan kurang terang. | Polaroid SX-70 |
+| 12 | `instant_modern_instax` | Instan Modern | Warna cenderung lebih cerah dan berkontras dibanding film instan klasik, cetak berukuran ringkas, dengan hasil highlight/latar sangat dipengaruhi kontrol eksposur dan flash. | Fujifilm Instax Mini 90 Neo Classic |
+| 13 | `medium_format_tlr_slr` | Format Medium 120 | Negatif berukuran jauh lebih besar menghasilkan grain sangat halus, gradasi tonal panjang, distorsi minim, dan separasi subjek terasa berdimensi dengan bokeh mulus. | Hasselblad 500C/M |
+| 14 | `camcorder_mini_dv_vhs` | Camcorder Pita MiniDV / 3-CCD | Resolusi definisi standar dengan warna 3-CCD yang pekat dan bersih dari kebocoran warna, sedikit kelembutan di sudut lebar, serta karakter gerak interlace dan kompresi pita MiniDV. | Sony Handycam DCR-TRV900 |
+| 15 | `early_camera_phone` | Kamera Ponsel Awal Ber-CMOS Mini | Cukup tajam dan cerah di bawah matahari terang dengan butiran noise halus tanpa penghalusan berlebihan, namun rentang dinamis sempit sehingga sorotan terang mudah terbakar putih. | Apple iPhone 4 |
