@@ -15,6 +15,14 @@ Format mengacu pada [Keep a Changelog](https://keepachangelog.com/id-ID/1.0.0/).
   - Menambahkan `AndroidManifest.xml`, tema gelap orisinal (`Theme.kt`), ikon peluncur orisinal, alur izin kamera, dan navigasi layar (`CameraScreen`, `GalleryScreen`, `SettingsScreen`).
 - **M1 (Jalur GL tanpa efek / passthrough)**:
   - Menambahkan `FrameTransform` (matematika transformasi koordinat murni Kotlin) beserta unit test `FrameTransformTest` untuk memastikan kesamaan framing, orientasi, dan mirror kamera depan antara preview dan foto.
-  - Menambahkan shader passthrough GLSL ES 3.0 bersama (`passthrough.vert`, `passthrough.frag`) dan `ShaderLoader`.
+  - Menambahkan shader passthrough GLSL ES 3.0 bersama dan `ShaderLoader`.
   - Menambahkan `EffectEngine` (preview live via OpenGL ES 3.0 `SurfaceTexture` + `EGLWindowSurface`) dan `CaptureProcessor` (pemrosesan FBO offscreen resolusi penuh dengan dukungan *tiling* otomatis).
   - Menambahkan `PhotoSaver` untuk menyimpan foto JPEG ke `MediaStore` (`Pictures/RetroCam`) dan menghubungkan `CameraController` serta `CameraScreen` untuk tombol rana dan balik kamera.
+- **M2 (Satu efek color grade)**:
+  - Menambahkan shader bersama `retro_pipeline.vert` / `retro_pipeline.frag` (white balance, shadow lift, highlight rolloff, contrast, saturation, split-tone tint, black lift) beserta `EffectUniforms`, `HexColorParser`, `ColorGradeMath`, dan `ColorGradeGoldenTest`.
+- **M3 (Resep dari JSON, Picker, dan Kalibrasi)**:
+  - Memperbarui `docs/ARCHITECTURE.md` dengan bagian **15. Katalog dan Kalibrasi**, `schemaVersion: 2` kamera (`archetype`, `confidence`, `sources`, `calibrationStatus`), dan folder `assets/archetypes/`.
+  - Menambahkan `kotlinx.serialization`, `RecipeModels`, `RecipeValidator`, `RecipeCompositor` (+ `RecipeCompositorTest` & `RecipeValidatorTest`), `RecipeCatalogLoader`, `RecipeRepository` (+ `RecipeRepositoryTest`), dan `SelectionStore`.
+  - Menambahkan 3 arketipe awal (`assets/archetypes/`), 3 kamera, 3 lensa, dan 3 film JSON (seluruhnya berstatus perkiraan awal `draft`).
+  - Menambahkan `PickerSheet`, 3 slot `CAMERA | LENS | FILM` pada `CameraScreen`, ikon geometris orisinal (`RecipeIcons.kt`), pemulihan pilihan terakhir, dan menghapus resep sementara M2 dari kode.
+  - Menambahkan `CalibrationDebugScreen` sederhana (metadata kalibrasi, log error JSON, pilih foto referensi dari galeri, perbandingan berdampingan via `CaptureProcessor`, serta slider parameter).

@@ -34,10 +34,10 @@ Aplikasi kamera Android untuk pemakaian pribadi dengan kombinasi modular **Camer
 
 - **M0 – Kerangka**: Proyek build, izin kamera, CameraX preview polos, navigasi layar kosong *(selesai)*
 - **M1 – Jalur GL tanpa efek**: Preview lewat `EffectEngine` (passthrough), foto lewat `CaptureProcessor` (passthrough), simpan ke galeri *(selesai)*
-- **M2 – Satu efek**: Color grade sementara untuk verifikasi kecocokan preview vs foto + golden-image test
-- **M3 – Resep dari JSON**: `RecipeRepository`, `RecipeCompositor` (+ unit test), `PickerSheet`, simpan pilihan terakhir
+- **M2 – Satu efek**: Color grade shader bersama + `ColorGradeMath` + `ColorGradeGoldenTest` *(selesai)*
+- **M3 – Resep dari JSON**: `RecipeRepository`, `RecipeCompositor` (+ unit test), 3 camera/3 lens/3 film + `assets/archetypes/`, `PickerSheet`, simpan pilihan terakhir, dan layar debug kalibrasi sederhana *(selesai)*
 - **M4 – Efek lengkap**: Grain, vignette, bloom/halation, chromatic aberration, distorsi, softness, crop rasio, date stamp
 - **M5 – Pelengkap**: Exposure compensation, grid, galeri, label resep di EXIF, favorit
-- **M6 – Kalibrasi dan konten**: Layar debug, optimasi performa/panas, perluasan konten JSON
+- **M6 – Kalibrasi dan konten**: Layar debug lanjutan (simpan kembali ke JSON), optimasi performa/panas, perluasan konten JSON
 
-**Status saat ini:** M0 & M1 selesai (siap build via GitHub Actions & uji perangkat; menunggu konfirmasi sebelum M2).
+**Status saat ini:** M2 & M3 selesai (siap build via GitHub Actions & uji perangkat; menunggu konfirmasi sebelum M4).
