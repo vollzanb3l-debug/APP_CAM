@@ -54,6 +54,7 @@ import androidx.lifecycle.LifecycleOwner
 import com.retrocam.app.camera.CameraController
 import com.retrocam.app.effects.CaptureProcessor
 import com.retrocam.app.effects.EffectEngine
+import com.retrocam.app.recipe.FinalRecipe
 import com.retrocam.app.storage.PhotoSaver
 import com.retrocam.app.ui.theme.RetroAmber
 import com.retrocam.app.ui.theme.RetroDarkBackground
@@ -115,6 +116,10 @@ fun CameraScreen(
     val captureProcessor = remember(context) { CaptureProcessor(context) }
     val photoSaver = remember(context) { PhotoSaver(context) }
     val cameraController = remember(context) { CameraController(context) }
+
+    LaunchedEffect(effectEngine) {
+        effectEngine.setRecipe(M2_TEMP_RECIPE)
+    }
 
     DisposableEffect(cameraController, effectEngine) {
         onDispose {
@@ -394,3 +399,17 @@ private fun readDisplayRotation(context: Context): Int {
         wm?.defaultDisplay?.rotation ?: Surface.ROTATION_0
     }
 }
+
+// Temporary handwritten recipe for M2 verification only; removed in M3.
+private val M2_TEMP_RECIPE = FinalRecipe(
+    temp = 0.14f,
+    tint = 0.02f,
+    contrast = 1.12f,
+    saturation = 1.15f,
+    highlightRolloff = 0.25f,
+    shadowLift = 0.04f,
+    blackLift = 0.03f,
+    highlightTintHex = "#FFE9C8",
+    shadowTintHex = "#1B2A3A",
+    tintStrength = 0.10f,
+)

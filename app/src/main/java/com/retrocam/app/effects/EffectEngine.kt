@@ -54,6 +54,7 @@ class EffectEngine(context: Context) {
     private var programId: Int = 0
     private var uTexMatrixLocation: Int = -1
     private var uInputTextureLocation: Int = -1
+    private var effectUniforms: EffectUniforms? = null
     private var oesTextureId: Int = 0
     private var vaoId: Int = 0
     private var vboId: Int = 0
@@ -72,6 +73,11 @@ class EffectEngine(context: Context) {
 
     fun setRecipe(recipe: FinalRecipe) {
         currentRecipe = recipe
+        glHandler.post {
+            if (!released && windowSurface != EGL14.EGL_NO_SURFACE) {
+                drawCurrentFrame()
+            }
+        }
     }
 
     fun getRecipe(): FinalRecipe = currentRecipe
@@ -216,12 +222,13 @@ class EffectEngine(context: Context) {
             check(pbufferSurface != EGL14.EGL_NO_SURFACE) { "eglCreatePbufferSurface failed" }
             makeCurrent(pbufferSurface)
 
-            val vertSrc = ShaderLoader.loadAssetText(assets, "shaders/passthrough.vert")
-            val fragBody = ShaderLoader.loadAssetText(assets, "shaders/passthrough.frag")
+            val vertSrc = ShaderLoader.loadAssetText(assets, "shaders/retro_pipeline.vert")
+            val fragBody = ShaderLoader.loadAssetText(assets, "shaders/retro_pipeline.frag")
             val fragSrc = ShaderLoader.buildFragmentSource(fragBody, useExternalOes = true)
             programId = ShaderLoader.compileProgram(vertSrc, fragSrc)
             uTexMatrixLocation = GLES30.glGetUniformLocation(programId, "uTexMatrix")
             uInputTextureLocation = GLES30.glGetUniformLocation(programId, "uInputTexture")
+            effectUniforms = EffectUniforms.lookup(programId)
 
             setupQuadGeometry()
 
@@ -348,6 +355,7 @@ class EffectEngine(context: Context) {
 
         GLES30.glUseProgram(programId)
         GLES30.glUniformMatrix4fv(uTexMatrixLocation, 1, false, texMatrix, 0)
+        effectUniforms?.apply(currentRecipe)
 
         GLES30.glActiveTexture(GLES30.GL_TEXTURE0)
         GLES30.glBindTexture(GLES11Ext.GL_TEXTURE_EXTERNAL_OES, oesTextureId)

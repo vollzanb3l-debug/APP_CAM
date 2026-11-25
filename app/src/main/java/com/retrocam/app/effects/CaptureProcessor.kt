@@ -34,10 +34,6 @@ class CaptureProcessor(context: Context) {
         viewportHeight: Int,
         recipe: FinalRecipe,
     ): Bitmap {
-        // M1 uses passthrough shader; recipe will drive uniforms in M2-M4.
-        @Suppress("UNUSED_VARIABLE")
-        val unusedRecipe = recipe
-
         var argbSource: Bitmap? = null
         var safeSource: Bitmap = sourceBitmap
         var eglDisplay: EGLDisplay = EGL14.EGL_NO_DISPLAY
@@ -145,12 +141,13 @@ class CaptureProcessor(context: Context) {
                 viewportHeight = viewportHeight,
             )
 
-            val vertSrc = ShaderLoader.loadAssetText(assets, "shaders/passthrough.vert")
-            val fragBody = ShaderLoader.loadAssetText(assets, "shaders/passthrough.frag")
+            val vertSrc = ShaderLoader.loadAssetText(assets, "shaders/retro_pipeline.vert")
+            val fragBody = ShaderLoader.loadAssetText(assets, "shaders/retro_pipeline.frag")
             val fragSrc = ShaderLoader.buildFragmentSource(fragBody, useExternalOes = false)
             programId = ShaderLoader.compileProgram(vertSrc, fragSrc)
             val uTexMatrixLocation = GLES30.glGetUniformLocation(programId, "uTexMatrix")
             val uInputTextureLocation = GLES30.glGetUniformLocation(programId, "uInputTexture")
+            val effectUniforms = EffectUniforms.lookup(programId)
 
             GLES30.glPixelStorei(GLES30.GL_UNPACK_ALIGNMENT, 1)
             GLES30.glPixelStorei(GLES30.GL_PACK_ALIGNMENT, 1)
@@ -188,6 +185,8 @@ class CaptureProcessor(context: Context) {
                     vaoId = vaoId,
                     uTexMatrixLocation = uTexMatrixLocation,
                     uInputTextureLocation = uInputTextureLocation,
+                    effectUniforms = effectUniforms,
+                    recipe = recipe,
                     texMatrix = photoTexMatrix,
                     tileW = outW,
                     tileH = outH,
@@ -217,6 +216,8 @@ class CaptureProcessor(context: Context) {
                         vaoId = vaoId,
                         uTexMatrixLocation = uTexMatrixLocation,
                         uInputTextureLocation = uInputTextureLocation,
+                        effectUniforms = effectUniforms,
+                        recipe = recipe,
                         texMatrix = tileTexMatrix,
                         tileW = tileW,
                         tileH = tileH,
@@ -271,6 +272,8 @@ class CaptureProcessor(context: Context) {
         vaoId: Int,
         uTexMatrixLocation: Int,
         uInputTextureLocation: Int,
+        effectUniforms: EffectUniforms,
+        recipe: FinalRecipe,
         texMatrix: FloatArray,
         tileW: Int,
         tileH: Int,
@@ -311,6 +314,7 @@ class CaptureProcessor(context: Context) {
 
         GLES30.glUseProgram(programId)
         GLES30.glUniformMatrix4fv(uTexMatrixLocation, 1, false, texMatrix, 0)
+        effectUniforms.apply(recipe)
         GLES30.glActiveTexture(GLES30.GL_TEXTURE0)
         GLES30.glBindTexture(GLES30.GL_TEXTURE_2D, sourceTexId)
         GLES30.glUniform1i(uInputTextureLocation, 0)
