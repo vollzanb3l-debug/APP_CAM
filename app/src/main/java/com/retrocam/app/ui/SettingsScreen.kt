@@ -9,6 +9,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.systemBarsPadding
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -24,6 +26,7 @@ import com.retrocam.app.ui.theme.RetroTextSecondary
 
 @Composable
 fun SettingsScreen(
+    onOpenCalibrationDebug: () -> Unit,
     onBack: () -> Unit,
 ) {
     Surface(
@@ -65,10 +68,20 @@ fun SettingsScreen(
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
-                    text = "Opsi kualitas, format simpan, dan layar kalibrasi akan ditambahkan pada tahap berikutnya.",
+                    text = "Opsi kualitas dan format penyimpanan akan ditambahkan di M5–M6. Layar debug kalibrasi sudah aktif.",
                     style = MaterialTheme.typography.bodyMedium,
                     color = RetroTextSecondary,
                 )
+                Spacer(modifier = Modifier.height(20.dp))
+                Button(
+                    onClick = onOpenCalibrationDebug,
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = RetroAmber,
+                        contentColor = RetroDarkBackground,
+                    ),
+                ) {
+                    Text(text = "Buka Layar Debug & Kalibrasi")
+                }
             }
         }
     }

@@ -13,6 +13,7 @@ import com.retrocam.app.recipe.FinalRecipe
 import com.retrocam.app.recipe.RecipeCompositor
 import com.retrocam.app.recipe.RecipeRepository
 import com.retrocam.app.recipe.SelectionStore
+import com.retrocam.app.ui.CalibrationDebugScreen
 import com.retrocam.app.ui.CameraScreen
 import com.retrocam.app.ui.GalleryScreen
 import com.retrocam.app.ui.SettingsScreen
@@ -22,6 +23,7 @@ private enum class AppScreen {
     Camera,
     Gallery,
     Settings,
+    CalibrationDebug,
 }
 
 class MainActivity : ComponentActivity() {
@@ -63,13 +65,15 @@ class MainActivity : ComponentActivity() {
                 val selectedFilm = catalog.films.firstOrNull { it.id == selectedFilmId }
                     ?: catalog.films.firstOrNull()
 
-                val activeRecipe = remember(selectedCamera, selectedLens, selectedFilm) {
+                val baseRecipe = remember(selectedCamera, selectedLens, selectedFilm) {
                     if (selectedCamera != null && selectedLens != null && selectedFilm != null) {
                         RecipeCompositor.compose(selectedCamera, selectedLens, selectedFilm)
                     } else {
                         FinalRecipe.NEUTRAL
                     }
                 }
+                var debugOverrideRecipe by remember { mutableStateOf<FinalRecipe?>(null) }
+                val activeRecipe = debugOverrideRecipe ?: baseRecipe
 
                 var currentScreen by rememberSaveable { mutableStateOf(AppScreen.Camera) }
                 when (currentScreen) {
@@ -82,14 +86,17 @@ class MainActivity : ComponentActivity() {
                         activeRecipe = activeRecipe,
                         onSelectCamera = { camera ->
                             selectedCameraId = camera.id
+                            debugOverrideRecipe = null
                             selectionStore.save(camera.id, selectedLens?.id, selectedFilm?.id)
                         },
                         onSelectLens = { lens ->
                             selectedLensId = lens.id
+                            debugOverrideRecipe = null
                             selectionStore.save(selectedCamera?.id, lens.id, selectedFilm?.id)
                         },
                         onSelectFilm = { film ->
                             selectedFilmId = film.id
+                            debugOverrideRecipe = null
                             selectionStore.save(selectedCamera?.id, selectedLens?.id, film.id)
                         },
                         onOpenGallery = { currentScreen = AppScreen.Gallery },
@@ -99,7 +106,21 @@ class MainActivity : ComponentActivity() {
                         onBack = { currentScreen = AppScreen.Camera },
                     )
                     AppScreen.Settings -> SettingsScreen(
+                        onOpenCalibrationDebug = { currentScreen = AppScreen.CalibrationDebug },
                         onBack = { currentScreen = AppScreen.Camera },
+                    )
+                    AppScreen.CalibrationDebug -> CalibrationDebugScreen(
+                        catalog = catalog,
+                        selectedCamera = selectedCamera,
+                        baseRecipe = baseRecipe,
+                        currentRecipe = activeRecipe,
+                        onApplyPreviewOverride = { overrideRecipe ->
+                            debugOverrideRecipe = overrideRecipe
+                        },
+                        onResetOverride = {
+                            debugOverrideRecipe = null
+                        },
+                        onBack = { currentScreen = AppScreen.Settings },
                     )
                 }
             }
