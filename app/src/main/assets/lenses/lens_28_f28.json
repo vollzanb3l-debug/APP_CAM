@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "id": "lens_28_f28",
+  "displayName": "28mm f2.8",
+  "icon": "icons/lenses/wide_28.png",
+  "focalLengthEquiv": 28,
+  "softness": 0.08,
+  "bloom": { "intensity": 0.08, "threshold": 0.82, "radius": 0.005 },
+  "vignette": { "strength": 0.28, "radius": 0.80 },
+  "distortion": { "k1": -0.04 },
+  "chromaticAberration": 0.08,
+  "flare": 0.05,
+  "notes": "Perkiraan awal: sudut lebar klasik dengan vignette sedang."
+}

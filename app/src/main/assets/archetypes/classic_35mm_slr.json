@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "classic_35mm_slr",
+  "displayName": "SLR / Rangefinder 35mm Klasik",
+  "era": "1970s-1990s",
+  "summary": "Perkiraan awal badan kamera mekanis 35mm dengan karakter netral sehingga warna dan grain sangat ditentukan oleh kombinasi lensa dan film.",
+  "typicalTraits": [
+    "Rasio klasik 3:2",
+    "White balance mendekati netral",
+    "Roll-off highlight halus dan noise sensor minimal"
+  ]
+}

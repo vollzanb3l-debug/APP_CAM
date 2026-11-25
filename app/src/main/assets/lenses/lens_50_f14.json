@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "id": "lens_50_f14",
+  "displayName": "50mm f1.4",
+  "icon": "icons/lenses/prime_50.png",
+  "focalLengthEquiv": 50,
+  "softness": 0.14,
+  "bloom": { "intensity": 0.16, "threshold": 0.76, "radius": 0.008 },
+  "vignette": { "strength": 0.16, "radius": 0.90 },
+  "distortion": { "k1": 0.01 },
+  "chromaticAberration": 0.04,
+  "flare": 0.10,
+  "notes": "Perkiraan awal: sedikit dreamy dengan bloom halus pada highlight."
+}

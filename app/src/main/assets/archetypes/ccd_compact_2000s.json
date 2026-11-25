@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "ccd_compact_2000s",
+  "displayName": "Kompak CCD Awal 2000-an",
+  "era": "2000s",
+  "summary": "Perkiraan awal karakter kamera saku digital bersensor CCD kecil: kontras sedang-tinggi, highlight cenderung cepat matang, warna hangat ringan.",
+  "typicalTraits": [
+    "Nada warna sedikit hangat atau kekuningan",
+    "Roll-off highlight sedang dan kontras punchy",
+    "Noise kromatik ringan pada area gelap"
+  ]
+}

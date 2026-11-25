@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "id": "lens_35_f2",
+  "displayName": "35mm f2",
+  "icon": "icons/lenses/prime_35.png",
+  "focalLengthEquiv": 35,
+  "softness": 0.10,
+  "bloom": { "intensity": 0.10, "threshold": 0.80, "radius": 0.006 },
+  "vignette": { "strength": 0.20, "radius": 0.85 },
+  "distortion": { "k1": 0.00 },
+  "chromaticAberration": 0.05,
+  "flare": 0.00,
+  "notes": "Perkiraan awal: standar serbaguna dengan tepi sedikit lembut."
+}
