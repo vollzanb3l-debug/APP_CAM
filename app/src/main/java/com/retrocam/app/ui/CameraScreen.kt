@@ -33,6 +33,8 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Slider
+import androidx.compose.material3.SliderDefaults
 import androidx.compose.material3.Surface as ComposeSurface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -40,6 +42,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -58,6 +61,7 @@ import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.LifecycleOwner
 import com.retrocam.app.camera.CameraController
+import com.retrocam.app.camera.ExposureCompensationMath
 import com.retrocam.app.camera.FrameTransform
 import com.retrocam.app.effects.CaptureProcessor
 import com.retrocam.app.effects.EffectEngine
@@ -130,6 +134,8 @@ fun CameraScreen(
     var isCapturing by remember { mutableStateOf(false) }
     var viewportSize by remember { mutableStateOf(IntSize(3, 4)) }
     var showPicker by rememberSaveable { mutableStateOf(false) }
+    var exposureBounds by remember { mutableStateOf(ExposureCompensationMath.ExposureBounds.UNSUPPORTED) }
+    var exposureEv by remember { mutableFloatStateOf(0f) }
 
     val permissionLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.RequestMultiplePermissions(),
@@ -176,6 +182,10 @@ fun CameraScreen(
                 targetRotation = displayRotation,
                 viewportWidth = viewportSize.width,
                 viewportHeight = viewportSize.height,
+                onExposureStateChanged = { bounds, appliedEv ->
+                    exposureBounds = bounds
+                    exposureEv = appliedEv
+                },
                 onError = { cameraError = it.localizedMessage ?: "Gagal membuka kamera" },
             )
         }
@@ -355,7 +365,21 @@ fun CameraScreen(
                     )
                 }
 
-                Spacer(modifier = Modifier.height(10.dp))
+                if (exposureBounds.supported) {
+                    Spacer(modifier = Modifier.height(6.dp))
+                    ExposureCompensationBar(
+                        bounds = exposureBounds,
+                        currentEv = exposureEv,
+                        onEvChange = { requestedEv ->
+                            exposureEv = cameraController.setExposureCompensationEv(requestedEv)
+                        },
+                        onResetEv = {
+                            exposureEv = cameraController.setExposureCompensationEv(0f)
+                        },
+                    )
+                }
+
+                Spacer(modifier = Modifier.height(8.dp))
 
                 // Three recipe slots: Camera | Lens | Film
                 Row(
@@ -474,6 +498,62 @@ fun CameraScreen(
                 )
             }
         }
+    }
+}
+
+@Composable
+private fun ExposureCompensationBar(
+    bounds: ExposureCompensationMath.ExposureBounds,
+    currentEv: Float,
+    onEvChange: (Float) -> Unit,
+    onResetEv: () -> Unit,
+) {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .clip(RoundedCornerShape(10.dp))
+            .background(RetroSurface)
+            .border(1.dp, RetroSurfaceBorder, RoundedCornerShape(10.dp))
+            .padding(horizontal = 12.dp, vertical = 4.dp),
+    ) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Text(
+                text = String.format(java.util.Locale.US, "%.1f", bounds.minEv),
+                style = MaterialTheme.typography.labelSmall,
+                color = RetroTextSecondary,
+            )
+            Spacer(modifier = Modifier.weight(1f))
+            Text(
+                text = ExposureCompensationMath.formatEv(currentEv),
+                style = MaterialTheme.typography.labelSmall,
+                color = RetroAmber,
+                modifier = Modifier.clickable(onClick = onResetEv),
+            )
+            Spacer(modifier = Modifier.weight(1f))
+            Text(
+                text = String.format(java.util.Locale.US, "+%.1f", bounds.maxEv),
+                style = MaterialTheme.typography.labelSmall,
+                color = RetroTextSecondary,
+            )
+        }
+        val stepCount = (bounds.maxIndex - bounds.minIndex - 1).coerceAtLeast(0)
+        Slider(
+            value = currentEv.coerceIn(bounds.minEv, bounds.maxEv),
+            onValueChange = onEvChange,
+            valueRange = bounds.minEv..bounds.maxEv,
+            steps = stepCount,
+            modifier = Modifier.height(28.dp),
+            colors = SliderDefaults.colors(
+                thumbColor = RetroAmber,
+                activeTrackColor = RetroAmber,
+                inactiveTrackColor = RetroSurfaceBorder,
+                activeTickColor = RetroDarkBackground,
+                inactiveTickColor = RetroTextSecondary,
+            ),
+        )
     }
 }
 

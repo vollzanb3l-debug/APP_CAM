@@ -6,6 +6,7 @@ import android.net.Uri
 import android.util.Log
 import android.util.Rational
 import android.util.Size
+import androidx.camera.core.Camera
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.ImageCapture
 import androidx.camera.core.ImageCaptureException
@@ -36,6 +37,7 @@ class CameraController(context: Context) {
     private val captureExecutor = Executors.newSingleThreadExecutor()
 
     private var cameraProvider: ProcessCameraProvider? = null
+    private var boundCamera: Camera? = null
     private var imageCapture: ImageCapture? = null
 
     private var boundLifecycleOwner: LifecycleOwner? = null
@@ -44,6 +46,10 @@ class CameraController(context: Context) {
     private var boundSensorOrientationDegrees: Int? = null
     private var boundViewportWidth: Int = 3
     private var boundViewportHeight: Int = 4
+    private var exposureBounds: ExposureCompensationMath.ExposureBounds =
+        ExposureCompensationMath.ExposureBounds.UNSUPPORTED
+    private var requestedExposureEv: Float = 0f
+    private var exposureStateListener: ((ExposureCompensationMath.ExposureBounds, Float) -> Unit)? = null
 
     var lensFacing: Int = CameraSelector.LENS_FACING_BACK
         private set
@@ -56,6 +62,7 @@ class CameraController(context: Context) {
         targetRotation: Int,
         viewportWidth: Int,
         viewportHeight: Int,
+        onExposureStateChanged: (ExposureCompensationMath.ExposureBounds, Float) -> Unit = { _, _ -> },
         onError: (Throwable) -> Unit = {},
     ) {
         boundLifecycleOwner = lifecycleOwner
@@ -63,6 +70,7 @@ class CameraController(context: Context) {
         boundTargetRotation = targetRotation
         boundViewportWidth = viewportWidth.coerceAtLeast(1)
         boundViewportHeight = viewportHeight.coerceAtLeast(1)
+        exposureStateListener = onExposureStateChanged
 
         val existing = cameraProvider
         if (existing != null) {
@@ -83,6 +91,25 @@ class CameraController(context: Context) {
             },
             mainExecutor,
         )
+    }
+
+    fun setExposureCompensationEv(targetEv: Float): Float {
+        requestedExposureEv = targetEv.coerceIn(
+            ExposureCompensationMath.UI_MIN_EV,
+            ExposureCompensationMath.UI_MAX_EV,
+        )
+        val bounds = exposureBounds
+        val camera = boundCamera ?: return 0f
+        if (!bounds.supported) return 0f
+
+        val index = ExposureCompensationMath.evToIndex(requestedExposureEv, bounds)
+        val appliedEv = ExposureCompensationMath.indexToEv(index, bounds)
+        try {
+            camera.cameraControl.setExposureCompensationIndex(index)
+        } catch (t: Throwable) {
+            Log.w(TAG, "Failed to set exposure compensation index=$index", t)
+        }
+        return appliedEv
     }
 
     fun toggleLensFacing(onError: (Throwable) -> Unit = {}): Boolean {
@@ -162,6 +189,7 @@ class CameraController(context: Context) {
 
     fun unbind() {
         cameraProvider?.unbindAll()
+        boundCamera = null
         imageCapture = null
     }
 
@@ -225,8 +253,9 @@ class CameraController(context: Context) {
                 .build()
 
             provider.unbindAll()
-            val boundCamera = provider.bindToLifecycle(lifecycleOwner, selector, useCaseGroup)
-            val sensorOrientation = boundCamera.cameraInfo.sensorRotationDegrees
+            val camera = provider.bindToLifecycle(lifecycleOwner, selector, useCaseGroup)
+            boundCamera = camera
+            val sensorOrientation = camera.cameraInfo.sensorRotationDegrees
             boundSensorOrientationDegrees = sensorOrientation
             val displayDegrees = FrameTransform.surfaceRotationToDegrees(boundTargetRotation)
             effectEngine.setTargetOrientation(
@@ -237,6 +266,31 @@ class CameraController(context: Context) {
                 ),
             )
             imageCapture = capture
+
+            val expState = camera.cameraInfo.exposureState
+            val range = expState.exposureCompensationRange
+            val bounds = ExposureCompensationMath.computeBounds(
+                isExposureCompensationSupported = expState.isExposureCompensationSupported,
+                hardwareMinIndex = range.lower,
+                hardwareMaxIndex = range.upper,
+                stepEv = expState.exposureCompensationStep.toFloat(),
+            )
+            exposureBounds = bounds
+            val appliedEv = if (bounds.supported) {
+                val index = ExposureCompensationMath.evToIndex(requestedExposureEv, bounds)
+                try {
+                    camera.cameraControl.setExposureCompensationIndex(index)
+                } catch (t: Throwable) {
+                    Log.w(TAG, "Failed to apply initial exposure compensation index=$index", t)
+                }
+                ExposureCompensationMath.indexToEv(index, bounds)
+            } else {
+                0f
+            }
+            requestedExposureEv = appliedEv
+            exposureStateListener?.let { listener ->
+                mainExecutor.execute { listener(bounds, appliedEv) }
+            }
         } catch (t: Throwable) {
             Log.e(TAG, "Failed to bind CameraX use cases", t)
             onError(t)
