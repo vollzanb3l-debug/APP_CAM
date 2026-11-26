@@ -124,6 +124,10 @@ class ColorGradeGoldenTest {
             "uHighlightTint",
             "uShadowTint",
             "uTintStrength",
+            "uTimeSec",
+            "uFrameIndex",
+            "uGrainSeed",
+            "uQualityLevel",
         )
         for (uniform in expectedUniforms) {
             assertTrue("Missing uniform $uniform in retro_pipeline.frag", source.contains(uniform))

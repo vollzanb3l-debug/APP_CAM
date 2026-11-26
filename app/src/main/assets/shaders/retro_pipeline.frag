@@ -20,6 +20,12 @@ uniform vec3 uHighlightTint;
 uniform vec3 uShadowTint;
 uniform float uTintStrength;
 
+// Video-ready frame context uniforms (bound by EffectUniforms; used by grain/time-based stages in M4+)
+uniform float uTimeSec;
+uniform int uFrameIndex;
+uniform float uGrainSeed;
+uniform int uQualityLevel; // 0 = preview, 1 = video, 2 = photo
+
 vec3 applyColorGrade(vec3 c) {
     // 1. White balance gain
     vec3 wbGain = max(vec3(

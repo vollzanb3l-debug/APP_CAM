@@ -20,8 +20,15 @@ class EffectUniforms private constructor(
     private val uHighlightTint: Int,
     private val uShadowTint: Int,
     private val uTintStrength: Int,
+    private val uTimeSec: Int,
+    private val uFrameIndex: Int,
+    private val uGrainSeed: Int,
+    private val uQualityLevel: Int,
 ) {
-    fun apply(recipe: FinalRecipe) {
+    fun apply(
+        recipe: FinalRecipe,
+        frame: FrameRenderParams = FrameRenderParams(),
+    ) {
         if (uTemp >= 0) GLES30.glUniform1f(uTemp, recipe.temp)
         if (uTint >= 0) GLES30.glUniform1f(uTint, recipe.tint)
         if (uContrast >= 0) GLES30.glUniform1f(uContrast, recipe.contrast)
@@ -35,6 +42,11 @@ class EffectUniforms private constructor(
         if (uHighlightTint >= 0) GLES30.glUniform3f(uHighlightTint, hi.r, hi.g, hi.b)
         if (uShadowTint >= 0) GLES30.glUniform3f(uShadowTint, sh.r, sh.g, sh.b)
         if (uTintStrength >= 0) GLES30.glUniform1f(uTintStrength, recipe.tintStrength)
+
+        if (uTimeSec >= 0) GLES30.glUniform1f(uTimeSec, frame.timeSec)
+        if (uFrameIndex >= 0) GLES30.glUniform1i(uFrameIndex, frame.frameIndex)
+        if (uGrainSeed >= 0) GLES30.glUniform1f(uGrainSeed, frame.grainSeed)
+        if (uQualityLevel >= 0) GLES30.glUniform1i(uQualityLevel, frame.quality.uniformValue)
     }
 
     companion object {
@@ -49,6 +61,10 @@ class EffectUniforms private constructor(
             uHighlightTint = GLES30.glGetUniformLocation(programId, "uHighlightTint"),
             uShadowTint = GLES30.glGetUniformLocation(programId, "uShadowTint"),
             uTintStrength = GLES30.glGetUniformLocation(programId, "uTintStrength"),
+            uTimeSec = GLES30.glGetUniformLocation(programId, "uTimeSec"),
+            uFrameIndex = GLES30.glGetUniformLocation(programId, "uFrameIndex"),
+            uGrainSeed = GLES30.glGetUniformLocation(programId, "uGrainSeed"),
+            uQualityLevel = GLES30.glGetUniformLocation(programId, "uQualityLevel"),
         )
     }
 }

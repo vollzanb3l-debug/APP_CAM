@@ -23,10 +23,20 @@ import java.nio.FloatBuffer
 import java.util.concurrent.Executor
 
 /**
- * Single OpenGL ES 3.0 live preview engine.
- * Knows only about FinalRecipe and Surfaces — never JSON, camera names, or Compose UI.
+ * Single OpenGL ES 3.0 live effect engine (video-ready).
+ * Knows only about FinalRecipe, FrameRenderParams, and output Surfaces — never JSON,
+ * camera names, or Compose UI. Supports rendering a single input texture frame into
+ * one or more registered output surfaces (e.g. preview and future video encoder surface).
  */
 class EffectEngine(context: Context) {
+
+    private data class OutputSurfaceTarget(
+        val id: String,
+        val eglSurface: EGLSurface,
+        var width: Int,
+        var height: Int,
+        val quality: RenderQuality,
+    )
 
     private val assets = context.applicationContext.assets
     private val glThread = HandlerThread("EffectEngineGL").apply { start() }
@@ -40,6 +50,9 @@ class EffectEngine(context: Context) {
     private var currentRecipe: FinalRecipe = FinalRecipe()
 
     @Volatile
+    private var grainSeedOverride: Float? = null
+
+    @Volatile
     private var viewportWidth: Int = 1080
 
     @Volatile
@@ -49,7 +62,7 @@ class EffectEngine(context: Context) {
     private var eglContext: EGLContext = EGL14.EGL_NO_CONTEXT
     private var eglConfig: EGLConfig? = null
     private var pbufferSurface: EGLSurface = EGL14.EGL_NO_SURFACE
-    private var windowSurface: EGLSurface = EGL14.EGL_NO_SURFACE
+    private val outputTargets = linkedMapOf<String, OutputSurfaceTarget>()
 
     private var programId: Int = 0
     private var uTexMatrixLocation: Int = -1
@@ -66,6 +79,8 @@ class EffectEngine(context: Context) {
     private var bufferHeight: Int = 0
     private var rotationDegrees: Int = 0
     private var isFrontCameraProvider: () -> Boolean = { false }
+    private var frameCounter: Int = 0
+    private val startTimeNanos: Long = System.nanoTime()
 
     init {
         glHandler.post { initGl() }
@@ -74,13 +89,17 @@ class EffectEngine(context: Context) {
     fun setRecipe(recipe: FinalRecipe) {
         currentRecipe = recipe
         glHandler.post {
-            if (!released && windowSurface != EGL14.EGL_NO_SURFACE) {
+            if (!released && outputTargets.isNotEmpty()) {
                 drawCurrentFrame()
             }
         }
     }
 
     fun getRecipe(): FinalRecipe = currentRecipe
+
+    fun setGrainSeedOverride(seed: Float?) {
+        grainSeedOverride = seed
+    }
 
     fun getPreviewViewportSize(): FrameTransform.Dimensions {
         val w = viewportWidth.coerceAtLeast(1)
@@ -89,39 +108,83 @@ class EffectEngine(context: Context) {
     }
 
     fun attachPreviewSurface(surface: Surface, width: Int, height: Int) {
+        attachOutputSurface(
+            id = PREVIEW_TARGET_ID,
+            surface = surface,
+            width = width,
+            height = height,
+            quality = RenderQuality.PREVIEW,
+        )
+    }
+
+    fun updatePreviewSize(width: Int, height: Int) {
+        updateOutputSurfaceSize(PREVIEW_TARGET_ID, width, height)
+    }
+
+    fun detachPreviewSurface() {
+        detachOutputSurface(PREVIEW_TARGET_ID)
+    }
+
+    fun attachOutputSurface(
+        id: String,
+        surface: Surface,
+        width: Int,
+        height: Int,
+        quality: RenderQuality = RenderQuality.PREVIEW,
+    ) {
         if (released) return
-        viewportWidth = width.coerceAtLeast(1)
-        viewportHeight = height.coerceAtLeast(1)
+        val safeW = width.coerceAtLeast(1)
+        val safeH = height.coerceAtLeast(1)
+        if (id == PREVIEW_TARGET_ID) {
+            viewportWidth = safeW
+            viewportHeight = safeH
+        }
         glHandler.post {
             if (released || eglDisplay == EGL14.EGL_NO_DISPLAY) return@post
-            destroyWindowSurface()
+            destroyOutputSurface(id)
             val config = eglConfig ?: return@post
             val attrs = intArrayOf(EGL14.EGL_NONE)
-            windowSurface = EGL14.eglCreateWindowSurface(eglDisplay, config, surface, attrs, 0)
-            if (windowSurface == EGL14.EGL_NO_SURFACE) {
-                Log.e(TAG, "eglCreateWindowSurface failed: 0x${EGL14.eglGetError().toString(16)}")
+            val eglSurface = EGL14.eglCreateWindowSurface(eglDisplay, config, surface, attrs, 0)
+            if (eglSurface == EGL14.EGL_NO_SURFACE) {
+                Log.e(
+                    TAG,
+                    "eglCreateWindowSurface($id) failed: 0x${EGL14.eglGetError().toString(16)}",
+                )
                 return@post
             }
-            makeCurrent(windowSurface)
+            outputTargets[id] = OutputSurfaceTarget(
+                id = id,
+                eglSurface = eglSurface,
+                width = safeW,
+                height = safeH,
+                quality = quality,
+            )
             drawCurrentFrame()
         }
     }
 
-    fun updatePreviewSize(width: Int, height: Int) {
+    fun updateOutputSurfaceSize(id: String, width: Int, height: Int) {
         if (released) return
-        viewportWidth = width.coerceAtLeast(1)
-        viewportHeight = height.coerceAtLeast(1)
+        val safeW = width.coerceAtLeast(1)
+        val safeH = height.coerceAtLeast(1)
+        if (id == PREVIEW_TARGET_ID) {
+            viewportWidth = safeW
+            viewportHeight = safeH
+        }
         glHandler.post {
-            if (!released && windowSurface != EGL14.EGL_NO_SURFACE) {
+            val target = outputTargets[id] ?: return@post
+            target.width = safeW
+            target.height = safeH
+            if (!released) {
                 drawCurrentFrame()
             }
         }
     }
 
-    fun detachPreviewSurface() {
+    fun detachOutputSurface(id: String) {
         glHandler.post {
-            destroyWindowSurface()
-            if (pbufferSurface != EGL14.EGL_NO_SURFACE) {
+            destroyOutputSurface(id)
+            if (outputTargets.isEmpty() && pbufferSurface != EGL14.EGL_NO_SURFACE) {
                 makeCurrent(pbufferSurface)
             }
         }
@@ -317,7 +380,7 @@ class EffectEngine(context: Context) {
 
     private fun onFrameAvailable() {
         val st = surfaceTexture ?: return
-        if (pbufferSurface != EGL14.EGL_NO_SURFACE && windowSurface == EGL14.EGL_NO_SURFACE) {
+        if (pbufferSurface != EGL14.EGL_NO_SURFACE) {
             makeCurrent(pbufferSurface)
         }
         try {
@@ -327,45 +390,77 @@ class EffectEngine(context: Context) {
             Log.w(TAG, "updateTexImage failed", t)
             return
         }
+        frameCounter += 1
         drawCurrentFrame()
     }
 
     private fun drawCurrentFrame() {
-        if (windowSurface == EGL14.EGL_NO_SURFACE || programId == 0) return
-        if (!makeCurrent(windowSurface)) return
+        if (outputTargets.isEmpty() || programId == 0) return
 
-        val viewW = viewportWidth.coerceAtLeast(1)
-        val viewH = viewportHeight.coerceAtLeast(1)
+        val elapsedSec = ((System.nanoTime() - startTimeNanos).coerceAtLeast(0L)) / 1_000_000_000f
         val bufW = bufferWidth.coerceAtLeast(1)
         val bufH = bufferHeight.coerceAtLeast(1)
+        val mirror = isFrontCameraProvider()
+        val recipe = currentRecipe
+        val seedOverride = grainSeedOverride
 
-        val texMatrix = FrameTransform.buildPreviewTexMatrix(
-            surfaceTextureMatrix = stMatrix,
-            bufferWidth = bufW,
-            bufferHeight = bufH,
-            rotationDegrees = rotationDegrees,
-            mirrorHorizontal = isFrontCameraProvider(),
-            viewportWidth = viewW,
-            viewportHeight = viewH,
-        )
+        for (target in outputTargets.values) {
+            val viewW = target.width.coerceAtLeast(1)
+            val viewH = target.height.coerceAtLeast(1)
+            val texMatrix = FrameTransform.buildPreviewTexMatrix(
+                surfaceTextureMatrix = stMatrix,
+                bufferWidth = bufW,
+                bufferHeight = bufH,
+                rotationDegrees = rotationDegrees,
+                mirrorHorizontal = mirror,
+                viewportWidth = viewW,
+                viewportHeight = viewH,
+            )
+            val frameParams = FrameRenderParams.forStreamFrame(
+                frameIndex = frameCounter,
+                timeSec = elapsedSec,
+                quality = target.quality,
+                fixedSeedOverride = seedOverride,
+            )
+            renderTextureToTarget(
+                target = target,
+                textureTarget = GLES11Ext.GL_TEXTURE_EXTERNAL_OES,
+                textureId = oesTextureId,
+                texMatrix = texMatrix,
+                recipe = recipe,
+                frameParams = frameParams,
+            )
+        }
+    }
 
-        GLES30.glViewport(0, 0, viewW, viewH)
+    private fun renderTextureToTarget(
+        target: OutputSurfaceTarget,
+        textureTarget: Int,
+        textureId: Int,
+        texMatrix: FloatArray,
+        recipe: FinalRecipe,
+        frameParams: FrameRenderParams,
+    ) {
+        if (target.eglSurface == EGL14.EGL_NO_SURFACE) return
+        if (!makeCurrent(target.eglSurface)) return
+
+        GLES30.glViewport(0, 0, target.width.coerceAtLeast(1), target.height.coerceAtLeast(1))
         GLES30.glClearColor(0f, 0f, 0f, 1f)
         GLES30.glClear(GLES30.GL_COLOR_BUFFER_BIT)
 
         GLES30.glUseProgram(programId)
         GLES30.glUniformMatrix4fv(uTexMatrixLocation, 1, false, texMatrix, 0)
-        effectUniforms?.apply(currentRecipe)
+        effectUniforms?.apply(recipe, frameParams)
 
         GLES30.glActiveTexture(GLES30.GL_TEXTURE0)
-        GLES30.glBindTexture(GLES11Ext.GL_TEXTURE_EXTERNAL_OES, oesTextureId)
+        GLES30.glBindTexture(textureTarget, textureId)
         GLES30.glUniform1i(uInputTextureLocation, 0)
 
         GLES30.glBindVertexArray(vaoId)
         GLES30.glDrawArrays(GLES30.GL_TRIANGLE_STRIP, 0, 4)
         GLES30.glBindVertexArray(0)
 
-        EGL14.eglSwapBuffers(eglDisplay, windowSurface)
+        EGL14.eglSwapBuffers(eglDisplay, target.eglSurface)
     }
 
     private fun makeCurrent(surface: EGLSurface): Boolean {
@@ -373,10 +468,20 @@ class EffectEngine(context: Context) {
         return EGL14.eglMakeCurrent(eglDisplay, surface, surface, eglContext)
     }
 
-    private fun destroyWindowSurface() {
-        if (windowSurface != EGL14.EGL_NO_SURFACE && eglDisplay != EGL14.EGL_NO_DISPLAY) {
-            EGL14.eglDestroySurface(eglDisplay, windowSurface)
-            windowSurface = EGL14.EGL_NO_SURFACE
+    private fun destroyOutputSurface(id: String) {
+        val target = outputTargets.remove(id) ?: return
+        if (eglDisplay != EGL14.EGL_NO_DISPLAY && target.eglSurface != EGL14.EGL_NO_SURFACE) {
+            if (pbufferSurface != EGL14.EGL_NO_SURFACE) {
+                makeCurrent(pbufferSurface)
+            }
+            EGL14.eglDestroySurface(eglDisplay, target.eglSurface)
+        }
+    }
+
+    private fun destroyAllOutputSurfaces() {
+        val ids = outputTargets.keys.toList()
+        for (id in ids) {
+            destroyOutputSurface(id)
         }
     }
 
@@ -411,7 +516,7 @@ class EffectEngine(context: Context) {
                 EGL14.EGL_NO_SURFACE,
                 EGL14.EGL_NO_CONTEXT,
             )
-            destroyWindowSurface()
+            destroyAllOutputSurfaces()
             if (pbufferSurface != EGL14.EGL_NO_SURFACE) {
                 EGL14.eglDestroySurface(eglDisplay, pbufferSurface)
                 pbufferSurface = EGL14.EGL_NO_SURFACE
@@ -427,5 +532,6 @@ class EffectEngine(context: Context) {
 
     companion object {
         private const val TAG = "EffectEngine"
+        const val PREVIEW_TARGET_ID = "preview"
     }
 }

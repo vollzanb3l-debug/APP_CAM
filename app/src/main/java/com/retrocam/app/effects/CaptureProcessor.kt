@@ -34,6 +34,7 @@ class CaptureProcessor(context: Context) {
         viewportWidth: Int,
         viewportHeight: Int,
         recipe: FinalRecipe,
+        grainSeed: Float = FrameRenderParams.DEFAULT_PHOTO_GRAIN_SEED,
     ): Bitmap {
         var argbSource: Bitmap? = null
         var safeSource: Bitmap = sourceBitmap
@@ -176,6 +177,7 @@ class CaptureProcessor(context: Context) {
             fboId = fboArr[0]
             fboTexId = fboTexArr[0]
 
+            val frameParams = FrameRenderParams.forPhoto(grainSeed)
             val maxTile = minOf(maxTextureSize, MAX_TILE_DIMENSION)
             if (outW <= maxTile && outH <= maxTile) {
                 val pixelBuf = renderTileToBuffer(
@@ -188,6 +190,7 @@ class CaptureProcessor(context: Context) {
                     uInputTextureLocation = uInputTextureLocation,
                     effectUniforms = effectUniforms,
                     recipe = recipe,
+                    frameParams = frameParams,
                     texMatrix = photoTexMatrix,
                     tileW = outW,
                     tileH = outH,
@@ -219,6 +222,7 @@ class CaptureProcessor(context: Context) {
                         uInputTextureLocation = uInputTextureLocation,
                         effectUniforms = effectUniforms,
                         recipe = recipe,
+                        frameParams = frameParams,
                         texMatrix = tileTexMatrix,
                         tileW = tileW,
                         tileH = tileH,
@@ -275,6 +279,7 @@ class CaptureProcessor(context: Context) {
         uInputTextureLocation: Int,
         effectUniforms: EffectUniforms,
         recipe: FinalRecipe,
+        frameParams: FrameRenderParams,
         texMatrix: FloatArray,
         tileW: Int,
         tileH: Int,
@@ -315,7 +320,7 @@ class CaptureProcessor(context: Context) {
 
         GLES30.glUseProgram(programId)
         GLES30.glUniformMatrix4fv(uTexMatrixLocation, 1, false, texMatrix, 0)
-        effectUniforms.apply(recipe)
+        effectUniforms.apply(recipe, frameParams)
         GLES30.glActiveTexture(GLES30.GL_TEXTURE0)
         GLES30.glBindTexture(GLES30.GL_TEXTURE_2D, sourceTexId)
         GLES30.glUniform1i(uInputTextureLocation, 0)
