@@ -14,6 +14,11 @@ uniform float uImageAspect;
 
 // Optics (Stage 2)
 uniform float uSoftness;
+uniform float uBloomIntensity;
+uniform float uBloomThreshold;
+uniform float uBloomRadius;
+uniform float uHalationIntensity;
+uniform vec3 uHalationColor;
 uniform float uVignetteStrength;
 uniform float uVignetteRadius;
 
@@ -86,6 +91,57 @@ vec4 sampleWithSoftness(vec2 imgUv) {
         blurred = center.rgb * 0.36 + diag * 0.16;
     }
     return vec4(mix(center.rgb, blurred, s * 0.78), center.a);
+}
+
+vec3 extractHighlight(vec3 c, float threshold) {
+    float luma = dot(c, vec3(0.2126, 0.7152, 0.0722));
+    float knee = 0.12;
+    float weight = smoothstep(threshold - knee, threshold + knee, luma);
+    float excess = max(luma - threshold * 0.85, 0.0);
+    return c * (weight * excess);
+}
+
+vec3 sampleHighlightRing(vec2 imgUv, vec2 stepUv, float threshold) {
+    vec2 diag = stepUv * 0.70710678;
+    vec3 sum =
+        extractHighlight(texture(uInputTexture, mapImageUvToSource(imgUv + vec2(stepUv.x, 0.0))).rgb, threshold) +
+        extractHighlight(texture(uInputTexture, mapImageUvToSource(imgUv - vec2(stepUv.x, 0.0))).rgb, threshold) +
+        extractHighlight(texture(uInputTexture, mapImageUvToSource(imgUv + vec2(0.0, stepUv.y))).rgb, threshold) +
+        extractHighlight(texture(uInputTexture, mapImageUvToSource(imgUv - vec2(0.0, stepUv.y))).rgb, threshold) +
+        extractHighlight(texture(uInputTexture, mapImageUvToSource(imgUv + vec2(diag.x, diag.y))).rgb, threshold) +
+        extractHighlight(texture(uInputTexture, mapImageUvToSource(imgUv + vec2(-diag.x, diag.y))).rgb, threshold) +
+        extractHighlight(texture(uInputTexture, mapImageUvToSource(imgUv + vec2(diag.x, -diag.y))).rgb, threshold) +
+        extractHighlight(texture(uInputTexture, mapImageUvToSource(imgUv + vec2(-diag.x, -diag.y))).rgb, threshold);
+    return sum * 0.125;
+}
+
+vec3 applyBloomAndHalation(vec3 baseColor, vec2 imgUv) {
+    float bloomAmt = clamp(uBloomIntensity, 0.0, 1.0);
+    float halationAmt = clamp(uHalationIntensity, 0.0, 1.0);
+    if (bloomAmt <= 0.0001 && halationAmt <= 0.0001) {
+        return baseColor;
+    }
+
+    float threshold = clamp(uBloomThreshold, 0.1, 0.99);
+    float effRadius = max(uBloomRadius, 0.006);
+    vec2 stepUv = shortSideStepToUv(effRadius);
+
+    vec3 glow;
+    if (uQualityLevel >= 2) {
+        // Photo quality tier: 16-tap dual-ring highlight glow
+        vec3 innerGlow = sampleHighlightRing(imgUv, stepUv * 0.55, threshold);
+        vec3 outerGlow = sampleHighlightRing(imgUv, stepUv * 1.25, threshold);
+        glow = innerGlow * 0.55 + outerGlow * 0.45;
+    } else {
+        // Preview / video quality tier: fast 8-tap single-ring highlight glow
+        glow = sampleHighlightRing(imgUv, stepUv, threshold);
+    }
+
+    vec3 bloomAdd = glow * bloomAmt * 1.15;
+    float glowLuma = dot(glow, vec3(0.2126, 0.7152, 0.0722));
+    vec3 halationAdd = uHalationColor * glowLuma * halationAmt * 1.35;
+    vec3 combinedGlow = bloomAdd + halationAdd;
+    return clamp(baseColor + combinedGlow * (1.0 - baseColor * 0.35), 0.0, 1.0);
 }
 
 float computeVignetteFactor(vec2 imgUv) {
@@ -197,9 +253,10 @@ void main() {
     // Stage 1: Geometry (normalized upright image coordinates)
     vec2 imgUv = vImageUv;
 
-    // Stage 2: Optics (softness -> vignette in normalized coordinates)
+    // Stage 2: Optics (softness -> bloom/halation -> vignette in normalized coordinates)
     vec4 sampleColor = sampleWithSoftness(imgUv);
-    vec3 color = sampleColor.rgb * computeVignetteFactor(imgUv);
+    vec3 color = applyBloomAndHalation(sampleColor.rgb, imgUv);
+    color = color * computeVignetteFactor(imgUv);
 
     // Stage 3 & 4: Sensor/Camera + Film color grade & fade
     color = applyColorGrade(color);

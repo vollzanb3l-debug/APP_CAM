@@ -78,6 +78,92 @@ object OpticsMath {
     }
 
     /**
+     * Soft highlight extractor matching retro_pipeline.frag's extractHighlight.
+     */
+    fun extractHighlight(color: RgbColor, threshold: Float): RgbColor {
+        val luma = 0.2126f * color.r + 0.7152f * color.g + 0.0722f * color.b
+        val knee = 0.12f
+        val weight = smoothstep(threshold - knee, threshold + knee, luma)
+        val excess = (luma - threshold * 0.85f).coerceAtLeast(0f)
+        val scale = weight * excess
+        return RgbColor(color.r * scale, color.g * scale, color.b * scale)
+    }
+
+    /**
+     * Resolution-independent bloom + film halation matching retro_pipeline.frag.
+     * Supports PREVIEW/VIDEO (8-tap single ring) and PHOTO (16-tap dual ring) tiers.
+     */
+    fun applyBloomAndHalation(
+        baseColor: RgbColor,
+        u: Float,
+        v: Float,
+        imageAspect: Float,
+        bloomIntensity: Float,
+        bloomThreshold: Float,
+        bloomRadius: Float,
+        halationIntensity: Float,
+        halationColor: RgbColor,
+        quality: RenderQuality,
+        sampler: (Float, Float) -> RgbColor,
+    ): RgbColor {
+        val bloomAmt = bloomIntensity.coerceIn(0f, 1f)
+        val halationAmt = halationIntensity.coerceIn(0f, 1f)
+        if (bloomAmt <= 0.0001f && halationAmt <= 0.0001f) return baseColor
+
+        val threshold = bloomThreshold.coerceIn(0.1f, 0.99f)
+        val effRadius = bloomRadius.coerceAtLeast(0.006f)
+        val (stepX, stepY) = shortSideStepToUv(effRadius, imageAspect)
+
+        fun ring(sx: Float, sy: Float): RgbColor {
+            val dx = sx * 0.70710678f
+            val dy = sy * 0.70710678f
+            val offsets = arrayOf(
+                sx to 0f,
+                -sx to 0f,
+                0f to sy,
+                0f to -sy,
+                dx to dy,
+                -dx to dy,
+                dx to -dy,
+                -dx to -dy,
+            )
+            var sr = 0f
+            var sg = 0f
+            var sb = 0f
+            for ((ox, oy) in offsets) {
+                val h = extractHighlight(sampler(u + ox, v + oy), threshold)
+                sr += h.r
+                sg += h.g
+                sb += h.b
+            }
+            return RgbColor(sr * 0.125f, sg * 0.125f, sb * 0.125f)
+        }
+
+        val glow = if (quality == RenderQuality.PHOTO) {
+            val inner = ring(stepX * 0.55f, stepY * 0.55f)
+            val outer = ring(stepX * 1.25f, stepY * 1.25f)
+            RgbColor(
+                r = inner.r * 0.55f + outer.r * 0.45f,
+                g = inner.g * 0.55f + outer.g * 0.45f,
+                b = inner.b * 0.55f + outer.b * 0.45f,
+            )
+        } else {
+            ring(stepX, stepY)
+        }
+
+        val glowLuma = 0.2126f * glow.r + 0.7152f * glow.g + 0.0722f * glow.b
+        val combR = glow.r * bloomAmt * 1.15f + halationColor.r * glowLuma * halationAmt * 1.35f
+        val combG = glow.g * bloomAmt * 1.15f + halationColor.g * glowLuma * halationAmt * 1.35f
+        val combB = glow.b * bloomAmt * 1.15f + halationColor.b * glowLuma * halationAmt * 1.35f
+
+        return RgbColor(
+            r = (baseColor.r + combR * (1f - baseColor.r * 0.35f)).coerceIn(0f, 1f),
+            g = (baseColor.g + combG * (1f - baseColor.g * 0.35f)).coerceIn(0f, 1f),
+            b = (baseColor.b + combB * (1f - baseColor.b * 0.35f)).coerceIn(0f, 1f),
+        )
+    }
+
+    /**
      * Resolution-independent aspect-corrected vignette multiplier in [0.15, 1.0].
      * (u, v) are upright normalized full-image coordinates in [0, 1].
      */

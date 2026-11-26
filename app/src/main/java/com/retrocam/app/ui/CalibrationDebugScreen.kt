@@ -358,6 +358,31 @@ fun CalibrationDebugScreen(
                 onValueChange = { draftRecipe = draftRecipe.copy(softness = it) },
             )
             ParameterSlider(
+                label = "Bloom Intensity",
+                value = draftRecipe.bloomIntensity,
+                range = 0.0f..1.0f,
+                onValueChange = { draftRecipe = draftRecipe.copy(bloomIntensity = it) },
+            )
+            ParameterSlider(
+                label = "Bloom Threshold",
+                value = draftRecipe.bloomThreshold,
+                range = 0.40f..0.98f,
+                onValueChange = { draftRecipe = draftRecipe.copy(bloomThreshold = it) },
+            )
+            ParameterSlider(
+                label = "Bloom Radius (Short Side)",
+                value = draftRecipe.bloomRadius,
+                range = 0.002f..0.030f,
+                format = "%.4f",
+                onValueChange = { draftRecipe = draftRecipe.copy(bloomRadius = it) },
+            )
+            ParameterSlider(
+                label = "Halation Intensity",
+                value = draftRecipe.halationIntensity,
+                range = 0.0f..1.0f,
+                onValueChange = { draftRecipe = draftRecipe.copy(halationIntensity = it) },
+            )
+            ParameterSlider(
                 label = "Vignette Strength",
                 value = draftRecipe.vignetteStrength,
                 range = 0.0f..1.0f,

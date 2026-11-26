@@ -12,6 +12,11 @@ import com.retrocam.app.recipe.RgbColor
 class EffectUniforms private constructor(
     private val uImageAspect: Int,
     private val uSoftness: Int,
+    private val uBloomIntensity: Int,
+    private val uBloomThreshold: Int,
+    private val uBloomRadius: Int,
+    private val uHalationIntensity: Int,
+    private val uHalationColor: Int,
     private val uVignetteStrength: Int,
     private val uVignetteRadius: Int,
     private val uTemp: Int,
@@ -40,6 +45,12 @@ class EffectUniforms private constructor(
     ) {
         if (uImageAspect >= 0) GLES30.glUniform1f(uImageAspect, imageAspect.coerceAtLeast(0.01f))
         if (uSoftness >= 0) GLES30.glUniform1f(uSoftness, recipe.softness)
+        if (uBloomIntensity >= 0) GLES30.glUniform1f(uBloomIntensity, recipe.bloomIntensity)
+        if (uBloomThreshold >= 0) GLES30.glUniform1f(uBloomThreshold, recipe.bloomThreshold)
+        if (uBloomRadius >= 0) GLES30.glUniform1f(uBloomRadius, recipe.bloomRadius)
+        if (uHalationIntensity >= 0) GLES30.glUniform1f(uHalationIntensity, recipe.halationIntensity)
+        val hal = HexColorParser.parseOrDefault(recipe.halationColorHex, RgbColor(1f, 0.416f, 0.239f))
+        if (uHalationColor >= 0) GLES30.glUniform3f(uHalationColor, hal.r, hal.g, hal.b)
         if (uVignetteStrength >= 0) GLES30.glUniform1f(uVignetteStrength, recipe.vignetteStrength)
         if (uVignetteRadius >= 0) GLES30.glUniform1f(uVignetteRadius, recipe.vignetteRadius)
 
@@ -72,6 +83,11 @@ class EffectUniforms private constructor(
         fun lookup(programId: Int): EffectUniforms = EffectUniforms(
             uImageAspect = GLES30.glGetUniformLocation(programId, "uImageAspect"),
             uSoftness = GLES30.glGetUniformLocation(programId, "uSoftness"),
+            uBloomIntensity = GLES30.glGetUniformLocation(programId, "uBloomIntensity"),
+            uBloomThreshold = GLES30.glGetUniformLocation(programId, "uBloomThreshold"),
+            uBloomRadius = GLES30.glGetUniformLocation(programId, "uBloomRadius"),
+            uHalationIntensity = GLES30.glGetUniformLocation(programId, "uHalationIntensity"),
+            uHalationColor = GLES30.glGetUniformLocation(programId, "uHalationColor"),
             uVignetteStrength = GLES30.glGetUniformLocation(programId, "uVignetteStrength"),
             uVignetteRadius = GLES30.glGetUniformLocation(programId, "uVignetteRadius"),
             uTemp = GLES30.glGetUniformLocation(programId, "uTemp"),
