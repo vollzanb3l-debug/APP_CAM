@@ -156,11 +156,12 @@ object FrameTransform {
     }
 
     /**
-     * Texture matrix for live EffectEngine preview where quad UVs are GL bottom-up
-     * ((0,0)=bottom-left, (1,1)=top-right) and SurfaceTexture.getTransformMatrix
-     * maps GL bottom-up buffer UVs to the underlying camera buffer.
+     * Texture matrix mapping upright top-down normalized image UV coordinates
+     * ((0,0)=top-left, (1,1)=bottom-right) directly into SurfaceTexture OES UV space.
+     * Shared by spatial shader effects (vignette, grain, softness, etc.) so preview
+     * and full-res photo execute identical normalized-coordinate math.
      */
-    fun buildPreviewTexMatrix(
+    fun buildUprightToPreviewTexMatrix(
         surfaceTextureMatrix: FloatArray,
         bufferWidth: Int,
         bufferHeight: Int,
@@ -177,7 +178,33 @@ object FrameTransform {
             cropScale = crop,
         )
         val flipY = verticalFlipMatrix()
-        return multiply(surfaceTextureMatrix, multiply(flipY, multiply(topDown, flipY)))
+        return multiply(surfaceTextureMatrix, multiply(flipY, topDown))
+    }
+
+    /**
+     * Texture matrix for live EffectEngine preview where quad UVs are GL bottom-up
+     * ((0,0)=bottom-left, (1,1)=top-right) and SurfaceTexture.getTransformMatrix
+     * maps GL bottom-up buffer UVs to the underlying camera buffer.
+     */
+    fun buildPreviewTexMatrix(
+        surfaceTextureMatrix: FloatArray,
+        bufferWidth: Int,
+        bufferHeight: Int,
+        rotationDegrees: Int,
+        mirrorHorizontal: Boolean,
+        viewportWidth: Int,
+        viewportHeight: Int,
+    ): FloatArray {
+        val uprightToOes = buildUprightToPreviewTexMatrix(
+            surfaceTextureMatrix = surfaceTextureMatrix,
+            bufferWidth = bufferWidth,
+            bufferHeight = bufferHeight,
+            rotationDegrees = rotationDegrees,
+            mirrorHorizontal = mirrorHorizontal,
+            viewportWidth = viewportWidth,
+            viewportHeight = viewportHeight,
+        )
+        return multiply(uprightToOes, verticalFlipMatrix())
     }
 
     fun verticalFlipMatrix(): FloatArray = floatArrayOf(

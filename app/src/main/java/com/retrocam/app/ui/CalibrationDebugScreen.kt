@@ -345,6 +345,26 @@ fun CalibrationDebugScreen(
             )
 
             Spacer(modifier = Modifier.height(8.dp))
+            Text(
+                text = "Parameter Optik",
+                style = MaterialTheme.typography.titleSmall,
+                color = RetroTextPrimary,
+            )
+            Spacer(modifier = Modifier.height(4.dp))
+            ParameterSlider(
+                label = "Vignette Strength",
+                value = draftRecipe.vignetteStrength,
+                range = 0.0f..1.0f,
+                onValueChange = { draftRecipe = draftRecipe.copy(vignetteStrength = it) },
+            )
+            ParameterSlider(
+                label = "Vignette Radius",
+                value = draftRecipe.vignetteRadius,
+                range = 0.2f..1.4f,
+                onValueChange = { draftRecipe = draftRecipe.copy(vignetteRadius = it) },
+            )
+
+            Spacer(modifier = Modifier.height(8.dp))
 
             Row(
                 modifier = Modifier.fillMaxWidth(),

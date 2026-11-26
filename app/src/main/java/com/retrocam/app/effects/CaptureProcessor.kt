@@ -147,6 +147,7 @@ class CaptureProcessor(context: Context) {
             val fragBody = ShaderLoader.loadAssetText(assets, "shaders/retro_pipeline.frag")
             val fragSrc = ShaderLoader.buildFragmentSource(fragBody, useExternalOes = false)
             programId = ShaderLoader.compileProgram(vertSrc, fragSrc)
+            val uImageUvRectLocation = GLES30.glGetUniformLocation(programId, "uImageUvRect")
             val uTexMatrixLocation = GLES30.glGetUniformLocation(programId, "uTexMatrix")
             val uInputTextureLocation = GLES30.glGetUniformLocation(programId, "uInputTexture")
             val effectUniforms = EffectUniforms.lookup(programId)
@@ -178,6 +179,7 @@ class CaptureProcessor(context: Context) {
             fboTexId = fboTexArr[0]
 
             val frameParams = FrameRenderParams.forPhoto(grainSeed)
+            val imageAspect = outW.toFloat() / outH.toFloat()
             val maxTile = minOf(maxTextureSize, MAX_TILE_DIMENSION)
             if (outW <= maxTile && outH <= maxTile) {
                 val pixelBuf = renderTileToBuffer(
@@ -186,11 +188,17 @@ class CaptureProcessor(context: Context) {
                     sourceTexId = sourceTexId,
                     programId = programId,
                     vaoId = vaoId,
+                    uImageUvRectLocation = uImageUvRectLocation,
                     uTexMatrixLocation = uTexMatrixLocation,
                     uInputTextureLocation = uInputTextureLocation,
                     effectUniforms = effectUniforms,
                     recipe = recipe,
                     frameParams = frameParams,
+                    imageAspect = imageAspect,
+                    uvOffsetX = 0f,
+                    uvOffsetY = 0f,
+                    uvScaleX = 1f,
+                    uvScaleY = 1f,
                     texMatrix = photoTexMatrix,
                     tileW = outW,
                     tileH = outH,
@@ -209,21 +217,24 @@ class CaptureProcessor(context: Context) {
                 var x = 0
                 while (x < outW) {
                     val tileW = minOf(maxTile, outW - x)
-                    val tileSubMatrix = buildTileSubMatrix(x, y, tileW, tileH, outW, outH)
-                    val tileTexMatrix = FrameTransform.multiply(photoTexMatrix, tileSubMatrix)
-
                     val tileBuffer = renderTileToBuffer(
                         fboId = fboId,
                         fboTexId = fboTexId,
                         sourceTexId = sourceTexId,
                         programId = programId,
                         vaoId = vaoId,
+                        uImageUvRectLocation = uImageUvRectLocation,
                         uTexMatrixLocation = uTexMatrixLocation,
                         uInputTextureLocation = uInputTextureLocation,
                         effectUniforms = effectUniforms,
                         recipe = recipe,
                         frameParams = frameParams,
-                        texMatrix = tileTexMatrix,
+                        imageAspect = imageAspect,
+                        uvOffsetX = x.toFloat() / outW.toFloat(),
+                        uvOffsetY = y.toFloat() / outH.toFloat(),
+                        uvScaleX = tileW.toFloat() / outW.toFloat(),
+                        uvScaleY = tileH.toFloat() / outH.toFloat(),
+                        texMatrix = photoTexMatrix,
                         tileW = tileW,
                         tileH = tileH,
                     )
@@ -275,11 +286,17 @@ class CaptureProcessor(context: Context) {
         sourceTexId: Int,
         programId: Int,
         vaoId: Int,
+        uImageUvRectLocation: Int,
         uTexMatrixLocation: Int,
         uInputTextureLocation: Int,
         effectUniforms: EffectUniforms,
         recipe: FinalRecipe,
         frameParams: FrameRenderParams,
+        imageAspect: Float,
+        uvOffsetX: Float,
+        uvOffsetY: Float,
+        uvScaleX: Float,
+        uvScaleY: Float,
         texMatrix: FloatArray,
         tileW: Int,
         tileH: Int,
@@ -319,8 +336,11 @@ class CaptureProcessor(context: Context) {
         GLES30.glClear(GLES30.GL_COLOR_BUFFER_BIT)
 
         GLES30.glUseProgram(programId)
+        if (uImageUvRectLocation >= 0) {
+            GLES30.glUniform4f(uImageUvRectLocation, uvOffsetX, uvOffsetY, uvScaleX, uvScaleY)
+        }
         GLES30.glUniformMatrix4fv(uTexMatrixLocation, 1, false, texMatrix, 0)
-        effectUniforms.apply(recipe, frameParams)
+        effectUniforms.apply(recipe, frameParams, imageAspect)
         GLES30.glActiveTexture(GLES30.GL_TEXTURE0)
         GLES30.glBindTexture(GLES30.GL_TEXTURE_2D, sourceTexId)
         GLES30.glUniform1i(uInputTextureLocation, 0)

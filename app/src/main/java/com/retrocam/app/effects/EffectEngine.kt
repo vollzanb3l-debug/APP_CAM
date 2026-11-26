@@ -65,6 +65,7 @@ class EffectEngine(context: Context) {
     private val outputTargets = linkedMapOf<String, OutputSurfaceTarget>()
 
     private var programId: Int = 0
+    private var uImageUvRectLocation: Int = -1
     private var uTexMatrixLocation: Int = -1
     private var uInputTextureLocation: Int = -1
     private var effectUniforms: EffectUniforms? = null
@@ -289,6 +290,7 @@ class EffectEngine(context: Context) {
             val fragBody = ShaderLoader.loadAssetText(assets, "shaders/retro_pipeline.frag")
             val fragSrc = ShaderLoader.buildFragmentSource(fragBody, useExternalOes = true)
             programId = ShaderLoader.compileProgram(vertSrc, fragSrc)
+            uImageUvRectLocation = GLES30.glGetUniformLocation(programId, "uImageUvRect")
             uTexMatrixLocation = GLES30.glGetUniformLocation(programId, "uTexMatrix")
             uInputTextureLocation = GLES30.glGetUniformLocation(programId, "uInputTexture")
             effectUniforms = EffectUniforms.lookup(programId)
@@ -407,7 +409,7 @@ class EffectEngine(context: Context) {
         for (target in outputTargets.values) {
             val viewW = target.width.coerceAtLeast(1)
             val viewH = target.height.coerceAtLeast(1)
-            val texMatrix = FrameTransform.buildPreviewTexMatrix(
+            val texMatrix = FrameTransform.buildUprightToPreviewTexMatrix(
                 surfaceTextureMatrix = stMatrix,
                 bufferWidth = bufW,
                 bufferHeight = bufH,
@@ -444,13 +446,21 @@ class EffectEngine(context: Context) {
         if (target.eglSurface == EGL14.EGL_NO_SURFACE) return
         if (!makeCurrent(target.eglSurface)) return
 
-        GLES30.glViewport(0, 0, target.width.coerceAtLeast(1), target.height.coerceAtLeast(1))
+        val viewW = target.width.coerceAtLeast(1)
+        val viewH = target.height.coerceAtLeast(1)
+        val imageAspect = viewW.toFloat() / viewH.toFloat()
+
+        GLES30.glViewport(0, 0, viewW, viewH)
         GLES30.glClearColor(0f, 0f, 0f, 1f)
         GLES30.glClear(GLES30.GL_COLOR_BUFFER_BIT)
 
         GLES30.glUseProgram(programId)
+        if (uImageUvRectLocation >= 0) {
+            // Map GL bottom-up screen quad aTexCoord ((0,1)=top-left) to upright top-down vImageUv ((0,0)=top-left).
+            GLES30.glUniform4f(uImageUvRectLocation, 0f, 1f, 1f, -1f)
+        }
         GLES30.glUniformMatrix4fv(uTexMatrixLocation, 1, false, texMatrix, 0)
-        effectUniforms?.apply(recipe, frameParams)
+        effectUniforms?.apply(recipe, frameParams, imageAspect)
 
         GLES30.glActiveTexture(GLES30.GL_TEXTURE0)
         GLES30.glBindTexture(textureTarget, textureId)

@@ -10,6 +10,9 @@ import com.retrocam.app.recipe.RgbColor
  * CaptureProcessor (full-res capture) so both paths execute identical parameters.
  */
 class EffectUniforms private constructor(
+    private val uImageAspect: Int,
+    private val uVignetteStrength: Int,
+    private val uVignetteRadius: Int,
     private val uTemp: Int,
     private val uTint: Int,
     private val uContrast: Int,
@@ -28,7 +31,12 @@ class EffectUniforms private constructor(
     fun apply(
         recipe: FinalRecipe,
         frame: FrameRenderParams = FrameRenderParams(),
+        imageAspect: Float = 0.75f,
     ) {
+        if (uImageAspect >= 0) GLES30.glUniform1f(uImageAspect, imageAspect.coerceAtLeast(0.01f))
+        if (uVignetteStrength >= 0) GLES30.glUniform1f(uVignetteStrength, recipe.vignetteStrength)
+        if (uVignetteRadius >= 0) GLES30.glUniform1f(uVignetteRadius, recipe.vignetteRadius)
+
         if (uTemp >= 0) GLES30.glUniform1f(uTemp, recipe.temp)
         if (uTint >= 0) GLES30.glUniform1f(uTint, recipe.tint)
         if (uContrast >= 0) GLES30.glUniform1f(uContrast, recipe.contrast)
@@ -51,6 +59,9 @@ class EffectUniforms private constructor(
 
     companion object {
         fun lookup(programId: Int): EffectUniforms = EffectUniforms(
+            uImageAspect = GLES30.glGetUniformLocation(programId, "uImageAspect"),
+            uVignetteStrength = GLES30.glGetUniformLocation(programId, "uVignetteStrength"),
+            uVignetteRadius = GLES30.glGetUniformLocation(programId, "uVignetteRadius"),
             uTemp = GLES30.glGetUniformLocation(programId, "uTemp"),
             uTint = GLES30.glGetUniformLocation(programId, "uTint"),
             uContrast = GLES30.glGetUniformLocation(programId, "uContrast"),
