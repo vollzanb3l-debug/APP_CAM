@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "warm_golden_film",
+  "displayName": "Film Hangat Keemasan",
+  "era": "1990s-2000s",
+  "summary": "Perkiraan awal arketipe film bernuansa emas-madu hangat dengan bayangan cokelat lembut terangkat dan sorotan berpendar hangat (docs/catalog/film_looks.md).",
+  "typicalTraits": [
+    "Nuansa warna keemasan/madu yang hangat",
+    "Bayangan gelap sedikit terangkat dengan fade lembut",
+    "Sorotan matahari cenderung krem hangat"
+  ]
+}

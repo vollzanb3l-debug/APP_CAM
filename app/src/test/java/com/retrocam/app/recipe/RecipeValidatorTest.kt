@@ -6,14 +6,15 @@ import org.junit.Test
 class RecipeValidatorTest {
 
     private fun validCamera() = CameraSpec(
-        schemaVersion = 2,
+        schemaVersion = 3,
         id = "compact_2003_ccd",
-        displayName = "Kompak 2003",
+        displayName = "Kompak CCD 2003",
         inspiredBy = "private note",
         era = "2000s",
         category = "digital_compact",
         archetype = "ccd_compact_2000s",
-        confidence = "medium",
+        confidenceLook = "high",
+        confidenceSpecs = "high",
         sources = listOf("Perkiraan awal arketipe CCD"),
         calibrationStatus = "draft",
         icon = "icons/cameras/compact.png",
@@ -27,17 +28,45 @@ class RecipeValidatorTest {
         notes = "draft",
     )
 
+    private fun validFilm() = FilmSpec(
+        schemaVersion = 2,
+        id = "film_surya_200",
+        displayName = "Surya 200",
+        archetype = "warm_golden_film",
+        confidenceLook = "high",
+        confidenceSpecs = "low",
+        sources = listOf("Panduan kualitatif film_looks.md"),
+        calibrationStatus = "draft",
+        icon = "icons/films/surya_200.png",
+        lut = null,
+        grade = FilmGradeSpec(
+            temp = 0.14f,
+            tint = 0.02f,
+            saturation = 1.06f,
+            contrast = 1.04f,
+            blackLift = 0.04f,
+            highlightTint = "#FFD8A8",
+            shadowTint = "#26332D",
+            tintStrength = 0.12f,
+        ),
+        grain = GrainSpec(amount = 0.16f, size = 0.0016f, roughness = 0.55f),
+        halation = HalationSpec(intensity = 0.08f, color = "#FF7244"),
+        notes = "draft",
+    )
+
     @Test
-    fun validCamera_passesValidation() {
+    fun validCameraAndFilm_passValidation() {
         assertTrue(RecipeValidator.validateCamera(validCamera()).isEmpty())
+        assertTrue(RecipeValidator.validateFilm(validFilm()).isEmpty())
     }
 
     @Test
     fun camera_rejectsBadSchemaConfidenceStatusSourcesAndHex() {
         val broken = validCamera().copy(
-            schemaVersion = 1,
+            schemaVersion = 2,
             archetype = "",
-            confidence = "certain",
+            confidenceLook = "certain",
+            confidenceSpecs = "guessed",
             calibrationStatus = "official",
             sources = emptyList(),
             aspectRatio = "21:9",
@@ -46,10 +75,30 @@ class RecipeValidatorTest {
         val errors = RecipeValidator.validateCamera(broken)
         assertTrue(errors.any { it.contains("schemaVersion") })
         assertTrue(errors.any { it.contains("archetype") })
-        assertTrue(errors.any { it.contains("confidence") })
+        assertTrue(errors.any { it.contains("confidenceLook") })
+        assertTrue(errors.any { it.contains("confidenceSpecs") })
         assertTrue(errors.any { it.contains("calibrationStatus") })
         assertTrue(errors.any { it.contains("sources") })
         assertTrue(errors.any { it.contains("aspectRatio") })
         assertTrue(errors.any { it.contains("dateStamp.color") })
+    }
+
+    @Test
+    fun film_rejectsBadSchemaArchetypeConfidenceStatusSources() {
+        val broken = validFilm().copy(
+            schemaVersion = 1,
+            archetype = "",
+            confidenceLook = "sure",
+            confidenceSpecs = "unknown",
+            calibrationStatus = "final",
+            sources = emptyList(),
+        )
+        val errors = RecipeValidator.validateFilm(broken)
+        assertTrue(errors.any { it.contains("schemaVersion") })
+        assertTrue(errors.any { it.contains("archetype") })
+        assertTrue(errors.any { it.contains("confidenceLook") })
+        assertTrue(errors.any { it.contains("confidenceSpecs") })
+        assertTrue(errors.any { it.contains("calibrationStatus") })
+        assertTrue(errors.any { it.contains("sources") })
     }
 }

@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "monochrome_bw",
+  "displayName": "Film Hitam Putih / Monokrom",
+  "era": "1970s-2000s",
+  "summary": "Perkiraan awal arketipe film hitam putih tanpa saturasi warna dengan gradasi abu-abu klasik dan kontras sedang-tinggi (docs/catalog/film_looks.md).",
+  "typicalTraits": [
+    "Skala abu-abu netral tanpa warna",
+    "Kontras tegas namun gradasi midtone tetap terbaca",
+    "Butiran grain terasa pada area abu-abu gelap dan langit"
+  ]
+}

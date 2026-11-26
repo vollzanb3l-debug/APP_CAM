@@ -112,6 +112,7 @@ class MainActivity : ComponentActivity() {
                     AppScreen.CalibrationDebug -> CalibrationDebugScreen(
                         catalog = catalog,
                         selectedCamera = selectedCamera,
+                        selectedFilm = selectedFilm,
                         baseRecipe = baseRecipe,
                         currentRecipe = activeRecipe,
                         onApplyPreviewOverride = { overrideRecipe ->

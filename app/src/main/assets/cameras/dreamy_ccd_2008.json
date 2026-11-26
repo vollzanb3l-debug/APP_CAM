@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 3,
+  "id": "dreamy_ccd_2008",
+  "displayName": "Saku Lembut 2008",
+  "inspiredBy": "Kamera saku CCD lembut/pastel akhir 2000-an kelompok ccd_dreamy_pastel (catatan pribadi)",
+  "era": "2000s",
+  "category": "digital_compact",
+  "archetype": "ccd_dreamy_pastel",
+  "confidenceLook": "high",
+  "confidenceSpecs": "high",
+  "sources": [
+    "Panduan kualitatif dari docs/catalog/archetypes.md dan docs/catalog/batch_02.md (kelompok ccd_dreamy_pastel).",
+    "Nilai numerik adalah perkiraan awal (draft), disetel lewat layar kalibrasi."
+  ],
+  "calibrationStatus": "draft",
+  "icon": "icons/cameras/dreamy_compact.png",
+  "aspectRatio": "4:3",
+  "whiteBalance": { "temp": 0.05, "tint": 0.04 },
+  "tone": { "contrast": 0.96, "highlightRolloff": 0.40, "shadowLift": 0.05 },
+  "saturation": 1.02,
+  "sensorNoise": { "amount": 0.12, "chroma": 0.20 },
+  "sharpen": 0.12,
+  "dateStamp": { "available": true, "defaultOn": false, "format": "yy MM dd", "color": "#FF8C1A" },
+  "notes": "Perkiraan awal: karakter lembut-pastel dengan bayangan terangkat ringan dan highlight halus."
+}

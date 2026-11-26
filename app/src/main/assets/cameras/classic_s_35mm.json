@@ -1,17 +1,19 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "classic_s_35mm",
-  "displayName": "Classic S",
-  "inspiredBy": "Kamera rangefinder/SLR 35mm klasik (catatan pribadi)",
+  "displayName": "Klasik 35mm",
+  "inspiredBy": "Kamera SLR/rangefinder 35mm klasik kelompok classic_35mm_slr (catatan pribadi)",
   "era": "1980s",
   "category": "film_35mm",
   "archetype": "classic_35mm_slr",
-  "confidence": "medium",
+  "confidenceLook": "medium",
+  "confidenceSpecs": "high",
   "sources": [
-    "Perkiraan awal arketipe classic_35mm_slr sebagai badan netral untuk menampilkan karakter film."
+    "Panduan kualitatif dari docs/catalog/archetypes.md, docs/catalog/batch_01.md, dan docs/catalog/batch_05.md (kelompok classic_35mm_slr).",
+    "Nilai numerik adalah perkiraan awal (draft), disetel lewat layar kalibrasi."
   ],
   "calibrationStatus": "draft",
-  "icon": "icons/cameras/classic_s.png",
+  "icon": "icons/cameras/classic_35mm.png",
   "aspectRatio": "3:2",
   "whiteBalance": { "temp": 0.02, "tint": 0.00 },
   "tone": { "contrast": 1.02, "highlightRolloff": 0.30, "shadowLift": 0.01 },
@@ -19,5 +21,5 @@
   "sensorNoise": { "amount": 0.04, "chroma": 0.10 },
   "sharpen": 0.15,
   "dateStamp": { "available": true, "defaultOn": false, "format": "yy MM dd", "color": "#FF8C1A" },
-  "notes": "Perkiraan awal: badan netral 3:2 dengan roll-off highlight lembut."
+  "notes": "Perkiraan awal: bodi 35mm netral agar karakter lensa dan film tampil dominan."
 }

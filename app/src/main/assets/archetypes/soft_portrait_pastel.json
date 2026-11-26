@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "soft_portrait_pastel",
+  "displayName": "Film Potret Lembut & Pastel",
+  "era": "1990s-2000s",
+  "summary": "Perkiraan awal arketipe film potret cerah-lapang (airy) dengan rona kulit krem halus, hijau-biru kalem, dan kontras sedang-lembut (docs/catalog/film_looks.md).",
+  "typicalTraits": [
+    "Rona kulit cerah bersih dan sedikit krem",
+    "Kontras lembut tanpa hitam terlalu keras",
+    "Sorotan putih melunak halus dan terasa lapang"
+  ]
+}

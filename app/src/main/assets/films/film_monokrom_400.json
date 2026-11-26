@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 2,
+  "id": "film_monokrom_400",
+  "displayName": "Monokrom 400",
+  "archetype": "monochrome_bw",
+  "confidenceLook": "medium",
+  "confidenceSpecs": "low",
+  "sources": [
+    "Panduan kualitatif arketipe monochrome_bw di docs/catalog/film_looks.md.",
+    "Nilai numerik adalah perkiraan awal (draft) tanpa pengukuran densitometri, disetel lewat layar kalibrasi."
+  ],
+  "calibrationStatus": "draft",
+  "icon": "icons/films/monokrom_400.png",
+  "lut": null,
+  "grade": {
+    "temp": 0.00,
+    "tint": 0.00,
+    "saturation": 0.00,
+    "contrast": 1.22,
+    "blackLift": 0.03,
+    "highlightTint": "#F4F2EC",
+    "shadowTint": "#18191B",
+    "tintStrength": 0.04
+  },
+  "grain": { "amount": 0.24, "size": 0.0020, "roughness": 0.65 },
+  "halation": { "intensity": 0.00, "color": "#FF6A3D" },
+  "notes": "Perkiraan awal: film hitam putih netral berkontras sedang-tinggi."
+}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 2,
+  "id": "film_surya_200",
+  "displayName": "Surya 200",
+  "archetype": "warm_golden_film",
+  "confidenceLook": "high",
+  "confidenceSpecs": "low",
+  "sources": [
+    "Panduan kualitatif arketipe warm_golden_film di docs/catalog/film_looks.md.",
+    "Nilai numerik adalah perkiraan awal (draft) tanpa pengukuran densitometri, disetel lewat layar kalibrasi."
+  ],
+  "calibrationStatus": "draft",
+  "icon": "icons/films/surya_200.png",
+  "lut": null,
+  "grade": {
+    "temp": 0.16,
+    "tint": 0.03,
+    "saturation": 1.06,
+    "contrast": 1.04,
+    "blackLift": 0.04,
+    "highlightTint": "#FFD8A8",
+    "shadowTint": "#26332D",
+    "tintStrength": 0.12
+  },
+  "grain": { "amount": 0.16, "size": 0.0016, "roughness": 0.55 },
+  "halation": { "intensity": 0.08, "color": "#FF7244" },
+  "notes": "Perkiraan awal: nuansa hangat keemasan dan bayangan sedikit terangkat."
+}

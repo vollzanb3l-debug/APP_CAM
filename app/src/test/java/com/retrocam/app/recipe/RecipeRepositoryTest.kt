@@ -25,7 +25,7 @@ class RecipeRepositoryTest {
         assertEquals(3, catalog.cameras.size)
         assertEquals(3, catalog.lenses.size)
         assertEquals(3, catalog.films.size)
-        assertEquals(3, catalog.archetypes.size)
+        assertEquals(7, catalog.archetypes.size)
 
         val archetypeIds = catalog.archetypes.map { it.id }.toSet()
         for (camera in catalog.cameras) {
@@ -34,6 +34,13 @@ class RecipeRepositoryTest {
                 camera.archetype in archetypeIds,
             )
             assertEquals("draft", camera.calibrationStatus)
+        }
+        for (film in catalog.films) {
+            assertTrue(
+                "Film ${film.id} references missing archetype ${film.archetype}",
+                film.archetype in archetypeIds,
+            )
+            assertEquals("draft", film.calibrationStatus)
         }
     }
 

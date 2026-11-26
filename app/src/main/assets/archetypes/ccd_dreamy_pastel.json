@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "ccd_dreamy_pastel",
+  "displayName": "Kompak CCD Lembut / Pastel",
+  "era": "2000s",
+  "summary": "Perkiraan awal karakter kamera saku CCD lembut/periskop akhir 2000-an: rona kulit halus, warna pastel cerah, tepi agak lembut, dan sorotan sedikit berpendar (docs/catalog/archetypes.md).",
+  "typicalTraits": [
+    "Warna cerah lembut dengan rona kulit halus",
+    "Detail tepi agak lembut dan sorotan mudah berpendar",
+    "Kontras tidak sekeras CCD awal 2000-an"
+  ]
+}

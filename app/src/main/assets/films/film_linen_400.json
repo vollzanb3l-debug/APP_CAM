@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 2,
+  "id": "film_linen_400",
+  "displayName": "Linen 400",
+  "archetype": "soft_portrait_pastel",
+  "confidenceLook": "high",
+  "confidenceSpecs": "low",
+  "sources": [
+    "Panduan kualitatif arketipe soft_portrait_pastel di docs/catalog/film_looks.md.",
+    "Nilai numerik adalah perkiraan awal (draft) tanpa pengukuran densitometri, disetel lewat layar kalibrasi."
+  ],
+  "calibrationStatus": "draft",
+  "icon": "icons/films/linen_400.png",
+  "lut": null,
+  "grade": {
+    "temp": 0.06,
+    "tint": 0.04,
+    "saturation": 0.92,
+    "contrast": 0.94,
+    "blackLift": 0.05,
+    "highlightTint": "#FFF3E2",
+    "shadowTint": "#2B3438",
+    "tintStrength": 0.10
+  },
+  "grain": { "amount": 0.12, "size": 0.0014, "roughness": 0.45 },
+  "halation": { "intensity": 0.06, "color": "#FFB088" },
+  "notes": "Perkiraan awal: potret lembut bernuansa krem-pastel lapang dengan kontras halus."
+}

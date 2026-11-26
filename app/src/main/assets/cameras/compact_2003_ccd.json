@@ -1,14 +1,16 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "compact_2003_ccd",
-  "displayName": "Kompak 2003",
-  "inspiredBy": "Kamera saku CCD awal 2000-an (catatan pribadi)",
+  "displayName": "Kompak CCD 2003",
+  "inspiredBy": "Kamera saku CCD awal 2000-an seperti kelompok ccd_compact_2000s (catatan pribadi)",
   "era": "2000s",
   "category": "digital_compact",
   "archetype": "ccd_compact_2000s",
-  "confidence": "low",
+  "confidenceLook": "high",
+  "confidenceSpecs": "high",
   "sources": [
-    "Perkiraan awal arketipe ccd_compact_2000s; belum dikalibrasi terhadap foto referensi."
+    "Panduan kualitatif dari docs/catalog/archetypes.md dan docs/catalog/batch_01.md–batch_02.md (kelompok ccd_compact_2000s).",
+    "Nilai numerik adalah perkiraan awal (draft), disetel lewat layar kalibrasi."
   ],
   "calibrationStatus": "draft",
   "icon": "icons/cameras/compact_generic.png",
@@ -19,5 +21,5 @@
   "sensorNoise": { "amount": 0.16, "chroma": 0.35 },
   "sharpen": 0.35,
   "dateStamp": { "available": true, "defaultOn": false, "format": "yy MM dd", "color": "#FF8C1A" },
-  "notes": "Perkiraan awal: hangat ringan dengan highlight cepat matang."
+  "notes": "Perkiraan awal: hangat ringan, kontras tegas, highlight cepat matang."
 }

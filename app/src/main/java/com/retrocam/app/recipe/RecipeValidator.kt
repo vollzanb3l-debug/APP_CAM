@@ -10,14 +10,17 @@ object RecipeValidator {
     private val allowedAspectRatios = setOf("4:3", "3:2", "16:9", "1:1")
 
     fun validateCamera(spec: CameraSpec): List<String> = buildList {
-        if (spec.schemaVersion != 2) add("camera.schemaVersion must be 2")
+        if (spec.schemaVersion != 3) add("camera.schemaVersion must be 3")
         if (spec.id.isBlank()) add("camera.id must not be blank")
         if (spec.displayName.isBlank()) add("camera.displayName must not be blank")
         if (spec.era.isBlank()) add("camera.era must not be blank")
         if (spec.category.isBlank()) add("camera.category must not be blank")
         if (spec.archetype.isBlank()) add("camera.archetype must not be blank")
-        if (spec.confidence !in allowedConfidence) {
-            add("camera.confidence must be high/medium/low")
+        if (spec.confidenceLook !in allowedConfidence) {
+            add("camera.confidenceLook must be high/medium/low")
+        }
+        if (spec.confidenceSpecs !in allowedConfidence) {
+            add("camera.confidenceSpecs must be high/medium/low")
         }
         if (spec.calibrationStatus !in allowedCalibrationStatus) {
             add("camera.calibrationStatus must be draft/calibrated")
@@ -59,9 +62,22 @@ object RecipeValidator {
     }
 
     fun validateFilm(spec: FilmSpec): List<String> = buildList {
-        if (spec.schemaVersion != 1) add("film.schemaVersion must be 1")
+        if (spec.schemaVersion != 2) add("film.schemaVersion must be 2")
         if (spec.id.isBlank()) add("film.id must not be blank")
         if (spec.displayName.isBlank()) add("film.displayName must not be blank")
+        if (spec.archetype.isBlank()) add("film.archetype must not be blank")
+        if (spec.confidenceLook !in allowedConfidence) {
+            add("film.confidenceLook must be high/medium/low")
+        }
+        if (spec.confidenceSpecs !in allowedConfidence) {
+            add("film.confidenceSpecs must be high/medium/low")
+        }
+        if (spec.calibrationStatus !in allowedCalibrationStatus) {
+            add("film.calibrationStatus must be draft/calibrated")
+        }
+        if (spec.sources.isEmpty() || spec.sources.any { it.isBlank() }) {
+            add("film.sources must contain at least one non-blank entry")
+        }
         if (spec.grade.temp !in -1f..1f) add("film.grade.temp out of -1..1")
         if (spec.grade.tint !in -1f..1f) add("film.grade.tint out of -1..1")
         if (spec.grade.saturation !in 0f..2.5f) add("film.grade.saturation out of 0..2.5")

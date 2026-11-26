@@ -47,6 +47,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import com.retrocam.app.effects.CaptureProcessor
 import com.retrocam.app.recipe.CameraSpec
+import com.retrocam.app.recipe.FilmSpec
 import com.retrocam.app.recipe.FinalRecipe
 import com.retrocam.app.recipe.RecipeCatalog
 import com.retrocam.app.ui.theme.RetroAmber
@@ -65,6 +66,7 @@ import java.util.Locale
 fun CalibrationDebugScreen(
     catalog: RecipeCatalog,
     selectedCamera: CameraSpec?,
+    selectedFilm: FilmSpec?,
     baseRecipe: FinalRecipe,
     currentRecipe: FinalRecipe,
     onApplyPreviewOverride: (FinalRecipe) -> Unit,
@@ -153,7 +155,7 @@ fun CalibrationDebugScreen(
 
             Spacer(modifier = Modifier.height(8.dp))
 
-            // Camera calibration metadata card
+            // Camera & Film calibration metadata card
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -170,7 +172,8 @@ fun CalibrationDebugScreen(
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
                     text = "Archetype: ${selectedCamera?.archetype ?: "-"} · " +
-                        "Confidence: ${selectedCamera?.confidence ?: "-"} · " +
+                        "Look: ${selectedCamera?.confidenceLook ?: "-"} · " +
+                        "Specs: ${selectedCamera?.confidenceSpecs ?: "-"} · " +
                         "Status: ${selectedCamera?.calibrationStatus ?: "-"}",
                     style = MaterialTheme.typography.bodySmall,
                     color = RetroTextPrimary,
@@ -183,9 +186,32 @@ fun CalibrationDebugScreen(
                         color = RetroTextSecondary,
                     )
                 }
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(
+                    text = "Film Aktif: ${selectedFilm?.displayName ?: "-"}",
+                    style = MaterialTheme.typography.titleSmall,
+                    color = RetroAmber,
+                )
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
-                    text = "Catatan: nilai JSON adalah perkiraan awal sebelum kalibrasi.",
+                    text = "Archetype: ${selectedFilm?.archetype ?: "-"} · " +
+                        "Look: ${selectedFilm?.confidenceLook ?: "-"} · " +
+                        "Specs: ${selectedFilm?.confidenceSpecs ?: "-"} · " +
+                        "Status: ${selectedFilm?.calibrationStatus ?: "-"}",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = RetroTextPrimary,
+                )
+                Spacer(modifier = Modifier.height(4.dp))
+                selectedFilm?.sources?.forEach { sourceNote ->
+                    Text(
+                        text = "• $sourceNote",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = RetroTextSecondary,
+                    )
+                }
+                Spacer(modifier = Modifier.height(6.dp))
+                Text(
+                    text = "Catatan: nilai JSON adalah perkiraan awal (draft), disetel lewat layar kalibrasi.",
                     style = MaterialTheme.typography.labelSmall,
                     color = RetroTextSecondary,
                 )
