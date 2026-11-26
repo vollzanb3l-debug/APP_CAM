@@ -46,15 +46,24 @@ class RecipeRepositoryTest {
         val camerasRaw = mapOf(
             validCameraRaw.key to validCameraRaw.value,
             "cameras/corrupt.json" to "{ not valid json ",
-            "cameras/bad_schema.json" to validCameraRaw.value.replace("\"schemaVersion\": 2", "\"schemaVersion\": 99"),
+            "cameras/bad_schema.json" to validCameraRaw.value.replaceFirst(
+                Regex("\"schemaVersion\"\\s*:\\s*\\d+"),
+                "\"schemaVersion\": 99",
+            ),
         )
         val lensesRaw = mapOf(
             validLensRaw.key to validLensRaw.value,
-            "lenses/bad_range.json" to validLensRaw.value.replace("\"softness\": 0.08", "\"softness\": 9.0"),
+            "lenses/bad_range.json" to validLensRaw.value.replaceFirst(
+                Regex("\"softness\"\\s*:\\s*[0-9.]+"),
+                "\"softness\": 9.0",
+            ),
         )
         val filmsRaw = mapOf(
             validFilmRaw.key to validFilmRaw.value,
-            "films/bad_hex.json" to validFilmRaw.value.replace("#FFE9C8", "not-a-color"),
+            "films/bad_hex.json" to validFilmRaw.value.replaceFirst(
+                Regex("#[0-9A-Fa-f]{6}"),
+                "not-a-color",
+            ),
         )
 
         val catalog = RecipeCatalogLoader.loadFromRaw(
