@@ -11,6 +11,7 @@ import com.retrocam.app.recipe.RgbColor
  */
 class EffectUniforms private constructor(
     private val uImageAspect: Int,
+    private val uDistortionK1: Int,
     private val uSoftness: Int,
     private val uChromaticAberration: Int,
     private val uBloomIntensity: Int,
@@ -45,6 +46,7 @@ class EffectUniforms private constructor(
         imageAspect: Float = 0.75f,
     ) {
         if (uImageAspect >= 0) GLES30.glUniform1f(uImageAspect, imageAspect.coerceAtLeast(0.01f))
+        if (uDistortionK1 >= 0) GLES30.glUniform1f(uDistortionK1, recipe.distortionK1)
         if (uSoftness >= 0) GLES30.glUniform1f(uSoftness, recipe.softness)
         if (uChromaticAberration >= 0) GLES30.glUniform1f(uChromaticAberration, recipe.chromaticAberration)
         if (uBloomIntensity >= 0) GLES30.glUniform1f(uBloomIntensity, recipe.bloomIntensity)
@@ -84,6 +86,7 @@ class EffectUniforms private constructor(
     companion object {
         fun lookup(programId: Int): EffectUniforms = EffectUniforms(
             uImageAspect = GLES30.glGetUniformLocation(programId, "uImageAspect"),
+            uDistortionK1 = GLES30.glGetUniformLocation(programId, "uDistortionK1"),
             uSoftness = GLES30.glGetUniformLocation(programId, "uSoftness"),
             uChromaticAberration = GLES30.glGetUniformLocation(programId, "uChromaticAberration"),
             uBloomIntensity = GLES30.glGetUniformLocation(programId, "uBloomIntensity"),

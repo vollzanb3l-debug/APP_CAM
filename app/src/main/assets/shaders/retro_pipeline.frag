@@ -12,6 +12,9 @@ uniform sampler2D uInputTexture;
 uniform mat4 uTexMatrix;
 uniform float uImageAspect;
 
+// Geometry (Stage 1)
+uniform float uDistortionK1;
+
 // Optics (Stage 2)
 uniform float uSoftness;
 uniform float uChromaticAberration;
@@ -56,6 +59,26 @@ vec2 shortSideStepToUv(float radiusShortSide) {
     return (aspect >= 1.0)
         ? vec2(radiusShortSide / aspect, radiusShortSide)
         : vec2(radiusShortSide, radiusShortSide * aspect);
+}
+
+vec2 applyLensDistortion(vec2 imgUv) {
+    float k1 = clamp(uDistortionK1, -0.5, 0.5);
+    if (abs(k1) <= 0.0001) {
+        return imgUv;
+    }
+    float aspect = max(uImageAspect, 0.01);
+    vec2 aspectScale = (aspect >= 1.0)
+        ? vec2(aspect, 1.0)
+        : vec2(1.0, 1.0 / aspect);
+    vec2 centered = imgUv - vec2(0.5);
+    vec2 metric = centered * aspectScale;
+    float maxR2 = dot(vec2(0.5) * aspectScale, vec2(0.5) * aspectScale);
+    float normR2 = dot(metric, metric) / max(maxR2, 0.0001);
+
+    float factor = (k1 < 0.0)
+        ? ((1.0 + (-k1) * 0.65 * normR2) / (1.0 + (-k1) * 0.65))
+        : (1.0 - k1 * 0.45 * normR2);
+    return clamp(vec2(0.5) + centered * factor, 0.0, 1.0);
 }
 
 vec4 sampleWithSoftness(vec2 imgUv) {
@@ -273,20 +296,20 @@ vec3 applyFilmGrain(vec3 c, vec2 imgUv) {
 }
 
 void main() {
-    // Stage 1: Geometry (normalized upright image coordinates)
-    vec2 imgUv = vImageUv;
+    // Stage 1: Geometry (normalized upright image coordinates + lens distortion)
+    vec2 imgUv = applyLensDistortion(vImageUv);
 
     // Stage 2: Optics (softness -> chromatic aberration -> bloom/halation -> vignette)
     vec4 sampleColor = sampleWithSoftness(imgUv);
     vec3 color = applyChromaticAberration(sampleColor.rgb, imgUv);
     color = applyBloomAndHalation(color, imgUv);
-    color = color * computeVignetteFactor(imgUv);
+    color = color * computeVignetteFactor(vImageUv);
 
     // Stage 3 & 4: Sensor/Camera + Film color grade & fade
     color = applyColorGrade(color);
 
     // Stage 4b: Film grain & sensor noise (short-side relative, video-ready seed)
-    color = applyFilmGrain(color, imgUv);
+    color = applyFilmGrain(color, vImageUv);
 
     fragColor = vec4(color, sampleColor.a);
 }

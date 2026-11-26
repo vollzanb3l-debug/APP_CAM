@@ -352,6 +352,12 @@ fun CalibrationDebugScreen(
             )
             Spacer(modifier = Modifier.height(4.dp))
             ParameterSlider(
+                label = "Lens Distortion (k1)",
+                value = draftRecipe.distortionK1,
+                range = -0.35f..0.35f,
+                onValueChange = { draftRecipe = draftRecipe.copy(distortionK1 = it) },
+            )
+            ParameterSlider(
                 label = "Softness",
                 value = draftRecipe.softness,
                 range = 0.0f..1.0f,

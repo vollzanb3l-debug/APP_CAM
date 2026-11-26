@@ -1,6 +1,7 @@
 package com.retrocam.app.effects
 
 import com.retrocam.app.recipe.RgbColor
+import kotlin.math.abs
 import kotlin.math.hypot
 
 /**
@@ -20,6 +21,39 @@ object OpticsMath {
         } else {
             radiusShortSide to (radiusShortSide * aspect)
         }
+    }
+
+    /**
+     * Aspect-corrected radial lens distortion matching retro_pipeline.frag's applyLensDistortion.
+     * Negative k1 produces barrel distortion (wide-angle); positive k1 produces pincushion.
+     */
+    fun applyLensDistortion(
+        u: Float,
+        v: Float,
+        imageAspect: Float,
+        distortionK1: Float,
+    ): Pair<Float, Float> {
+        val k1 = distortionK1.coerceIn(-0.5f, 0.5f)
+        if (abs(k1) <= 0.0001f) return u to v
+        val aspect = imageAspect.coerceAtLeast(0.01f)
+        val scaleX = if (aspect >= 1f) aspect else 1f
+        val scaleY = if (aspect >= 1f) 1f else 1f / aspect
+        val cx = u - 0.5f
+        val cy = v - 0.5f
+        val mx = cx * scaleX
+        val my = cy * scaleY
+        val maxR2 = (0.25f * scaleX * scaleX + 0.25f * scaleY * scaleY).coerceAtLeast(0.0001f)
+        val normR2 = (mx * mx + my * my) / maxR2
+
+        val factor = if (k1 < 0f) {
+            val k = -k1 * 0.65f
+            (1f + k * normR2) / (1f + k)
+        } else {
+            1f - k1 * 0.45f * normR2
+        }
+        val outU = (0.5f + cx * factor).coerceIn(0f, 1f)
+        val outV = (0.5f + cy * factor).coerceIn(0f, 1f)
+        return outU to outV
     }
 
     /**
