@@ -87,14 +87,14 @@ Maka:
 
 - Semua parameter efek dinyatakan dalam **koordinat ternormalisasi** (0..1 terhadap lebar/tinggi
   gambar), BUKAN piksel. Contoh: radius blur = 0.004 x sisi pendek gambar.
-- Ukuran grain relatif terhadap sisi pendek gambar. Seed grain tetap per foto.
+- Ukuran grain relatif terhadap sisi pendek gambar. Seed grain dapat diatur: **tetap per foto** (`photo`), dan **berubah per frame** untuk streaming/video (`preview`/`video`).
 - Preview berjalan di resolusi rendah (target tinggi sekitar 720–1080 piksel) untuk 30 fps.
 - Foto memakai shader SAMA di FBO offscreen pada resolusi penuh. Bila memori kurang, proses
   per tile dengan overlap agar efek blur/bloom tidak bergaris di sambungan.
 - Orientasi dan mirror (kamera depan) ditangani SATU kali di `CameraController`/transform
   matrix, bukan di shader efek.
-- Efek berat (mis. noise reduction, bloom radius besar) boleh punya `quality` dua tingkat:
-  `preview` dan `final`. Karakter harus sama, hanya halus/kasarnya yang beda.
+- Efek berat (mis. noise reduction, bloom radius besar) memiliki `quality` tiga tingkat:
+  `preview`, `video`, dan `photo`. Karakter harus sama; efek berat hanya aktif penuh di `photo`.
 
 ## 7. Skema data dan aturan penggabungan
 
@@ -104,16 +104,18 @@ Semua file punya `schemaVersion`. Mengubah skema = naikkan versi + migrasi + per
 
 ```json
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "compact_2003_ccd",
-  "displayName": "Kompak 2003",
+  "displayName": "Kompak CCD 2003",
   "inspiredBy": "(catatan pribadi, tidak ditampilkan di UI publik)",
   "era": "2000s",
   "category": "digital_compact",
   "archetype": "ccd_compact_2000s",
-  "confidence": "medium",
+  "confidenceLook": "high",
+  "confidenceSpecs": "high",
   "sources": [
-    "Perkiraan awal berdasarkan arketipe kompak CCD awal 2000-an (belum dikalibrasi dengan foto referensi)."
+    "Panduan kualitatif dari docs/catalog/archetypes.md dan docs/catalog/batch_01.md–batch_02.md (kelompok ccd_compact_2000s).",
+    "Parameter numerik adalah perkiraan awal (draft), disetel lewat layar kalibrasi."
   ],
   "calibrationStatus": "draft",
   "icon": "icons/cameras/compact_generic.png",
@@ -124,7 +126,7 @@ Semua file punya `schemaVersion`. Mengubah skema = naikkan versi + migrasi + per
   "sensorNoise": { "amount": 0.18, "chroma": 0.35 },
   "sharpen": 0.35,
   "dateStamp": { "available": true, "defaultOn": false, "format": "yy MM dd", "color": "#FF8C1A" },
-  "notes": "Hangat sedikit kekuningan, highlight keras, agak noise."
+  "notes": "Perkiraan awal: hangat ringan, kontras tegas, highlight cepat matang."
 }
 ```
 
@@ -151,20 +153,28 @@ Semua file punya `schemaVersion`. Mengubah skema = naikkan versi + migrasi + per
 
 ```json
 {
-  "schemaVersion": 1,
-  "id": "film_vivid_100",
-  "displayName": "Vivid 100",
+  "schemaVersion": 2,
+  "id": "film_surya_200",
+  "displayName": "Surya 200",
+  "archetype": "warm_golden_film",
+  "confidenceLook": "high",
+  "confidenceSpecs": "low",
+  "sources": [
+    "Panduan kualitatif arketipe warm_golden_film di docs/catalog/film_looks.md.",
+    "Parameter numerik adalah perkiraan awal (draft), disetel lewat layar kalibrasi."
+  ],
+  "calibrationStatus": "draft",
   "icon": "icons/films/canister_generic.png",
   "lut": null,
   "grade": {
-    "temp": 0.00, "tint": 0.00,
-    "saturation": 1.25, "contrast": 1.10,
-    "blackLift": 0.01,
-    "highlightTint": "#FFE9C8", "shadowTint": "#1B2A3A", "tintStrength": 0.08
+    "temp": 0.16, "tint": 0.03,
+    "saturation": 1.06, "contrast": 1.04,
+    "blackLift": 0.04,
+    "highlightTint": "#FFD8A8", "shadowTint": "#26332D", "tintStrength": 0.12
   },
-  "grain": { "amount": 0.10, "size": 0.0012, "roughness": 0.5 },
-  "halation": { "intensity": 0.05, "color": "#FF6A3D" },
-  "notes": "Warna kuat, grain halus."
+  "grain": { "amount": 0.16, "size": 0.0016, "roughness": 0.55 },
+  "halation": { "intensity": 0.08, "color": "#FF7244" },
+  "notes": "Perkiraan awal: nuansa hangat keemasan dan hitam sedikit terangkat."
 }
 ```
 
@@ -293,16 +303,67 @@ Kerjakan berurutan. Jangan mulai tahap berikutnya sebelum pemilik proyek menyetu
 
 ## 15. Katalog dan Kalibrasi
 
-- Setiap entri kamera di `assets/cameras/` WAJIB memiliki field berikut:
+- Setiap entri **kamera** (`assets/cameras/`) dan **film** (`assets/films/`) WAJIB memiliki field berikut:
   - `archetype`: ID arketipe dasar (mengacu ke `assets/archetypes/<id>.json`).
-  - `confidence`: tingkat keyakinan perkiraan parameter (`high` / `medium` / `low`).
+  - `confidenceLook`: tingkat keyakinan deskripsi tampilan visual (`high` / `medium` / `low`).
+  - `confidenceSpecs`: tingkat keyakinan verifikasi spesifikasi teknis (`high` / `medium` / `low`).
   - `sources`: daftar catatan sumber/observasi yang mendasari perkiraan awal.
   - `calibrationStatus`: status kalibrasi (`draft` / `calibrated`).
 - **Kebijakan nilai parameter**: seluruh angka di file JSON awal adalah **perkiraan awal**
-  (`draft`), bukan klaim akurat. Dilarang mengarang angka yang terkesan pasti tanpa proses
+  (`draft`), bukan klaim akurat. Dilarang mengarang nilai yang terkesan pasti tanpa proses
   kalibrasi terhadap foto referensi nyata.
-- **Folder arketipe (`assets/archetypes/`)**: disiapkan untuk menampung sekitar 15 arketipe
-  kamera/sensor sebagai fondasi pengelompokan karakter sebelum perluasan katalog.
+- **Panduan karakter kualitatif**: gunakan `docs/catalog/archetypes.md`, `docs/catalog/batch_01.md`
+  hingga `docs/catalog/batch_05.md`, serta `docs/catalog/film_looks.md` sebagai panduan arah
+  karakter (kualitatif) saat menyusun resep awal. Penyetelan angka parameter dilakukan lewat
+  layar kalibrasi, bukan ditebak.
+- **Folder arketipe (`assets/archetypes/`)**: menyimpan definisi arketipe kamera/sensor dan film
+  sebagai fondasi pengelompokan karakter sebelum perluasan katalog.
 - **Layar debug kalibrasi sederhana (M3)**: menyediakan slider parameter dan tampilan
   berdampingan dengan foto referensi yang dipilih dari galeri melalui pipeline shader yang
   sama, agar kalibrasi dapat dimulai lebih awal sejak M3.
+
+## 16. Rencana Masa Depan: Video (di luar M0–M6)
+
+Fitur perekaman video **BELUM dikerjakan** pada tahap M0–M6, tetapi `EffectEngine` dirancang
+**video-ready sejak sekarang** agar penambahan video di masa depan tidak memerlukan penulisan
+ulang mesin shader maupun pipeline render:
+
+1. **Antarmuka frame & waktu**: mesin efek menerima satu frame (texture input) beserta uniform
+   waktu dan nomor frame (`uTimeSec`, `uFrameIndex`) melalui `FrameRenderParams`.
+2. **Seed grain yang dapat diatur (`uGrainSeed`)**: tetap/deterministik per foto (`photo`),
+   dan berubah per frame untuk pratinjau/video (`preview`/`video`), dengan opsi *override* seed
+   untuk pengujian deterministik.
+3. **Tiga tingkat kualitas (`RenderQuality`)**: `preview` (`0`), `video` (`1`), dan `photo` (`2`).
+   Karakter warna/estetika tetap konsisten di ketiganya, sementara efek berat (mis. blur/bloom
+   radius besar atau *multi-pass* resolusi tinggi) hanya dijalankan penuh pada `photo`.
+4. **Output multi-surface (tidak terikat satu surface)**: `EffectEngine` mengelola daftar target
+   output (`attachOutputSurface(id, surface, width, height, quality)` / `detachOutputSurface(id)`)
+   sehingga kelak dapat merender frame yang sama ke permukaan preview dan permukaan encoder video
+   secara bersamaan.
+
+### Temuan Dokumentasi Resmi CameraX 1.4.0 (Versi yang Dipakai Proyek)
+
+Berdasarkan dokumentasi resmi Android Developers untuk CameraX `1.4.0` (versi di
+`gradle/libs.versions.toml`):
+
+- **`CameraEffect` & `UseCaseGroup`**: CameraX menyediakan `androidx.camera.core.CameraEffect`
+  dengan target bitmask `CameraEffect.PREVIEW`, `CameraEffect.VIDEO_CAPTURE`, dan
+  `CameraEffect.IMAGE_CAPTURE` (dapat digabung dengan operator `or`) yang dipasang lewat
+  `UseCaseGroup.Builder().addEffect(effect)` sebelum `bindToLifecycle(...)`.
+- **`SurfaceProcessor` vs `ImageProcessor`**:
+  - `SurfaceProcessor` bekerja pada `Surface` / tekstur OpenGL ES untuk jalur real-time
+    (`PREVIEW` dan `VIDEO_CAPTURE`; CameraX mengelola *stream sharing* internal bila beberapa
+    use case berbagi efek yang sama).
+  - `ImageProcessor` bekerja per-frame pada `ImageProxy` untuk pemrosesan berbasis buffer.
+- **Tambahan di CameraX 1.4.0**: artefak opsional `camera-effects` menghadirkan `OverlayEffect`
+  berbasis `Canvas` (untuk overlay seperti watermark/stempel), serta adaptor `Media3Effect`
+  (`androidx.camera.media3.effect`) untuk jembatan ke Jetpack Media3.
+- **Implikasi arsitektur RetroCam**: pada M0–M6 kita tidak menambah dependensi `camera-video`
+  atau `camera-effects`. Setelah M6, ketika video mulai dikerjakan, `EffectEngine` yang sudah
+  multi-surface dan menerima `FrameRenderParams` dapat langsung dibungkus ke `SurfaceProcessor`
+  untuk `CameraEffect(CameraEffect.PREVIEW or CameraEffect.VIDEO_CAPTURE)` tanpa mengganti
+  shader maupun resep JSON.
+- **Referensi resmi**:
+  - `https://developer.android.com/reference/androidx/camera/core/CameraEffect`
+  - `https://developer.android.com/reference/androidx/camera/core/SurfaceProcessor`
+  - `https://developer.android.com/jetpack/androidx/releases/camera`
