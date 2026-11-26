@@ -3,7 +3,10 @@ package com.retrocam.app.ui
 import android.Manifest
 import android.content.Context
 import android.content.pm.PackageManager
+import android.hardware.display.DisplayManager
 import android.os.Build
+import android.os.Handler
+import android.os.Looper
 import android.view.Surface
 import android.view.SurfaceHolder
 import android.view.SurfaceView
@@ -37,6 +40,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -87,7 +91,26 @@ fun CameraScreen(
 ) {
     val context = LocalContext.current
     val configuration = LocalConfiguration.current
-    val displayRotation = remember(configuration.orientation) { readDisplayRotation(context) }
+    var displayRotation by remember { mutableIntStateOf(readDisplayRotation(context)) }
+
+    DisposableEffect(context) {
+        val displayManager = context.getSystemService(Context.DISPLAY_SERVICE) as? DisplayManager
+        val listener = object : DisplayManager.DisplayListener {
+            override fun onDisplayAdded(displayId: Int) = Unit
+            override fun onDisplayRemoved(displayId: Int) = Unit
+            override fun onDisplayChanged(displayId: Int) {
+                displayRotation = readDisplayRotation(context)
+            }
+        }
+        displayManager?.registerDisplayListener(listener, Handler(Looper.getMainLooper()))
+        onDispose {
+            displayManager?.unregisterDisplayListener(listener)
+        }
+    }
+
+    LaunchedEffect(configuration.orientation) {
+        displayRotation = readDisplayRotation(context)
+    }
 
     val requiredPermissions = remember {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) {
@@ -232,13 +255,10 @@ fun CameraScreen(
                         .weight(1f),
                     contentAlignment = Alignment.Center,
                 ) {
-                    val viewfinderAspect = if (
+                    val isLandscapeDisplay = displayRotation == Surface.ROTATION_90 ||
+                        displayRotation == Surface.ROTATION_270 ||
                         configuration.orientation == android.content.res.Configuration.ORIENTATION_LANDSCAPE
-                    ) {
-                        4f / 3f
-                    } else {
-                        3f / 4f
-                    }
+                    val viewfinderAspect = if (isLandscapeDisplay) 4f / 3f else 3f / 4f
 
                     Box(
                         modifier = Modifier
