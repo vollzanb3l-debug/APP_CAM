@@ -352,6 +352,12 @@ fun CalibrationDebugScreen(
             )
             Spacer(modifier = Modifier.height(4.dp))
             ParameterSlider(
+                label = "Softness",
+                value = draftRecipe.softness,
+                range = 0.0f..1.0f,
+                onValueChange = { draftRecipe = draftRecipe.copy(softness = it) },
+            )
+            ParameterSlider(
                 label = "Vignette Strength",
                 value = draftRecipe.vignetteStrength,
                 range = 0.0f..1.0f,

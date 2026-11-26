@@ -13,6 +13,7 @@ uniform mat4 uTexMatrix;
 uniform float uImageAspect;
 
 // Optics (Stage 2)
+uniform float uSoftness;
 uniform float uVignetteStrength;
 uniform float uVignetteRadius;
 
@@ -42,6 +43,49 @@ uniform int uQualityLevel; // 0 = preview, 1 = video, 2 = photo
 
 vec2 mapImageUvToSource(vec2 imgUv) {
     return (uTexMatrix * vec4(imgUv, 0.0, 1.0)).xy;
+}
+
+vec2 shortSideStepToUv(float radiusShortSide) {
+    float aspect = max(uImageAspect, 0.01);
+    return (aspect >= 1.0)
+        ? vec2(radiusShortSide / aspect, radiusShortSide)
+        : vec2(radiusShortSide, radiusShortSide * aspect);
+}
+
+vec4 sampleWithSoftness(vec2 imgUv) {
+    vec4 center = texture(uInputTexture, mapImageUvToSource(imgUv));
+    if (uSoftness <= 0.0001) {
+        return center;
+    }
+    float s = clamp(uSoftness, 0.0, 1.0);
+    vec2 stepUv = shortSideStepToUv(s * 0.0045);
+
+    vec3 blurred;
+    if (uQualityLevel >= 2) {
+        // Photo quality tier: 9-tap two-ring Gaussian kernel (weights sum to 1.0)
+        vec2 innerStep = stepUv * 0.65;
+        vec2 outerStep = stepUv * 1.15;
+        vec3 axial =
+            texture(uInputTexture, mapImageUvToSource(imgUv + vec2(innerStep.x, 0.0))).rgb +
+            texture(uInputTexture, mapImageUvToSource(imgUv - vec2(innerStep.x, 0.0))).rgb +
+            texture(uInputTexture, mapImageUvToSource(imgUv + vec2(0.0, innerStep.y))).rgb +
+            texture(uInputTexture, mapImageUvToSource(imgUv - vec2(0.0, innerStep.y))).rgb;
+        vec3 diag =
+            texture(uInputTexture, mapImageUvToSource(imgUv + vec2(outerStep.x, outerStep.y))).rgb +
+            texture(uInputTexture, mapImageUvToSource(imgUv + vec2(-outerStep.x, outerStep.y))).rgb +
+            texture(uInputTexture, mapImageUvToSource(imgUv + vec2(outerStep.x, -outerStep.y))).rgb +
+            texture(uInputTexture, mapImageUvToSource(imgUv + vec2(-outerStep.x, -outerStep.y))).rgb;
+        blurred = center.rgb * 0.24 + axial * 0.12 + diag * 0.07;
+    } else {
+        // Preview / video quality tier: fast 5-tap diagonal Gaussian kernel (weights sum to 1.0)
+        vec3 diag =
+            texture(uInputTexture, mapImageUvToSource(imgUv + vec2(stepUv.x, stepUv.y))).rgb +
+            texture(uInputTexture, mapImageUvToSource(imgUv + vec2(-stepUv.x, stepUv.y))).rgb +
+            texture(uInputTexture, mapImageUvToSource(imgUv + vec2(stepUv.x, -stepUv.y))).rgb +
+            texture(uInputTexture, mapImageUvToSource(imgUv + vec2(-stepUv.x, -stepUv.y))).rgb;
+        blurred = center.rgb * 0.36 + diag * 0.16;
+    }
+    return vec4(mix(center.rgb, blurred, s * 0.78), center.a);
 }
 
 float computeVignetteFactor(vec2 imgUv) {
@@ -153,8 +197,8 @@ void main() {
     // Stage 1: Geometry (normalized upright image coordinates)
     vec2 imgUv = vImageUv;
 
-    // Stage 2: Optics (vignette in normalized coordinates)
-    vec4 sampleColor = texture(uInputTexture, mapImageUvToSource(imgUv));
+    // Stage 2: Optics (softness -> vignette in normalized coordinates)
+    vec4 sampleColor = sampleWithSoftness(imgUv);
     vec3 color = sampleColor.rgb * computeVignetteFactor(imgUv);
 
     // Stage 3 & 4: Sensor/Camera + Film color grade & fade

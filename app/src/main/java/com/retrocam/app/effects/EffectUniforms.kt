@@ -11,6 +11,7 @@ import com.retrocam.app.recipe.RgbColor
  */
 class EffectUniforms private constructor(
     private val uImageAspect: Int,
+    private val uSoftness: Int,
     private val uVignetteStrength: Int,
     private val uVignetteRadius: Int,
     private val uTemp: Int,
@@ -38,6 +39,7 @@ class EffectUniforms private constructor(
         imageAspect: Float = 0.75f,
     ) {
         if (uImageAspect >= 0) GLES30.glUniform1f(uImageAspect, imageAspect.coerceAtLeast(0.01f))
+        if (uSoftness >= 0) GLES30.glUniform1f(uSoftness, recipe.softness)
         if (uVignetteStrength >= 0) GLES30.glUniform1f(uVignetteStrength, recipe.vignetteStrength)
         if (uVignetteRadius >= 0) GLES30.glUniform1f(uVignetteRadius, recipe.vignetteRadius)
 
@@ -69,6 +71,7 @@ class EffectUniforms private constructor(
     companion object {
         fun lookup(programId: Int): EffectUniforms = EffectUniforms(
             uImageAspect = GLES30.glGetUniformLocation(programId, "uImageAspect"),
+            uSoftness = GLES30.glGetUniformLocation(programId, "uSoftness"),
             uVignetteStrength = GLES30.glGetUniformLocation(programId, "uVignetteStrength"),
             uVignetteRadius = GLES30.glGetUniformLocation(programId, "uVignetteRadius"),
             uTemp = GLES30.glGetUniformLocation(programId, "uTemp"),
