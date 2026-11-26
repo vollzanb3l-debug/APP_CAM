@@ -74,11 +74,13 @@ class EffectEngine(context: Context) {
     private var vboId: Int = 0
 
     private var surfaceTexture: SurfaceTexture? = null
-    private val stMatrix = FloatArray(16)
+    private val stMatrix = FrameTransform.identity()
+    private var hasReceivedFrame: Boolean = false
 
     private var bufferWidth: Int = 0
     private var bufferHeight: Int = 0
-    private var rotationDegrees: Int = 0
+    private var targetOrientation: FrameTransform.CameraOrientation =
+        FrameTransform.CameraOrientation(rotationDegrees = 0, mirrorHorizontal = false)
     private var isFrontCameraProvider: () -> Boolean = { false }
     private var frameCounter: Int = 0
     private val startTimeNanos: Long = System.nanoTime()
@@ -100,6 +102,16 @@ class EffectEngine(context: Context) {
 
     fun setGrainSeedOverride(seed: Float?) {
         grainSeedOverride = seed
+    }
+
+    fun setTargetOrientation(orientation: FrameTransform.CameraOrientation) {
+        glHandler.post {
+            if (released) return@post
+            targetOrientation = orientation
+            if (hasReceivedFrame && outputTargets.isNotEmpty()) {
+                drawCurrentFrame()
+            }
+        }
     }
 
     fun getPreviewViewportSize(): FrameTransform.Dimensions {
@@ -206,6 +218,7 @@ class EffectEngine(context: Context) {
                 return@post
             }
 
+            hasReceivedFrame = false
             isFrontCameraProvider = isFrontCamera
             bufferWidth = request.resolution.width
             bufferHeight = request.resolution.height
@@ -218,7 +231,10 @@ class EffectEngine(context: Context) {
             val surface = Surface(st)
 
             request.setTransformationInfoListener(glExecutor) { info ->
-                rotationDegrees = info.rotationDegrees
+                targetOrientation = FrameTransform.CameraOrientation(
+                    rotationDegrees = FrameTransform.normalizeRotation(info.rotationDegrees),
+                    mirrorHorizontal = isFrontCameraProvider(),
+                )
             }
 
             request.provideSurface(surface, glExecutor) {
@@ -392,17 +408,18 @@ class EffectEngine(context: Context) {
             Log.w(TAG, "updateTexImage failed", t)
             return
         }
+        hasReceivedFrame = true
         frameCounter += 1
         drawCurrentFrame()
     }
 
     private fun drawCurrentFrame() {
-        if (outputTargets.isEmpty() || programId == 0) return
+        if (!hasReceivedFrame || outputTargets.isEmpty() || programId == 0) return
 
         val elapsedSec = ((System.nanoTime() - startTimeNanos).coerceAtLeast(0L)) / 1_000_000_000f
         val bufW = bufferWidth.coerceAtLeast(1)
         val bufH = bufferHeight.coerceAtLeast(1)
-        val mirror = isFrontCameraProvider()
+        val orientation = targetOrientation
         val recipe = currentRecipe
         val seedOverride = grainSeedOverride
 
@@ -413,8 +430,8 @@ class EffectEngine(context: Context) {
                 surfaceTextureMatrix = stMatrix,
                 bufferWidth = bufW,
                 bufferHeight = bufH,
-                rotationDegrees = rotationDegrees,
-                mirrorHorizontal = mirror,
+                rotationDegrees = orientation.rotationDegrees,
+                mirrorHorizontal = orientation.mirrorHorizontal,
                 viewportWidth = viewW,
                 viewportHeight = viewH,
             )

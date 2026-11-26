@@ -41,6 +41,7 @@ class CameraController(context: Context) {
     private var boundLifecycleOwner: LifecycleOwner? = null
     private var boundEffectEngine: EffectEngine? = null
     private var boundTargetRotation: Int = 0
+    private var boundSensorOrientationDegrees: Int? = null
     private var boundViewportWidth: Int = 3
     private var boundViewportHeight: Int = 4
 
@@ -123,15 +124,18 @@ class CameraController(context: Context) {
                         val buffer = image.planes[0].buffer
                         val bytes = ByteArray(buffer.remaining())
                         buffer.get(bytes)
-                        val rotationDegrees = image.imageInfo.rotationDegrees
+                        val orientation = FrameTransform.CameraOrientation(
+                            rotationDegrees = FrameTransform.normalizeRotation(image.imageInfo.rotationDegrees),
+                            mirrorHorizontal = mirrorHorizontal,
+                        )
 
                         rawBitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
                             ?: throw IllegalStateException("Gagal decode hasil JPEG kamera")
 
                         processedBitmap = captureProcessor.process(
                             sourceBitmap = rawBitmap,
-                            rotationDegrees = rotationDegrees,
-                            mirrorHorizontal = mirrorHorizontal,
+                            rotationDegrees = orientation.rotationDegrees,
+                            mirrorHorizontal = orientation.mirrorHorizontal,
                             viewportWidth = viewport.width,
                             viewportHeight = viewport.height,
                             recipe = recipe,
@@ -221,7 +225,17 @@ class CameraController(context: Context) {
                 .build()
 
             provider.unbindAll()
-            provider.bindToLifecycle(lifecycleOwner, selector, useCaseGroup)
+            val boundCamera = provider.bindToLifecycle(lifecycleOwner, selector, useCaseGroup)
+            val sensorOrientation = boundCamera.cameraInfo.sensorRotationDegrees
+            boundSensorOrientationDegrees = sensorOrientation
+            val displayDegrees = FrameTransform.surfaceRotationToDegrees(boundTargetRotation)
+            effectEngine.setTargetOrientation(
+                FrameTransform.computeCameraOrientation(
+                    sensorOrientationDegrees = sensorOrientation,
+                    displayRotationDegrees = displayDegrees,
+                    isFrontCamera = isFrontCamera(),
+                ),
+            )
             imageCapture = capture
         } catch (t: Throwable) {
             Log.e(TAG, "Failed to bind CameraX use cases", t)

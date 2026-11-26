@@ -1,5 +1,6 @@
 package com.retrocam.app.camera
 
+import kotlin.math.abs
 import kotlin.math.roundToInt
 
 /**
@@ -13,12 +14,103 @@ object FrameTransform {
 
     data class CropScale(val scaleX: Float, val scaleY: Float)
 
+    data class CameraOrientation(
+        val rotationDegrees: Int,
+        val mirrorHorizontal: Boolean,
+    )
+
     fun normalizeRotation(degrees: Int): Int {
         val mod = ((degrees % 360) + 360) % 360
         return when (mod) {
             0, 90, 180, 270 -> mod
             else -> ((mod + 45) / 90 * 90) % 360
         }
+    }
+
+    /**
+     * Converts Android Surface.ROTATION_* constants (0..3) into degrees (0, 90, 180, 270).
+     */
+    fun surfaceRotationToDegrees(surfaceRotation: Int): Int = when (surfaceRotation) {
+        1 -> 90
+        2 -> 180
+        3 -> 270
+        else -> 0
+    }
+
+    /**
+     * Single source of truth for camera sensor-to-display rotation and horizontal mirror,
+     * matching Android CameraX CameraOrientationUtil.getRelativeImageRotation.
+     * Shared by both live preview (EffectEngine) and photo capture (CaptureProcessor).
+     */
+    fun computeCameraOrientation(
+        sensorOrientationDegrees: Int,
+        displayRotationDegrees: Int,
+        isFrontCamera: Boolean,
+    ): CameraOrientation {
+        val sensor = normalizeRotation(sensorOrientationDegrees)
+        val display = normalizeRotation(displayRotationDegrees)
+        val rotation = if (isFrontCamera) {
+            (sensor + display) % 360
+        } else {
+            (sensor - display + 360) % 360
+        }
+        return CameraOrientation(
+            rotationDegrees = rotation,
+            mirrorHorizontal = isFrontCamera,
+        )
+    }
+
+    /**
+     * Extracts the orthogonal rotation (0/90/180/270) and horizontal mirror already
+     * baked into Android's SurfaceTexture.getTransformMatrix(stMatrix) by the camera HAL.
+     *
+     * Because (stMatrix * flipY) maps top-down UV into raw buffer top-down UV,
+     * its determinant sign identifies baked mirroring and its second column (m4, m5)
+     * uniquely identifies baked CW rotation even when slight hardware padding scales exist.
+     */
+    fun extractBakedSurfaceTransform(surfaceTextureMatrix: FloatArray): CameraOrientation {
+        require(surfaceTextureMatrix.size == 16) { "Expected 4x4 matrix" }
+        val base = multiply(surfaceTextureMatrix, verticalFlipMatrix())
+        val m0 = base[0]
+        val m1 = base[1]
+        val m4 = base[4]
+        val m5 = base[5]
+        if (abs(m0) < 1e-4f && abs(m1) < 1e-4f && abs(m4) < 1e-4f && abs(m5) < 1e-4f) {
+            return CameraOrientation(rotationDegrees = 0, mirrorHorizontal = false)
+        }
+        val bakedMirror = (m0 * m5 - m1 * m4) < 0f
+        val bakedRotation = if (abs(m4) > abs(m5)) {
+            if (m4 > 0f) 90 else 270
+        } else {
+            if (m5 >= 0f) 0 else 180
+        }
+        return CameraOrientation(
+            rotationDegrees = bakedRotation,
+            mirrorHorizontal = bakedMirror,
+        )
+    }
+
+    /**
+     * Solves the residual (rotation, mirror) that, when composed on the right of
+     * (surfaceTextureMatrix * flipY), yields the exact same upright transform as
+     * targetOrientation — eliminating double-rotation and double-mirroring regardless
+     * of whether the device camera HAL baked sensor orientation/mirror into stMatrix.
+     */
+    fun solvePreviewDelta(
+        target: CameraOrientation,
+        baked: CameraOrientation,
+    ): CameraOrientation {
+        val extraMirror = target.mirrorHorizontal != baked.mirrorHorizontal
+        val delta = normalizeRotation(target.rotationDegrees - baked.rotationDegrees)
+        val extraRotation = if (baked.mirrorHorizontal) {
+            normalizeRotation(360 - delta)
+        } else {
+            delta
+        }
+        return CameraOrientation(
+            rotationDegrees = extraRotation,
+            mirrorHorizontal = extraMirror,
+        )
     }
 
     fun uprightDimensions(
@@ -158,8 +250,8 @@ object FrameTransform {
     /**
      * Texture matrix mapping upright top-down normalized image UV coordinates
      * ((0,0)=top-left, (1,1)=bottom-right) directly into SurfaceTexture OES UV space.
-     * Shared by spatial shader effects (vignette, grain, softness, etc.) so preview
-     * and full-res photo execute identical normalized-coordinate math.
+     * Decomposes any sensor rotation/mirror already baked into surfaceTextureMatrix
+     * so live preview always matches buildPhotoTexMatrix without double-rotation.
      */
     fun buildUprightToPreviewTexMatrix(
         surfaceTextureMatrix: FloatArray,
@@ -170,15 +262,21 @@ object FrameTransform {
         viewportWidth: Int,
         viewportHeight: Int,
     ): FloatArray {
-        val upright = uprightDimensions(bufferWidth, bufferHeight, rotationDegrees)
-        val crop = computeCenterCropScale(upright.width, upright.height, viewportWidth, viewportHeight)
-        val topDown = buildTopDownToBufferMatrix(
-            rotationDegrees = rotationDegrees,
+        val target = CameraOrientation(
+            rotationDegrees = normalizeRotation(rotationDegrees),
             mirrorHorizontal = mirrorHorizontal,
+        )
+        val baked = extractBakedSurfaceTransform(surfaceTextureMatrix)
+        val delta = solvePreviewDelta(target = target, baked = baked)
+        val upright = uprightDimensions(bufferWidth, bufferHeight, target.rotationDegrees)
+        val crop = computeCenterCropScale(upright.width, upright.height, viewportWidth, viewportHeight)
+        val topDownDelta = buildTopDownToBufferMatrix(
+            rotationDegrees = delta.rotationDegrees,
+            mirrorHorizontal = delta.mirrorHorizontal,
             cropScale = crop,
         )
         val flipY = verticalFlipMatrix()
-        return multiply(surfaceTextureMatrix, multiply(flipY, topDown))
+        return multiply(surfaceTextureMatrix, multiply(flipY, topDownDelta))
     }
 
     /**
