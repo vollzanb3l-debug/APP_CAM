@@ -13,6 +13,7 @@ import android.opengl.GLES30
 import android.opengl.GLUtils
 import com.retrocam.app.camera.FrameTransform
 import com.retrocam.app.recipe.FinalRecipe
+import java.nio.Buffer
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import java.nio.FloatBuffer
@@ -292,7 +293,7 @@ class CaptureProcessor(context: Context) {
             0,
             GLES30.GL_RGBA,
             GLES30.GL_UNSIGNED_BYTE,
-            null,
+            null as Buffer?,
         )
 
         GLES30.glBindFramebuffer(GLES30.GL_FRAMEBUFFER, fboId)
