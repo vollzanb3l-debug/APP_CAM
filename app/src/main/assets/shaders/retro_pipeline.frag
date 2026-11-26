@@ -45,6 +45,8 @@ uniform float uGrainSize;
 uniform float uGrainRoughness;
 
 // Overlay (Stage 5)
+uniform float uLightLeakIntensity;
+uniform float uLightLeakSeed;
 uniform float uDateStampIntensity;
 uniform vec3 uDateStampColor;
 uniform int uDateYmd;
@@ -300,6 +302,32 @@ vec3 applyFilmGrain(vec3 c, vec2 imgUv) {
     return clamp(c + grainVec * strength, 0.0, 1.0);
 }
 
+vec3 applyLightLeak(vec3 baseColor, vec2 imgUv) {
+    float strength = clamp(uLightLeakIntensity, 0.0, 1.0);
+    if (strength <= 0.0001) {
+        return baseColor;
+    }
+    float seed = fract(abs(uLightLeakSeed));
+    float edgeU = (seed < 0.5) ? (seed * 0.40) : (1.0 - (seed - 0.5) * 0.40);
+    float centerV = 0.25 + fract(seed * 2.37) * 0.55;
+    float wave = sin((imgUv.y - centerV) * 5.0 + seed * 6.2831853) * 0.035;
+
+    float dx = (imgUv.x - edgeU) + wave;
+    float dy = (imgUv.y - centerV) * 0.55;
+    float primaryBand = exp(-(dx * dx * 18.0 + dy * dy * 4.5));
+
+    float dx2 = imgUv.x - edgeU;
+    float dy2 = imgUv.y - (1.0 - centerV);
+    float secondaryFlare = exp(-(dx2 * dx2 * 6.0 + dy2 * dy2 * 8.0)) * 0.45;
+
+    float mask = clamp(primaryBand + secondaryFlare, 0.0, 1.0);
+    vec3 coreColor = vec3(1.0, 0.46, 0.14);
+    vec3 edgeColor = vec3(0.88, 0.18, 0.12);
+    vec3 leakColor = mix(edgeColor, coreColor, clamp(primaryBand, 0.0, 1.0));
+    vec3 leakRgb = leakColor * (mask * strength * 0.85);
+    return clamp(vec3(1.0) - (vec3(1.0) - baseColor) * (vec3(1.0) - leakRgb), 0.0, 1.0);
+}
+
 int sevenSegMask(int d) {
     if (d == 0) return 63;
     if (d == 1) return 6;
@@ -406,7 +434,8 @@ void main() {
     // Stage 4b: Film grain & sensor noise (short-side relative, video-ready seed)
     color = applyFilmGrain(color, vImageUv);
 
-    // Stage 5: Overlay (original procedural digital date stamp)
+    // Stage 5: Overlay (optional light leak + original procedural digital date stamp)
+    color = applyLightLeak(color, vImageUv);
     color = applyDateStamp(color, vImageUv);
 
     fragColor = vec4(color, sampleColor.a);

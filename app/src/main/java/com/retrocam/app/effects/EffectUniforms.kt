@@ -36,6 +36,8 @@ class EffectUniforms private constructor(
     private val uGrainChroma: Int,
     private val uGrainSize: Int,
     private val uGrainRoughness: Int,
+    private val uLightLeakIntensity: Int,
+    private val uLightLeakSeed: Int,
     private val uDateStampIntensity: Int,
     private val uDateStampColor: Int,
     private val uDateYmd: Int,
@@ -80,6 +82,9 @@ class EffectUniforms private constructor(
         if (uGrainChroma >= 0) GLES30.glUniform1f(uGrainChroma, recipe.sensorNoiseChroma)
         if (uGrainSize >= 0) GLES30.glUniform1f(uGrainSize, recipe.grainSize)
         if (uGrainRoughness >= 0) GLES30.glUniform1f(uGrainRoughness, recipe.grainRoughness)
+
+        if (uLightLeakIntensity >= 0) GLES30.glUniform1f(uLightLeakIntensity, recipe.lightLeakIntensity)
+        if (uLightLeakSeed >= 0) GLES30.glUniform1f(uLightLeakSeed, recipe.lightLeakSeed)
 
         val dateIntensity = if (recipe.dateStampEnabled) recipe.dateStampIntensity else 0f
         if (uDateStampIntensity >= 0) GLES30.glUniform1f(uDateStampIntensity, dateIntensity)
@@ -131,6 +136,8 @@ class EffectUniforms private constructor(
             uGrainChroma = GLES30.glGetUniformLocation(programId, "uGrainChroma"),
             uGrainSize = GLES30.glGetUniformLocation(programId, "uGrainSize"),
             uGrainRoughness = GLES30.glGetUniformLocation(programId, "uGrainRoughness"),
+            uLightLeakIntensity = GLES30.glGetUniformLocation(programId, "uLightLeakIntensity"),
+            uLightLeakSeed = GLES30.glGetUniformLocation(programId, "uLightLeakSeed"),
             uDateStampIntensity = GLES30.glGetUniformLocation(programId, "uDateStampIntensity"),
             uDateStampColor = GLES30.glGetUniformLocation(programId, "uDateStampColor"),
             uDateYmd = GLES30.glGetUniformLocation(programId, "uDateYmd"),

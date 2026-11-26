@@ -41,6 +41,8 @@ data class FinalRecipe(
     val dateStampIntensity: Float = 0.90f,
     val dateStampFormat: String = "yy MM dd",
     val dateStampColorHex: String = "#FF8C1A",
+    val lightLeakIntensity: Float = 0f,
+    val lightLeakSeed: Float = 0.25f,
 ) {
     companion object {
         val NEUTRAL = FinalRecipe()

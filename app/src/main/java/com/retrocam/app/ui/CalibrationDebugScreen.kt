@@ -499,6 +499,18 @@ fun CalibrationDebugScreen(
                 range = 0.0f..1.0f,
                 onValueChange = { draftRecipe = draftRecipe.copy(dateStampIntensity = it) },
             )
+            ParameterSlider(
+                label = "Light Leak Intensity (Opsional)",
+                value = draftRecipe.lightLeakIntensity,
+                range = 0.0f..1.0f,
+                onValueChange = { draftRecipe = draftRecipe.copy(lightLeakIntensity = it) },
+            )
+            ParameterSlider(
+                label = "Light Leak Pattern (Seed)",
+                value = draftRecipe.lightLeakSeed,
+                range = 0.0f..1.0f,
+                onValueChange = { draftRecipe = draftRecipe.copy(lightLeakSeed = it) },
+            )
 
             Spacer(modifier = Modifier.height(8.dp))
 

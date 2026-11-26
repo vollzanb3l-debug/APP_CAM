@@ -1,8 +1,11 @@
 package com.retrocam.app.effects
 
 import com.retrocam.app.recipe.RgbColor
+import kotlin.math.abs
 import kotlin.math.exp
+import kotlin.math.floor
 import kotlin.math.hypot
+import kotlin.math.sin
 
 /**
  * Pure-Kotlin reference implementations for Stage 5 overlays (original procedural
@@ -37,6 +40,48 @@ object OverlayMath {
             safe % 10,
         )
     }
+
+    /**
+     * Resolution-independent optional film-edge light leak overlay matching
+     * retro_pipeline.frag's applyLightLeak.
+     */
+    fun applyLightLeak(
+        baseColor: RgbColor,
+        u: Float,
+        v: Float,
+        intensity: Float,
+        seed: Float,
+    ): RgbColor {
+        val strength = intensity.coerceIn(0f, 1f)
+        if (strength <= 0.0001f) return baseColor
+
+        val s = fract(abs(seed))
+        val edgeU = if (s < 0.5f) s * 0.40f else 1f - (s - 0.5f) * 0.40f
+        val centerV = 0.25f + fract(s * 2.37f) * 0.55f
+        val wave = sin(((v - centerV) * 5f + s * 6.2831853f).toDouble()).toFloat() * 0.035f
+
+        val dx = (u - edgeU) + wave
+        val dy = (v - centerV) * 0.55f
+        val primaryBand = exp((-(dx * dx * 18f + dy * dy * 4.5f)).toDouble()).toFloat()
+
+        val dx2 = u - edgeU
+        val dy2 = v - (1f - centerV)
+        val secondaryFlare = exp((-(dx2 * dx2 * 6f + dy2 * dy2 * 8f)).toDouble()).toFloat() * 0.45f
+
+        val mask = (primaryBand + secondaryFlare).coerceIn(0f, 1f)
+        val t = primaryBand.coerceIn(0f, 1f)
+        val leakColorR = 0.88f + (1.00f - 0.88f) * t
+        val leakColorG = 0.18f + (0.46f - 0.18f) * t
+        val leakColorB = 0.12f + (0.14f - 0.12f) * t
+
+        val scale = mask * strength * 0.85f
+        val outR = (1f - (1f - baseColor.r) * (1f - leakColorR * scale)).coerceIn(0f, 1f)
+        val outG = (1f - (1f - baseColor.g) * (1f - leakColorG * scale)).coerceIn(0f, 1f)
+        val outB = (1f - (1f - baseColor.b) * (1f - leakColorB * scale)).coerceIn(0f, 1f)
+        return RgbColor(outR, outG, outB)
+    }
+
+    private fun fract(x: Float): Float = x - floor(x)
 
     fun applyDateStamp(
         baseColor: RgbColor,
