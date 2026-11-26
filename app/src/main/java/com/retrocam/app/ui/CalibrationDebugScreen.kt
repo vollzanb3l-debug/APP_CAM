@@ -365,6 +365,39 @@ fun CalibrationDebugScreen(
             )
 
             Spacer(modifier = Modifier.height(8.dp))
+            Text(
+                text = "Parameter Grain & Noise",
+                style = MaterialTheme.typography.titleSmall,
+                color = RetroTextPrimary,
+            )
+            Spacer(modifier = Modifier.height(4.dp))
+            ParameterSlider(
+                label = "Grain Amount",
+                value = draftRecipe.combinedNoiseAmount,
+                range = 0.0f..0.7f,
+                onValueChange = { draftRecipe = draftRecipe.copy(combinedNoiseAmount = it) },
+            )
+            ParameterSlider(
+                label = "Grain Size (Short Side)",
+                value = draftRecipe.grainSize,
+                range = 0.0005f..0.0060f,
+                format = "%.4f",
+                onValueChange = { draftRecipe = draftRecipe.copy(grainSize = it) },
+            )
+            ParameterSlider(
+                label = "Grain Roughness",
+                value = draftRecipe.grainRoughness,
+                range = 0.0f..1.0f,
+                onValueChange = { draftRecipe = draftRecipe.copy(grainRoughness = it) },
+            )
+            ParameterSlider(
+                label = "Sensor Noise Chroma",
+                value = draftRecipe.sensorNoiseChroma,
+                range = 0.0f..1.0f,
+                onValueChange = { draftRecipe = draftRecipe.copy(sensorNoiseChroma = it) },
+            )
+
+            Spacer(modifier = Modifier.height(8.dp))
 
             Row(
                 modifier = Modifier.fillMaxWidth(),
@@ -477,6 +510,7 @@ private fun ParameterSlider(
     value: Float,
     range: ClosedFloatingPointRange<Float>,
     onValueChange: (Float) -> Unit,
+    format: String = "%.2f",
 ) {
     Column(modifier = Modifier.fillMaxWidth()) {
         Row(
@@ -490,7 +524,7 @@ private fun ParameterSlider(
             )
             Spacer(modifier = Modifier.weight(1f))
             Text(
-                text = String.format(Locale.US, "%.2f", value),
+                text = String.format(Locale.US, format, value),
                 style = MaterialTheme.typography.labelMedium,
                 color = RetroAmber,
             )

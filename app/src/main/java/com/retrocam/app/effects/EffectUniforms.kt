@@ -23,6 +23,10 @@ class EffectUniforms private constructor(
     private val uHighlightTint: Int,
     private val uShadowTint: Int,
     private val uTintStrength: Int,
+    private val uGrainAmount: Int,
+    private val uGrainChroma: Int,
+    private val uGrainSize: Int,
+    private val uGrainRoughness: Int,
     private val uTimeSec: Int,
     private val uFrameIndex: Int,
     private val uGrainSeed: Int,
@@ -51,6 +55,11 @@ class EffectUniforms private constructor(
         if (uShadowTint >= 0) GLES30.glUniform3f(uShadowTint, sh.r, sh.g, sh.b)
         if (uTintStrength >= 0) GLES30.glUniform1f(uTintStrength, recipe.tintStrength)
 
+        if (uGrainAmount >= 0) GLES30.glUniform1f(uGrainAmount, recipe.combinedNoiseAmount)
+        if (uGrainChroma >= 0) GLES30.glUniform1f(uGrainChroma, recipe.sensorNoiseChroma)
+        if (uGrainSize >= 0) GLES30.glUniform1f(uGrainSize, recipe.grainSize)
+        if (uGrainRoughness >= 0) GLES30.glUniform1f(uGrainRoughness, recipe.grainRoughness)
+
         if (uTimeSec >= 0) GLES30.glUniform1f(uTimeSec, frame.timeSec)
         if (uFrameIndex >= 0) GLES30.glUniform1i(uFrameIndex, frame.frameIndex)
         if (uGrainSeed >= 0) GLES30.glUniform1f(uGrainSeed, frame.grainSeed)
@@ -72,6 +81,10 @@ class EffectUniforms private constructor(
             uHighlightTint = GLES30.glGetUniformLocation(programId, "uHighlightTint"),
             uShadowTint = GLES30.glGetUniformLocation(programId, "uShadowTint"),
             uTintStrength = GLES30.glGetUniformLocation(programId, "uTintStrength"),
+            uGrainAmount = GLES30.glGetUniformLocation(programId, "uGrainAmount"),
+            uGrainChroma = GLES30.glGetUniformLocation(programId, "uGrainChroma"),
+            uGrainSize = GLES30.glGetUniformLocation(programId, "uGrainSize"),
+            uGrainRoughness = GLES30.glGetUniformLocation(programId, "uGrainRoughness"),
             uTimeSec = GLES30.glGetUniformLocation(programId, "uTimeSec"),
             uFrameIndex = GLES30.glGetUniformLocation(programId, "uFrameIndex"),
             uGrainSeed = GLES30.glGetUniformLocation(programId, "uGrainSeed"),
