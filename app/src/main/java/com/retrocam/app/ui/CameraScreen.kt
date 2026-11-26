@@ -84,6 +84,7 @@ fun CameraScreen(
     selectedLens: LensSpec?,
     selectedFilm: FilmSpec?,
     activeRecipe: FinalRecipe,
+    onToggleDateStamp: () -> Unit,
     onSelectCamera: (CameraSpec) -> Unit,
     onSelectLens: (LensSpec) -> Unit,
     onSelectFilm: (FilmSpec) -> Unit,
@@ -243,6 +244,24 @@ fun CameraScreen(
                         )
                     }
                     Spacer(modifier = Modifier.weight(1f))
+                    Box(
+                        modifier = Modifier
+                            .clip(RoundedCornerShape(14.dp))
+                            .background(RetroSurface)
+                            .border(
+                                width = 1.dp,
+                                color = if (activeRecipe.dateStampEnabled) RetroAmber else RetroSurfaceBorder,
+                                shape = RoundedCornerShape(14.dp),
+                            )
+                            .clickable(onClick = onToggleDateStamp)
+                            .padding(horizontal = 10.dp, vertical = 4.dp),
+                    ) {
+                        Text(
+                            text = if (activeRecipe.dateStampEnabled) "DATE ON" else "DATE OFF",
+                            style = MaterialTheme.typography.labelSmall,
+                            color = if (activeRecipe.dateStampEnabled) RetroAmber else RetroTextSecondary,
+                        )
+                    }
                     TextButton(onClick = onOpenSettings) {
                         Text(text = "Pengaturan", color = RetroTextPrimary)
                     }

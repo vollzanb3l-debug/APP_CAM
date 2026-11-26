@@ -4,6 +4,7 @@ import android.opengl.GLES30
 import com.retrocam.app.recipe.FinalRecipe
 import com.retrocam.app.recipe.HexColorParser
 import com.retrocam.app.recipe.RgbColor
+import java.util.Calendar
 
 /**
  * Shared shader uniform binder used by both EffectEngine (preview) and
@@ -35,6 +36,9 @@ class EffectUniforms private constructor(
     private val uGrainChroma: Int,
     private val uGrainSize: Int,
     private val uGrainRoughness: Int,
+    private val uDateStampIntensity: Int,
+    private val uDateStampColor: Int,
+    private val uDateYmd: Int,
     private val uTimeSec: Int,
     private val uFrameIndex: Int,
     private val uGrainSeed: Int,
@@ -77,6 +81,23 @@ class EffectUniforms private constructor(
         if (uGrainSize >= 0) GLES30.glUniform1f(uGrainSize, recipe.grainSize)
         if (uGrainRoughness >= 0) GLES30.glUniform1f(uGrainRoughness, recipe.grainRoughness)
 
+        val dateIntensity = if (recipe.dateStampEnabled) recipe.dateStampIntensity else 0f
+        if (uDateStampIntensity >= 0) GLES30.glUniform1f(uDateStampIntensity, dateIntensity)
+        val stampColor = HexColorParser.parseOrDefault(
+            recipe.dateStampColorHex,
+            RgbColor(1f, 0.549f, 0.102f),
+        )
+        if (uDateStampColor >= 0) GLES30.glUniform3f(uDateStampColor, stampColor.r, stampColor.g, stampColor.b)
+        if (uDateYmd >= 0) {
+            val cal = Calendar.getInstance()
+            val ymd = OverlayMath.encodeDateYmd(
+                year = cal.get(Calendar.YEAR),
+                month = cal.get(Calendar.MONTH) + 1,
+                day = cal.get(Calendar.DAY_OF_MONTH),
+            )
+            GLES30.glUniform1i(uDateYmd, ymd)
+        }
+
         if (uTimeSec >= 0) GLES30.glUniform1f(uTimeSec, frame.timeSec)
         if (uFrameIndex >= 0) GLES30.glUniform1i(uFrameIndex, frame.frameIndex)
         if (uGrainSeed >= 0) GLES30.glUniform1f(uGrainSeed, frame.grainSeed)
@@ -110,6 +131,9 @@ class EffectUniforms private constructor(
             uGrainChroma = GLES30.glGetUniformLocation(programId, "uGrainChroma"),
             uGrainSize = GLES30.glGetUniformLocation(programId, "uGrainSize"),
             uGrainRoughness = GLES30.glGetUniformLocation(programId, "uGrainRoughness"),
+            uDateStampIntensity = GLES30.glGetUniformLocation(programId, "uDateStampIntensity"),
+            uDateStampColor = GLES30.glGetUniformLocation(programId, "uDateStampColor"),
+            uDateYmd = GLES30.glGetUniformLocation(programId, "uDateYmd"),
             uTimeSec = GLES30.glGetUniformLocation(programId, "uTimeSec"),
             uFrameIndex = GLES30.glGetUniformLocation(programId, "uFrameIndex"),
             uGrainSeed = GLES30.glGetUniformLocation(programId, "uGrainSeed"),

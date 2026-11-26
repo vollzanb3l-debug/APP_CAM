@@ -52,6 +52,7 @@ object RecipeCompositor {
             lut = film.lut,
             dateStampAvailable = camera.dateStamp.available,
             dateStampDefaultOn = camera.dateStamp.defaultOn,
+            dateStampEnabled = camera.dateStamp.available && camera.dateStamp.defaultOn,
             dateStampFormat = camera.dateStamp.format,
             dateStampColorHex = camera.dateStamp.color,
         )

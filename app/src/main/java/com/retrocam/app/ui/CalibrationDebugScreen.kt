@@ -466,6 +466,41 @@ fun CalibrationDebugScreen(
             )
 
             Spacer(modifier = Modifier.height(8.dp))
+            Text(
+                text = "Parameter Overlay",
+                style = MaterialTheme.typography.titleSmall,
+                color = RetroTextPrimary,
+            )
+            Spacer(modifier = Modifier.height(4.dp))
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Text(
+                    text = "Date Stamp Digital",
+                    style = MaterialTheme.typography.labelMedium,
+                    color = RetroTextPrimary,
+                )
+                Spacer(modifier = Modifier.weight(1f))
+                OutlinedButton(
+                    onClick = {
+                        draftRecipe = draftRecipe.copy(dateStampEnabled = !draftRecipe.dateStampEnabled)
+                    },
+                ) {
+                    Text(
+                        text = if (draftRecipe.dateStampEnabled) "AKTIF" else "NONAKTIF",
+                        color = if (draftRecipe.dateStampEnabled) RetroAmber else RetroTextSecondary,
+                    )
+                }
+            }
+            ParameterSlider(
+                label = "Date Stamp Intensity",
+                value = draftRecipe.dateStampIntensity,
+                range = 0.0f..1.0f,
+                onValueChange = { draftRecipe = draftRecipe.copy(dateStampIntensity = it) },
+            )
+
+            Spacer(modifier = Modifier.height(8.dp))
 
             Row(
                 modifier = Modifier.fillMaxWidth(),

@@ -37,6 +37,8 @@ data class FinalRecipe(
     val lut: String? = null,
     val dateStampAvailable: Boolean = false,
     val dateStampDefaultOn: Boolean = false,
+    val dateStampEnabled: Boolean = false,
+    val dateStampIntensity: Float = 0.90f,
     val dateStampFormat: String = "yy MM dd",
     val dateStampColorHex: String = "#FF8C1A",
 ) {

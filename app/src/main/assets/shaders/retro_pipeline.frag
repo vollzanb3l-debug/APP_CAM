@@ -44,6 +44,11 @@ uniform float uGrainChroma;
 uniform float uGrainSize;
 uniform float uGrainRoughness;
 
+// Overlay (Stage 5)
+uniform float uDateStampIntensity;
+uniform vec3 uDateStampColor;
+uniform int uDateYmd;
+
 // Video-ready frame context uniforms (bound by EffectUniforms; used by grain/time-based stages in M4+)
 uniform float uTimeSec;
 uniform int uFrameIndex;
@@ -295,6 +300,96 @@ vec3 applyFilmGrain(vec3 c, vec2 imgUv) {
     return clamp(c + grainVec * strength, 0.0, 1.0);
 }
 
+int sevenSegMask(int d) {
+    if (d == 0) return 63;
+    if (d == 1) return 6;
+    if (d == 2) return 91;
+    if (d == 3) return 79;
+    if (d == 4) return 102;
+    if (d == 5) return 109;
+    if (d == 6) return 125;
+    if (d == 7) return 7;
+    if (d == 8) return 127;
+    if (d == 9) return 111;
+    return 0;
+}
+
+float sdSegment(vec2 p, vec2 a, vec2 b) {
+    vec2 pa = p - a;
+    vec2 ba = b - a;
+    float h = clamp(dot(pa, ba) / max(dot(ba, ba), 0.000001), 0.0, 1.0);
+    return length(pa - ba * h);
+}
+
+float sdSevenSegDigit(vec2 p, int digit) {
+    int mask = sevenSegMask(digit);
+    float d = 100000.0;
+    if ((mask & 1) != 0) d = min(d, sdSegment(p, vec2(0.24, 0.12), vec2(0.76, 0.12)));
+    if ((mask & 2) != 0) d = min(d, sdSegment(p, vec2(0.78, 0.16), vec2(0.78, 0.46)));
+    if ((mask & 4) != 0) d = min(d, sdSegment(p, vec2(0.78, 0.54), vec2(0.78, 0.84)));
+    if ((mask & 8) != 0) d = min(d, sdSegment(p, vec2(0.24, 0.88), vec2(0.76, 0.88)));
+    if ((mask & 16) != 0) d = min(d, sdSegment(p, vec2(0.22, 0.54), vec2(0.22, 0.84)));
+    if ((mask & 32) != 0) d = min(d, sdSegment(p, vec2(0.22, 0.16), vec2(0.22, 0.46)));
+    if ((mask & 64) != 0) d = min(d, sdSegment(p, vec2(0.25, 0.50), vec2(0.75, 0.50)));
+    return d;
+}
+
+vec3 applyDateStamp(vec3 baseColor, vec2 imgUv) {
+    float strength = clamp(uDateStampIntensity, 0.0, 1.0);
+    if (strength <= 0.0001) {
+        return baseColor;
+    }
+
+    float aspect = max(uImageAspect, 0.01);
+    float widthShort = (aspect >= 1.0) ? aspect : 1.0;
+    float heightShort = (aspect >= 1.0) ? 1.0 : (1.0 / aspect);
+
+    vec2 pos = vec2(imgUv.x * widthShort, imgUv.y * heightShort);
+    float boxH = 0.036;
+    float slotW = boxH * 0.62;
+    float boxW = slotW * 9.0;
+    float margin = 0.045;
+
+    vec2 origin = vec2(widthShort - margin - boxW, heightShort - margin - boxH);
+    vec2 local = pos - origin;
+    float pad = boxH * 0.35;
+    if (local.x < -pad || local.x > boxW + pad || local.y < -pad || local.y > boxH + pad) {
+        return baseColor;
+    }
+
+    int slotIndex = clamp(int(floor(local.x / slotW)), 0, 8);
+    vec2 cell = vec2((local.x - float(slotIndex) * slotW) / slotW, local.y / boxH);
+
+    int safeYmd = clamp(uDateYmd, 0, 999999);
+    float dist = 100000.0;
+    if (slotIndex == 0) {
+        dist = sdSegment(cell, vec2(0.62, 0.12), vec2(0.52, 0.34));
+    } else if (slotIndex == 1) {
+        dist = sdSevenSegDigit(cell, (safeYmd / 100000) % 10);
+    } else if (slotIndex == 2) {
+        dist = sdSevenSegDigit(cell, (safeYmd / 10000) % 10);
+    } else if (slotIndex == 3 || slotIndex == 6) {
+        dist = length(cell - vec2(0.50, 0.86)) - 0.07;
+    } else if (slotIndex == 4) {
+        dist = sdSevenSegDigit(cell, (safeYmd / 1000) % 10);
+    } else if (slotIndex == 5) {
+        dist = sdSevenSegDigit(cell, (safeYmd / 100) % 10);
+    } else if (slotIndex == 7) {
+        dist = sdSevenSegDigit(cell, (safeYmd / 10) % 10);
+    } else {
+        dist = sdSevenSegDigit(cell, safeYmd % 10);
+    }
+
+    float thickness = 0.068;
+    float core = clamp(1.0 - smoothstep(thickness * 0.65, thickness * 1.25, dist), 0.0, 1.0);
+    float glow = clamp(exp(-max(dist, 0.0) * 7.5) * 0.85, 0.0, 1.0);
+
+    vec3 darkened = baseColor * (1.0 - glow * 0.25 * strength);
+    vec3 coreBoost = min(uDateStampColor * vec3(1.15, 1.12, 1.05), vec3(1.0));
+    vec3 withGlow = darkened + uDateStampColor * (glow * 0.55 * strength);
+    return clamp(mix(withGlow, coreBoost, core * strength), 0.0, 1.0);
+}
+
 void main() {
     // Stage 1: Geometry (normalized upright image coordinates + lens distortion)
     vec2 imgUv = applyLensDistortion(vImageUv);
@@ -310,6 +405,9 @@ void main() {
 
     // Stage 4b: Film grain & sensor noise (short-side relative, video-ready seed)
     color = applyFilmGrain(color, vImageUv);
+
+    // Stage 5: Overlay (original procedural digital date stamp)
+    color = applyDateStamp(color, vImageUv);
 
     fragColor = vec4(color, sampleColor.a);
 }

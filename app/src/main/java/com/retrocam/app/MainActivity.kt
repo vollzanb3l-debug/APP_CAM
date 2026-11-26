@@ -65,11 +65,18 @@ class MainActivity : ComponentActivity() {
                 val selectedFilm = catalog.films.firstOrNull { it.id == selectedFilmId }
                     ?: catalog.films.firstOrNull()
 
-                val baseRecipe = remember(selectedCamera, selectedLens, selectedFilm) {
-                    if (selectedCamera != null && selectedLens != null && selectedFilm != null) {
+                var dateStampOverride by rememberSaveable { mutableStateOf<Boolean?>(null) }
+                val baseRecipe = remember(selectedCamera, selectedLens, selectedFilm, dateStampOverride) {
+                    val composed = if (selectedCamera != null && selectedLens != null && selectedFilm != null) {
                         RecipeCompositor.compose(selectedCamera, selectedLens, selectedFilm)
                     } else {
                         FinalRecipe.NEUTRAL
+                    }
+                    val overrideEnabled = dateStampOverride
+                    if (overrideEnabled != null) {
+                        composed.copy(dateStampEnabled = overrideEnabled)
+                    } else {
+                        composed
                     }
                 }
                 var debugOverrideRecipe by remember { mutableStateOf<FinalRecipe?>(null) }
@@ -84,8 +91,14 @@ class MainActivity : ComponentActivity() {
                         selectedLens = selectedLens,
                         selectedFilm = selectedFilm,
                         activeRecipe = activeRecipe,
+                        onToggleDateStamp = {
+                            val next = !activeRecipe.dateStampEnabled
+                            dateStampOverride = next
+                            debugOverrideRecipe = debugOverrideRecipe?.copy(dateStampEnabled = next)
+                        },
                         onSelectCamera = { camera ->
                             selectedCameraId = camera.id
+                            dateStampOverride = null
                             debugOverrideRecipe = null
                             selectionStore.save(camera.id, selectedLens?.id, selectedFilm?.id)
                         },
