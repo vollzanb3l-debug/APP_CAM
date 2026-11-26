@@ -358,6 +358,12 @@ fun CalibrationDebugScreen(
                 onValueChange = { draftRecipe = draftRecipe.copy(softness = it) },
             )
             ParameterSlider(
+                label = "Chromatic Aberration",
+                value = draftRecipe.chromaticAberration,
+                range = 0.0f..1.0f,
+                onValueChange = { draftRecipe = draftRecipe.copy(chromaticAberration = it) },
+            )
+            ParameterSlider(
                 label = "Bloom Intensity",
                 value = draftRecipe.bloomIntensity,
                 range = 0.0f..1.0f,

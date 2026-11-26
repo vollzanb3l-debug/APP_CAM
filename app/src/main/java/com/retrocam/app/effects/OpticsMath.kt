@@ -78,6 +78,42 @@ object OpticsMath {
     }
 
     /**
+     * Radial lateral chromatic aberration UV shift (short-side normalized),
+     * zero at center (0.5, 0.5) and increasing smoothly toward corners.
+     */
+    fun chromaticAberrationOffset(
+        u: Float,
+        v: Float,
+        imageAspect: Float,
+        amount: Float,
+    ): Pair<Float, Float> {
+        val clamped = amount.coerceIn(0f, 1f)
+        if (clamped <= 0.0001f) return 0f to 0f
+        val cx = u - 0.5f
+        val cy = v - 0.5f
+        val r2 = cx * cx + cy * cy
+        val maxShift = clamped * 0.008f
+        val (scaleX, scaleY) = shortSideStepToUv(1f, imageAspect)
+        val radialScale = (0.4f + 1.6f * r2) * maxShift * 2f
+        return (cx * radialScale * scaleX) to (cy * radialScale * scaleY)
+    }
+
+    fun applyChromaticAberration(
+        baseColor: RgbColor,
+        u: Float,
+        v: Float,
+        imageAspect: Float,
+        amount: Float,
+        sampler: (Float, Float) -> RgbColor,
+    ): RgbColor {
+        if (amount <= 0.0001f) return baseColor
+        val (dx, dy) = chromaticAberrationOffset(u, v, imageAspect, amount)
+        val r = sampler((u + dx).coerceIn(0f, 1f), (v + dy).coerceIn(0f, 1f)).r
+        val b = sampler((u - dx).coerceIn(0f, 1f), (v - dy).coerceIn(0f, 1f)).b
+        return RgbColor(r = r, g = baseColor.g, b = b)
+    }
+
+    /**
      * Soft highlight extractor matching retro_pipeline.frag's extractHighlight.
      */
     fun extractHighlight(color: RgbColor, threshold: Float): RgbColor {

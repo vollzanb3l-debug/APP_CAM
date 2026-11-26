@@ -12,6 +12,7 @@ import com.retrocam.app.recipe.RgbColor
 class EffectUniforms private constructor(
     private val uImageAspect: Int,
     private val uSoftness: Int,
+    private val uChromaticAberration: Int,
     private val uBloomIntensity: Int,
     private val uBloomThreshold: Int,
     private val uBloomRadius: Int,
@@ -45,6 +46,7 @@ class EffectUniforms private constructor(
     ) {
         if (uImageAspect >= 0) GLES30.glUniform1f(uImageAspect, imageAspect.coerceAtLeast(0.01f))
         if (uSoftness >= 0) GLES30.glUniform1f(uSoftness, recipe.softness)
+        if (uChromaticAberration >= 0) GLES30.glUniform1f(uChromaticAberration, recipe.chromaticAberration)
         if (uBloomIntensity >= 0) GLES30.glUniform1f(uBloomIntensity, recipe.bloomIntensity)
         if (uBloomThreshold >= 0) GLES30.glUniform1f(uBloomThreshold, recipe.bloomThreshold)
         if (uBloomRadius >= 0) GLES30.glUniform1f(uBloomRadius, recipe.bloomRadius)
@@ -83,6 +85,7 @@ class EffectUniforms private constructor(
         fun lookup(programId: Int): EffectUniforms = EffectUniforms(
             uImageAspect = GLES30.glGetUniformLocation(programId, "uImageAspect"),
             uSoftness = GLES30.glGetUniformLocation(programId, "uSoftness"),
+            uChromaticAberration = GLES30.glGetUniformLocation(programId, "uChromaticAberration"),
             uBloomIntensity = GLES30.glGetUniformLocation(programId, "uBloomIntensity"),
             uBloomThreshold = GLES30.glGetUniformLocation(programId, "uBloomThreshold"),
             uBloomRadius = GLES30.glGetUniformLocation(programId, "uBloomRadius"),

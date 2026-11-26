@@ -14,6 +14,7 @@ uniform float uImageAspect;
 
 // Optics (Stage 2)
 uniform float uSoftness;
+uniform float uChromaticAberration;
 uniform float uBloomIntensity;
 uniform float uBloomThreshold;
 uniform float uBloomRadius;
@@ -91,6 +92,28 @@ vec4 sampleWithSoftness(vec2 imgUv) {
         blurred = center.rgb * 0.36 + diag * 0.16;
     }
     return vec4(mix(center.rgb, blurred, s * 0.78), center.a);
+}
+
+vec2 computeChromaticAberrationOffset(vec2 imgUv) {
+    float amount = clamp(uChromaticAberration, 0.0, 1.0);
+    if (amount <= 0.0001) {
+        return vec2(0.0);
+    }
+    vec2 centered = imgUv - vec2(0.5);
+    float r2 = dot(centered, centered);
+    float maxShift = amount * 0.008;
+    vec2 aspectScale = shortSideStepToUv(1.0);
+    return centered * (0.4 + 1.6 * r2) * maxShift * aspectScale * 2.0;
+}
+
+vec3 applyChromaticAberration(vec3 baseColor, vec2 imgUv) {
+    if (uChromaticAberration <= 0.0001) {
+        return baseColor;
+    }
+    vec2 offset = computeChromaticAberrationOffset(imgUv);
+    float r = texture(uInputTexture, mapImageUvToSource(clamp(imgUv + offset, 0.0, 1.0))).r;
+    float b = texture(uInputTexture, mapImageUvToSource(clamp(imgUv - offset, 0.0, 1.0))).b;
+    return vec3(r, baseColor.g, b);
 }
 
 vec3 extractHighlight(vec3 c, float threshold) {
@@ -253,9 +276,10 @@ void main() {
     // Stage 1: Geometry (normalized upright image coordinates)
     vec2 imgUv = vImageUv;
 
-    // Stage 2: Optics (softness -> bloom/halation -> vignette in normalized coordinates)
+    // Stage 2: Optics (softness -> chromatic aberration -> bloom/halation -> vignette)
     vec4 sampleColor = sampleWithSoftness(imgUv);
-    vec3 color = applyBloomAndHalation(sampleColor.rgb, imgUv);
+    vec3 color = applyChromaticAberration(sampleColor.rgb, imgUv);
+    color = applyBloomAndHalation(color, imgUv);
     color = color * computeVignetteFactor(imgUv);
 
     // Stage 3 & 4: Sensor/Camera + Film color grade & fade
