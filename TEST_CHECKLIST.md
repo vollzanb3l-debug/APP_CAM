@@ -19,4 +19,13 @@ Checklist pengujian manual yang dijalankan setiap kali satu tahap (`M0`–`M6`) 
 - [ ] 5 menit preview terus-menerus: tidak terlalu panas, fps wajar *(uji di M1–M3)*
 - [ ] Foto resolusi penuh tidak OOM *(uji di M1–M3)*
 - [ ] File JSON rusak sengaja: aplikasi tetap jalan, item dilewati, dan error tampil di Layar Debug & Kalibrasi *(uji di M3 — tercover juga oleh unit test `RecipeRepositoryTest`)*
-- [ ] Layar Debug & Kalibrasi: tampilkan metadata `archetype`, `confidenceLook`, `confidenceSpecs`, `calibrationStatus`, dan `sources` untuk kamera & film aktif; pilih foto referensi dari galeri, geser slider parameter, bandingkan berdampingan, lalu terapkan/reset ke preview *(uji di M3)*
+- [ ] Layar Debug & Kalibrasi: tampilkan metadata `archetype`, `confidenceLook`, `confidenceSpecs`, `calibrationStatus`, dan `sources` untuk kamera & film aktif; pilih foto referensi dari galeri, geser slider parameter (color grade, optik, grain, overlay), bandingkan berdampingan, lalu terapkan/reset ke preview *(uji di M3–M4)*
+- [ ] Efek M4 cocok antara preview dan foto (bandingkan berdampingan):
+  - [ ] **Vignette** & **Distorsi Lensa** (mis. lensa `28mm f2.8` dengan *barrel* & vignette lebih kuat dibanding `50mm f1.4`)
+  - [ ] **Softness**, **Bloom & Halation** pada sumber cahaya terang (mis. lensa `50mm f1.4` + film `Surya 200` — foto resolusi penuh tampak lebih halus dari preview namun berkarakter sama)
+  - [ ] **Chromatic Aberration** di tepi benda berkontras tinggi
+  - [ ] **Grain** (mis. `Monokrom 400` ukuran butiran seragam antara preview dan foto; tidak melar/menghilang saat resolusi penuh)
+  - [ ] **Crop Rasio Gambar**: ganti antara `Kompak CCD 2003` (`4:3`), `Saku Lembut 2008` (`3:4` vertikal), dan `Klasik 35mm` (`3:2`) — viewfinder & foto galeri memiliki rasio dan area crop yang sama
+  - [ ] **Date Stamp Orisinal (`'YY.MM.DD`)**: tombol `DATE ON/OFF` langsung menghidupkan/mematikan stempel oranye di kanan bawah pada preview maupun foto hasil
+  - [ ] **Light Leak Opsional**: uji slider *Light Leak Intensity* & *Seed* di Layar Debug & Kalibrasi lalu klik **Terapkan ke Preview**
+- [ ] Performa & panas dengan semua efek M4 aktif (terutama `50mm f1.4` + `Surya 200` yang memakai softness + bloom/halation + grain): 5 menit preview tetap lancar dan tidak terlalu panas *(uji di M4)*
