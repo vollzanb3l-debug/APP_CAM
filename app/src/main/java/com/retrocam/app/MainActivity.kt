@@ -66,6 +66,7 @@ class MainActivity : ComponentActivity() {
                     ?: catalog.films.firstOrNull()
 
                 var dateStampOverride by rememberSaveable { mutableStateOf<Boolean?>(null) }
+                var gridEnabled by rememberSaveable { mutableStateOf(initialSelection.gridEnabled) }
                 val baseRecipe = remember(selectedCamera, selectedLens, selectedFilm, dateStampOverride) {
                     val composed = if (selectedCamera != null && selectedLens != null && selectedFilm != null) {
                         RecipeCompositor.compose(selectedCamera, selectedLens, selectedFilm)
@@ -91,6 +92,12 @@ class MainActivity : ComponentActivity() {
                         selectedLens = selectedLens,
                         selectedFilm = selectedFilm,
                         activeRecipe = activeRecipe,
+                        gridEnabled = gridEnabled,
+                        onToggleGrid = {
+                            val next = !gridEnabled
+                            gridEnabled = next
+                            selectionStore.saveGridEnabled(next)
+                        },
                         onToggleDateStamp = {
                             val next = !activeRecipe.dateStampEnabled
                             dateStampOverride = next

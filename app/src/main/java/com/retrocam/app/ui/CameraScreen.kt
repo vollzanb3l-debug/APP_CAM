@@ -13,6 +13,7 @@ import android.view.SurfaceView
 import android.view.WindowManager
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -28,6 +29,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.systemBarsPadding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
@@ -51,6 +53,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
@@ -88,6 +92,8 @@ fun CameraScreen(
     selectedLens: LensSpec?,
     selectedFilm: FilmSpec?,
     activeRecipe: FinalRecipe,
+    gridEnabled: Boolean,
+    onToggleGrid: () -> Unit,
     onToggleDateStamp: () -> Unit,
     onSelectCamera: (CameraSpec) -> Unit,
     onSelectLens: (LensSpec) -> Unit,
@@ -260,14 +266,33 @@ fun CameraScreen(
                             .background(RetroSurface)
                             .border(
                                 width = 1.dp,
+                                color = if (gridEnabled) RetroAmber else RetroSurfaceBorder,
+                                shape = RoundedCornerShape(14.dp),
+                            )
+                            .clickable(onClick = onToggleGrid)
+                            .padding(horizontal = 9.dp, vertical = 4.dp),
+                    ) {
+                        Text(
+                            text = "GRID",
+                            style = MaterialTheme.typography.labelSmall,
+                            color = if (gridEnabled) RetroAmber else RetroTextSecondary,
+                        )
+                    }
+                    Spacer(modifier = Modifier.width(6.dp))
+                    Box(
+                        modifier = Modifier
+                            .clip(RoundedCornerShape(14.dp))
+                            .background(RetroSurface)
+                            .border(
+                                width = 1.dp,
                                 color = if (activeRecipe.dateStampEnabled) RetroAmber else RetroSurfaceBorder,
                                 shape = RoundedCornerShape(14.dp),
                             )
                             .clickable(onClick = onToggleDateStamp)
-                            .padding(horizontal = 10.dp, vertical = 4.dp),
+                            .padding(horizontal = 9.dp, vertical = 4.dp),
                     ) {
                         Text(
-                            text = if (activeRecipe.dateStampEnabled) "DATE ON" else "DATE OFF",
+                            text = "DATE",
                             style = MaterialTheme.typography.labelSmall,
                             color = if (activeRecipe.dateStampEnabled) RetroAmber else RetroTextSecondary,
                         )
@@ -344,6 +369,30 @@ fun CameraScreen(
                                 }
                             },
                         )
+
+                        if (gridEnabled) {
+                            Canvas(modifier = Modifier.fillMaxSize()) {
+                                val lines = GridOverlayMath.computeRuleOfThirdsLines(size.width, size.height)
+                                val shadowColor = Color.Black.copy(alpha = 0.28f)
+                                val lineColor = Color.White.copy(alpha = 0.48f)
+                                for (seg in lines) {
+                                    val start = Offset(seg.startX, seg.startY)
+                                    val end = Offset(seg.endX, seg.endY)
+                                    drawLine(
+                                        color = shadowColor,
+                                        start = start,
+                                        end = end,
+                                        strokeWidth = 2.5f,
+                                    )
+                                    drawLine(
+                                        color = lineColor,
+                                        start = start,
+                                        end = end,
+                                        strokeWidth = 1.2f,
+                                    )
+                                }
+                            }
+                        }
                     }
                 }
 
