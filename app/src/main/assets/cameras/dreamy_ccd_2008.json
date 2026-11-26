@@ -14,12 +14,12 @@
   ],
   "calibrationStatus": "draft",
   "icon": "icons/cameras/dreamy_compact.png",
-  "aspectRatio": "4:3",
+  "aspectRatio": "3:4",
   "whiteBalance": { "temp": 0.05, "tint": 0.04 },
-  "tone": { "contrast": 0.96, "highlightRolloff": 0.40, "shadowLift": 0.05 },
-  "saturation": 1.02,
-  "sensorNoise": { "amount": 0.12, "chroma": 0.20 },
-  "sharpen": 0.12,
-  "dateStamp": { "available": true, "defaultOn": false, "format": "yy MM dd", "color": "#FF8C1A" },
-  "notes": "Perkiraan awal: karakter lembut-pastel dengan bayangan terangkat ringan dan highlight halus."
+  "tone": { "contrast": 0.95, "highlightRolloff": 0.42, "shadowLift": 0.06 },
+  "saturation": 1.03,
+  "sensorNoise": { "amount": 0.14, "chroma": 0.22 },
+  "sharpen": 0.10,
+  "dateStamp": { "available": true, "defaultOn": false, "format": "yy MM dd", "color": "#FF9830" },
+  "notes": "Perkiraan awal: bingkai vertikal 3:4 lembut-pastel dengan bayangan terangkat ringan dan highlight halus."
 }

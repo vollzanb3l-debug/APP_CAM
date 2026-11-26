@@ -22,7 +22,7 @@
     "shadowTint": "#2B3438",
     "tintStrength": 0.10
   },
-  "grain": { "amount": 0.12, "size": 0.0014, "roughness": 0.45 },
-  "halation": { "intensity": 0.06, "color": "#FFB088" },
-  "notes": "Perkiraan awal: potret lembut bernuansa krem-pastel lapang dengan kontras halus."
+  "grain": { "amount": 0.15, "size": 0.0014, "roughness": 0.45 },
+  "halation": { "intensity": 0.14, "color": "#FFB088" },
+  "notes": "Perkiraan awal: potret lembut bernuansa krem-pastel lapang dengan grain halus dan pendaran sorotan lembut."
 }

@@ -22,7 +22,7 @@
     "shadowTint": "#26332D",
     "tintStrength": 0.12
   },
-  "grain": { "amount": 0.16, "size": 0.0016, "roughness": 0.55 },
-  "halation": { "intensity": 0.08, "color": "#FF7244" },
-  "notes": "Perkiraan awal: nuansa hangat keemasan dan bayangan sedikit terangkat."
+  "grain": { "amount": 0.22, "size": 0.0018, "roughness": 0.55 },
+  "halation": { "intensity": 0.22, "color": "#FF7244" },
+  "notes": "Perkiraan awal: nuansa hangat keemasan, grain halus-sedang, halation sorotan hangat, dan hitam sedikit terangkat."
 }

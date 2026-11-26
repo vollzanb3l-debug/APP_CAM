@@ -16,10 +16,10 @@
   "icon": "icons/cameras/compact_generic.png",
   "aspectRatio": "4:3",
   "whiteBalance": { "temp": 0.08, "tint": 0.02 },
-  "tone": { "contrast": 1.08, "highlightRolloff": 0.25, "shadowLift": 0.02 },
-  "saturation": 1.05,
-  "sensorNoise": { "amount": 0.16, "chroma": 0.35 },
+  "tone": { "contrast": 1.10, "highlightRolloff": 0.22, "shadowLift": 0.02 },
+  "saturation": 1.08,
+  "sensorNoise": { "amount": 0.20, "chroma": 0.42 },
   "sharpen": 0.35,
-  "dateStamp": { "available": true, "defaultOn": false, "format": "yy MM dd", "color": "#FF8C1A" },
-  "notes": "Perkiraan awal: hangat ringan, kontras tegas, highlight cepat matang."
+  "dateStamp": { "available": true, "defaultOn": true, "format": "yy MM dd", "color": "#FF8C1A" },
+  "notes": "Perkiraan awal: rasio 4:3, hangat ringan, kontras tegas, noise kromatik CCD, stempel tanggal aktif bawaan."
 }

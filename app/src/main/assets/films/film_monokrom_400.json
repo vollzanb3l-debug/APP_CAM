@@ -16,13 +16,13 @@
     "temp": 0.00,
     "tint": 0.00,
     "saturation": 0.00,
-    "contrast": 1.22,
+    "contrast": 1.24,
     "blackLift": 0.03,
     "highlightTint": "#F4F2EC",
     "shadowTint": "#18191B",
     "tintStrength": 0.04
   },
-  "grain": { "amount": 0.24, "size": 0.0020, "roughness": 0.65 },
+  "grain": { "amount": 0.32, "size": 0.0022, "roughness": 0.70 },
   "halation": { "intensity": 0.00, "color": "#FF6A3D" },
-  "notes": "Perkiraan awal: film hitam putih netral berkontras sedang-tinggi."
+  "notes": "Perkiraan awal: film hitam putih netral berkontras sedang-tinggi dengan grain lebih terasa."
 }

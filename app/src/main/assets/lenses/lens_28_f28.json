@@ -4,11 +4,11 @@
   "displayName": "28mm f2.8",
   "icon": "icons/lenses/wide_28.png",
   "focalLengthEquiv": 28,
-  "softness": 0.08,
-  "bloom": { "intensity": 0.08, "threshold": 0.82, "radius": 0.005 },
-  "vignette": { "strength": 0.28, "radius": 0.80 },
-  "distortion": { "k1": -0.04 },
-  "chromaticAberration": 0.08,
+  "softness": 0.10,
+  "bloom": { "intensity": 0.10, "threshold": 0.80, "radius": 0.007 },
+  "vignette": { "strength": 0.34, "radius": 0.78 },
+  "distortion": { "k1": -0.10 },
+  "chromaticAberration": 0.16,
   "flare": 0.05,
-  "notes": "Perkiraan awal: sudut lebar klasik dengan vignette sedang."
+  "notes": "Perkiraan awal: sudut lebar klasik dengan barrel distortion ringan, vignette sedang, dan CA tepi."
 }
