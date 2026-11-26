@@ -7,7 +7,7 @@ object RecipeValidator {
 
     private val allowedConfidence = setOf("high", "medium", "low")
     private val allowedCalibrationStatus = setOf("draft", "calibrated")
-    private val allowedAspectRatios = setOf("4:3", "3:2", "16:9", "1:1")
+    private val allowedAspectRatios = setOf("4:3", "3:4", "3:2", "2:3", "16:9", "1:1")
 
     fun validateCamera(spec: CameraSpec): List<String> = buildList {
         if (spec.schemaVersion != 3) add("camera.schemaVersion must be 3")

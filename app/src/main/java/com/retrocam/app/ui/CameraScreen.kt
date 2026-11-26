@@ -58,6 +58,7 @@ import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.LifecycleOwner
 import com.retrocam.app.camera.CameraController
+import com.retrocam.app.camera.FrameTransform
 import com.retrocam.app.effects.CaptureProcessor
 import com.retrocam.app.effects.EffectEngine
 import com.retrocam.app.recipe.CameraSpec
@@ -258,7 +259,10 @@ fun CameraScreen(
                     val isLandscapeDisplay = displayRotation == Surface.ROTATION_90 ||
                         displayRotation == Surface.ROTATION_270 ||
                         configuration.orientation == android.content.res.Configuration.ORIENTATION_LANDSCAPE
-                    val viewfinderAspect = if (isLandscapeDisplay) 4f / 3f else 3f / 4f
+                    val viewfinderAspect = FrameTransform.resolveDisplayAspectRatio(
+                        aspectRatio = activeRecipe.aspectRatio,
+                        isLandscapeDisplay = isLandscapeDisplay,
+                    )
 
                     Box(
                         modifier = Modifier

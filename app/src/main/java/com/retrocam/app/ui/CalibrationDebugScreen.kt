@@ -45,6 +45,7 @@ import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import com.retrocam.app.camera.FrameTransform
 import com.retrocam.app.effects.CaptureProcessor
 import com.retrocam.app.recipe.CameraSpec
 import com.retrocam.app.recipe.FilmSpec
@@ -104,12 +105,17 @@ fun CalibrationDebugScreen(
         delay(60)
         val processed = withContext(Dispatchers.Default) {
             runCatching {
+                val targetDims = FrameTransform.computeAspectTargetDimensions(
+                    sourceWidth = ref.width,
+                    sourceHeight = ref.height,
+                    aspectRatio = draftRecipe.aspectRatio,
+                )
                 captureProcessor.process(
                     sourceBitmap = ref,
                     rotationDegrees = 0,
                     mirrorHorizontal = false,
-                    viewportWidth = ref.width,
-                    viewportHeight = ref.height,
+                    viewportWidth = targetDims.width,
+                    viewportHeight = targetDims.height,
                     recipe = draftRecipe,
                 )
             }
@@ -350,6 +356,25 @@ fun CalibrationDebugScreen(
                 style = MaterialTheme.typography.titleSmall,
                 color = RetroTextPrimary,
             )
+            Spacer(modifier = Modifier.height(4.dp))
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(6.dp),
+            ) {
+                listOf("4:3", "3:4", "3:2", "1:1", "16:9").forEach { ratio ->
+                    val selected = draftRecipe.aspectRatio == ratio
+                    OutlinedButton(
+                        modifier = Modifier.weight(1f),
+                        onClick = { draftRecipe = draftRecipe.copy(aspectRatio = ratio) },
+                    ) {
+                        Text(
+                            text = ratio,
+                            style = MaterialTheme.typography.labelSmall,
+                            color = if (selected) RetroAmber else RetroTextSecondary,
+                        )
+                    }
+                }
+            }
             Spacer(modifier = Modifier.height(4.dp))
             ParameterSlider(
                 label = "Lens Distortion (k1)",

@@ -146,6 +146,50 @@ object FrameTransform {
         }
     }
 
+    /**
+     * Resolves a recipe aspect ratio string ("4:3", "3:4", "3:2", "2:3", "16:9", "1:1")
+     * into width/height ratio for the active display orientation.
+     * Explicit vertical formats ("3:4", "2:3", e.g. half-frame) stay vertical;
+     * "1:1" stays square; standard camera formats adapt cleanly to portrait/landscape.
+     */
+    fun resolveDisplayAspectRatio(aspectRatio: String, isLandscapeDisplay: Boolean): Float {
+        return when (aspectRatio.trim()) {
+            "1:1" -> 1f
+            "3:4" -> 3f / 4f
+            "2:3" -> 2f / 3f
+            "3:2" -> if (isLandscapeDisplay) 3f / 2f else 2f / 3f
+            "16:9" -> if (isLandscapeDisplay) 16f / 9f else 9f / 16f
+            else -> if (isLandscapeDisplay) 4f / 3f else 3f / 4f
+        }
+    }
+
+    /**
+     * Computes a target (width, height) pair inside the given reference bounds matching
+     * the recipe's aspect ratio (used for offscreen calibration simulation).
+     */
+    fun computeAspectTargetDimensions(
+        sourceWidth: Int,
+        sourceHeight: Int,
+        aspectRatio: String,
+    ): Dimensions {
+        val safeW = sourceWidth.coerceAtLeast(1)
+        val safeH = sourceHeight.coerceAtLeast(1)
+        val isLandscape = safeW > safeH
+        val targetAspect = resolveDisplayAspectRatio(aspectRatio, isLandscapeDisplay = isLandscape)
+        val srcAspect = safeW.toFloat() / safeH.toFloat()
+        return if (srcAspect > targetAspect) {
+            Dimensions(
+                width = (safeH * targetAspect).roundToInt().coerceIn(1, safeW),
+                height = safeH,
+            )
+        } else {
+            Dimensions(
+                width = safeW,
+                height = (safeW / targetAspect).roundToInt().coerceIn(1, safeH),
+            )
+        }
+    }
+
     fun computeCroppedOutputDimensions(
         uprightWidth: Int,
         uprightHeight: Int,
