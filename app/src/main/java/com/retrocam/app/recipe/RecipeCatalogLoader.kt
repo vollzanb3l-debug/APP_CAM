@@ -23,28 +23,28 @@ object RecipeCatalogLoader {
         val archetypes = parseEntries(
             entries = archetypesRaw,
             errors = errors,
-            decode = { raw -> json.decodeFromString<ArchetypeSpec>(raw) },
+            decode = { raw -> json.decodeFromString(ArchetypeSpec.serializer(), raw) },
             validate = RecipeValidator::validateArchetype,
         ).sortedBy { it.displayName }
 
         val cameras = parseEntries(
             entries = camerasRaw,
             errors = errors,
-            decode = { raw -> json.decodeFromString<CameraSpec>(raw) },
+            decode = { raw -> json.decodeFromString(CameraSpec.serializer(), raw) },
             validate = RecipeValidator::validateCamera,
         ).sortedBy { it.displayName }
 
         val lenses = parseEntries(
             entries = lensesRaw,
             errors = errors,
-            decode = { raw -> json.decodeFromString<LensSpec>(raw) },
+            decode = { raw -> json.decodeFromString(LensSpec.serializer(), raw) },
             validate = RecipeValidator::validateLens,
         ).sortedBy { it.focalLengthEquiv }
 
         val films = parseEntries(
             entries = filmsRaw,
             errors = errors,
-            decode = { raw -> json.decodeFromString<FilmSpec>(raw) },
+            decode = { raw -> json.decodeFromString(FilmSpec.serializer(), raw) },
             validate = RecipeValidator::validateFilm,
         ).sortedBy { it.displayName }
 
