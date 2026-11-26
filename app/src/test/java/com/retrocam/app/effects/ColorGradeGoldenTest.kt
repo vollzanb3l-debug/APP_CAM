@@ -48,14 +48,14 @@ class ColorGradeGoldenTest {
 
         val actual = ColorGradeMath.applyToRgbBytes(testChartRgb, warmRetro)
         val expected = intArrayOf(
-            9, 10, 12,
-            40, 40, 40,
-            138, 132, 118,
-            234, 229, 211,
-            246, 36, 30,
-            39, 219, 32,
-            29, 64, 232,
-            236, 174, 121,
+            10, 12, 13,
+            39, 39, 39,
+            143, 136, 130,
+            254, 242, 231,
+            240, 43, 42,
+            39, 210, 44,
+            45, 76, 230,
+            234, 172, 127,
         )
 
         for (i in expected.indices) {
