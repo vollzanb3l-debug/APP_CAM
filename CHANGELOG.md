@@ -6,6 +6,12 @@ Format mengacu pada [Keep a Changelog](https://keepachangelog.com/id-ID/1.0.0/).
 
 ## [Unreleased]
 
+### Fixed
+- **Orientasi Preview M1 (Bug Prioritas Tertinggi)**:
+  - Menyatukan perhitungan orientasi kamera dan mirror ke satu sumber kebenaran `FrameTransform.computeCameraOrientation` (mengacu ke aturan CameraX `CameraOrientationUtil`) yang dipakai oleh jalur preview (`EffectEngine` + `CameraController`) dan foto (`CaptureProcessor`).
+  - Memperbaiki *double-rotation* dan *double-mirroring* pada preview OpenGL dengan mendekomposisi rotasi/mirror bawaan HAL dari `SurfaceTexture.getTransformMatrix` (`extractBakedSurfaceTransform` & `solvePreviewDelta`) sehingga preview dan foto cocok di semua kombinasi orientasi sensor (`90°`/`270°`), rotasi layar (`0°`/`90°`/`180°`/`270°`), dan kamera belakang/depan (+ unit test komprehensif di `FrameTransformTest`).
+  - Menambahkan `DisplayManager.DisplayListener` pada `CameraScreen` agar perubahan rotasi layar terdeteksi di keempat posisi (termasuk perpindahan langsung landscape kiri ↔ landscape kanan).
+
 ### Added
 - Menambahkan dokumen arsitektur utama (`docs/ARCHITECTURE.md`) dan prompt kerja agent (`docs/AGENT_PROMPT.md`).
 - Menambahkan `TEST_CHECKLIST.md`, `CHANGELOG.md`, dan `README.md` sebagai struktur awal proyek.
