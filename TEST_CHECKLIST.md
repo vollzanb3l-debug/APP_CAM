@@ -57,3 +57,9 @@ Checklist pengujian manual yang dijalankan setiap kali satu tahap (`M0`–`M6`) 
 - [ ] **M6 Gerbang 1 — Performa Preview & Penurunan Kualitas Otomatis** *(uji di M6 Gerbang 1)*:
   - [ ] Di `CameraScreen`, perhatikan angka waktu frame (`ms`) di samping judul `RetroCam` saat kombinasi efek berat aktif (mis. `50mm f1.4` + `Surya 200` dengan softness + bloom/halation + grain): catat kisaran `ms` pada kondisi normal dan setelah 3–5 menit preview
   - [ ] Jika HP mulai panas atau frame melambat (`> 28 ms`), indikator berubah menjadi `...ms · ECO` (mode `PREVIEW_LOW`): pastikan preview tetap lancar, karakter warna/tampilan tetap konsisten, dan **foto hasil jepretan tetap beresolusi & berkualitas penuh (`PHOTO`)**
+- [ ] **M6 Gerbang 2 — Katalog 100 Kamera, Waktu Muat, & Pencarian Picker** *(uji di M6 Gerbang 2)*:
+  - [ ] Buka aplikasi dari kondisi tertutup (*cold start*): aplikasi terbuka cepat tanpa lag mencolok; cek `Pengaturan -> Debug & Kalibrasi -> Status Validasi JSON` menampilkan **0 error** (`100 camera, 3 lens, 3 film, 18 archetype`)
+  - [ ] Buka `PickerSheet`: indikator `CAMERA` menampilkan `.../ 100`; gulir daftar 100 kamera dengan cepat — tidak lag berat dan tidak crash
+  - [ ] Uji pencarian berdasarkan **nama/model** (mis. `SD1000`, `Holga`, `X100V`), **brand** (mis. `Canon`, `Fujifilm`, `Olympus`), **alias wilayah** (mis. `IXUS 70`), **kata kunci `lookTags`** (mis. `heavy-vignette`, `soft-edges`, `film-like-grain`), serta ketuk chip cepat `#lookTag`
+  - [ ] Uji kata kunci tidak cocok (mis. `zzzzz`): muncul pesan tidak ditemukan dengan tombol **Reset** tanpa crash; tombol **Hapus** mengembalikan seluruh 100 kamera
+  - [ ] Pilih kamera dari beberapa arketipe berbeda (mis. `Canon PowerShot SD1000` `4:3`, `Olympus Pen EE-3` `3:4`, `Holga 120N` `1:1`, `Canon AE-1` `3:2`): preview & rasio viewfinder langsung berubah tanpa menutup `PickerSheet`, lalu potret dan pastikan EXIF label di `GalleryScreen` menampilkan nama kamera yang dipilih
