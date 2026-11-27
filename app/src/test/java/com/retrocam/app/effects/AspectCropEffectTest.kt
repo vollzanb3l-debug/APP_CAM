@@ -67,8 +67,11 @@ class AspectCropEffectTest {
     fun validator_acceptsHalfFrame34And23AspectRatios() {
         for (ratio in listOf("3:4", "2:3", "4:3", "3:2", "1:1", "16:9")) {
             val cam = CameraSpec(
-                schemaVersion = 3,
+                schemaVersion = 4,
                 id = "cam_ratio_test",
+                brand = "RetroCam",
+                model = "Ratio Test",
+                aliases = emptyList(),
                 displayName = "Ratio Test",
                 inspiredBy = "test",
                 era = "1990s",
@@ -78,6 +81,7 @@ class AspectCropEffectTest {
                 confidenceSpecs = "high",
                 sources = listOf("unit test"),
                 calibrationStatus = "draft",
+                iconType = "half_frame",
                 icon = "icons/cam.png",
                 aspectRatio = ratio,
                 whiteBalance = WhiteBalanceSpec(0f, 0f),

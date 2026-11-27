@@ -83,8 +83,8 @@ class RecipeExifMetadataTest {
         assertEquals("lens_35_f2", metadata.lensId)
         assertEquals("film_surya_200", metadata.filmId)
         assertEquals(RecipeExifMetadata.CURRENT_SCHEMA_VERSION, metadata.schemaVersion)
-        assertEquals("c3.l1.f2", metadata.recipeVersion)
-        assertEquals(3, metadata.cameraSchemaVersion)
+        assertEquals("c4.l1.f2", metadata.recipeVersion)
+        assertEquals(4, metadata.cameraSchemaVersion)
         assertEquals(1, metadata.lensSchemaVersion)
         assertEquals(2, metadata.filmSchemaVersion)
 
@@ -125,8 +125,11 @@ class RecipeExifMetadataTest {
 
     private fun sampleCatalog(): RecipeCatalog {
         val camera = CameraSpec(
-            schemaVersion = 3,
+            schemaVersion = 4,
             id = "compact_2003_ccd",
+            brand = "RetroCam",
+            model = "Kompak CCD 2003",
+            aliases = emptyList(),
             displayName = "Kompak CCD 2003",
             inspiredBy = "test",
             era = "2000s",
@@ -136,6 +139,7 @@ class RecipeExifMetadataTest {
             confidenceSpecs = "high",
             sources = listOf("test"),
             calibrationStatus = "draft",
+            iconType = "compact_digital",
             icon = "compact_digital",
             aspectRatio = "4:3",
             whiteBalance = WhiteBalanceSpec(0f, 0f),

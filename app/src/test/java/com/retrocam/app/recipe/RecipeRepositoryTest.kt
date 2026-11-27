@@ -28,7 +28,16 @@ class RecipeRepositoryTest {
         assertEquals(7, catalog.archetypes.size)
 
         val archetypeIds = catalog.archetypes.map { it.id }.toSet()
+        val cameraIds = catalog.cameras.map { it.id }.toSet()
+        assertEquals(
+            setOf("compact_2003_ccd", "dreamy_ccd_2008", "classic_s_35mm"),
+            cameraIds,
+        )
         for (camera in catalog.cameras) {
+            assertEquals(CameraSchemaMigrator.CURRENT_SCHEMA_VERSION, camera.schemaVersion)
+            assertTrue(camera.brand.isNotBlank())
+            assertTrue(camera.model.isNotBlank())
+            assertTrue(camera.iconType in RecipeValidator.allowedIconTypes)
             assertTrue(
                 "Camera ${camera.id} references missing archetype ${camera.archetype}",
                 camera.archetype in archetypeIds,

@@ -5,14 +5,39 @@ package com.retrocam.app.recipe
  */
 object RecipeValidator {
 
+    const val CURRENT_CAMERA_SCHEMA_VERSION = CameraSchemaMigrator.CURRENT_SCHEMA_VERSION
+
+    val allowedIconTypes = setOf(
+        "compact_digital",
+        "compact_film",
+        "slr_film",
+        "half_frame",
+        "disposable",
+        "instant",
+        "medium_format",
+        "toy_lens",
+        "camcorder",
+        "camera_phone",
+    )
+
     private val allowedConfidence = setOf("high", "medium", "low")
     private val allowedCalibrationStatus = setOf("draft", "calibrated")
     private val allowedAspectRatios = setOf("4:3", "3:4", "3:2", "2:3", "16:9", "1:1")
 
     fun validateCamera(spec: CameraSpec): List<String> = buildList {
-        if (spec.schemaVersion != 3) add("camera.schemaVersion must be 3")
+        if (spec.schemaVersion != CURRENT_CAMERA_SCHEMA_VERSION) {
+            add("camera.schemaVersion must be $CURRENT_CAMERA_SCHEMA_VERSION")
+        }
         if (spec.id.isBlank()) add("camera.id must not be blank")
+        if (spec.brand.isBlank()) add("camera.brand must not be blank")
+        if (spec.model.isBlank()) add("camera.model must not be blank")
+        if (spec.aliases.any { it.isBlank() }) {
+            add("camera.aliases must not contain blank entries")
+        }
         if (spec.displayName.isBlank()) add("camera.displayName must not be blank")
+        if (spec.iconType !in allowedIconTypes) {
+            add("camera.iconType unsupported: ${spec.iconType}")
+        }
         if (spec.era.isBlank()) add("camera.era must not be blank")
         if (spec.category.isBlank()) add("camera.category must not be blank")
         if (spec.archetype.isBlank()) add("camera.archetype must not be blank")

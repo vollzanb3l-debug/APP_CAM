@@ -17,10 +17,13 @@ class FavoritesTest {
         }
     }
 
-    private fun sampleCamera(id: String, displayName: String, schemaVersion: Int = 3): CameraSpec =
+    private fun sampleCamera(id: String, displayName: String, schemaVersion: Int = 4): CameraSpec =
         CameraSpec(
             schemaVersion = schemaVersion,
             id = id,
+            brand = "RetroCam",
+            model = displayName,
+            aliases = emptyList(),
             displayName = displayName,
             inspiredBy = "test",
             era = "2000s",
@@ -30,6 +33,7 @@ class FavoritesTest {
             confidenceSpecs = "high",
             sources = listOf("test"),
             calibrationStatus = "draft",
+            iconType = "compact_digital",
             icon = "icons/cameras/compact.png",
             aspectRatio = "4:3",
             whiteBalance = WhiteBalanceSpec(0f, 0f),

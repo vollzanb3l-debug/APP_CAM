@@ -6,8 +6,11 @@ import org.junit.Test
 class RecipeValidatorTest {
 
     private fun validCamera() = CameraSpec(
-        schemaVersion = 3,
+        schemaVersion = 4,
         id = "compact_2003_ccd",
+        brand = "RetroCam",
+        model = "Kompak CCD 2003",
+        aliases = listOf("CCD 2003"),
         displayName = "Kompak CCD 2003",
         inspiredBy = "private note",
         era = "2000s",
@@ -17,6 +20,7 @@ class RecipeValidatorTest {
         confidenceSpecs = "high",
         sources = listOf("Perkiraan awal arketipe CCD"),
         calibrationStatus = "draft",
+        iconType = "compact_digital",
         icon = "icons/cameras/compact.png",
         aspectRatio = "4:3",
         whiteBalance = WhiteBalanceSpec(0.08f, 0.02f),
@@ -63,7 +67,11 @@ class RecipeValidatorTest {
     @Test
     fun camera_rejectsBadSchemaConfidenceStatusSourcesAndHex() {
         val broken = validCamera().copy(
-            schemaVersion = 2,
+            schemaVersion = 3,
+            brand = "",
+            model = "   ",
+            aliases = listOf("Valid Alias", ""),
+            iconType = "unknown_silhouette",
             archetype = "",
             confidenceLook = "certain",
             confidenceSpecs = "guessed",
@@ -74,6 +82,10 @@ class RecipeValidatorTest {
         )
         val errors = RecipeValidator.validateCamera(broken)
         assertTrue(errors.any { it.contains("schemaVersion") })
+        assertTrue(errors.any { it.contains("brand") })
+        assertTrue(errors.any { it.contains("model") })
+        assertTrue(errors.any { it.contains("aliases") })
+        assertTrue(errors.any { it.contains("iconType") })
         assertTrue(errors.any { it.contains("archetype") })
         assertTrue(errors.any { it.contains("confidenceLook") })
         assertTrue(errors.any { it.contains("confidenceSpecs") })

@@ -30,7 +30,10 @@ object RecipeCatalogLoader {
         val cameras = parseEntries(
             entries = camerasRaw,
             errors = errors,
-            decode = { raw -> json.decodeFromString(CameraSpec.serializer(), raw) },
+            decode = { raw ->
+                val migrated = CameraSchemaMigrator.migrateIfNeeded(raw)
+                json.decodeFromString(CameraSpec.serializer(), migrated.jsonText)
+            },
             validate = RecipeValidator::validateCamera,
         ).sortedBy { it.displayName }
 

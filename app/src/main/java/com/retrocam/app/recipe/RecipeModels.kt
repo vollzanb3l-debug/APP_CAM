@@ -1,5 +1,6 @@
 package com.retrocam.app.recipe
 
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
@@ -33,16 +34,21 @@ data class DateStampSpec(
 data class CameraSpec(
     val schemaVersion: Int,
     val id: String,
+    val brand: String,
+    val model: String,
+    val aliases: List<String> = emptyList(),
     val displayName: String,
-    val inspiredBy: String,
+    val inspiredBy: String = "",
     val era: String,
     val category: String,
     val archetype: String,
+    val lookTags: List<String> = emptyList(),
     val confidenceLook: String,
     val confidenceSpecs: String,
     val sources: List<String>,
     val calibrationStatus: String,
-    val icon: String,
+    val iconType: String,
+    val icon: String = "",
     val aspectRatio: String,
     val whiteBalance: WhiteBalanceSpec,
     val tone: ToneSpec,
@@ -50,7 +56,9 @@ data class CameraSpec(
     val sensorNoise: SensorNoiseSpec,
     val sharpen: Float,
     val dateStamp: DateStampSpec,
-    val notes: String,
+    val notes: String = "",
+    @SerialName("tuning_notes")
+    val tuningNotes: String = "",
 )
 
 @Serializable

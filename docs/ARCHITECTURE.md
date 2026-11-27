@@ -104,13 +104,17 @@ Semua file punya `schemaVersion`. Mengubah skema = naikkan versi + migrasi + per
 
 ```json
 {
-  "schemaVersion": 3,
+  "schemaVersion": 4,
   "id": "compact_2003_ccd",
+  "brand": "RetroCam",
+  "model": "Kompak CCD 2003",
+  "aliases": [],
   "displayName": "Kompak CCD 2003",
   "inspiredBy": "(catatan pribadi, tidak ditampilkan di UI publik)",
   "era": "2000s",
   "category": "digital_compact",
   "archetype": "ccd_compact_2000s",
+  "lookTags": ["high-contrast", "punchy-daylight", "digital-noise"],
   "confidenceLook": "high",
   "confidenceSpecs": "high",
   "sources": [
@@ -118,6 +122,7 @@ Semua file punya `schemaVersion`. Mengubah skema = naikkan versi + migrasi + per
     "Parameter numerik adalah perkiraan awal (draft), disetel lewat layar kalibrasi."
   ],
   "calibrationStatus": "draft",
+  "iconType": "compact_digital",
   "icon": "icons/cameras/compact_generic.png",
   "aspectRatio": "4:3",
   "whiteBalance": { "temp": 0.08, "tint": 0.02 },
@@ -126,9 +131,12 @@ Semua file punya `schemaVersion`. Mengubah skema = naikkan versi + migrasi + per
   "sensorNoise": { "amount": 0.18, "chroma": 0.35 },
   "sharpen": 0.35,
   "dateStamp": { "available": true, "defaultOn": false, "format": "yy MM dd", "color": "#FF8C1A" },
-  "notes": "Perkiraan awal: hangat ringan, kontras tegas, highlight cepat matang."
+  "notes": "Perkiraan awal: hangat ringan, kontras tegas, highlight cepat matang.",
+  "tuning_notes": "Catatan kualitatif pembeda kamera terhadap arketipenya (tidak dibaca mesin)."
 }
 ```
+
+> Migrasi otomatis `v3 -> v4` ditangani oleh `CameraSchemaMigrator` saat pemuatan JSON tanpa mengubah `id` yang sudah ada. Field `iconType` menggunakan 10 jenis siluet standar dari `docs/catalog/json/catalog_index.json`.
 
 ### 7.2 Lens (`assets/lenses/<id>.json`)
 
