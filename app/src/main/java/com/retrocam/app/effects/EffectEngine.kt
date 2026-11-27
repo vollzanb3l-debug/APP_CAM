@@ -10,8 +10,10 @@ import android.opengl.EGLExt
 import android.opengl.EGLSurface
 import android.opengl.GLES11Ext
 import android.opengl.GLES30
+import android.os.Build
 import android.os.Handler
 import android.os.HandlerThread
+import android.os.PowerManager
 import android.util.Log
 import android.view.Surface
 import androidx.camera.core.SurfaceRequest
@@ -39,9 +41,16 @@ class EffectEngine(context: Context) {
     )
 
     private val assets = context.applicationContext.assets
+    private val powerManager = context.applicationContext.getSystemService(Context.POWER_SERVICE) as? PowerManager
     private val glThread = HandlerThread("EffectEngineGL").apply { start() }
     private val glHandler = Handler(glThread.looper)
     private val glExecutor = Executor { command -> glHandler.post(command) }
+
+    private val perfController = PreviewPerformanceController()
+    private var cachedThermalLevel: ThermalLevel = ThermalLevel.NORMAL
+
+    @Volatile
+    private var latestPerfSnapshot: PreviewPerfSnapshot = PreviewPerfSnapshot()
 
     @Volatile
     private var released = false
@@ -99,6 +108,8 @@ class EffectEngine(context: Context) {
     }
 
     fun getRecipe(): FinalRecipe = currentRecipe
+
+    fun getPreviewPerfSnapshot(): PreviewPerfSnapshot = latestPerfSnapshot
 
     fun setGrainSeedOverride(seed: Float?) {
         grainSeedOverride = seed
@@ -422,6 +433,10 @@ class EffectEngine(context: Context) {
         val orientation = targetOrientation
         val recipe = currentRecipe
         val seedOverride = grainSeedOverride
+        val heavyActive = PreviewPerformanceController.hasHeavyEffects(recipe)
+        if (frameCounter == 1 || frameCounter % THERMAL_POLL_INTERVAL_FRAMES == 0) {
+            cachedThermalLevel = readThermalLevel()
+        }
 
         for (target in outputTargets.values) {
             val viewW = target.width.coerceAtLeast(1)
@@ -435,12 +450,14 @@ class EffectEngine(context: Context) {
                 viewportWidth = viewW,
                 viewportHeight = viewH,
             )
+            val effectiveQuality = perfController.effectiveQuality(target.quality)
             val frameParams = FrameRenderParams.forStreamFrame(
                 frameIndex = frameCounter,
                 timeSec = elapsedSec,
-                quality = target.quality,
+                quality = effectiveQuality,
                 fixedSeedOverride = seedOverride,
             )
+            val frameStartNs = if (target.id == PREVIEW_TARGET_ID) System.nanoTime() else 0L
             renderTextureToTarget(
                 target = target,
                 textureTarget = GLES11Ext.GL_TEXTURE_EXTERNAL_OES,
@@ -449,6 +466,30 @@ class EffectEngine(context: Context) {
                 recipe = recipe,
                 frameParams = frameParams,
             )
+            if (target.id == PREVIEW_TARGET_ID && frameStartNs > 0L) {
+                val durationMs = ((System.nanoTime() - frameStartNs).coerceAtLeast(0L)) / 1_000_000f
+                val snap = perfController.recordFrame(
+                    frameDurationMs = durationMs,
+                    thermalLevel = cachedThermalLevel,
+                    heavyEffectsActive = heavyActive,
+                )
+                latestPerfSnapshot = snap
+                if (snap.sampleCount % PERF_LOG_INTERVAL_FRAMES == 0) {
+                    Log.d(TAG, "PreviewPerf ${PreviewPerformanceController.formatMetricsSummary(snap)}")
+                }
+            }
+        }
+    }
+
+    private fun readThermalLevel(): ThermalLevel {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) return ThermalLevel.NORMAL
+        val status = runCatching { powerManager?.currentThermalStatus }.getOrNull()
+            ?: return ThermalLevel.NORMAL
+        return when {
+            status >= PowerManager.THERMAL_STATUS_SEVERE -> ThermalLevel.SEVERE
+            status == PowerManager.THERMAL_STATUS_MODERATE -> ThermalLevel.MODERATE
+            status == PowerManager.THERMAL_STATUS_LIGHT -> ThermalLevel.LIGHT
+            else -> ThermalLevel.NORMAL
         }
     }
 
@@ -560,5 +601,7 @@ class EffectEngine(context: Context) {
     companion object {
         private const val TAG = "EffectEngine"
         const val PREVIEW_TARGET_ID = "preview"
+        private const val THERMAL_POLL_INTERVAL_FRAMES = 30
+        private const val PERF_LOG_INTERVAL_FRAMES = 150
     }
 }

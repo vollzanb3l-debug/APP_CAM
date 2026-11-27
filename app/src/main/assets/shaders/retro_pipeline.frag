@@ -55,7 +55,7 @@ uniform int uDateYmd;
 uniform float uTimeSec;
 uniform int uFrameIndex;
 uniform float uGrainSeed;
-uniform int uQualityLevel; // 0 = preview, 1 = video, 2 = photo
+uniform int uQualityLevel; // -1 = preview_low (auto-downgraded), 0 = preview, 1 = video, 2 = photo
 
 vec2 mapImageUvToSource(vec2 imgUv) {
     return (uTexMatrix * vec4(imgUv, 0.0, 1.0)).xy;
@@ -112,7 +112,7 @@ vec4 sampleWithSoftness(vec2 imgUv) {
             texture(uInputTexture, mapImageUvToSource(imgUv + vec2(outerStep.x, -outerStep.y))).rgb +
             texture(uInputTexture, mapImageUvToSource(imgUv + vec2(-outerStep.x, -outerStep.y))).rgb;
         blurred = center.rgb * 0.24 + axial * 0.12 + diag * 0.07;
-    } else {
+    } else if (uQualityLevel >= 0) {
         // Preview / video quality tier: fast 5-tap diagonal Gaussian kernel (weights sum to 1.0)
         vec3 diag =
             texture(uInputTexture, mapImageUvToSource(imgUv + vec2(stepUv.x, stepUv.y))).rgb +
@@ -120,6 +120,12 @@ vec4 sampleWithSoftness(vec2 imgUv) {
             texture(uInputTexture, mapImageUvToSource(imgUv + vec2(stepUv.x, -stepUv.y))).rgb +
             texture(uInputTexture, mapImageUvToSource(imgUv + vec2(-stepUv.x, -stepUv.y))).rgb;
         blurred = center.rgb * 0.36 + diag * 0.16;
+    } else {
+        // Auto-downgraded preview tier (PREVIEW_LOW): 3-tap opposing diagonal blur (weights sum to 1.0)
+        vec3 diagPair =
+            texture(uInputTexture, mapImageUvToSource(imgUv + vec2(stepUv.x, stepUv.y))).rgb +
+            texture(uInputTexture, mapImageUvToSource(imgUv - vec2(stepUv.x, stepUv.y))).rgb;
+        blurred = center.rgb * 0.50 + diagPair * 0.25;
     }
     return vec4(mix(center.rgb, blurred, s * 0.78), center.a);
 }
@@ -168,6 +174,16 @@ vec3 sampleHighlightRing(vec2 imgUv, vec2 stepUv, float threshold) {
     return sum * 0.125;
 }
 
+vec3 sampleHighlightRingFast(vec2 imgUv, vec2 stepUv, float threshold) {
+    vec2 diag = stepUv * 0.70710678;
+    vec3 sum =
+        extractHighlight(texture(uInputTexture, mapImageUvToSource(imgUv + vec2(diag.x, diag.y))).rgb, threshold) +
+        extractHighlight(texture(uInputTexture, mapImageUvToSource(imgUv + vec2(-diag.x, diag.y))).rgb, threshold) +
+        extractHighlight(texture(uInputTexture, mapImageUvToSource(imgUv + vec2(diag.x, -diag.y))).rgb, threshold) +
+        extractHighlight(texture(uInputTexture, mapImageUvToSource(imgUv + vec2(-diag.x, -diag.y))).rgb, threshold);
+    return sum * 0.25;
+}
+
 vec3 applyBloomAndHalation(vec3 baseColor, vec2 imgUv) {
     float bloomAmt = clamp(uBloomIntensity, 0.0, 1.0);
     float halationAmt = clamp(uHalationIntensity, 0.0, 1.0);
@@ -185,9 +201,12 @@ vec3 applyBloomAndHalation(vec3 baseColor, vec2 imgUv) {
         vec3 innerGlow = sampleHighlightRing(imgUv, stepUv * 0.55, threshold);
         vec3 outerGlow = sampleHighlightRing(imgUv, stepUv * 1.25, threshold);
         glow = innerGlow * 0.55 + outerGlow * 0.45;
-    } else {
+    } else if (uQualityLevel >= 0) {
         // Preview / video quality tier: fast 8-tap single-ring highlight glow
         glow = sampleHighlightRing(imgUv, stepUv, threshold);
+    } else {
+        // Auto-downgraded preview tier (PREVIEW_LOW): 4-tap diagonal highlight ring
+        glow = sampleHighlightRingFast(imgUv, stepUv, threshold);
     }
 
     vec3 bloomAdd = glow * bloomAmt * 1.15;
@@ -279,20 +298,34 @@ vec3 applyFilmGrain(vec3 c, vec2 imgUv) {
     float cellSize = max(uGrainSize, 0.0005);
     vec2 grainCoord = shortSidePos / cellSize;
 
-    float baseNoise = valueNoise(grainCoord, uGrainSeed) * 2.0 - 1.0;
-    float lumaNoise = baseNoise;
-    if (uQualityLevel >= 2) {
-        float fineNoise = valueNoise(grainCoord * 2.07 + vec2(17.3, 9.1), uGrainSeed * 1.31) * 2.0 - 1.0;
-        float fineWeight = clamp(uGrainRoughness, 0.0, 1.0) * 0.35;
-        lumaNoise = mix(baseNoise, fineNoise, fineWeight);
-    }
+    vec3 grainVec;
+    if (uQualityLevel < 0) {
+        // Auto-downgraded preview tier (PREVIEW_LOW): fast cell hash preserves grain size & mood with >80% fewer hash ops
+        vec2 cell = floor(grainCoord);
+        float lumaFast = hash12(cell + vec2(uGrainSeed, uGrainSeed * 0.37)) * 2.0 - 1.0;
+        grainVec = vec3(lumaFast);
+        if (uGrainChroma > 0.0001) {
+            float cr = hash12(cell + vec2(31.7 + uGrainSeed, 11.3)) * 2.0 - 1.0;
+            float cb = hash12(cell + vec2(59.3 + uGrainSeed, 23.5)) * 2.0 - 1.0;
+            float cg = -0.5 * (cr + cb);
+            grainVec = mix(grainVec, vec3(cr, cg, cb), clamp(uGrainChroma, 0.0, 1.0) * 0.65);
+        }
+    } else {
+        float baseNoise = valueNoise(grainCoord, uGrainSeed) * 2.0 - 1.0;
+        float lumaNoise = baseNoise;
+        if (uQualityLevel >= 2) {
+            float fineNoise = valueNoise(grainCoord * 2.07 + vec2(17.3, 9.1), uGrainSeed * 1.31) * 2.0 - 1.0;
+            float fineWeight = clamp(uGrainRoughness, 0.0, 1.0) * 0.35;
+            lumaNoise = mix(baseNoise, fineNoise, fineWeight);
+        }
 
-    vec3 grainVec = vec3(lumaNoise);
-    if (uGrainChroma > 0.0001) {
-        float cr = valueNoise(grainCoord + vec2(31.7, 11.3), uGrainSeed + 7.0) * 2.0 - 1.0;
-        float cg = valueNoise(grainCoord + vec2(13.1, 47.9), uGrainSeed + 19.0) * 2.0 - 1.0;
-        float cb = valueNoise(grainCoord + vec2(59.3, 23.5), uGrainSeed + 37.0) * 2.0 - 1.0;
-        grainVec = mix(grainVec, vec3(cr, cg, cb), clamp(uGrainChroma, 0.0, 1.0) * 0.65);
+        grainVec = vec3(lumaNoise);
+        if (uGrainChroma > 0.0001) {
+            float cr = valueNoise(grainCoord + vec2(31.7, 11.3), uGrainSeed + 7.0) * 2.0 - 1.0;
+            float cg = valueNoise(grainCoord + vec2(13.1, 47.9), uGrainSeed + 19.0) * 2.0 - 1.0;
+            float cb = valueNoise(grainCoord + vec2(59.3, 23.5), uGrainSeed + 37.0) * 2.0 - 1.0;
+            grainVec = mix(grainVec, vec3(cr, cg, cb), clamp(uGrainChroma, 0.0, 1.0) * 0.65);
+        }
     }
 
     float luma = dot(c, vec3(0.2126, 0.7152, 0.0722));

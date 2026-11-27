@@ -6,6 +6,7 @@ package com.retrocam.app.effects
  * fidelity only for PHOTO while preserving consistent look character across PREVIEW and VIDEO.
  */
 enum class RenderQuality(val uniformValue: Int) {
+    PREVIEW_LOW(-1),
     PREVIEW(0),
     VIDEO(1),
     PHOTO(2),

@@ -69,6 +69,8 @@ import com.retrocam.app.camera.ExposureCompensationMath
 import com.retrocam.app.camera.FrameTransform
 import com.retrocam.app.effects.CaptureProcessor
 import com.retrocam.app.effects.EffectEngine
+import com.retrocam.app.effects.PreviewPerfSnapshot
+import com.retrocam.app.effects.PreviewPerformanceController
 import com.retrocam.app.recipe.CameraSpec
 import com.retrocam.app.recipe.FavoriteIds
 import com.retrocam.app.recipe.FilmSpec
@@ -145,6 +147,7 @@ fun CameraScreen(
     var showPicker by rememberSaveable { mutableStateOf(false) }
     var exposureBounds by remember { mutableStateOf(ExposureCompensationMath.ExposureBounds.UNSUPPORTED) }
     var exposureEv by remember { mutableFloatStateOf(0f) }
+    var previewPerf by remember { mutableStateOf(PreviewPerfSnapshot()) }
 
     val permissionLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.RequestMultiplePermissions(),
@@ -174,6 +177,14 @@ fun CameraScreen(
 
     LaunchedEffect(effectEngine, activeRecipe) {
         effectEngine.setRecipe(activeRecipe)
+    }
+
+    LaunchedEffect(effectEngine, hasCameraPermission) {
+        if (!hasCameraPermission) return@LaunchedEffect
+        while (true) {
+            delay(1000)
+            previewPerf = effectEngine.getPreviewPerfSnapshot()
+        }
     }
 
     DisposableEffect(cameraController, effectEngine) {
@@ -255,6 +266,13 @@ fun CameraScreen(
                         style = MaterialTheme.typography.labelLarge,
                         color = RetroAmber,
                     )
+                    PreviewPerformanceController.formatCompactBadge(previewPerf)?.let { badge ->
+                        Text(
+                            text = " · $badge",
+                            style = MaterialTheme.typography.labelSmall,
+                            color = if (previewPerf.isDowngraded) RetroAmber else RetroTextSecondary,
+                        )
+                    }
                     if (catalog.loadErrors.isNotEmpty()) {
                         Text(
                             text = " · ${catalog.loadErrors.size} error JSON",
