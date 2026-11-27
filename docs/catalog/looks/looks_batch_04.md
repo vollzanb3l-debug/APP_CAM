@@ -25,7 +25,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 04 (kamera #61–#
   - **Sifat Emulsi Film (bawaan tetap Kodak Max/Gold ISO 800):** Karena film terpasang dari pabrik, palet warna hangat nostalgia 90-an menjadi bagian menyatu dari kamera ini: dinding krem, rumput siang, dan baja kuning tampak **hangat keemasan serta cukup pekat**, langit biru sedikit bernuansa lembut dengan sedikit rona merah muda tipis saat mendung, bayangan dedaunan jatuh pekat, dan **butiran *grain* ISO 800 tampak nyata serta bertekstur mentah** di hamparan langit maupun permukaan air.
 - **lookTags:** `warm-nostalgic`, `visible-grain`, `soft-edges`, `punchy-color`, `light-vignette`, `harsh-flash`
 - **Arketipe:** `disposable_point_shoot` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual langsung 4 foto lintas 4 sumber/pengunggah (2 Wikimedia Commons, 1 Flickr CC, dan sampel jembatan The Darkroom) yang sepenuhnya konsisten dengan ulasan The Darkroom, Casual Photophile, dan Shoot It With Film.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [7], >= 3 foto diperiksa [4], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Kodak Moments / Kodak Alaris — Kodak FunSaver](https://business.kodakmoments.com/product/kodak-fun-saver-single-use-camera)
   - *Situs Fotografi / Lab Film (dengan inspeksi visual sampel):* [The Darkroom — Kodak FunSaver Review](https://thedarkroom.com/disposable-cameras-top-cameras-reviewed-compared/kodak-fun-saver-disposable-camera/), [Casual Photophile — Kodak FunSaver Review](https://casualphotophile.com/2018/10/08/kodak-funsaver-disposable-camera-review-cheap-is-good/), [Shoot It With Film — QuickSnap & FunSaver Comparison](https://shootitwithfilm.com/fujifilm-quicksnap-and-kodak-funsaver-disposable-cameras/), [Australian Photography — Kodak FunSaver Review](https://www.australianphotography.com/gear/review-kodak-funsaver)
@@ -51,7 +52,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 04 (kamera #61–#
   - **Sifat Emulsi Film (bawaan tetap Ilford HP5 Plus ISO 400):** Menghadirkan **estetika hitam-putih dokumenter klasik yang organik** — gradasi *midtone* abu-abu pada aspal, plester dinding, dan badan mobil berlangsung mulus tanpa kontras digital kaku, sementara **butiran *grain* perak terasa nyata dan bertekstur hidup** pada langit mendung maupun bayangan ruang dalam.
 - **lookTags:** `classic-bw`, `smooth-midtones`, `textured-grain`, `soft-edges`, `flash-dependent`
 - **Arketipe:** `disposable_point_shoot` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual 3 foto lintas 2 sumber independen (1 Flickr CC + 2 foto sampel siang & interior The Darkroom) yang sepenuhnya konsisten dengan ulasan Australian Photography dan Rediscover Analog.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [4], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** halaman spesifikasi resmi produsen aktif; halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Situs Fotografi / Lab Film (dengan inspeksi visual sampel):* [The Darkroom — Harman Ilford HP5 Plus 400 Single Use](https://thedarkroom.com/film/harman-ilford-hp5-plus-400-single-use-disposable-camera/), [Australian Photography — Ilford HP5 Plus Single Use Review](https://www.australianphotography.com/gear/review-harman-ilford-hp5-plus-single-use-camera), [Rediscover Analog — Ilford HP5 Plus Disposable Review](https://rediscoveranalog.com/camera-review-ilford-hp5-plus-disposable-camera/)
   - *Foto Sampel Diperiksa Visual (3 lintas 2 sumber, seluruhnya memakai film bawaan Ilford HP5 Plus 400):*
@@ -74,7 +76,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 04 (kamera #61–#
   - **Sifat Emulsi Film (bawaan tetap Ilford XP2 Super ISO 400 kromogenik C-41):** Perbedaannya dari HP5 Plus sangat kentara saat inspeksi visual langsung: awan langit dan permukaan granit terang pada sampel The Darkroom tampil **berbutiran jauh lebih halus, bersih, dan modern** dibanding film perak tradisional, dengan **rentang tonal panjang dan ketahanan sorotan yang sangat luwes** tanpa cepat terbakar rata. Sebaliknya, pada kondisi sangat kurang cahaya tanpa *flash* (dikonfirmasi sampel redup The Darkroom & ulasan Artizan Images), bayangan yang dipaksa terangkat cepat berubah menjadi **abu-abu keruh, berkontras rendah, dan berbutir kasar**.
 - **lookTags:** `fine-grain-bw`, `smooth-tonality`, `clean-monochrome`, `wide-latitude`, `muddy-underexposure`
 - **Arketipe:** `disposable_point_shoot` *(dikonfirmasi)*
-- **confidenceLook:** **`medium`** *(diturunkan dari `high` di `batch_04.md`)* — Tiga sumber ulasan independen (The Darkroom, CameraDojo, Artizan Images) sangat konsisten dan didukung inspeksi visual langsung 2 foto bersih (tebing Yosemite & rangka baja jembatan) plus uji cahaya redup dari The Darkroom, namun **belum ditemukan foto contoh berlisensi CC/PD** di Wikimedia Commons maupun Openverse sehingga bukti visual masih bertumpu pada satu domain sumber.
+- **confidenceLook:** **`medium`** *(terkonfirmasi pada audit ketat)* — 0 foto CC/PD lokal; bukti visual hanya 2 foto sementara (< 3) dari 1 galeri ulasan (The Darkroom), ditopang 3 ulasan konsisten.
+- **Tidak ditemukan:** halaman spesifikasi resmi produsen aktif; tahun rilis persis varian saat ini di sumber resmi; halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan; foto hasil bidikan berlisensi CC/PD di Wikimedia Commons/Openverse (bukti visual hanya dari inspeksi sementara galeri ulasan); foto contoh bebas-wajah ke-3 (baru 2 foto bersih diperiksa visual).
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Situs Fotografi / Lab Film (dengan inspeksi visual sampel):* [The Darkroom — Ilford XP2 Single Use Disposable Review](https://thedarkroom.com/disposable-cameras-top-cameras-reviewed-compared/ilford-xp2-single-use-disposable-camera/), [Artizan Images — Ilford XP2 Super Single Use Review](https://www.artizanimages.com/blog/2017/11/ilford-xp2-super-single-use-camera-review), [CameraDojo — Ilford XP2 Super Review](https://cameradojo.com/film/ilford-xp2-super/)
   - *Foto Sampel Diperiksa Visual (2 foto siang bersih + observasi kurang cahaya dari 1 sumber, seluruhnya memakai film bawaan Ilford XP2 Super 400; 0 sampel CC ditemukan):*
@@ -99,7 +102,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 04 (kamera #61–#
     - Sampel 3 (*First day of summer* — **Lomography 400**): laut biru-toska sejuk lembut dengan langit mendung cerah dan butiran merata.
 - **lookTags:** `lofi-analog`, `soft-corners`, `barrel-distortion`, `gritty-grain`, `color-gel-flash`
 - **Arketipe:** `disposable_point_shoot` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — 3 foto sampel Flickr CC dari 3 pengunggah berbeda menunjukkan konsistensi optik 31mm f/9 yang persis sejalan dengan spesifikasi resmi Lomography serta ulasan PCMag, Digital Camera World, dan Tom's Guide.
+- **confidenceLook:** **`medium`** *(diaudit ketat dari `high` → `medium`)* — Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Lomography — Simple and Reloadable: The Classic Picks](https://www.lomography.com/magazine/345086-simple-and-reloadable-the-classic-picks)
   - *Situs Fotografi / Ulasan:* [PCMag — Lomography Simple Use Color Negative 400 Review](https://www.pcmag.com/reviews/lomography-simple-use-film-camera-color-negative-400), [Digital Camera World — Lomography Simple Use LomoChrome Purple Review](https://www.digitalcameraworld.com/reviews/lomography-simple-use-reloadable-film-camera-lomochrome-purple-review), [Tom's Guide — Lomography Simple Use Classicolor Review](https://www.tomsguide.com/cameras-photography/lomography-simple-use-reloadable-film-camera-classicolor-review)
@@ -126,7 +130,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 04 (kamera #61–#
     - Sampel 2–3 (mural dinding & jalan berpohon Shoot It With Film — Polaroid 600 modern): langit krem-merah muda lembut, bayangan jalan mengarah hangat kemerahan/violet kalem, dan tampak sesekali **jejak kimia biru tipis (*opacification mark*)** di tepi bawah cetak khas film Polaroid modern.
 - **lookTags:** `instant-vintage`, `sonar-sharp`, `pastel-shift`, `soft-vignette`, `direct-flash`, `square-instant`
 - **Arketipe:** `instant_integral_vintage` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual langsung 3 pindaian cetak Polaroid 600 lintas 2 sumber independen (Flickr CC + Shoot It With Film) yang selaras sepenuhnya dengan ulasan Casual Photophile dan Shoot It With Film.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [3], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** halaman spesifikasi resmi produsen aktif; halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Situs Fotografi / Ulasan (dengan inspeksi visual sampel):* [Shoot It With Film — My Love for the Vintage Polaroid Sun 660](https://shootitwithfilm.com/my-love-for-the-vintage-polaroid-sun-660/), [Casual Photophile — Polaroid Sun 660 Review](https://casualphotophile.com/2018/08/22/polaroid-sun-660-review/)
   - *Foto Sampel Diperiksa Visual (3 lintas 2 sumber, seluruhnya cetak Polaroid 600):*
@@ -151,7 +156,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 04 (kamera #61–#
     - Sampel 2 (papan nama *Sabatino* — emulsi hitam-putih Polaroid Spectra B&W): gradasi monokrom lembut bernuansa sedikit hangat, bayangan dedaunan pekat seperti beludru, dan sorotan papan putih menyala lembut tanpa batas kasar.
 - **lookTags:** `wide-instant`, `crisp-quintic`, `moody-pastel`, `soft-vignette`, `cinematic-frame`
 - **Arketipe:** `instant_integral_vintage` *(dikonfirmasi)*
-- **confidenceLook:** **`medium`** *(diturunkan dari `high` di `batch_04.md`)* — Tiga sumber independen (PhotoThinking, Blue Moon Camera Codex, Lomography) sangat konsisten dan didukung inspeksi visual langsung 2 pindaian bersih lintas warna & B&W dari Blue Moon Camera Codex, namun **belum ditemukan foto hasil bidikan berlisensi CC/PD** di Wikimedia Commons maupun Openverse (seluruh temuan CC merupakan foto bodi kamera) sehingga bukti visual bertumpu pada satu domain.
+- **confidenceLook:** **`medium`** *(terkonfirmasi pada audit ketat)* — 0 foto CC/PD lokal; bukti visual hanya 2 pindaian sementara (< 3, warna & B&W) dari 1 galeri ulasan (Blue Moon Camera Codex).
+- **Tidak ditemukan:** halaman spesifikasi resmi produsen aktif; halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan; foto hasil bidikan berlisensi CC/PD di Wikimedia Commons/Openverse (bukti visual hanya dari inspeksi sementara galeri ulasan); foto contoh bebas-wajah ke-3 (baru 2 foto bersih diperiksa visual).
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Arsip / Situs Fotografi (dengan inspeksi visual sampel):* [Blue Moon Camera Codex — Film Fridays: Polaroid Spectra](https://bluemooncameracodex.com/film-fridays/ffpospectra), [PhotoThinking — Polaroid Spectra Almost Instant](https://photothinking.com/2018-05-11-polaroid-spectra-almost-instant/), [InstantPhoto.eu — Polaroid Spectra Archive](https://www.instantphoto.eu/pola/pola_spectra.htm)
   - *Komunitas:* [Lomography Magazine — Polaroid Spectra / Image System](https://www.lomography.com/magazine/8159-polaroid-spectra-image-system)
@@ -174,7 +180,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 04 (kamera #61–#
   - **Sifat Emulsi Instan Integral Polaroid i-Type Modern:** Sangat mudah dikenali pada pindaian gurun (*Desert Southwest*) maupun ulasan Gen 2: langit dan area terang sering membawa **pergeseran rona merah muda-lavender atau hangat teredam (*muted warm*)**, kontras vintage yang empuk dengan bayangan berbatu jatuh gelap kecokelatan/violet, aksen warna pekat (seperti tenda merah) tetap menonjol lembut, serta karakter warna sangat peka terhadap suhu lingkungan saat berkembang (sesekali menyisakan nyala kimia biru kecil di tepi bawah bingkai).
 - **lookTags:** `dreamy-instant`, `muted-warm`, `pastel-magenta-cast`, `soft-edges`, `strong-flash`
 - **Arketipe:** `instant_integral_vintage` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual langsung lintas 2 sumber (1 pindaian cetak Flickr CC lanskap gurun Polaroid Now 2023 + observasi sampel cetak Polaroid Now Gen 2 pada ulasan Myles Katherine) yang konsisten dengan ulasan Digital Camera World dan Chris Kendrick Photography.
+- **confidenceLook:** **`medium`** *(diaudit ketat dari `high` → `medium`)* — Foto contoh diperiksa visual < 3 (hanya 2: 1 Flickr CC + 1 sampel ulasan Myles Katherine).
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan; foto contoh bebas-wajah ke-3 (baru 2 foto bersih diperiksa visual).
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Polaroid Official — Polaroid Now Generation 2](https://www.polaroid.com/en_nl/products/polaroid-now-generation-2)
   - *Situs Fotografi / Ulasan (dengan inspeksi visual sampel):* [Digital Camera World — Polaroid Now Generation 2 Review](https://www.digitalcameraworld.com/reviews/polaroid-now-generation-2-review), [Chris Kendrick Photography — Polaroid Now Gen 2 Review](https://chriskendrickphoto.co.uk/blog/gear-review-polaroid-now-gen-2-camera), [Myles Katherine — Polaroid Now Generation 2 Review & Sample Photos](https://www.myleskatherine.com/blog/2026/3/1/polaroid-now-generation-2-review-and-how-to-with-sample-photos-the-best-polaroid-camera-for-beginners)
@@ -198,7 +205,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 04 (kamera #61–#
   - **Sifat Emulsi Instan Fujifilm Instax Wide (bawaan tetap):** Berbeda dari Polaroid integral yang cenderung pastel-hangat pudar, emulsi Instax Wide menampilkan **warna yang lebih jernih, segar, sedikit sejuk-biru pada hari mendung**, serta **kontras lebih tegas dengan rentang dinamis sempit** — terlihat langsung pada pindaian jalan bersalju CC0: gundukan salju dan langit mendung tampak cerah bersih, sedangkan fasad rumah dan aspal bayangan langsung jatuh gelap pekat (sejalan dengan temuan PCMag dan Digital Camera World soal sorotan yang cepat terbakar di terik matahari dan bayangan cepat mengeras).
 - **lookTags:** `wide-instax`, `crisp-contrast`, `cool-bright`, `narrow-dr`, `soft-edges`, `organic-print`
 - **Arketipe:** `instant_modern_instax` *(dikonfirmasi)*
-- **confidenceLook:** **`medium`** *(diturunkan dari `high` di `batch_04.md`)* — Meskipun ulasan PCMag, Digital Camera World, dan Dan Finnen sangat konsisten bersama spesifikasi resmi Fujifilm, inspeksi visual bersih non-produk baru mencakup **1 pindaian cetak fisik CC0** dari Wikimedia Commons (sebagian besar gambar halaman ulasan yang dapat diunduh berupa foto bodi kamera atau terhalang akses), sehingga membutuhkan tambahan sampel cetak siang terik & *flash* saat tahap kalibrasi.
+- **confidenceLook:** **`low`** *(diaudit ketat dari `medium` → `low`)* — Bukti visual sangat terbatas: hanya 1 pindaian cetak fisik (CC0 Wikimedia) yang diperiksa langsung.
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan; foto contoh bebas-wajah ke-3 (baru 1 foto bersih diperiksa visual).
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Fujifilm Official — Instax Wide 300 Specifications](https://www.fujifilm.com/us/en/consumer/instax/cameras/wide300/specifications)
   - *Situs Fotografi / Ulasan:* [PCMag — Fujifilm Instax Wide 300 Review](https://www.pcmag.com/reviews/fujifilm-instax-wide-300), [Digital Camera World — Fujifilm Instax Wide 300 Review](https://www.digitalcameraworld.com/reviews/fujifilm-instax-wide-300), [Dan Finnen — Fuji Instax Wide 300 Review](https://danfinnen.com/2015/03/28/new-review-alert-fuji-instax-wide-300-instant-camera/)
@@ -221,7 +229,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 04 (kamera #61–#
   - **Sifat Emulsi Instan Fujifilm Instax Square (bawaan tetap):** Menyajikan karakter warna khas Instax yang **lebih tegas, sedikit hangat keemasan pada pencahayaan alami, dan berkontras lebih pekat** dibanding film Polaroid modern — pada sampel etalase roti terlihat bagian bayangan interior jatuh hitam dalam sementara permukaan terkena matahari langsung (meja tepi bawah & pantulan jendela) segera penuh memutih bersih (*crisp highlight clipping*).
 - **lookTags:** `square-instax`, `punchy-warm`, `deep-shadows`, `clipped-highlights`, `creative-flash`
 - **Arketipe:** `instant_modern_instax` *(dikonfirmasi)*
-- **confidenceLook:** **`medium`** *(diturunkan dari `high` di `batch_04.md`)* — Tiga ulasan independen (Fstoppers, TechRadar, PCMag) dan spesifikasi resmi Fujifilm konsisten, namun **0 foto sampel berlisensi CC/PD ditemukan** (seluruh berkas Wikimedia hanya foto bodi kamera) dan inspeksi visual bersih non-wajah hanya bertumpu pada **1 pindaian cetak etalase dari Fstoppers**.
+- **confidenceLook:** **`low`** *(diaudit ketat dari `medium` → `low`)* — 0 foto CC/PD; bukti visual sangat terbatas: hanya 1 foto cetak sementara dari 1 galeri ulasan (Fstoppers).
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan; foto hasil bidikan berlisensi CC/PD di Wikimedia Commons/Openverse (bukti visual hanya dari inspeksi sementara galeri ulasan); foto contoh bebas-wajah ke-3 (baru 1 foto bersih diperiksa visual).
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Fujifilm Official — Instax Square SQ6 Specifications](https://www.fujifilm.com/uy/en/consumer/instax/cameras/squaresq6/specifications)
   - *Situs Fotografi / Ulasan (dengan inspeksi visual sampel):* [Fstoppers — Fujifilm Instax Square SQ6 Review](https://fstoppers.com/film/fstoppers-reviews-fujifilm-instax-square-sq6-camera-medium-format-your-pocket-273236), [TechRadar — Fujifilm Instax SQ6 Review](https://www.techradar.com/reviews/fujifilm-instax-sq6-review), [PCMag — Fujifilm Instax Square SQ6 Review](https://www.pcmag.com/reviews/fujifilm-instax-square-sq6), [DPReview — Fujifilm Instax Square SQ6 Announcement](https://www.dpreview.com/news/0067965594/fujifilm-s-instax-square-sq6-is-a-square-format-analog-instant-camera/)
@@ -244,7 +253,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 04 (kamera #61–#
   - **Sifat Emulsi Instan Fujifilm Instax Mini (bawaan tetap):** Menyajikan **biru langit kobalt yang cerah pekat**, hijau dedaunan dalam dan jenuh, nada hangat-bersih pada kayu dan bunga, serta **kontras retro tegas** di mana bidang putih cerah (fasad rumah di terik matahari dan salju) mudah menyentuh batas putih penuh (*clean highlight clipping*) dan bayangan gelap (siluet pohon melawan langit, bulu anjing hitam) cepat jatuh pekat.
 - **lookTags:** `balanced-instax`, `vivid-sky`, `soft-vignette`, `constant-flash`, `dark-background`
 - **Arketipe:** `instant_modern_instax` *(dikonfirmasi)*
-- **confidenceLook:** **`medium`** *(diturunkan dari `high` di `batch_04.md`)* — Tiga ulasan independen (DPReview, Camera Labs, Popular Photography) sangat konsisten dan didukung inspeksi visual langsung terhadap satu foto dinding berisi belasan cetakan asli Mini 11 dari Popular Photography, namun **0 foto hasil bidikan berlisensi CC/PD ditemukan** (berkas Wikimedia hanya berupa foto produk kamera) sehingga verifikasi visual berasal dari satu domain sumber.
+- **confidenceLook:** **`low`** *(diaudit ketat dari `medium` → `low`)* — 0 foto CC/PD; bukti visual sangat terbatas: hanya 1 foto dinding kolase cetak dari 1 galeri ulasan (Popular Photography).
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan; foto hasil bidikan berlisensi CC/PD di Wikimedia Commons/Openverse (bukti visual hanya dari inspeksi sementara galeri ulasan); foto contoh bebas-wajah ke-3 (baru 1 foto bersih diperiksa visual).
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Fujifilm Official — Instax Mini 11 Specifications](https://www.fujifilm.com/uy/en/consumer/instax/cameras/mini11/specifications)
   - *Situs Fotografi / Ulasan (dengan inspeksi visual sampel):* [Popular Photography — Instax Mini 11 Review](https://www.popphoto.com/gear-reviews/instax-mini-11-review/), [DPReview — Fujifilm Instax Mini 11 Review](https://www.dpreview.com/reviews/3860122294/fujifilm-instax-mini-11-review-the-best-easy-to-use-instax-mini-model/), [Camera Labs — Fujifilm Instax Mini 11 Review](https://www.cameralabs.com/fujifilm-instax-mini-11-review/)
@@ -270,7 +280,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 04 (kamera #61–#
     - Sampel 3–6 (Austerity Photo — film negatif warna 120 standar): biru langit lembut, nada hangat alami pada meja kayu dan batu bata, serta warna pastel nostalgia berasal dari film negatif warna 120 (sedangkan ulasan Myles Katherine menunjukkan rona sureal bila diisi film LomoChrome Purple/Turquoise).
 - **lookTags:** `heavy-vignette`, `dreamy-soft`, `radial-blur`, `light-leak`, `plastic-distortion`, `square-format`
 - **Arketipe:** `toy_lomo_vignette` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual langsung 6 foto lintas 3 sumber independen (Wikimedia Commons, Flickr CC, dan 4 sampel 120 film Austerity Photo) yang sangat konsisten dengan Lomopedia resmi Lomography dan ulasan Myles Katherine.
+- **confidenceLook:** **`medium`** *(diaudit ketat dari `high` → `medium`)* — Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Lomography Lomopedia — Diana F+](https://www.lomography.com/magazine/324365-lomopedia-diana-f)
   - *Situs Fotografi / Ulasan (dengan inspeksi visual sampel):* [Austerity Photo — Diana F+ Review](https://austerityphoto.co.uk/diana-f-review-or-how-i-learned-to-love-the-plastic-bomb/), [Myles Katherine — Diana F+ Review & Sample Photos](https://www.myleskatherine.com/blog/2024/2/12/review-of-the-diana-f-with-sample-photos-using-lomography-lomochrome-purple-and-lomochrome-turquoise-in-st-lucia-teaming-up-with-lomography-to-save-120-film)
@@ -297,7 +308,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 04 (kamera #61–#
     - Sampel 3 (*La Sardina* danau & pepohonan — *film negatif warna 35mm tidak dicantumkan*): hijau-kuning keemasan dedaunan yang jenuh hangat serta langit biru pekat berasal dari emulsi film negatif warna siang hari, yang makin terasa vintage berkat penggelapan sudut optik La Sardina.
 - **lookTags:** `ultra-wide-lofi`, `heavy-vignette`, `soft-corners`, `dramatic-perspective`, `plastic-flare`
 - **Arketipe:** `toy_lomo_vignette` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — 3 foto sampel CC lintas 2 pengunggah dan 2 jenis film (B&W Lady Grey 400 & negatif warna) memperlihatkan ciri 22mm, vignette, dan kelembutan sudut yang persis selaras dengan Lomopedia resmi Lomography, PCMag, dan Camera Go Camera.
+- **confidenceLook:** **`medium`** *(diaudit ketat dari `high` → `medium`)* — Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Lomography Lomopedia — Lomography La Sardina](https://www.lomography.com/magazine/243257-lomopedia-lomography-la-sardina)
   - *Situs Fotografi / Ulasan:* [PCMag — Lomography La Sardina Review](https://au.pcmag.com/digital-cameras/5951/lomography-la-sardina-camera-flash-western-edition), [Camera Go Camera — Lomography La Sardina Review](https://cameragocamera.com/2021/10/11/lomography-la-sardina/)
@@ -324,7 +336,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 04 (kamera #61–#
   - **Ketajaman, Noise & Cahaya Redup:** Ketajaman lensa fokus tetap tampak **agak lunak di pinggir dan jarak dekat**, disertai pemrosesan JPEG sederhana (penajaman kontras kasar di siang hari menurut DPReview). Di dalam ruang dan malam hari, **bintik *noise* digital (luminansi sekaligus warna) segera muncul kuat** di bayangan kain maupun aspal, dan tanpa *flash* Xenon, rana lambat mudah menimbulkan jejak kabur gerak (*motion blur*) pada kendaraan melintas.
 - **lookTags:** `lofi-digital`, `vintage-filter`, `narrow-dr`, `highlight-bloom`, `noisy-lowlight`, `soft-corners`
 - **Arketipe:** `toy_lomo_vignette` *(dikonfirmasi)*
-- **confidenceLook:** **`medium`** *(diturunkan dari `high` di `batch_04.md`)* — Empat sumber ulasan independen (DPReview, PetaPixel, PCMag, 35mmc) sangat konsisten dan didukung inspeksi visual langsung 2 foto asli (kucing dalam ruang & malam pecinan) dari 35mmc, namun **0 foto berlisensi CC/PD ditemukan** di Wikimedia Commons maupun Openverse sehingga pengamatan visual baru berasal dari satu domain.
+- **confidenceLook:** **`medium`** *(terkonfirmasi pada audit ketat)* — 0 foto CC/PD lokal; bukti visual hanya 2 foto sementara (< 3) dari 1 galeri ulasan (35mmc), ditopang 4 ulasan konsisten.
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan; foto hasil bidikan berlisensi CC/PD di Wikimedia Commons/Openverse (bukti visual hanya dari inspeksi sementara galeri ulasan); foto contoh bebas-wajah ke-3 (baru 2 foto bersih diperiksa visual).
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Camp Snap Official — Specification](https://www.campsnapphoto.com/pages/specification)
   - *Situs Fotografi / Ulasan (dengan inspeksi visual sampel):* [35mmc — Camp Snap Camera Everyday Carry Review](https://www.35mmc.com/09/02/2026/camp-snap-camera-a-simple-and-fun-everyday-carry/), [DPReview — Camp Snap Camera Review](https://www.dpreview.com/reviews/2441177946/camp-snap-camera-review-perfect-for-camp-rules-but-what-about-the-photos/), [PetaPixel — Camp Snap Camera Review](https://petapixel.com/2025/03/31/camp-snap-camera-review-light-hearted-and-nostalgia-packed/), [PCMag — Camp Snap Review](https://www.pcmag.com/reviews/camp-snap-2)
@@ -349,7 +362,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 04 (kamera #61–#
   - **Kontras & Sorotan:** Rentang dinamis amat ekstrem — bidang cerah (kap mobil putih dan langit pada sampel 2–3) langsung jatuh menjadi **putih rata tanpa tekstur**, sedangkan ban, kolong mobil, dan sisi teduh langsung jatuh **hitam pekat**. Tanpa *flash* dan nyaris tanpa kepekaan cahaya redup, foto sangat bertumpu pada kontras bentuk yang kuat di bawah pencahayaan terang.
 - **lookTags:** `pixelated-8bit`, `4-shade-mono`, `dither-pattern`, `extreme-lofi`, `stark-contrast`
 - **Arketipe:** `toy_lomo_vignette` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual langsung **3 tangkapan mentah 128×112 berlisensi CC0/CC** lintas 3 pengunggah dan 2 platform (Wikimedia Commons & Flickr CC), sepenuhnya konsisten dengan ulasan PetaPixel, Casual Photophile, dan 35mmc.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [5], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** halaman spesifikasi resmi produsen aktif; halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Situs Fotografi / Ulasan:* [PetaPixel — Nintendo Game Boy Camera 24 Years Later](https://petapixel.com/2022/05/05/a-review-of-the-nintendo-game-boy-camera-24-years-later/), [Casual Photophile — Game Boy Camera Review](https://casualphotophile.com/2021/12/19/game-boy-camera-review/), [35mmc — Game Boy Camera by Adam Laws](https://www.35mmc.com/28/04/2018/game-boy-camera-by-adam-laws/)
   - *Foto Sampel Diperiksa Visual (3 tangkapan mentah 128×112 lintas 3 pengunggah):*
@@ -376,7 +390,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 04 (kamera #61–#
   - **Karakter Flash Xenon:** Dikonfirmasi GSMArena, MobileTechReview, dan diskusi DPReview, **flash Xenon sejati** mampu membekukan subjek di ruang gelap secara jauh lebih kuat dan tajam dibanding LED ponsel sezamannya, meski mudah membuat objek amat dekat tampak terlalu terang/datar.
 - **lookTags:** `crisp-3mp`, `cool-muted-wb`, `clipped-highlights`, `xenon-flash`, `early-mobile`
 - **Arketipe:** `early_camera_phone` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual langsung 3 foto SOOC *firmware* asli Sony Ericsson lintas 3 pengunggah dan 3 pencahayaan berbeda (siang, matahari terbit *backlight*, mendung), konsisten dengan GSMArena, TechRadar, MobileTechReview, dan forum DPReview.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [5], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** halaman spesifikasi resmi produsen aktif; halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Situs Ulasan / Komunitas:* [GSMArena — Sony Ericsson K800 Review](https://www.gsmarena.com/sony_ericsson_k800-review-93.php), [GSMArena — K800 Camera Page](https://www.gsmarena.com/sony_ericsson_k800-review-93p2.php), [TechRadar — Sony Ericsson K800i Review](https://www.techradar.com/reviews/phones/mobile-phones/sony-ericsson-k800i-87823/review), [MobileTechReview — Sony Ericsson K800i](https://www.mobiletechreview.com/phones/sony-ericsson-K800i.htm), [DPReview Forum — K800i Discussion](https://www.dpreview.com/forums/threads/sony-k800i-phone-vs-canon-350d.1679406/)
   - *Foto Sampel Diperiksa Visual (3, seluruhnya EXIF SOOC firmware Sony Ericsson):*
@@ -402,7 +417,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 04 (kamera #61–#
   - **Sorotan, Flare & Cahaya Redup:** Pada foto senja berlatar air (sampel 2), langit cerah di balik gedung langsung **terbakar putih lebar dengan kabut *flare* lembut** di sisi kiri, sementara sisi teduh bangunan memperlihatkan **bintik *noise* digital yang nyata dan penurunan kontras**. Di malam hari, *flash* LED lemah bawaan (dikonfirmasi GSMArena, All About Symbian, dan CNET) jangkauannya sangat pendek dan mudah memicu blur gerak serta *noise* kasar.
 - **lookTags:** `detailed-daylight`, `oversharpened-edges`, `cool-tint`, `clipped-sky`, `lowlight-noise`, `weak-led-flash`
 - **Arketipe:** `early_camera_phone` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual langsung 3 foto EXIF SOOC Nokia N95 lintas 3 pengunggah dan 3 skenario (hutan siang, senja *backlight*, *close-up* dalam ruang), konsisten penuh dengan GSMArena, All About Symbian, dan CNET.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [4], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** halaman spesifikasi resmi produsen aktif; halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Situs Ulasan:* [GSMArena — Nokia N95 Camera Review](https://www.gsmarena.com/nokia_n95_camera-review-139p2.php), [All About Symbian — Nokia N95 Part 3: The Camera](https://allaboutsymbian.com/reviews/item/Nokia_N95-part_3_the_Camera.php), [CNET — Living with the N95](https://www.cnet.com/tech/mobile/living-with-the-n95/)
   - *Foto Sampel Diperiksa Visual (3, seluruhnya EXIF SOOC Nokia N95):*
@@ -428,7 +444,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 04 (kamera #61–#
   - **Sorotan, Optik & Flash Xenon:** Optik Carl Zeiss 28mm menjaga ketajaman merata dengan distorsi minim; pada bukaan celah langit amat terang di belakang pohon (sampel 3) sorotan tetap dapat penuh ke putih, namun secara keseluruhan berkat sensor besar dan filter ND bawaan, sorotan siang hari jauh lebih terkendali. Menurut GSMArena dan komunitas DPReview, **flash Xenon sejati** menjadikan foto malam dan ruangan gelap jauh lebih bersih serta mampu membekukan gerak secara alami.
 - **lookTags:** `natural-rendering`, `crisp-zeiss`, `balanced-dr`, `organic-texture`, `xenon-flash`, `compact-like`
 - **Arketipe:** `early_camera_phone` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual langsung 3 foto lintas 3 pengunggah dan 2 platform (Wikimedia Commons EXIF `N8-00` SOOC + Flickr CC), konsisten penuh dengan ulasan GSMArena dan utas foto teknis DPReview.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [4], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** halaman spesifikasi resmi produsen aktif; halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Situs Ulasan / Komunitas:* [GSMArena — Nokia N8 Camera Review](https://www.gsmarena.com/nokia_n8-review-523p6.php), [DPReview Forum — Nokia N8 Photo Thread](https://www.dpreview.com/forums/threads/nokia-n8-photo-thread.3153994/)
   - *Foto Sampel Diperiksa Visual (3 lintas 2 platform):*
@@ -454,7 +471,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 04 (kamera #61–#
   - **Warna, Kontras & Noise:** Warna cat biru-toska mobil, lampu belakang merah, dan hijau padang rumput (sampel 2) tampak **kaya, dalam, dan terukur alami**, gradasi kulit kayu serta bayangan lembap (sampel 1 & 3) sangat bersih dari bercak warna digital. Ulasan DPReview, GSMArena, TechRadar, dan All About Symbian juga mencatat bahwa pada resolusi penuh 38 MP butiran *grain* halus mirip film tampak lebih kentara dan sesekali *white balance* otomatis sedikit berubah di pencahayaan campur, sementara **flash Xenon** tetap kuat untuk malam hari.
 - **lookTags:** `organic-oversampled`, `ultra-detailed`, `natural-bokeh`, `clean-texture`, `filmic-grain`, `xenon-flash`
 - **Arketipe:** `early_camera_phone` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual langsung 3 foto EXIF SOOC `808 PureView` lintas 3 pengunggah (makro alam, siang terik otomotif, tekstur organik), sepenuhnya konsisten dengan 4 ulasan teknis independen (DPReview, GSMArena, TechRadar, All About Symbian).
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [5], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** halaman spesifikasi resmi produsen aktif; halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Situs Fotografi / Ulasan:* [DPReview — Nokia 808 PureView Review](https://www.dpreview.com/reviews/4388245494/nokia-808-pureview-review/), [GSMArena — Nokia 808 PureView Camera Review](https://www.gsmarena.com/nokia_808_pureview-review-776p6.php), [TechRadar — Nokia 808 PureView Review](https://www.techradar.com/reviews/phones/mobile-phones/nokia-808-pureview-1090241/review/12), [All About Symbian — Nokia 808 PureView Camera Part 2a](https://allaboutsymbian.com/reviews/item/15115_Nokia_808_PureView_part_2a_cam.php)
   - *Foto Sampel Diperiksa Visual (3, seluruhnya EXIF SOOC Nokia 808 PureView):*
@@ -480,7 +498,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 04 (kamera #61–#
   - **Ketajaman & Ketiadaan Flash:** Resolusi 3 MP memberi detail memadai di bidang fokus tengah (ukiran fasad dan gagang kuningan) dengan **kelembutan halus pada detail mikro**. Karena **tidak memiliki lampu kilat**, pemotretan di ruang redup atau malam (dikonfirmasi GSMArena & TechRadar) segera berubah gelap, kasar ber-noise, dan sangat rentan kabur gerak.
 - **lookTags:** `balanced-daylight`, `luminance-grain`, `modest-3mp`, `clipped-highlights`, `no-flash-lowlight`
 - **Arketipe:** `early_camera_phone` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual langsung 3 foto ber-EXIF `iPhone 3GS` lintas 3 pengunggah dan 3 skenario pencahayaan (siang terik SOOC iOS 3.1.3, teduh *close-up*, arsitektur langit cerah), konsisten dengan spesifikasi resmi Apple Support, GSMArena, dan TechRadar.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [4], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Apple Support — iPhone 3GS Technical Specifications](https://support.apple.com/en-om/112307)
   - *Situs Ulasan:* [GSMArena — Apple iPhone 3GS Camera Review](https://www.gsmarena.com/apple_iphone_3gs-review-369p7.php), [TechRadar — iPhone 3GS Camera Review](https://www.techradar.com/reviews/phones/mobile-phones/iphone-3gs-610078/review/7)
@@ -507,7 +526,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 04 (kamera #61–#
   - **Cahaya Redup & Peredaman Noise:** Pada tepi jauh bangunan mendung tampak sedikit pelunakan sudut, sementara menurut pengujian GSMArena, Imaging Resource, dan PCMag, pada cahaya redup dan malam hari *noise* cepat naik disertai **peredaman *noise* agresif yang menghaluskan tekstur halus** (*smudged low-light*) dengan bantuan LED *flash* berjarak pendek.
 - **lookTags:** `punchy-8mp`, `vivid-saturation`, `crisp-daylight`, `clipped-sky`, `smudged-lowlight`
 - **Arketipe:** `early_camera_phone` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual langsung 3 foto ber-EXIF `GT-I9100` lintas 3 pengunggah (arsitektur mendung SOOC, makro bunga SOOC, kendaraan luar ruang), konsisten penuh dengan lembar spesifikasi resmi Samsung Mobile Press, GSMArena, Imaging Resource, dan PCMag.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [5], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Samsung Mobile Press — Galaxy S II Specifications](https://www.samsungmobilepress.com/media-assets/galaxy-s-ii?tab=specs)
   - *Situs Fotografi / Ulasan:* [GSMArena — Samsung Galaxy S II Camera Review](https://www.gsmarena.com/samsung_i9100_galaxy_s_ii-review-588p5.php), [Imaging Resource — Samsung Galaxy S II Review](https://www.imaging-resource.com/cameras/samsung-galaxy-s-ii-review/), [PCMag — Samsung Galaxy S II Review](https://www.pcmag.com/reviews/samsung-galaxy-s-ii-unlocked)
@@ -518,28 +538,36 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 04 (kamera #61–#
 
 ---
 
-## Ringkasan Laporan Batch 04
+---
 
-### 1. Jumlah Kamera per `confidenceLook`
+## Ringkasan Laporan Batch 04 *(Diperbarui Audit Ketat)*
+
+### 1. Jumlah Kamera per `confidenceLook` (Setelah Audit Ketat — Lihat [AUDIT.md](AUDIT.md))
 
 | Tingkat `confidenceLook` | Jumlah | Daftar Kamera |
 |---|---:|---|
-| **`high`** | **14** | `kodak_funsaver`, `ilford_hp5_plus_single_use_camera`, `lomography_simple_use_reloadable_film_camera`, `polaroid_sun_660_autofocus`, `polaroid_now_gen_2`, `lomography_diana_f_plus`, `lomography_la_sardina`, `nintendo_game_boy_camera`, `sony_ericsson_k800i`, `nokia_n95`, `nokia_n8`, `nokia_808_pureview`, `apple_iphone_3gs`, `samsung_galaxy_s_ii` |
-| **`medium`** | **6** | `ilford_xp2_super_single_use_camera`, `polaroid_spectra`, `fujifilm_instax_wide_300`, `fujifilm_instax_square_sq6`, `fujifilm_instax_mini_11`, `camp_snap_camera` |
-| **`low`** | **0** | — |
-| **`tidak ditemukan`** | **0** | *(Seluruh 20 kamera memiliki sumber ulasan terverifikasi dan inspeksi visual langsung)* |
-| **Total** | **20** | **54 foto/cetakan contoh diperiksa visual langsung** (36 berlisensi CC0/CC BY/CC BY-SA/PD disimpan metadata-nya di `docs/references/manifest_batch_04.json` + 18 foto ulasan independen diperiksa sementara lalu seluruh berkas sementara dihapus tuntas) |
-
-*(Perbandingan terhadap `docs/catalog/batch_04.md`: 6 kamera dikalibrasi turun secara jujur dari `high` menjadi `medium` karena walaupun memiliki 3+ ulasan teks independen yang konsisten, inspeksi visual bersih non-wajah baru bertumpu pada satu domain sumber dan/atau belum memiliki cukup sampel berlisensi terbuka CC/PD.)*
+| **`high`** | **10** | `kodak_funsaver`, `ilford_hp5_plus_single_use_camera`, `polaroid_sun_660_autofocus`, `nintendo_game_boy_camera`, `sony_ericsson_k800i`, `nokia_n95`, `nokia_n8`, `nokia_808_pureview`, `apple_iphone_3gs`, `samsung_galaxy_s_ii` |
+| **`medium`** | **7** | `ilford_xp2_super_single_use_camera`, `lomography_simple_use_reloadable_film_camera`, `polaroid_spectra`, `polaroid_now_gen_2`, `lomography_diana_f_plus`, `lomography_la_sardina`, `camp_snap_camera` |
+| **`low`** | **3** | `fujifilm_instax_wide_300`, `fujifilm_instax_square_sq6`, `fujifilm_instax_mini_11` |
+| **`tidak ditemukan`** | **0** | — |
+| **Total** | **20** | **54 foto/frame diperiksa visual** (36 berlisensi CC/PD lokal di `docs/references/manifest.md`) |
 
 ### 2. Kamera dengan Sumber Lemah / Perlu Perhatian Saat Kalibrasi
 
-1. **`fujifilm_instax_wide_300` & `fujifilm_instax_square_sq6` (`medium`):** Masing-masing baru diverifikasi visual melalui **1 pindaian cetak non-wajah** (1 CC0 Wikimedia untuk Wide 300; 1 pindaian Fstoppers untuk SQ6, 0 CC). Sebelum penyetelan akhir resep warna/flash, disarankan menambah rujukan visual cetak siang terik dan *flash* dalam ruang (serta contoh filter gel warna untuk SQ6).
-2. **`ilford_xp2_super_single_use_camera`, `polaroid_spectra`, `fujifilm_instax_mini_11`, `camp_snap_camera` (`medium`):** Seluruhnya sudah diamati visual langsung (2+ foto/cetakan bersih atau dinding ~15 cetak untuk Mini 11) dan selaras dengan 3–4 ulasan independen, tetapi **0 sampel CC/PD** ditemukan di Wikimedia Commons / Openverse (temuan yang ada hanya foto produk bodi kamera) sehingga bukti visual masih berasal dari 1 domain sumber ulasan.
-3. **Catatan khusus kamera dengan *flash* gel / Xenon (`lomography_simple_use_reloadable_film_camera`, `sony_ericsson_k800i`, `nokia_n8`, `nokia_808_pureview`):** Karakter *flash* Xenon dan gel warna terverifikasi konsisten di berbagai ulasan teknis independen, namun sampel CC lokal yang tersimpan lebih banyak mewakili pemotretan cahaya alami/ambien.
+- **`ilford_xp2_super_single_use_camera` (`medium`):** 0 foto CC/PD lokal; bukti visual hanya 2 foto sementara (< 3) dari 1 galeri ulasan (The Darkroom), ditopang 3 ulasan konsisten.
+- **`lomography_simple_use_reloadable_film_camera` (`medium`):** Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **`polaroid_spectra` (`medium`):** 0 foto CC/PD lokal; bukti visual hanya 2 pindaian sementara (< 3, warna & B&W) dari 1 galeri ulasan (Blue Moon Camera Codex).
+- **`polaroid_now_gen_2` (`medium`):** Foto contoh diperiksa visual < 3 (hanya 2: 1 Flickr CC + 1 sampel ulasan Myles Katherine).
+- **`fujifilm_instax_wide_300` (`low`):** Bukti visual sangat terbatas: hanya 1 pindaian cetak fisik (CC0 Wikimedia) yang diperiksa langsung.
+- **`fujifilm_instax_square_sq6` (`low`):** 0 foto CC/PD; bukti visual sangat terbatas: hanya 1 foto cetak sementara dari 1 galeri ulasan (Fstoppers).
+- **`fujifilm_instax_mini_11` (`low`):** 0 foto CC/PD; bukti visual sangat terbatas: hanya 1 foto dinding kolase cetak dari 1 galeri ulasan (Popular Photography).
+- **`lomography_diana_f_plus` (`medium`):** Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **`lomography_la_sardina` (`medium`):** Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **`camp_snap_camera` (`medium`):** 0 foto CC/PD lokal; bukti visual hanya 2 foto sementara (< 3) dari 1 galeri ulasan (35mmc), ditopang 4 ulasan konsisten.
 
-### 3. Hal yang Tidak Ditemukan
+### 3. Ringkasan Hal yang Tidak Ditemukan (Detail Per Kamera Tercatat di Masing-Masing Entri)
 
-- **Foto sampel *taken-with* berlisensi CC0/CC BY/CC BY-SA/PD di Wikimedia Commons & Openverse (0 ditemukan):** `Ilford XP2 Super Single Use Camera`, `Polaroid Spectra (Image System)`, `Fujifilm Instax Square SQ6`, `Fujifilm Instax Mini 11`, dan `Camp Snap Camera` (hasil pencarian yang ada hanyalah foto produk bodi kamera atau tidak terkait).
-- **Halaman spesifikasi resmi produsen aktif yang tidak ditemukan:** `Ilford HP5 Plus Single Use Camera`, `Ilford XP2 Super Single Use Camera`, `Polaroid Sun 660 Autofocus` (1981), `Polaroid Spectra` (1986), `Nintendo Game Boy Camera` (1998), `Sony Ericsson K800i` (2006), `Nokia N95` (2007), `Nokia N8` (2010), dan `Nokia 808 PureView` (2012).
-- **Tahun rilis pasti tidak ditemukan di sumber resmi:** varian sekali pakai `Ilford XP2 Super Single Use Camera`.
+- **Tanpa halaman spesifikasi resmi produsen aktif (9):** `ilford_hp5_plus_single_use_camera`, `ilford_xp2_super_single_use_camera`, `polaroid_sun_660_autofocus`, `polaroid_spectra`, `nintendo_game_boy_camera`, `sony_ericsson_k800i`, `nokia_n95`, `nokia_n8`, `nokia_808_pureview`
+- **Tanpa foto contoh tunggal berlisensi CC/PD lokal (5):** `ilford_xp2_super_single_use_camera`, `polaroid_spectra`, `fujifilm_instax_square_sq6`, `fujifilm_instax_mini_11`, `camp_snap_camera`
+- **Foto contoh diperiksa visual < 3 (7):** `ilford_xp2_super_single_use_camera`, `polaroid_spectra`, `polaroid_now_gen_2`, `fujifilm_instax_wide_300`, `fujifilm_instax_square_sq6`, `fujifilm_instax_mini_11`, `camp_snap_camera`
+- Rincian lengkap kekurangan per kamera (termasuk status Flickr Camera Finder dan mode khusus) tercantum pada baris **`Tidak ditemukan`** di setiap entri kamera di atas serta tabel menyeluruh di [AUDIT.md](AUDIT.md).

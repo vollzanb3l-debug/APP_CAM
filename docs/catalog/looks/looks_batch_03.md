@@ -28,7 +28,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera film Batch 03 (nomor 41�
     - Sampel 3 (Tangga interior berdinding garis biru-toska — *jenis film tidak dicantumkan*): gradasi warna biru-hijau bersih dan sorotan plafon lembut merupakan hasil emulsi negatif warna serta pencahayaan merata, bukan pewarnaan dari bodi.
 - **lookTags:** `sharp`, `high-contrast`, `clean-geometry`, `direct-flash`, `90s-snapshot`
 - **Arketipe:** `premium_point_shoot_35mm` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — 3 foto sampel CC lintas 2 pengunggah konsisten dengan 3 situs ulasan fotografi independen (35mmc, Casual Photophile, EMULSIVE) mengenai ketajaman Tessar T*, kontras tegas, dan estetika flash langsungnya.
+- **confidenceLook:** **`medium`** *(diaudit ketat dari `high` → `medium`)* — Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **Tidak ditemukan:** halaman spesifikasi resmi produsen aktif; halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Situs Fotografi / Ulasan:* [35mmc — Yashica T4 Review](https://www.35mmc.com/22/02/2020/yashica-t4-review-2-goodbye/), [Casual Photophile — 5 Best Point and Shoot Film Cameras Part 2](https://casualphotophile.com/2015/08/17/5-best-point-and-shoot-film-cameras-part-2-5/), [EMULSIVE — Compact Camera Megatest](https://emulsive.org/reviews/camera-reviews/compact-camera-megatest-12-high-mid-and-low-end-35mm-point-and-shoot-head-to-head)
   - *Foto Sampel Diperiksa Visual (3, CC):*
@@ -54,7 +55,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera film Batch 03 (nomor 41�
     - Sampel 3 (Gudang kayu lapuk beratap seng karat — *jenis film warna tidak dicantumkan*): nada abu-abu kayu yang sejuk, karat merah kecokelatan, dan hijau rumput yang matang berasal dari film negatif warna dan pemindaian. *(Catatan: sampel di EMULSIVE memakai Kodak Tri-X 400 dengan karakter hitam-putih kontras khas emulsi tersebut.)*
 - **lookTags:** `sharp-stopped-down`, `smooth-bokeh`, `classic-contrast`, `vintage-flare`, `shallow-dof`
 - **Arketipe:** `classic_35mm_slr` *(dikonfirmasi)*
-- **confidenceLook:** **`medium`** — Didukung inspeksi visual 3 foto CC lintas 2 pengunggah serta ulasan Kosmo Foto dan catatan sampel 35mmc/EMULSIVE, namun tetap `medium` karena warna akhir sangat bergantung emulsi film dan ulasan mendalam utama yang membahas optiknya relatif terbatas.
+- **confidenceLook:** **`medium`** *(terkonfirmasi pada audit ketat)* — Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **Tidak ditemukan:** halaman spesifikasi resmi produsen aktif; halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Situs Fotografi / Ulasan:* [Kosmo Foto — Yashica Electro 35 GSN Review](https://kosmofoto.com/2020/02/yashica-electro-35-gsn-review/), [35mmc — 5 Frames on the Beach with a Yashica Electro 35 GSN](https://www.35mmc.com/25/08/2019/5-frames-on-the-beach-with-a-yashica-electro-35-gsn-by-lee-webb/), [EMULSIVE — 5 Frames with Yashica Electro 35 GSN on Tri-X](https://emulsive.org/articles/5-frames-from-a-walk-around-cape-pond-massachusetts-on-kodak-tri-x-400-35mm-format-ei-400-yashica-electro-35-gsn-by-bob-harrison)
   - *Foto Sampel Diperiksa Visual (3, CC):*
@@ -81,7 +83,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera film Batch 03 (nomor 41�
     - Sampel 3 (Gang tua Nanjing dengan ayam di ujung cahaya — **film hitam-putih Kodak**, varian tidak dirinci): kontras gelap-terang dramatis pada lorong berbayang berasal dari emulsi film dan pengukuran eksposur pada bidang terang ujung gang.
 - **lookTags:** `razor-sharp`, `micro-contrast`, `wide-28mm`, `circular-bokeh`, `minimal-distortion`
 - **Arketipe:** `premium_point_shoot_35mm` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — 3 foto sampel CC lintas 3 pengunggah dan 3 kondisi cahaya berbeda sepenuhnya selaras dengan ulasan 35mmc dan Japan Camera Hunter.
+- **confidenceLook:** **`medium`** *(diaudit ketat dari `high` → `medium`)* — Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **Tidak ditemukan:** halaman spesifikasi resmi produsen aktif; halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Situs Fotografi / Ulasan:* [35mmc — Minolta TC-1 Review](https://www.35mmc.com/27/09/2014/minolta-tc-1-review/), [Japan Camera Hunter — Minolta TC-1](https://www.japancamerahunter.com/2011/07/a-secret-gem-of-a-compact-camera/)
   - *Foto Sampel Diperiksa Visual (3, CC):*
@@ -108,7 +111,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera film Batch 03 (nomor 41�
     - Sampel 3 (Potongan uji resolusi jam menara di The Rokkor Files — *jenis film warna tidak dicantumkan*): rona kuning bata hangat dan *grain* halus berasal dari film warna yang dipakai dalam pengujian.
 - **lookTags:** `sharp`, `micro-contrast`, `smooth-bokeh`, `classic-40mm`, `minimal-distortion`
 - **Arketipe:** `classic_35mm_slr` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual 2 foto CC lintas 2 pengunggah ditambah potongan uji resolusi The Rokkor Files, konsisten dengan ulasan Casual Photophile dan The Rokkor Files.
+- **confidenceLook:** **`medium`** *(diaudit ketat dari `high` → `medium`)* — Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **Tidak ditemukan:** halaman spesifikasi resmi produsen aktif; halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Situs Fotografi / Ulasan & Arsip:* [Casual Photophile — Minolta Hi-Matic 7sII Review](https://casualphotophile.com/2017/05/24/minolta-hi-matic-7sii-35mm-film-rangefinder-camera-review/), [The Rokkor Files — Minolta Hi-Matic 7sII](https://www.rokkorfiles.com/7SII.htm)
   - *Foto Sampel Diperiksa Visual (3 lintas 3 sumber):*
@@ -134,7 +138,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera film Batch 03 (nomor 41�
     - Sampel 2–5 (Klaper uji, balkon besi putih, pintu garasi kayu, dan tangga bata di New Wave Pool — **Ilford HP5 Plus 400 diproses HC-110**, tercatat langsung di klaper uji): gradasi abu-abu luwes, kontras menengah yang rapi, dan tekstur *grain* klasik berasal dari Ilford HP5 Plus, sedangkan ketajaman tepi-ke-tepi dan geometri lurus merupakan ciri optik 34mm f/3.5-nya.
 - **lookTags:** `edge-to-edge-sharp`, `crisp-contrast`, `low-distortion`, `90s-compact`, `flash-reliant-lowlight`
 - **Arketipe:** `premium_point_shoot_35mm` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual langsung 5 foto bersih dari 2 situs ulasan independen berbeda (35mmc dan New Wave Pool, lengkap dengan identitas roll Ilford HP5+), sepenuhnya konsisten secara optik. *(Catatan: belum ada foto sampel CC bebas-wajah yang layak disimpan di `docs/references/batch_03_samples/`.)*
+- **confidenceLook:** **`medium`** *(diaudit ketat dari `high` → `medium`)* — 0 foto CC/PD lokal; 5 foto sementara lintas 2 galeri ulasan (35mmc & New Wave Pool) dengan film campur (warna & Ilford HP5+).
+- **Tidak ditemukan:** halaman spesifikasi resmi produsen aktif; halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan; foto hasil bidikan berlisensi CC/PD di Wikimedia Commons/Openverse (bukti visual hanya dari inspeksi sementara galeri ulasan).
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Situs Fotografi / Ulasan (dengan inspeksi visual sampel):* [35mmc — Minolta Riva Mini Review](https://www.35mmc.com/02/10/2015/minolta-riva-mini-review/), [New Wave Pool — Minolta Freedom Escort Film Test Notes](https://www.newwavepool.ca/blogs/the-camera-roll-a-blog/minolta-freedom-escort-film-test-notes)
   - *Foto Sampel Diperiksa Visual (5 sementara dari 2 ulasan, telah dihapus lokal):*
@@ -161,7 +166,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera film Batch 03 (nomor 41�
     - Sampel 4 (Hutan pohon ek musim dingin di 35mmc — *film hitam-putih tidak dirinci pada keterangan gambar*): gradasi abu-abu lembut dan detail daun gugur menguatkan perilaku *vignette* serta ketajaman tengah lensa 32mm-nya.
 - **lookTags:** `sharp-center`, `punchy-contrast`, `subtle-vignette`, `mild-barrel`, `flare-resistant`
 - **Arketipe:** `premium_point_shoot_35mm` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — 3 foto sampel CC lintas 2 pengunggah (dengan 2 nama film tercatat jelas) + 1 sampel 35mmc, konsisten dengan 3 situs ulasan independen (Casual Photophile, 35mmc, Japan Camera Hunter).
+- **confidenceLook:** **`medium`** *(diaudit ketat dari `high` → `medium`)* — Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **Tidak ditemukan:** halaman spesifikasi resmi produsen aktif; halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Situs Fotografi / Ulasan:* [Casual Photophile — Pentax UC-1 / Espio Mini Review](https://casualphotophile.com/2018/11/21/pentax-uc-1-espio-mini-camera-review/), [35mmc — Pentax Espio Mini / UC-1 Review](https://www.35mmc.com/30/12/2014/pentax-espio-mini-uc-1/), [Japan Camera Hunter — Mini Review Pentax Espio Mini](https://www.japancamerahunter.com/2012/05/mini-review-the-pentax-espio-mini/)
   - *Foto Sampel Diperiksa Visual (4 lintas 3 sumber):*
@@ -189,7 +195,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera film Batch 03 (nomor 41�
     - Sampel 3 (*Copper Kettle* interior — *jenis film tidak dicantumkan*): rona hangat kuning-amber dari lampu ruang dan bayangan kayu dalam berasal dari film negatif warna seimbang siang hari (*daylight-balanced*) yang dipakai di cahaya pijar.
 - **lookTags:** `sharp`, `vintage-80s`, `natural-rendering`, `rich-contrast`, `pop-up-flash`
 - **Arketipe:** `premium_point_shoot_35mm` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — 3 foto sampel CC lintas 2 pengunggah dalam 3 kondisi cahaya (mendung, lanskap luar ruang, interior pijar) konsisten dengan 3 situs ulasan independen (Casual Photophile, 35mmc, Mike Eckman).
+- **confidenceLook:** **`medium`** *(diaudit ketat dari `high` → `medium`)* — Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **Tidak ditemukan:** halaman spesifikasi resmi produsen aktif; halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Situs Fotografi / Ulasan:* [Casual Photophile — Pentax PC35AF Review](https://casualphotophile.com/2026/01/30/pentax-pc35af-camera-review/), [35mmc — Pentax PC35AF Review](https://www.35mmc.com/15/05/2014/pentax-pc35af-review/), [Mike Eckman — Pentax PC35AF (1982)](https://mikeeckman.com/2018/04/pentax-pc35af-1982/)
   - *Foto Sampel Diperiksa Visual (3, CC):*
@@ -215,7 +222,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera film Batch 03 (nomor 41�
     - Sampel 4–5 (Bunga mawar putih & duri tanaman berlatar gelap di 35mmc — *film hitam-putih 35mm tidak dirinci per-bingkai*): kontras monokrom tinggi dan tekstur *grain* tegas memperlihatkan batas ketajaman makro 0,25m lensa HD 25mm.
 - **lookTags:** `vertical-frame`, `prominent-grain`, `crisp-hd-optics`, `deep-dof`, `minimal-flare`
 - **Arketipe:** `half_frame_35mm` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual langsung 5 foto half-frame bersih (warna & hitam-putih, diptik & makro) lintas 2 situs ulasan independen (Shoot It With Film dan 35mmc), ditambah konsistensi Casual Photophile dan spesifikasi resmi Ricoh Imaging. *(Catatan: karena rilis 2024, foto CC khusus Pentax 17 di Wikimedia/Openverse belum tersedia — hasil pencarian Openverse mengembalikan kecocokan keliru Pentax ME/K1000/10–17mm yang telah dibersihkan.)*
+- **confidenceLook:** **`medium`** *(diaudit ketat dari `high` → `medium`)* — 0 foto CC/PD lokal; 5 foto sementara lintas 2 galeri ulasan (Shoot It With Film & 35mmc) dengan film campur (warna & B&W).
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan; foto hasil bidikan berlisensi CC/PD di Wikimedia Commons/Openverse (bukti visual hanya dari inspeksi sementara galeri ulasan).
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Ricoh Imaging — Pentax 17 Specifications](https://www.ricoh-imaging.co.jp/english/products/pentax17/spec/)
   - *Situs Fotografi / Ulasan (dengan inspeksi visual sampel):* [Shoot It With Film — Pentax 17 Review](https://shootitwithfilm.com/pentax-17-review/), [35mmc — Pentax 17 Review](https://www.35mmc.com/17/06/2024/pentax-17-review/), [Casual Photophile — Pentax 17 Review](https://casualphotophile.com/2024/06/17/pentax-17-new-film-camera-review/)
@@ -242,7 +250,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera film Batch 03 (nomor 41�
     - Sampel 3–4 (Bunga kucai jarak dekat & deretan perahu layar pelabuhan di 35mmc — *jenis film negatif warna tidak dicantumkan per-gambar*): warna terpal biru-merah organik dan kontras cerah mempertegas kejernihan lensa 35mm-nya.
 - **lookTags:** `sharp`, `mild-vignette`, `low-distortion`, `close-focus-35cm`, `direct-flash`
 - **Arketipe:** `premium_point_shoot_35mm` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual 4 foto bersih lintas 3 sumber independen (2 CC dari 2 pengunggah + 2 foto 35mmc), konsisten dengan ulasan Casual Photophile, 35mmc, dan EMULSIVE.
+- **confidenceLook:** **`medium`** *(diaudit ketat dari `high` → `medium`)* — Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **Tidak ditemukan:** halaman spesifikasi resmi produsen aktif; halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Situs Fotografi / Ulasan (dengan inspeksi visual sampel):* [Casual Photophile — Konica Big Mini BM-201 Review](https://casualphotophile.com/2017/05/06/konica-big-mini-bm-201-point-and-shoot-film-camera-review/), [35mmc — Konica Big Mini Review](https://www.35mmc.com/08/07/2013/konica-big-mini-review-yeah-its-not-bad/), [EMULSIVE — Compact Camera Mega Test: Konica Big Mini](https://emulsive.org/reviews/camera-reviews/konica-film-camera-reviews/compact-camera-mega-test-konica-big-mini-transparent-ambitions)
   - *Foto Sampel Diperiksa Visual (4 lintas 3 sumber):*
@@ -267,7 +276,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera film Batch 03 (nomor 41�
     - Sampel 1–3 (Bodegas Ysios dan terowongan batu di Spanyol — *jenis film negatif/slide warna tidak dicantumkan oleh pengunggah*): biru langit terik yang jenuh, jalur kerikil merah hangat, dan hijau dedaunan segar berasal dari emulsi warna 35mm di bawah terik matahari tengah hari, sedangkan resolusi tinggi serta kejernihan kontras mikro adalah ciri khas lensa Hexar 35mm f/2.
 - **lookTags:** `razor-sharp`, `micro-contrast`, `clean-geometry`, `rich-midtones`, `creamy-bokeh`
 - **Arketipe:** `premium_point_shoot_35mm` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — 3 foto sampel CC beresolusi tinggi konsisten sepenuhnya dengan 3 situs ulasan fotografi independen (35mmc, Japan Camera Hunter, Camera Legend).
+- **confidenceLook:** **`medium`** *(diaudit ketat dari `high` → `medium`)* — Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **Tidak ditemukan:** halaman spesifikasi resmi produsen aktif; halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Situs Fotografi / Ulasan:* [35mmc — Konica Hexar Review](https://www.35mmc.com/16/07/2017/konica-hexar-review/), [Japan Camera Hunter — Konica Hexar AF](https://www.japancamerahunter.com/2011/09/the-konica-hexar-af-the-quietest-camera-in-the-world/), [Camera Legend — Konica Hexar AF Review](https://cameralegend.com/tag/konica-hexar-af-review/)
   - *Foto Sampel Diperiksa Visual (3, CC):*
@@ -293,7 +303,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera film Batch 03 (nomor 41�
     - Sampel 2–3 (Jembatan kanal bata & pasangan angsa di depan gudang di 35mmc — *film hitam-putih 35mm tidak dicantumkan per-bingkai*): kontras monokrom padat dan tekstur bata renyah menegaskan resolusi sudut-ke-sudut optik Sonnar 5 elemen L35AF.
 - **lookTags:** `sharp-across-frame`, `punchy-contrast`, `clean-geometry`, `vintage-80s`, `pop-up-flash`
 - **Arketipe:** `premium_point_shoot_35mm` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual 3 foto bersih (1 CC warna pada Kodak Portra 400 + 2 foto hitam-putih 35mmc) yang sepenuhnya konsisten dengan arsip optik Nikon Imaging, 35mmc, dan Casual Photophile.
+- **confidenceLook:** **`medium`** *(diaudit ketat dari `high` → `medium`)* — Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Nikon Imaging Story — NIKKOR Thousand and One Nights #33 (L35AF)](https://imaging.nikon.com/imaging/information/story/0033/), [Nikon Imaging Chronicle — Cousins #22](https://imaging.nikon.com/imaging/information/chronicle/cousins22-e/)
   - *Situs Fotografi / Ulasan (dengan inspeksi visual sampel):* [35mmc — Nikon L35AF Review](https://www.35mmc.com/30/01/2016/nikon-l35af-review/), [Casual Photophile — Nikon L35AF "Pikaichi" Review](https://casualphotophile.com/2014/11/30/nikon-l35af-pikaichi-camera-review/)
@@ -320,7 +331,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera film Batch 03 (nomor 41�
     - Sampel 3 (Punggung bukit vulkanik bersalju di Islandia — **Kodak Portra 400** sesuai tag pengunggah): gradasi tanah merah bata kontras dengan salju kebiruan berasal dari Kodak Portra 400 dan pemindaian.
 - **lookTags:** `corner-to-corner-sharp`, `distortion-free`, `balanced-exposure`, `high-contrast`, `smooth-bokeh`
 - **Arketipe:** `premium_point_shoot_35mm` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — 3 foto sampel CC lintas 3 pengunggah berbeda (termasuk 2 nama emulsi tercatat jelas: slide Elite Chrome & negatif Portra 400) konsisten penuh dengan arsip Nikon, EMULSIVE, 35mmc, dan Japan Camera Hunter.
+- **confidenceLook:** **`medium`** *(diaudit ketat dari `high` → `medium`)* — Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Nikon Product History — 1990s (35Ti)](https://imaging.nikon.com/imaging/information/products_history/1990/), [Nikon Imaging Story — #0001](https://imaging.nikon.com/imaging/information/story/0001/)
   - *Situs Fotografi / Ulasan:* [EMULSIVE — Compact Camera Mega Test: Nikon 35Ti](https://emulsive.org/reviews/camera-reviews/compact-camera-mega-test-nikon-35ti-the-worlds-most-sophisticated-compact-camera), [35mmc — Nikon 35Ti Review](https://www.35mmc.com/21/09/2015/nikon-35ti-review-marc/), [Japan Camera Hunter — Premium Compact Cameras Buyer's Guide](https://www.japancamerahunter.com/2013/05/premium-compact-cameras-a-buyers-guide/)
@@ -348,7 +360,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera film Batch 03 (nomor 41�
     - Sampel 3 (Gang bata sempit di 35mmc — *film hitam-putih tidak dirinci per-gambar*): kontras monokrom rapi mempertegas ketajaman sudut-ke-sudut lensa 40mm-nya.
 - **lookTags:** `sharp-stopped-down`, `classic-40mm`, `micro-contrast`, `character-bokeh`, `vintage-flare`
 - **Arketipe:** `classic_35mm_slr` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual 3 foto bersih lintas 3 sumber independen (Wikimedia Commons, Flickr CC dengan emulsi Ilford Pan 400 tercatat, dan 35mmc), konsisten dengan Canon Camera Museum, Casual Photophile, dan 35mmc.
+- **confidenceLook:** **`medium`** *(diaudit ketat dari `high` → `medium`)* — Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Canon Camera Museum — Canonet G-III 17](https://global.canon/en/c-museum/product/film84.html)
   - *Situs Fotografi / Ulasan (dengan inspeksi visual sampel):* [Casual Photophile — Canon Canonet QL17 GIII Review](https://casualphotophile.com/2021/06/16/canon-canonet-ql17-giii/), [35mmc — Canonet QL17 GIII Review](https://www.35mmc.com/19/01/2015/canonet-ql17-giii-affordable-fine-reliable/)
@@ -374,7 +387,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera film Batch 03 (nomor 41�
     - Sampel 1–2 (Spanduk parade di pagar kawat & jalanan Hilo di bawah bendera gantung pada 35mmc — *film hitam-putih 35mm, emulsi spesifik per-bingkai tidak dicantumkan di berkas*): kontras hitam-putih bersih, bayangan tegas, dan butiran sedang berasal dari roll film hitam-putih yang digunakan pengulas, bukan sifat warna bodi. *(Catatan: sampel CC pada Openverse yang sempat muncul berlabel Canon Sure Shot 60 Zoom sehingga dikeluarkan; tidak ada foto CC bersih yang cocok persis untuk Sure Shot Max.)*
 - **lookTags:** `crisp-prime`, `natural-contrast`, `subtle-vignette`, `direct-flash`, `everyday-snapshot`
 - **Arketipe:** `premium_point_shoot_35mm` *(dikonfirmasi)*
-- **confidenceLook:** **`medium`** — 2 foto sampel bebas-wajah diperiksa langsung dari 1 ulasan utama (35mmc) ditambah catatan ringkas Kosmo Foto dan arsip Canon Camera Museum, namun belum ada foto sampel CC bebas-wajah maupun sampel warna bebas-wajah lintas sumber kedua yang terverifikasi khusus varian 38mm f/3.5.
+- **confidenceLook:** **`low`** *(diaudit ketat dari `medium` → `low`)* — 0 foto CC/PD; hanya 2 foto B&W sementara dari 1 galeri ulasan (35mmc), tanpa sampel warna.
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan; foto hasil bidikan berlisensi CC/PD di Wikimedia Commons/Openverse (bukti visual hanya dari inspeksi sementara galeri ulasan); foto contoh bebas-wajah ke-3 (baru 2 foto bersih diperiksa visual); sampel foto warna bebas-wajah (2 sampel sementara yang diperiksa hanya hitam-putih).
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Canon Camera Museum — Sure Shot Max / Autoboy Mini](https://global.canon/en/c-museum/product/film153.html)
   - *Situs Fotografi / Ulasan (dengan inspeksi visual sampel):* [35mmc — Canon Sure Shot Max Review](https://www.35mmc.com/07/12/2018/canon-sure-shot-max-review/), [Kosmo Foto — Three Cameras for 2023](https://kosmofoto.com/2023/12/three-cameras-for-2023/)
@@ -399,7 +413,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera film Batch 03 (nomor 41�
     - Sampel 1–3 (Sungai Teslin & Yukon 1988 — *jenis film slide/negatif warna 1988 tidak dicantumkan pada keterangan arsip*): dominasi rona biru-sian sejuk pada air dan langit, kontras awan mendung, serta butiran sedang merupakan hasil emulsi film warna 1988 dan pemindaian, sedangkan pola penggelapan keempat sudut dan karakter *flare* adalah ciri khas optik F.Zuiko XA.
 - **lookTags:** `corner-vignette`, `sharp-at-f56`, `vintage-flare`, `classic-street`, `organic-contrast`
 - **Arketipe:** `premium_point_shoot_35mm` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — 3 foto sampel CC yang sangat jelas memperlihatkan vignette sudut dan perilaku backlit F.Zuiko, didukung kesepakatan 4 situs ulasan independen (Casual Photophile, 35mmc, EMULSIVE, Japan Camera Hunter) serta arsip resmi Olympus Technology Museum.
+- **confidenceLook:** **`medium`** *(diaudit ketat dari `high` → `medium`)* — Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Olympus Technology Museum — Story of XA (Vol. 2)](https://www.olympus-global.com/technology/museum/lecture/vol2/)
   - *Situs Fotografi / Ulasan:* [Casual Photophile — Olympus XA Review](https://casualphotophile.com/2018/06/20/olympus-xa-review-35mm-film-camera-rangefinder/), [35mmc — Olympus XA Review](https://www.35mmc.com/07/07/2016/olympus-xa-review-mighty-micro-machine/), [EMULSIVE — Olympus XA Review](https://emulsive.org/reviews/camera-reviews/olympus-camera-reviews/the-olympus-xa-how-i-fell-in-love-with-a-tiny-plastic-box), [Japan Camera Hunter — Olympus XA](https://www.japancamerahunter.com/2013/10/olympus-xa-pocket-professional/)
@@ -428,7 +443,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera film Batch 03 (nomor 41�
     - Sampel 4 (Tongkang bersalju di 35mmc — *film hitam-putih tidak dirinci per-bingkai*): gradasi salju bersih tanpa kehilangan detail bata menegaskan resolusi serta kontras mikro GR 28mm f/2.8.
 - **lookTags:** `edge-to-edge-sharp`, `high-contrast`, `wide-28mm`, `minimal-distortion`, `crisp-street`
 - **Arketipe:** `premium_point_shoot_35mm` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — 3 foto sampel CC lintas 2 pengunggah + 1 sampel arsitektur bersalju 35mmc konsisten penuh dengan arsip resmi Ricoh Imaging, 35mmc, Casual Photophile, dan Japan Camera Hunter.
+- **confidenceLook:** **`medium`** *(diaudit ketat dari `high` → `medium`)* — Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Ricoh Imaging Archive — GR1v](https://www.ricoh-imaging.co.jp/japan/products/ricoh-filmcamera/cameralist/GR1v.html)
   - *Situs Fotografi / Ulasan (dengan inspeksi visual sampel):* [35mmc — Ricoh GR1v Review](https://www.35mmc.com/16/02/2014/ricoh-gr1v-review/), [Casual Photophile — Ricoh GR1v Review](https://casualphotophile.com/2019/05/17/ricoh-gr1v-film-camera-review/), [Japan Camera Hunter — Ricoh GR Buyer's Guide](https://www.japancamerahunter.com/2012/04/the-ricoh-gr-a-buyers-guide/)
@@ -457,7 +473,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera film Batch 03 (nomor 41�
     - Sampel 3 (*ABSTRACT* kubah kaca — **film negatif warna C-41**, merek tidak dicantumkan): cahaya bohlam kuning hangat berpadu biru langit lembut berasal dari film C-41.
 - **lookTags:** `crisp-tessar`, `high-contrast`, `deep-dof`, `clean-geometry`, `vintage-character`
 - **Arketipe:** `classic_35mm_slr` *(dikonfirmasi)*
-- **confidenceLook:** **`medium`** — 3 foto sampel CC lintas 2 pengunggah (dengan 2 emulsi hitam-putih + 1 C-41 tercatat) konsisten dengan ulasan Photo Thinking, 35mmc, dan pembanding Kosmo Foto; tetap `medium` karena warna/grain akhir sepenuhnya bergantung film dan perbedaan varian optik Tessar vs Sonnar.
+- **confidenceLook:** **`medium`** *(terkonfirmasi pada audit ketat)* — Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **Tidak ditemukan:** halaman spesifikasi resmi produsen aktif; halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Situs Fotografi / Ulasan:* [Photo Thinking — Rollei 35 Review](https://photothinking.com/2023-11-11-rollei-35-not-just-small/), [35mmc — 5 Frames with a Rollei 35 and Kodak Tri-X](https://www.35mmc.com/06/01/2024/5-frames-with-a-rollei-35-and-kodak-tri-x/), [Kosmo Foto — Rollei 35S Review](https://kosmofoto.com/2019/01/rollei-35s-review/)
   - *Foto Sampel Diperiksa Visual (3, CC):*
@@ -483,7 +500,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera film Batch 03 (nomor 41�
     - Sampel 2 (Kubah gereja tembaga berbingkai dedaunan siang hari — *jenis film warna tidak dicantumkan*): langit biru pucat dan hijau daun hangat berasal dari film negatif warna di siang hari, sementara vignette gelap, kelembutan tepi, dan grain kasar adalah ciri optik akrilik + format half-frame H35.
 - **lookTags:** `lo-fi`, `heavy-vignette`, `soft-edges`, `coarse-grain`, `vertical-frame`, `underexposed-indoor`
 - **Arketipe:** `half_frame_35mm` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — 3 foto sampel CC vertikal lintas 2 pengunggah (siang cerah vs dalam ruang tanpa flash) sepenuhnya konsisten dengan spesifikasi resmi Kodak serta 3 ulasan independen (Casual Photophile, 35mmc, Shoot It With Film).
+- **confidenceLook:** **`medium`** *(diaudit ketat dari `high` → `medium`)* — Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Kodak Official — Ektar H35 Half Frame Film Camera](https://www.kodak.com/en/consumer/product/cameras/film/h35-film-camera/)
   - *Situs Fotografi / Ulasan:* [Casual Photophile — Kodak Ektar H35 Review](https://casualphotophile.com/2023/09/11/kodak-ektar-h35-half-frame-film-camera-review/), [35mmc — Kodak Ektar H35 Review](https://www.35mmc.com/05/08/2022/kodak-ektar-h35-review-cheap-thrills-with-a-very-simple-camera-by-eric-woods/), [Shoot It With Film — Kodak Ektar H35 Review](https://shootitwithfilm.com/kodak-ektar-h35-half-frame-film-camera-review/)
@@ -509,7 +527,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera film Batch 03 (nomor 41�
     - Sampel 1–3 (Tiga diptik *half-frame* warna: tanaman/tenda konstruksi, irisan jeruk/daun palem, serta lembar putih/jendela papan kayu — *jenis lensa Pen F spesifik dan merek film negatif warna tidak dicantumkan oleh pengunggah*): warna bata hangat, jingga jeruk pekat, biru dinding dalam, dan bayangan kehijauan berasal dari emulsi film negatif warna dan pemindaian, sedangkan garis sekat diptik, kekasaran *grain* perbesaran half-frame, serta kemampuan bokeh ruang tajam dangkal berasal dari sistem SLR half-frame Pen FT + optik Pen F.
 - **lookTags:** `vertical-diptych`, `coarse-grain`, `sharp-zuiko`, `shallow-dof`, `classic-analog`
 - **Arketipe:** `half_frame_35mm` *(dikonfirmasi)*
-- **confidenceLook:** **`medium`** — 3 diptik CC bersih telah diperiksa visual dan selaras dengan Casual Photophile serta Photo Thinking, namun tetap `medium` karena Pen FT adalah SLR berlensa lepas-tukar (tampilan optik bergantung pada lensa Pen F yang terpasang serta emulsi film, dan sampel CC berasal dari 1 pengunggah).
+- **confidenceLook:** **`medium`** *(terkonfirmasi pada audit ketat)* — Contoh campur: bodi kamera film berlensa tukar dengan lensa dan emulsi film berbeda-beda/sebagian tidak tercatat.
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Olympus Technology Museum — Pen F / FT Series (Vol. 1)](https://www.olympus-global.com/technology/museum/lecture/vol1/?page=technology_museum)
   - *Situs Fotografi / Ulasan:* [Casual Photophile — Olympus Pen FT Review](https://casualphotophile.com/2020/08/28/olympus-pen-ft-review/), [Photo Thinking — Olympus Pen FT: Half Yet Double](https://photothinking.com/2025-05-03-olympus-pen-ft-half-yet-double/)
@@ -537,7 +556,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera film Batch 03 (nomor 41�
     - Sampel 3 (*vysoka009* diptik hutan — **expired Kodak 200** sesuai tag `200 expired kodak`): kontras kuat, langit biru berbintik kasar, dan sorotan jingga di sudut kiri berasal dari film Kodak ISO 200 kedaluwarsa serta ujung roll (*light burn*).
 - **lookTags:** `vertical-diptych`, `dreamy-wideopen`, `sharp-stopped-down`, `visible-grain`, `vintage-1960s`
 - **Arketipe:** `half_frame_35mm` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — 3 foto sampel CC lintas 2 pengunggah (siang terik, interior wide-open, dan hutan) sepenuhnya konsisten dengan Canon Camera Museum serta 3 ulasan independen (35mmc, EMULSIVE, Alex Luyckx).
+- **confidenceLook:** **`medium`** *(diaudit ketat dari `high` → `medium`)* — Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Canon Camera Museum — Demi EE17](https://global.canon/en/c-museum/product/film64.html)
   - *Situs Fotografi / Ulasan:* [35mmc — Canon Demi EE17 Review](https://www.35mmc.com/22/02/2019/canon-demi-ee17/), [EMULSIVE — Canon Demi EE17: The Everyday Diptych Machine](https://emulsive.org/reviews/camera-reviews/canon-camera-reviews/canon-demi-ee17-the-everyday-diptych-machine), [Alex Luyckx — Camera Review #173: Canon Demi EE17](http://www.alexluyckx.com/blog/2026/07/21/camera-review-blog-no-173-canon-demi-ee17/)
@@ -548,29 +568,46 @@ Pendalaman karakter visual kualitatif untuk **20 kamera film Batch 03 (nomor 41�
 
 ---
 
-## Ringkasan Laporan Batch 03
+---
 
-### 1. Jumlah Kamera per `confidenceLook`
+## Ringkasan Laporan Batch 03 *(Diperbarui Audit Ketat)*
+
+### 1. Jumlah Kamera per `confidenceLook` (Setelah Audit Ketat — Lihat [AUDIT.md](AUDIT.md))
 
 | Tingkat `confidenceLook` | Jumlah | Daftar Kamera |
 |---|---:|---|
-| **`high`** | **16** | `yashica_t4`, `minolta_tc_1`, `minolta_hi_matic_7sii`, `minolta_freedom_escort`, `pentax_espio_mini`, `pentax_pc35af`, `pentax_17`, `konica_big_mini_bm_201`, `konica_hexar_af`, `nikon_l35af`, `nikon_35ti`, `canon_canonet_ql17_giii`, `olympus_xa`, `ricoh_gr1v`, `kodak_ektar_h35`, `canon_demi_ee17` |
-| **`medium`** | **4** | `yashica_electro_35_gsn`, `canon_sure_shot_max`, `rollei_35`, `olympus_pen_ft` |
-| **`low`** | **0** | — |
-| **`tidak ditemukan`** | **0** | *(Seluruh 20 kamera memiliki sampel visual nyata yang diverifikasi)* |
-| **Total** | **20** | **65 foto sampel bersih diperiksa visual langsung** (46 foto CC BY / CC BY-SA tersimpan di `docs/references/batch_03_samples/` dan dicatat pada `docs/references/manifest_batch_03.json` + 19 foto ulasan independen diperiksa sementara lalu dihapus total dari `scratch/tmp_b3/`) |
-
-*(Distribusi arketipe terkonfirmasi: `premium_point_shoot_35mm` = 12, `classic_35mm_slr` = 4, `half_frame_35mm` = 4 — selaras penuh dengan `docs/catalog/batch_03.md` dan `docs/catalog/archetypes.md`.)*
+| **`high`** | **0** | — |
+| **`medium`** | **19** | `yashica_t4`, `yashica_electro_35_gsn`, `minolta_tc_1`, `minolta_hi_matic_7sii`, `minolta_freedom_escort`, `pentax_espio_mini`, `pentax_pc35af`, `pentax_17`, `konica_big_mini_bm_201`, `konica_hexar_af`, `nikon_l35af`, `nikon_35ti`, `canon_canonet_ql17_giii`, `olympus_xa`, `ricoh_gr1v`, `rollei_35`, `kodak_ektar_h35`, `olympus_pen_ft`, `canon_demi_ee17` |
+| **`low`** | **1** | `canon_sure_shot_max` |
+| **`tidak ditemukan`** | **0** | — |
+| **Total** | **20** | **66 foto/frame diperiksa visual** (46 berlisensi CC/PD lokal di `docs/references/manifest.md`) |
 
 ### 2. Kamera dengan Sumber Lemah / Perlu Perhatian Saat Kalibrasi
 
-1. **`canon_sure_shot_max` (`medium`):** Tidak ditemukan foto sampel CC bebas-wajah khusus varian 38mm f/3.5 (hasil pencarian Openverse sempat menampilkan Canon Sure Shot 60 Zoom sehingga dibuang); inspeksi visual hanya bersandar pada 2 foto hitam-putih bebas-wajah dari 1 ulasan utama (35mmc). Saat tahap kalibrasi profil warna/flash, sebaiknya ditambahkan referensi pemotretan film negatif warna bebas-wajah khusus varian Sure Shot Max / Prima 5 / Autoboy Mini.
-2. **`olympus_pen_ft` (`medium`):** Sebagai sistem **SLR half-frame berlensa lepas-tukar**, karakter ketajaman dan bokeh bergantung pada lensa Pen F yang dipasang (mis. 38mm f/1.8 vs 40mm f/1.4), sementara 3 diptik CC bersih berasal dari 1 pengunggah tanpa rincian jenis lensa maupun emulsi film.
-3. **`yashica_electro_35_gsn` & `rollei_35` (`medium`):** Meski masing-masing memiliki 3 foto CC bersih lintas 2 pengunggah, karakter warna dan *grain* akhir sangat ditentukan emulsi film; khusus `rollei_35` perlu diperhatikan pembedaan varian optik Tessar 40mm f/3.5 vs 35S/SE Sonnar 40mm f/2.8 saat kalibrasi.
-4. **`pentax_17` & `minolta_freedom_escort` (`high` secara bukti visual, tetapi 0 foto CC lokal):** Masing-masing telah diverifikasi lewat 5 foto bersih lintas 2 situs ulasan film independen (sehingga karakter optiknya sangat terkonfirmasi), namun belum memiliki salinan CC di `docs/references/batch_03_samples/` karena keterbatasan unggahan CC terbuka (Pentax 17 baru rilis 2024; unggahan CC Minolta Riva Mini/Escort didominasi foto produk kamera).
+- **`yashica_t4` (`medium`):** Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **`yashica_electro_35_gsn` (`medium`):** Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **`minolta_tc_1` (`medium`):** Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **`minolta_hi_matic_7sii` (`medium`):** Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **`minolta_freedom_escort` (`medium`):** 0 foto CC/PD lokal; 5 foto sementara lintas 2 galeri ulasan (35mmc & New Wave Pool) dengan film campur (warna & Ilford HP5+).
+- **`pentax_espio_mini` (`medium`):** Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **`pentax_pc35af` (`medium`):** Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **`pentax_17` (`medium`):** 0 foto CC/PD lokal; 5 foto sementara lintas 2 galeri ulasan (Shoot It With Film & 35mmc) dengan film campur (warna & B&W).
+- **`konica_big_mini_bm_201` (`medium`):** Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **`konica_hexar_af` (`medium`):** Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **`nikon_l35af` (`medium`):** Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **`nikon_35ti` (`medium`):** Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **`canon_canonet_ql17_giii` (`medium`):** Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **`canon_sure_shot_max` (`low`):** 0 foto CC/PD; hanya 2 foto B&W sementara dari 1 galeri ulasan (35mmc), tanpa sampel warna.
+- **`olympus_xa` (`medium`):** Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **`ricoh_gr1v` (`medium`):** Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **`rollei_35` (`medium`):** Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **`kodak_ektar_h35` (`medium`):** Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **`olympus_pen_ft` (`medium`):** Contoh campur: bodi kamera film berlensa tukar dengan lensa dan emulsi film berbeda-beda/sebagian tidak tercatat.
+- **`canon_demi_ee17` (`medium`):** Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
 
-### 3. Hal yang Tidak Ditemukan
+### 3. Ringkasan Hal yang Tidak Ditemukan (Detail Per Kamera Tercatat di Masing-Masing Entri)
 
-- **Foto sampel CC terbuka (CC0/CC BY/CC BY-SA) bebas-wajah tidak ditemukan untuk 3 kamera:** `Pentax 17` (hasil Openverse/Wikimedia masih didominasi kecocokan keliru lensa 10–17mm & Pentax ME/K1000), `Minolta Freedom Escort (Riva Mini / Pico)` (Openverse hanya memuat foto produk kamera dan kecocokan lokasi "Picos de Europa"), dan `Canon Sure Shot Max (Prima 5 / Autoboy Mini)` (Openverse hanya memuat Canon Sure Shot 60 Zoom). Ketiganya ditutup lewat inspeksi visual langsung foto ulasan independen (lalu berkas sementara dihapus).
-- **Halaman spesifikasi resmi produsen yang tidak ditemukan aktif (10 kamera):** `Yashica T4 / T4 Super (T5)`, `Yashica Electro 35 GSN`, `Minolta TC-1`, `Minolta Hi-Matic 7sII`, `Minolta Freedom Escort (Riva Mini / Pico)`, `Pentax Espio Mini (UC-1)`, `Pentax PC35AF`, `Konica Big Mini BM-201`, `Konica Hexar AF`, dan `Rollei 35`.
-- **Sebagian besar unggahan CC arsip tidak mencantumkan nama emulsi film secara eksplisit:** Tercatat jelas hanya pada sebagian sampel (`Kodak Gold 100`, `Fujifilm Neopan 400`, `Kodak Portra 400`, `expired Kodak Portra 400VC`, `Kodak Elite Chrome`, `Ilford Pan 400`, `Ilford HP5 Plus`, `Ilford Pan F 50`, `Kodak Ektar 100`, `expired Kodak 200`, `Provia 400`); sisanya secara jujur ditandai *"jenis film tidak dicantumkan"*.
+- **Tanpa halaman spesifikasi resmi produsen aktif (10):** `yashica_t4`, `yashica_electro_35_gsn`, `minolta_tc_1`, `minolta_hi_matic_7sii`, `minolta_freedom_escort`, `pentax_espio_mini`, `pentax_pc35af`, `konica_big_mini_bm_201`, `konica_hexar_af`, `rollei_35`
+- **Tanpa foto contoh tunggal berlisensi CC/PD lokal (3):** `minolta_freedom_escort`, `pentax_17`, `canon_sure_shot_max`
+- **Foto contoh diperiksa visual < 3 (1):** `canon_sure_shot_max`
+- Rincian lengkap kekurangan per kamera (termasuk status Flickr Camera Finder dan mode khusus) tercantum pada baris **`Tidak ditemukan`** di setiap entri kamera di atas serta tabel menyeluruh di [AUDIT.md](AUDIT.md).

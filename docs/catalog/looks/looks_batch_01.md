@@ -29,7 +29,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 01** dari [batch_0
   - **Vignette & Flash:** Vignette optik nyaris tidak kentara di siang hari; flash bawaan yang dekat sumbu lensa menghasilkan foto snapshot malam berkontras keras dengan subjek depan terang mencolok dan latar cepat jatuh gelap.
 - **lookTags:** `high-contrast`, `punchy-daylight`, `clipped-highlights`, `digital-noise`, `harsh-flash`, `purple-fringing`
 - **Arketipe:** `ccd_compact_2000s` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — 3 foto sampel SOOC lintas sumber berbeda (Wikimedia Direct, Panoramio, Flickr) konsisten dengan ulasan uji lab Imaging Resource dan komunitas DPReview.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [5], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** Tidak ada kekurangan sumber utama (spesifikasi resmi, referensi ulasan/Camera Finder, dan >= 3 foto contoh CC/PD tersedia).
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Canon Camera Museum — PowerShot SD1000](https://global.canon/en/c-museum/product/dcc539.html)
   - *Situs Fotografi / Ulasan:* [Imaging Resource — Canon SD1000 Gallery](https://www.imaging-resource.com/cameras/canon-sd1000-review/gallery/), [DPReview — Canon SD750/SD1000](https://www.dpreview.com/articles/2520296423/canonsd750sd1000/)
@@ -58,7 +59,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 01** dari [batch_0
   - **Ketajaman, Aberasi & Vignette:** Ketajaman merata dengan tekstur organik tanpa penajaman tepi yang kaku; pada tiang lampu sorot malam berkontras ekstrem muncul pinggiran ungu tipis di sekitar cahaya paling terang; vignette sangat minim.
 - **lookTags:** `natural-color`, `film-like-grain`, `clean-high-iso`, `smooth-midtones`, `purple-fringing`
 - **Arketipe:** `pro_ccd_filmic` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** *(naik dari `medium` di `batch_01.md`)* — Kini didukung inspeksi visual langsung 3 foto lintas sumber (Wikimedia Direct + Flickr CC) ditambah konsistensi Imaging Resource dan komunitas DPReview.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [4], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** halaman spesifikasi resmi produsen aktif.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Situs Fotografi / Ulasan:* [Imaging Resource — FinePix F31fd Gallery](https://www.imaging-resource.com/PRODS/F31FD/F31FDGALLERY.HTM), [DPReview — FinePix F31fd Specs](https://www.dpreview.com/products/fuji/compacts/fuji_finepixf31fd)
   - *Flickr Camera Finder:* [Flickr — Fujifilm FinePix F31fd](https://www.flickr.com/cameras/fujifilm/finepix_f31fd)
@@ -87,7 +89,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 01** dari [batch_0
   - **Flash & Vignette:** Flash langsung bawaan memberi kontras depan-belakang yang tajam khas digicam pesta era 2007 (subjek dekat terang mengilap, latar belakang segera gelap pekat), disertai sedikit pelunakan di sudut bingkai.
 - **lookTags:** `warm-indoor`, `soft-detail`, `noise-smoothing`, `vivid-flash`, `highlight-bloom`
 - **Arketipe:** `ccd_dreamy_pastel` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** *(naik dari `medium` di `batch_01.md`)* — Didukung inspeksi visual 3 foto dari 3 sumber berbeda (Wikimedia Direct, Flickr-via-Wikimedia, Flickr CC) + Imaging Resource & DPReview.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [6], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** halaman Flickr Camera Finder (404/500 saat diperiksa).
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Sony Support — DSC-T70 Specifications](https://www.sony.co.id/en/electronics/support/compact-cameras-dsct-series/dsc-t70/specifications)
   - *Situs Fotografi / Ulasan:* [Imaging Resource — Sony DSC-T70 Gallery](https://www.imaging-resource.com/PRODS/T70/T70GALLERY.HTM), [DPReview — Sony T200/T70](https://www.dpreview.com/articles/6948762998/sonyt200t70/), [PBase — Sony DSC-T70](https://www.pbase.com/cameras/sony/cyber-shot_dsc_t70)
@@ -115,7 +118,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 01** dari [batch_0
   - **Noise & Flash:** Sangat bersih di ISO dasar, namun menurut ulasan independen cepat memunculkan *chroma noise* dan pergeseran warna pada ISO tinggi; bodi tidak memiliki flash bawaan.
 - **lookTags:** `crisp-micro-contrast`, `rich-ccd-color`, `filmic-midtones`, `deep-shadows`, `smooth-bokeh`
 - **Arketipe:** `pro_ccd_filmic` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** *(naik dari `medium` di `batch_01.md`)* — Didukung inspeksi visual langsung 3 foto (termasuk EXIF firmware bawaan `1.002`) lintas sumber + ulasan Steve Huff, Imaging Resource (M9-P), dan DPReview.
+- **confidenceLook:** **`medium`** *(diaudit ketat dari `high` → `medium`)* — Kamera digital berlensa tukar (mount Leica M); karakter optik (vignette, bokeh, flare) bervariasi antar lensa sampel.
+- **Tidak ditemukan:** Tidak ada kekurangan sumber utama (spesifikasi resmi, referensi ulasan/Camera Finder, dan >= 3 foto contoh CC/PD tersedia).
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Leica Technical Data PDF — Leica M9 / M9-P](https://leica-camera.com/sites/default/files/pm-29341-Leica-M-9--M-9-P_Technical-Data_en.pdf)
   - *Situs Fotografi / Ulasan:* [Steve Huff Photo — Leica M9 Review](https://www.stevehuffphoto.com/2010/08/04/my-updated-big-bad-ass-leica-m9-review/), [Imaging Resource — Leica M9-P Gallery (sensor sama)](https://www.imaging-resource.com/PRODS/M9P/M9PGALLERY.HTM), [DPReview — Leica M9](https://www.dpreview.com/articles/3013742516/leicam9/)
@@ -144,7 +148,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 01** dari [batch_0
   - **Vignette & Flash:** Vignette optik sangat ringan pada bukaan normal; kamera ini tidak memiliki flash bawaan.
 - **lookTags:** `razor-sharp`, `micro-contrast`, `wide-dr`, `punchy-slide`, `gritty-bw`
 - **Arketipe:** `early_cmos_gritty` *(dikonfirmasi — catatan: sensor modern APS-C, namun tetap cocok pada arketipe street berkontras tegas karena peran utama profil Positive Film & Hi-Contrast B&W)*
-- **confidenceLook:** **`high`** — Didukung 3 foto sampel SOOC lintas sumber, halaman fitur/galeri resmi Ricoh, ulasan Imaging Resource & DPReview, serta diskusi pengguna profil JPEG.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [5], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** Tidak ada kekurangan sumber utama (spesifikasi resmi, referensi ulasan/Camera Finder, dan >= 3 foto contoh CC/PD tersedia).
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Galeri & Resmi Produsen:* [Ricoh Imaging — GR III Features & Gallery](https://www.ricoh-imaging.co.jp/english/products/gr-3/)
   - *Situs Fotografi / Ulasan:* [Imaging Resource — Ricoh GR III Gallery](https://www.imaging-resource.com/cameras/ricoh-gr-iii-review/gallery/), [DPReview — Ricoh GR III Review](https://www.dpreview.com/reviews/8690273264/ricoh-gr-iii/)
@@ -174,7 +179,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 01** dari [batch_0
   - **Vignette & Flash:** Vignette optik sangat tipis; flash bawaan kecil dapat dipadukan rana daun (*leaf shutter*) untuk *fill flash* siang hari yang rapi.
 - **lookTags:** `sharp`, `film-sim`, `smooth-rolloff`, `muted-warm`, `wide-dr`, `fine-grain`
 - **Arketipe:** `filmic_digital_mirrorless` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Inspeksi visual 3 foto lintas sumber (memperlihatkan langsung beda SOOC standar vs resep *Film Simulation*) selaras dengan halaman resmi Fujifilm, Imaging Resource, dan DPReview.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [5], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** Tidak ada kekurangan sumber utama (spesifikasi resmi, referensi ulasan/Camera Finder, dan >= 3 foto contoh CC/PD tersedia).
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Fujifilm X Official — X100V Product Page](https://www.fujifilm-x.com/global/products/cameras/x100v/), [Fujifilm X News — Introducing X100V](https://www.fujifilm-x.com/global/news/introducing-the-fujifilm-x100v/)
   - *Situs Fotografi / Ulasan:* [Imaging Resource — Fujifilm X100V Gallery](https://www.imaging-resource.com/cameras/fujifilm-x100v-review/gallery/), [DPReview — Fujifilm X100V Review](https://www.dpreview.com/reviews/7990558355/fujifilm-x100v-review/)
@@ -203,7 +209,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 01** dari [batch_0
     - Sampel 3 (Lokomotif Saltley 1987 — **Kodacolor Gold 100**, dipotret dengan Canon AE-1 Program): kuning cerah hangat, biru tua agak teduh, dan butiran halus ISO 100 sepenuhnya sifat Kodacolor Gold 100.
 - **lookTags:** `classic-film`, `clean-geometry`, `balanced-contrast`, `sharp-center`, `shallow-dof`
 - **Arketipe:** `classic_35mm_slr` *(dikonfirmasi)*
-- **confidenceLook:** **`medium`** *(naik dari `low` di `batch_01.md`)* — Sudah diperiksa langsung 3 foto sampel arsip dan dipadukan dengan ulasan Shoot It With Film & arsip Canon/MIR, namun tetap `medium` karena bodi SLR film bersifat netral dan hasil akhir sangat bergantung lensa FD serta roll film (hanya 1 dari 3 sampel CC yang mencatat pasti nama emulsinya).
+- **confidenceLook:** **`medium`** *(terkonfirmasi pada audit ketat)* — Contoh campur: bodi kamera film berlensa tukar dengan lensa dan emulsi film berbeda-beda/sebagian tidak tercatat.
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Canon Camera Museum — AE-1](https://global.canon/en/c-museum/product/film93.html)
   - *Situs Fotografi / Arsip:* [MIR Archive — Canon AE-1 Specs](http://www.mir.com.my/rb/photography/companies/canon/fdresources/SLRs/ae1/spec.htm), [Shoot It With Film — Canon AE-1 Program Review](https://shootitwithfilm.com/canon-ae-1-program-review/), [Lomography Gallery — Canon AE-1](https://www.lomography.com/cameras/3315294-canon-ae-1/photos)
@@ -231,7 +238,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 01** dari [batch_0
     - Sampel 3 (Katedral Novocherkassk — *jenis film tidak dicantumkan*): langit biru pekat dan bayangan tegas berasal dari film/pemindaian. *(Catatan: ulasan 35mmc juga menguji FM2 + 50mm f/1.8 AI-S pada Kodak Portra 400, Kodak Gold 200, dan CineStill 400D dengan catatan ketajaman optik serupa.)*
 - **lookTags:** `neutral-body`, `sharp-glass`, `clean-contrast`, `minimal-distortion`, `smooth-bokeh`
 - **Arketipe:** `classic_35mm_slr` *(dikonfirmasi)*
-- **confidenceLook:** **`medium`** *(naik dari `low` di `batch_01.md`)* — Didukung inspeksi visual 3 foto lintas pengunggah + ulasan rinci 35mmc, tetap `medium` karena karakter warna/grain sepenuhnya bergantung lensa Nikon F dan film yang dipakai.
+- **confidenceLook:** **`medium`** *(terkonfirmasi pada audit ketat)* — Contoh campur: bodi kamera film berlensa tukar dengan lensa dan emulsi film berbeda-beda/sebagian tidak tercatat.
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Nikon Museum — Nikon FM2](https://www.nikonmuseum.com/post/nikon-fm2)
   - *Situs Fotografi / Ulasan:* [35mmc — Nikon FM2 Camera Review](https://www.35mmc.com/28/12/2022/nikon-fm2-camera-review/)
@@ -259,7 +267,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 01** dari [batch_0
     - Sampel 3 (Pelabuhan senja — **Nokton 40mm + CineStill 800T**, M6 TTL): rona dingin biru-sian menyeluruh dan pendaran tipis pada lampu pelabuhan berasal dari film tungsten CineStill 800T, bukan bodi M6. *(Ulasan Shoot It With Film juga menguji M6 dengan Kodak Portra 400 & Portra 800.)*
 - **lookTags:** `micro-contrast`, `edge-sharpness`, `clean-geometry`, `subtle-flare`, `smooth-midtones`
 - **Arketipe:** `classic_35mm_slr` *(dikonfirmasi)*
-- **confidenceLook:** **`medium`** — 3 foto sampel lintas sumber (2 dengan lensa & film tercatat jelas) + 2 situs fotografi independen, tetap `medium` karena hasil sangat ditentukan oleh variasi lensa M dan jenis film.
+- **confidenceLook:** **`medium`** *(terkonfirmasi pada audit ketat)* — Contoh campur: bodi kamera film berlensa tukar dengan lensa dan emulsi film berbeda-beda/sebagian tidak tercatat.
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Leica Camera — Technical Specs Leica M6](https://leica-camera.com/fr-CH/technical-specs-leica-m6)
   - *Situs Fotografi / Ulasan:* [Shoot It With Film — Leica M6 Review](https://shootitwithfilm.com/leica-m6-35mm-film-camera-review/), [Red Dot Camera — Leica M6](https://reddotcamera.net/leica/m6/)
@@ -284,7 +293,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 01** dari [batch_0
   - **Sifat Emulsi Film (pada sampel yang diperiksa):** Ketiga sampel CC yang diperiksa (gerbang merah Taichung, kuil emas Kaohsiung, mural jembatan beton Taichung) dipotret pada film negatif warna 35mm (*jenis emulsi spesifik tidak dicantumkan pada deskripsi pengunggah*); karenanya rona jingga-merah pekat, emas hangat, dan butiran film moderat diatribusikan ke kombinasi emulsi negatif warna + pemindaian, bukan semata lensa Sonnar.
 - **lookTags:** `sharp`, `micro-contrast`, `clean-flare`, `subtle-vignette`, `direct-flash`, `90s-snapshot`
 - **Arketipe:** `premium_point_shoot_35mm` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — 3 foto sampel dari 2 pengunggah berbeda konsisten sepenuhnya dengan ulasan independen MrLeica, A Fist Full of Bolts, dan galeri Lomography soal ketajaman dan kontras mikro Zeiss T*.
+- **confidenceLook:** **`medium`** *(diaudit ketat dari `high` → `medium`)* — Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **Tidak ditemukan:** halaman spesifikasi resmi produsen aktif; halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Situs Fotografi / Ulasan:* [MrLeica — Contax T2 Review](https://mrleica.com/contax-t2-review/), [A Fist Full of Bolts — Contax T2 Review](https://afistfullofbolts.com/film/contax-t2-review)
   - *Komunitas / Galeri:* [Lomography Gallery — Contax T2](https://www.lomography.com/cameras/3333919-contax-t2/photos)
@@ -312,7 +322,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 01** dari [batch_0
     - Sampel 3 (Pohon musim dingin bersalju — **film: dm Paradies** sesuai tag pengunggah): pergeseran warna biru-toska dingin menyeluruh berasal dari emulsi/pemindaian dm Paradies, bukan lensa Zuiko. *(Ulasan Shoot It With Film menguji kamera ini dengan Kodak UltraMax 400, ColorPlus, dan Portra 400.)*
 - **lookTags:** `sharp-center`, `corner-vignette`, `harsh-flash`, `high-contrast`, `night-glow`
 - **Arketipe:** `premium_point_shoot_35mm` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — 3 foto sampel dari 3 pengunggah dan kondisi cahaya berbeda (flash interior, neon malam, backlit salju) sangat konsisten dengan ulasan Shoot It With Film, Casual Photophile, dan galeri Lomography.
+- **confidenceLook:** **`medium`** *(diaudit ketat dari `high` → `medium`)* — Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **Tidak ditemukan:** halaman spesifikasi resmi produsen aktif; halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Situs Fotografi / Ulasan:* [Shoot It With Film — Olympus Stylus Epic Review](https://shootitwithfilm.com/olympus-stylus-epic-review/), [Casual Photophile — Olympus mju-II Review](https://casualphotophile.com/2018/09/27/olympus-mju-ii-film-camera-review/)
   - *Komunitas / Galeri:* [Lomography Gallery — Olympus mju-II](https://www.lomography.com/cameras/3324333-olympus-mju-ii/photos)
@@ -339,7 +350,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 01** dari [batch_0
     - Sampel 3–4 (Triptik jalan batu *Magpie Lane* & fasad rumah batu Oxford di Kosmo Foto — *film negatif warna 35mm tidak dicantumkan secara spesifik pada keterangan gambar*): nuansa sejuk sedikit kebiruan di bayangan jalan batu dan langit cerah pucat berasal dari film negatif warna, sedangkan kekasaran *grain* dan garis vertikal rasio 3:4 adalah ciri langsung format half-frame Pen EE-3. *(Catatan: ulasan 35mmc juga menguji Pen EE-3 dengan Kodak ColorPlus 200 dengan tekstur grain half-frame yang sama.)*
 - **lookTags:** `coarse-grain`, `vertical-frame`, `deep-dof`, `fixed-focus-soft-close`, `nostalgic`
 - **Arketipe:** `half_frame_35mm` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual langsung 4 foto/rangkaian half-frame bersih dari 2 sumber independen (Wikimedia/Flickr CC + ulasan foto Kosmo Foto) serta dikuatkan ulasan 35mmc dan galeri Lomography.
+- **confidenceLook:** **`medium`** *(diaudit ketat dari `high` → `medium`)* — Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **Tidak ditemukan:** halaman spesifikasi resmi produsen aktif; halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Situs Fotografi / Ulasan (dengan inspeksi visual sampel):* [Kosmo Foto — Olympus Pen EE3 Review](https://kosmofoto.com/2023/10/olympus-pen-ee3-review/), [35mmc — Olympus Pen EE-3 Review](https://www.35mmc.com/08/05/2020/olympus-pen-ee-3-review-weekend-in-prague-john-hanson/)
   - *Komunitas / Galeri:* [Lomography Gallery — Olympus Pen EE-3](https://www.lomography.com/cameras/3323369-olympus-pen-ee-3/photos)
@@ -364,7 +376,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 01** dari [batch_0
   - **Sifat Emulsi Film (bawaan tetap Fujicolor Superia/ISO 400):** Karena film terpasang dari pabrik, warna menjadi bagian tak terpisahkan dari produk ini: di bawah cahaya redup tanpa flash (sampel 2), bayangan kurang eksposur terangkat menjadi keruh **hijau-sian berbutir sangat kasar**; pada foto senja dan salju (sampel 3–5 The Darkroom), langit menampilkan nuansa hangat-persik/magenta tipis pada awan senja, hijau-biru sejuk pada bayangan bulu/kendaraan gelap, kontras lembut, serta butiran *grain* ISO 400 yang terasa jelas di area langit.
 - **lookTags:** `soft-edges`, `light-vignette`, `highlight-bloom`, `grainy-green-shadows`, `harsh-flash`
 - **Arketipe:** `disposable_point_shoot` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual langsung 5 foto lintas 3 sumber independen (2 Flickr CC + 3 foto sampel The Darkroom mencakup siang mendung, senja, jendela terang, flash langsung, dan ruang gelap tanpa flash) serta spesifikasi resmi Fujifilm dan galeri Lomography.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [4], >= 3 foto diperiksa [5], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** tahun rilis persis varian saat ini di sumber resmi; halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Fujifilm QuickSnap Official Specifications](https://quicksnap.fujifilm.com/en/spec.html)
   - *Situs Fotografi / Lab Film (dengan inspeksi visual sampel):* [The Darkroom — Fujifilm QuickSnap Review](https://thedarkroom.com/film/fujifilm-quicksnap-single-use-disposable-camera/)
@@ -393,7 +406,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 01** dari [batch_0
     - Sampel 3 (Taman Curitiba — **film 35mm Fuji** dipasang di bodi 120N): hijau rumput hangat dan merah muda bunga berasal dari film negatif warna Fuji.
 - **lookTags:** `heavy-vignette`, `soft-edges`, `radial-blur`, `dreamy`, `square-format`, `light-leak`
 - **Arketipe:** `toy_lomo_vignette` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — 3 foto sampel lintas 3 pengunggah dan 3 jenis film berbeda (B&W 120, Fuji Pro 400H 120, Fuji 35mm) menunjukkan ciri optik Holga 120N yang sangat konsisten dengan MyFavouriteLens, EMULSIVE, dan Lomography.
+- **confidenceLook:** **`medium`** *(diaudit ketat dari `high` → `medium`)* — Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **Tidak ditemukan:** halaman spesifikasi resmi produsen aktif; tahun rilis persis varian saat ini di sumber resmi; halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Situs Fotografi / Ulasan:* [MyFavouriteLens — Holga 120N Review](https://www.myfavouritelens.com/holga-120n-camera-review/), [EMULSIVE — Holga 120N Review](https://emulsive.org/reviews/camera-reviews/holga-camera-reviews/holga-120n-by-sandeep-sumal)
   - *Komunitas / Galeri:* [Lomography Gallery — Holga 120N](https://www.lomography.com/cameras/3331797-holga-120-n/photos)
@@ -421,7 +435,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 01** dari [batch_0
     - Sampel 3 (Shinjuku *backlight* — **Kodak Vision3 500T 5219**): bayangan sejuk kebiruan dan merah mobil sangat dalam dipengaruhi emulsi film bioskop tungsten 500T. *(Ulasan Blue Moon Camera Codex juga menguji Minitar-1 dengan Agfa Color Mission & Kodak Portra 400.)*
 - **lookTags:** `heavy-vignette`, `high-contrast`, `vivid`, `strong-flare`, `soft-edges`
 - **Arketipe:** `toy_lomo_vignette` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — 3 foto sampel dari 2 pengunggah lintas 3 kondisi pencahayaan sangat seragam dengan ulasan teknis Blue Moon Camera Codex dan dokumentasi resmi Lomography.
+- **confidenceLook:** **`medium`** *(diaudit ketat dari `high` → `medium`)* — Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Penerus Merek:* [Lomography — Introducing the Lomo LC-A Minitar-1](https://www.lomography.com/magazine/311143-introducing-the-lomo-lca-minitar-1-art-lens)
   - *Situs Fotografi / Ulasan:* [Blue Moon Camera Codex — Lomo LC-A Minitar-1 32mm f/2.8 Review](https://bluemooncameracodex.com/technical-reviews/lomo-lc-a-minitar-1-32mm-28-review)
@@ -449,7 +464,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 01** dari [batch_0
     - Sampel 3 (Bayangan kursi pantai 1985 — *emulsi Polaroid SX-70 Time-Zero klasik*): warna oker-krem hangat, merah bata kaya, dan bayangan beludru lembut tanpa garis keras.
 - **lookTags:** `muted-vintage`, `low-contrast`, `sharp-center`, `square-instant`, `organic-chemical-shift`
 - **Arketipe:** `instant_integral_vintage` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** *(naik dari `low` di `batch_01.md`)* — Kini didukung inspeksi visual 3 foto cetak SX-70 dari 3 pengunggah dan 2 era emulsi berbeda ditambah 3 ulasan independen (Casual Photophile, Shoot It With Film, EMULSIVE) dan galeri Lomography.
+- **confidenceLook:** **`medium`** *(diaudit ketat dari `high` → `medium`)* — Contoh campur kimia emulsi instan lintas era (Polaroid Time-Zero 1985 vs Polaroid Originals SX-70 modern).
+- **Tidak ditemukan:** halaman spesifikasi resmi produsen aktif; halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Situs Fotografi / Ulasan:* [Shoot It With Film — Polaroid SX-70 Review](https://shootitwithfilm.com/polaroid-sx-70-land-camera-review/), [Casual Photophile — Polaroid SX-70 Review](https://casualphotophile.com/2017/06/02/polaroid-sx-70-instant-film-camera-review-the-pinnacle-of-polaroid/), [EMULSIVE — Polaroid Originals SX-70 Film Review](https://emulsive.org/reviews/film-reviews/polaroid-originals-sx70-film-review-and-user-guide)
   - *Komunitas / Galeri:* [Lomography Gallery — Polaroid SX-70](https://www.lomography.com/cameras/3315377-polaroid-sx-70/photos)
@@ -474,7 +490,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 01** dari [batch_0
   - **Sifat Emulsi Instan Fujifilm Instax Mini (bawaan tetap pada ketiga sampel):** Jauh lebih cerah, jenuh, dan berkontras kuat dibanding Polaroid SX-70 — langit biru tampil kobalt pekat (sampel 1–2), kuning bunga menyala bersih, hijau semanggi gelap pekat berlawanan dengan putih kelopak yang tegas (sampel 3), dan sorotan matahari langsung cepat memutih bersih (*crisp highlight clipping*).
 - **lookTags:** `bright-color`, `punchy-contrast`, `crisp-instant`, `vertical-mini`, `balanced-flash`
 - **Arketipe:** `instant_modern_instax` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — 3 pindaian cetak fisik Instax Mini 90 dari 2 pengunggah berbeda (Flickr CC) sangat konsisten dengan katalog resmi Fujifilm, PCMag, Popular Photography, dan artikel sampel Lomography.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [5], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Fujifilm Official Catalogue PDF — Instax Mini 90](https://asset.fujifilm.com/www/ca/files/2020-12/5e51c23b70d831f1adccc629b2ddb593/instax_mini_90_catalogue.pdf)
   - *Situs Fotografi / Ulasan:* [PCMag — Instax Mini 90 Review](https://au.pcmag.com/digital-cameras/59124/fujifilm-instax-mini-90-neo-classic), [Popular Photography — Instax Mini 90 Review](https://www.popphoto.com/gear/2013/12/review-fujifilm-instax-mini-90-neo-classic-instant-camera/), [Lomography Magazine — Instax Mini 90 Sample Snapshots](https://www.lomography.com/magazine/256704-sample-snapshots-taken-with-the-fuji-instax-mini-90-neo-classic)
@@ -502,7 +519,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 01** dari [batch_0
     - Sampel 3 (Lorong sepeda San Francisco — **Planar 80mm**, *film negatif warna 120 tidak dicantumkan*): nuansa dinding hijau-zaitun kalem berasal dari film negatif warna di bawah cahaya koridor.
 - **lookTags:** `fine-grain`, `3d-pop`, `smooth-rolloff`, `square-format`, `subtle-glow`, `zero-distortion`
 - **Arketipe:** `medium_format_tlr_slr` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — 3 foto sampel dari 3 pengunggah dan 3 emulsi berbeda (slide, B&W, negatif warna) konsisten sepenuhnya dengan ulasan EMULSIVE, Shoot It With Film, dan galeri Lomography.
+- **confidenceLook:** **`medium`** *(diaudit ketat dari `high` → `medium`)* — Contoh campur: bodi kamera film berlensa tukar dengan lensa dan emulsi film berbeda-beda/sebagian tidak tercatat.
+- **Tidak ditemukan:** halaman spesifikasi resmi produsen aktif; halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Situs Fotografi / Ulasan:* [EMULSIVE — Hasselblad 500C/M Review](https://emulsive.org/reviews/camera-reviews/hasselblad-camera-reviews/camera-review-a-love-letter-to-my-hasselblad-500cm), [Shoot It With Film — Hasselblad 500C/M Review](https://shootitwithfilm.com/hasselblad-500-cm-film-camera-review/)
   - *Komunitas / Galeri:* [Lomography Gallery — Hasselblad 500C/M](https://www.lomography.com/cameras/3352762-hasselblad-500c-m/photos)
@@ -529,7 +547,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 01** dari [batch_0
   - **Karakter Video:** Menurut pengujian Videomaker dan BealeCorner, ujung sudut lebar lensa sedikit melunak dan rekaman pita MiniDV bawaannya membawa karakter gerak *interlaced* (sedangkan mode *Progressive Scan* menurunkan separuh resolusi vertikal gerak tetapi sering dipakai untuk menangkap *still* bersih ke disket).
 - **lookTags:** `rich-3ccd-color`, `low-res`, `clipped-highlights`, `dv-softness`, `interlaced-video`
 - **Arketipe:** `camcorder_mini_dv_vhs` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual langsung **4 *still frame* asli dari kamera** lintas 2 sumber independen (Wikimedia Commons + arsip foto BealeCorner mode Superfine langsung dari TRV900) yang selaras dengan ulasan teknis Videomaker *(catatan: gerak video interlaced diverifikasi dari ulasan teks teknis, bukan pemutaran video)*.
+- **confidenceLook:** **`medium`** *(diaudit ketat dari `high` → `medium`)* — 4 frame still diperiksa lintas 2 domain (Wikimedia + BealeCorner), namun karakter gerak video interlaced hanya dari ulasan teknis.
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan; inspeksi pemutaran video bergerak (interlaced/24p hanya diverifikasi dari literatur teknis).
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Sony Press Release 1998 — DCR-TRV900](https://www.sony.com/en/SonyInfo/News/Press/199807/98-068/)
   - *Situs Videografi / Uji Teknis (dengan inspeksi visual sampel):* [BealeCorner — TRV900 Notes & Direct Still Frames](http://www.bealecorner.com/trv900/bnotes/brief.html), [BealeCorner — TRV900 Comparisons](http://www.bealecorner.com/trv900/trv-comp.html), [Videomaker — Sony DCR-TRV900 Review](https://www.videomaker.com/article/c5/7530-sony-three-ccd-camcorder-review-dcr-trv900-mini-dv-camcorder/)
@@ -556,7 +575,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 01** dari [batch_0
   - **Vignette & Flash:** Vignette sudut hampir tak terlihat; lampu kilat LED kecil bawaan (menurut Engadget & GSMArena) cenderung keras pada jarak dekat dan mudah membuat subjek datar/terbakar.
 - **lookTags:** `crisp-daylight`, `vivid`, `clipped-highlights`, `fine-noise`, `low-dr`
 - **Arketipe:** `early_camera_phone` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** *(naik dari `low` di `batch_01.md`)* — Kini didukung inspeksi visual langsung 3 foto SOOC (iOS 5.0.1, iOS 6.1.3, dan unggahan Flickr-via-Wikimedia) lintas 3 pencahayaan, konsisten dengan GSMArena, Imaging Resource, dan Engadget.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [5], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** halaman Flickr Camera Finder (404/500 saat diperiksa).
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Apple Support — iPhone 4 Technical Specifications](https://support.apple.com/en-us/112562)
   - *Situs Fotografi / Ulasan:* [Imaging Resource — Apple iPhone 4 Gallery](https://www.imaging-resource.com/cameras/apple-iphone-4-review/gallery/), [GSMArena — Apple iPhone 4 Camera Review](https://www.gsmarena.com/apple_iphone_4-review-490p8.php), [Engadget — iPhone 4 Review](https://www.engadget.com/2010-06-22-iphone-4-review.html)
@@ -567,27 +587,38 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 01** dari [batch_0
 
 ---
 
-## Ringkasan Laporan Batch 01
+---
 
-### 1. Jumlah Kamera per `confidenceLook`
+## Ringkasan Laporan Batch 01 *(Diperbarui Audit Ketat)*
+
+### 1. Jumlah Kamera per `confidenceLook` (Setelah Audit Ketat — Lihat [AUDIT.md](AUDIT.md))
 
 | Tingkat `confidenceLook` | Jumlah | Daftar Kamera |
 |---|---:|---|
-| **`high`** | **17** | `canon_powershot_sd1000`, `fujifilm_finepix_f31fd`, `sony_cyber_shot_dsc_t70`, `leica_m9`, `ricoh_gr_iii`, `fujifilm_x100v`, `contax_t2`, `olympus_mju_ii`, `olympus_pen_ee_3`, `fujifilm_quicksnap_flash_400`, `holga_120n`, `lomo_lc_a`, `polaroid_sx_70`, `fujifilm_instax_mini_90_neo_classic`, `hasselblad_500c_m`, `sony_handycam_dcr_trv900`, `apple_iphone_4` |
-| **`medium`** | **3** | `canon_ae_1`, `nikon_fm2`, `leica_m6` |
+| **`high`** | **8** | `canon_powershot_sd1000`, `fujifilm_finepix_f31fd`, `sony_cyber_shot_dsc_t70`, `ricoh_gr_iii`, `fujifilm_x100v`, `fujifilm_quicksnap_flash_400`, `fujifilm_instax_mini_90_neo_classic`, `apple_iphone_4` |
+| **`medium`** | **12** | `leica_m9`, `canon_ae_1`, `nikon_fm2`, `leica_m6`, `contax_t2`, `olympus_mju_ii`, `olympus_pen_ee_3`, `holga_120n`, `lomo_lc_a`, `polaroid_sx_70`, `hasselblad_500c_m`, `sony_handycam_dcr_trv900` |
 | **`low`** | **0** | — |
-| **`tidak ditemukan`** | **0** | *(Tidak ada kamera tanpa sumber sama sekali)* |
-| **Total** | **20** | **64 foto contoh diperiksa visual langsung** (56 berlisensi CC/PD di `docs/references/manifest.md` + 8 foto ulasan independen diperiksa sementara lalu dihapus) |
-
-*(Perbandingan terhadap `docs/catalog/batch_01.md`: 5 kamera naik ke `high` berkat inspeksi visual langsung lintas sumber — `FinePix F31fd`, `Cyber-shot DSC-T70`, `Leica M9`, `Polaroid SX-70`, dan `Apple iPhone 4`; serta `Canon AE-1` dan `Nikon FM2` naik dari `low` ke `medium`.)*
+| **`tidak ditemukan`** | **0** | — |
+| **Total** | **20** | **64 foto/frame diperiksa visual** (56 berlisensi CC/PD lokal di `docs/references/manifest.md`) |
 
 ### 2. Kamera dengan Sumber Lemah / Perlu Perhatian Saat Kalibrasi
 
-1. **`canon_ae_1`, `nikon_fm2`, `leica_m6` (`medium`):** Sudah diperiksa 3 foto visual per kamera dan dipisahkan antara sifat optik bodi/lensa vs emulsi film, tetapi tetap `medium` karena bodi kamera SLR/rangefinder film bersifat netral secara warna dan tampilan akhir sangat bergantung pada lensa yang dipasang serta roll film (sebagian sampel arsip Wikimedia tidak mencantumkan nama emulsi spesifik).
-2. **`sony_handycam_dcr_trv900` (`high` untuk karakter *still* 3-CCD, catatan khusus untuk video):** Sudah diperiksa 4 *still frame* asli lintas 2 sumber (Wikimedia + BealeCorner), namun efek gerak *interlaced* dan kompresi video MiniDV bergerak diverifikasi dari ulasan teknis, bukan pemutaran klip video.
+- **`leica_m9` (`medium`):** Kamera digital berlensa tukar (mount Leica M); karakter optik (vignette, bokeh, flare) bervariasi antar lensa sampel.
+- **`canon_ae_1` (`medium`):** Contoh campur: bodi kamera film berlensa tukar dengan lensa dan emulsi film berbeda-beda/sebagian tidak tercatat.
+- **`nikon_fm2` (`medium`):** Contoh campur: bodi kamera film berlensa tukar dengan lensa dan emulsi film berbeda-beda/sebagian tidak tercatat.
+- **`leica_m6` (`medium`):** Contoh campur: bodi kamera film berlensa tukar dengan lensa dan emulsi film berbeda-beda/sebagian tidak tercatat.
+- **`contax_t2` (`medium`):** Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **`olympus_mju_ii` (`medium`):** Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **`olympus_pen_ee_3` (`medium`):** Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **`holga_120n` (`medium`):** Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **`lomo_lc_a` (`medium`):** Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **`polaroid_sx_70` (`medium`):** Contoh campur kimia emulsi instan lintas era (Polaroid Time-Zero 1985 vs Polaroid Originals SX-70 modern).
+- **`hasselblad_500c_m` (`medium`):** Contoh campur: bodi kamera film berlensa tukar dengan lensa dan emulsi film berbeda-beda/sebagian tidak tercatat.
+- **`sony_handycam_dcr_trv900` (`medium`):** 4 frame still diperiksa lintas 2 domain (Wikimedia + BealeCorner), namun karakter gerak video interlaced hanya dari ulasan teknis.
 
-### 3. Hal yang Tidak Ditemukan
+### 3. Ringkasan Hal yang Tidak Ditemukan (Detail Per Kamera Tercatat di Masing-Masing Entri)
 
-- **Flickr Camera Finder 500/404:** Halaman `flickr.com/cameras/sony/dsc-t70/` dan `flickr.com/cameras/apple/iphone_4/` mengembalikan galat server/tidak tersedia saat dicek (berbeda dengan SD1000, F31fd, M9, GR III, dan X100V yang merespons HTTP 200).
-- **Halaman spesifikasi resmi produsen yang tidak ditemukan aktif:** `Fujifilm FinePix F31fd`, `Contax T2`, `Olympus µ[mju:]-II`, `Olympus Pen EE-3`, `Holga 120N`, `Polaroid SX-70`, dan `Hasselblad 500C/M`.
-- **Tahun rilis persis tidak ditemukan di sumber resmi:** varian saat ini `Fujifilm QuickSnap Flash 400` dan varian `Holga 120N`.
+- **Tanpa halaman spesifikasi resmi produsen aktif (7):** `fujifilm_finepix_f31fd`, `contax_t2`, `olympus_mju_ii`, `olympus_pen_ee_3`, `holga_120n`, `polaroid_sx_70`, `hasselblad_500c_m`
+- **Tanpa foto contoh tunggal berlisensi CC/PD lokal (0):** —
+- **Foto contoh diperiksa visual < 3 (0):** —
+- Rincian lengkap kekurangan per kamera (termasuk status Flickr Camera Finder dan mode khusus) tercantum pada baris **`Tidak ditemukan`** di setiap entri kamera di atas serta tabel menyeluruh di [AUDIT.md](AUDIT.md).

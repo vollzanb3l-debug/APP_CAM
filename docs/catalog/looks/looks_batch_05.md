@@ -28,7 +28,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 05** (nomor `81`�
   - **Noise & Flash:** Pada bayangan atap stasiun dan pasir gelap pantai mulai tampak butiran *noise* luminansi khas sensor kecil, dan tanpa stabilisasi optik kenaikan ISO cepat memicu peredaman *noise* yang menghaluskan tekstur halus; lampu kilat langsung bawaan pada jarak dekat memberi pencahayaan depan yang terang rata, kontras tegas, dan jatuhan bayangan tajam khas snapshot digicam akhir 2000-an.
 - **lookTags:** `warm`, `punchy-daylight`, `soft-corners`, `noise-smoothing`, `harsh-flash`
 - **Arketipe:** `ccd_compact_2000s` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — 3 foto sampel SOOC EXIF `DSC-W55` lintas 3 pencahayaan berbeda (teduh stasiun, senja pantai, dalam ruang dengan flash) konsisten sepenuhnya dengan pengujian Imaging Resource, PCMag, dan Bling Museum.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [5], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Sony Support — DSC-W55 Specifications](https://www.sony.co.id/en/electronics/support/compact-cameras-dscw-series/dsc-w55/specifications)
   - *Situs Fotografi / Ulasan:* [Imaging Resource — Sony DSC-W55 Test](https://www.imaging-resource.com/cameras/sony-dsc-w55-review/test/), [PCMag — Sony Cyber-shot DSC-W55](https://uk.pcmag.com/cameras/24301/sony-cyber-shot-dsc-w55), [Bling Museum — Sony Cyber-shot DSC-W55](https://bling-inc.com/blogs/museum/sony-cyber-shot-dsc-w55)
@@ -56,7 +57,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 05** (nomor `81`�
   - **Noise:** Bahkan pada bayangan papan biru di siang hari (sampel 2), bintik *noise* luminansi digital halus sudah mulai terbaca; menurut uji lab DPInterface dan PCMag, *noise* naik cepat mulai ISO 200–400 dan melahirkan kesan saku pertengahan 2000-an yang sedikit membuai.
 - **lookTags:** `natural-color`, `soft-detail`, `dreamy`, `high-iso-noise`, `ultra-compact-ccd`
 - **Arketipe:** `ccd_dreamy_pastel` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — 3 foto sampel EXIF `DSC-T7` lintas kondisi cerah, papan berkontras tinggi, dan pesisir mendung konsisten dengan ulasan DPInterface, TechRadar, PCMag, dan komunitas DPReview.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [6], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Sony UK Support — DSC-T7 Specifications](https://www.sony.co.uk/electronics/support/compact-cameras-dsc-t-series/dsc-t7/specifications)
   - *Situs Fotografi / Ulasan:* [DPInterface — Sony Cyber-shot T7 Review](https://dpinterface.com/reviews/sony-cybershot-t7/), [TechRadar — Sony Cyber-shot DSC-T7 Review](https://www.techradar.com/reviews/cameras-and-camcorders/cameras/compact-cameras/sony-cyber-shot-dsc-t7-64361/review), [PCMag — Sony Cyber-shot DSC-T7](https://uk.pcmag.com/cameras/26324/sony-cyber-shot-dsc-t7)
@@ -84,7 +86,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 05** (nomor `81`�
   - **Rentang Dinamis & Artefak Sensor Camcorder:** Rentang dinamis amat sempit — bagian atas lambung perahu putih, langit di balik menara, dan jendela teras langsung terbakar putih tanpa gradasi, sementara bayangan air jatuh gelap cepat. Karena pembacaan sensornya berakar dari camcorder era 90-an (*field/frame*), tepi miring dan permukaan air bergerak pada sampel perahu memperlihatkan gerigi tipis menyerupai garis *interlace*.
 - **lookTags:** `lo-fi`, `low-res-vga`, `jpeg-artifacts`, `dreamy-soft`, `clipped-highlights`, `harsh-flash`
 - **Arketipe:** `ccd_dreamy_pastel` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual langsung 1 kolase 100 bidikan 1997 berlisensi CC di Wikimedia Commons ditambah 5 berkas asli 640×480 lintas 2 arsip independen (Mike Eckman/Wrotniak Archive & Stanford Mavica Notes) yang selaras dengan Guy J. Brown Collection.
+- **confidenceLook:** **`medium`** *(diaudit ketat dari `high` → `medium`)* — 0 foto tunggal 640x480 CC/PD lokal (hanya 1 kolase grid 100 foto CC di Wikimedia + 5 sampel sementara lintas 2 arsip).
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan; foto tunggal 640x480 berlisensi CC/PD (hanya ditemukan 1 kolase grid 100 foto CC di Wikimedia).
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Sony Official Manual PDF — MVC-FD7](https://www.sony.com/electronics/support/res/manuals/W000/W0007206M.pdf)
   - *Lab / Arsip Fotografi (dengan inspeksi visual sampel):* [Mike Eckman / Wrotniak Archive — Sony Mavica MVC-FD7](https://mikeeckman.com/wrotniak/photo/snap/fd7.html), [Stanford Mavica Notes — Lucas Pereira](https://graphics.stanford.edu/~lucasp/Mavica/), [Digitalkamera Museum — Sony MVC-FD7](https://www.digitalkameramuseum.de/en/cameras/item/sony-mvc-fd7), [MavicaZine — FD7](https://www.mavicazine.com/fd7/)
@@ -113,7 +116,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 05** (nomor `81`�
   - **Noise Cahaya Redup:** Pada teras restoran senja (sampel 1), terlihat langsung karakter khas G10 melewati ISO rendah: butiran *noise* luminansi dan sedikit bintik warna muncul jelas di area bantal putih, kayu gelap, serta langit senja, selaras dengan catatan DPReview dan Camera Labs mengenai naiknya *noise* cepat di atas ISO 200–400.
 - **lookTags:** `sharp-base-iso`, `punchy-color`, `high-contrast`, `clipped-highlights`, `noisy-high-iso`
 - **Arketipe:** `ccd_compact_2000s` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — 3 foto sampel EXIF `Canon PowerShot G10` lintas 3 kondisi pencahayaan (senja ISO tinggi, jarak dekat mengilap, siang terik) sangat selaras dengan DPReview, Imaging Resource, dan Camera Labs.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [5], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Canon USA Support — PowerShot G10 Specifications](https://support.usa.canon.com/kb/s/article/ART105000)
   - *Situs Fotografi / Ulasan:* [DPReview — Canon PowerShot G10 Review](https://www.dpreview.com/reviews/5619014799/canong10/), [Imaging Resource — Canon G10 Review](https://www.imaging-resource.com/cameras/canon-g10-review/), [Camera Labs — Canon PowerShot G10](https://www.cameralabs.com/canon_powershot_g10/5/)
@@ -140,7 +144,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 05** (nomor `81`�
   - **Sorotan, Noise & Flash:** Pada latar salju dekat jendela (sampel 1), sorotan terang langsung penuh putih lembut dan permukaan plastik dalam ruang menunjukkan butiran *noise* halus disertai sedikit penghalusan tekstur khas DIGIC 4 saat ISO meningkat; menurut Camera Labs dan Imaging Resource, ISO 800–1600 tampak kasar berbutir dan *flash* langsung menghasilkan potret malam berkontras kuat dengan latar cepat menggelap.
 - **lookTags:** `warm-skin`, `vivid-daylight`, `gentle-softness`, `noise-smoothing`, `direct-flash`
 - **Arketipe:** `ccd_dreamy_pastel` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — 3 foto sampel EXIF lintas dua nama wilayah (`Canon DIGITAL IXUS 95 IS` dan `Canon PowerShot SD1200 IS`) selaras dengan ulasan Camera Labs, Imaging Resource, dan forum DPReview.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [5], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Canon Indonesia Support — IXY Digital 110 IS / Digital IXUS 95 IS](https://id.canon/id/support/6200040400)
   - *Situs Fotografi / Ulasan:* [Camera Labs — PowerShot SD1200 IS / IXUS 95 IS](https://www.cameralabs.com/canon_powershot_sd1200_is_ixus_95_is/3/), [Imaging Resource — Canon SD1200 IS Review](https://www.imaging-resource.com/cameras/canon-sd1200-is-review/)
@@ -168,7 +173,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 05** (nomor `81`�
   - **Eksposur & Sorotan (*Highlight*):** Pengamatan langsung pada benteng batu di bawah matahari terik (sampel 3) dan jendela gereja (sampel 2) mengonfirmasi temuan DPReview dan Imaging Resource: pengukuran cahaya bawaan F10 cenderung sedikit kelebihan eksposur sehingga langit terang, dinding batu diterpa matahari langsung, serta bingkai jendela mudah memudar penuh ke putih.
 - **lookTags:** `clean-high-iso`, `warm-reds`, `film-like-grain`, `slight-overexposure`, `smooth-lowlight`
 - **Arketipe:** `pro_ccd_filmic` *(diperbarui dari `ccd_dreamy_pastel` di `batch_05.md` agar selaras dengan definisi sensor Super CCD HR 1/1,7" berpola grain organik milik penerusnya FinePix F31fd di `archetypes.md`)*
-- **confidenceLook:** **`high`** — 3 foto sampel EXIF `FinePix F10` lintas cahaya kabut sangat redup, interior tanpa flash, dan siang terik mengonfirmasi secara persis seluruh temuan DPReview, Imaging Resource, dan Reviewed.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [5], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** halaman spesifikasi resmi produsen aktif; halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Situs Fotografi / Ulasan:* [DPReview — Fujifilm FinePix F10 Review](https://www.dpreview.com/reviews/1581648897/fujifilmf10zoom/), [Imaging Resource — FinePix F10 Review](https://www.imaging-resource.com/news/fujifilm-finepix-f10-review-posted/), [Imaging Resource — FinePix F10 Data](https://old.imaging-resource.com/PRODS/F10/F10DAT.HTM), [Reviewed — Fujifilm FinePix F10 Review](https://www.reviewed.com/cameras/content/fujifilm-finepix-f10-digital-camera-review)
   - *Foto Sampel Diperiksa Visual (3, EXIF FinePix F10):*
@@ -194,7 +200,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 05** (nomor `81`�
   - **Sorotan & Cahaya Redup:** Langit di balik bangunan (sampel 1) dan celah kanopi pepohonan (sampel 2) cepat penuh terbakar putih rata; menurut pengujian lab Reviewed, di atas ISO 400 kualitas gambar turun tajam karena lonjakan *noise* sehingga pemotretan dalam ruang bergantung pada *flash* langsung.
 - **lookTags:** `accurate-daylight`, `soft-edges`, `oversharpened-center`, `aggressive-nr`, `clipped-highlights`
 - **Arketipe:** `ccd_dreamy_pastel` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** *(naik dari `medium` di `batch_05.md`)* — Kini didukung inspeksi visual langsung 3 foto SOOC EXIF `COOLPIX S3300V1.0` lintas 3 pengunggah berbeda di Wikimedia Commons, konsisten dengan uji lab Reviewed dan ringkasan Imaging Resource.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [4], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Nikon USA — Coolpix S3300 Overview](https://www.nikonusa.com/p/coolpix-s3300/26309/overview)
   - *Situs Fotografi / Ulasan:* [Reviewed — Nikon Coolpix S3300 Review](https://www.reviewed.com/cameras/content/nikon-coolpix-s3300-review), [Imaging Resource — Nikon S3300 Review](https://www.imaging-resource.com/cameras/nikon-s3300-review/)
@@ -221,7 +228,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 05** (nomor `81`�
   - **Cahaya Redup Tanpa OIS:** Sampel malam jalanan Nagoya (sampel 3) memperlihatkan kelemahan sekaligus ciri nostalgia utamanya: tanpa stabilisasi optik, pemotretan malam mendorong ISO tinggi dan rana lambat sehingga memicu rona kehijauan-sejuk di bawah lampu jalan, *noise* luminansi dan warna yang jelas, serta sedikit kabur gerak dan penghalusan detail halus.
 - **lookTags:** `warm-vivid`, `sharp-center`, `clipped-highlights`, `soft-corners`, `noisy-lowlight`
 - **Arketipe:** `ccd_dreamy_pastel` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — 3 foto sampel lintas 2 platform independen (Wikimedia Commons EXIF `EX-Z1080` + 2 foto Flickr CC meliputi siang dan malam) konsisten dengan ulasan CNET dan komunitas DPReview.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [6], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Casio Archive — EX-Z1080 Specifications](http://arch.casio-intl.com/asia-mea/en/dc/past/ex_z1080/spec.html)
   - *Situs Fotografi / Ulasan:* [CNET — Casio Exilim Zoom EX-Z1080 Review](https://www.cnet.com/reviews/casio-exilim-zoom-ex-z1080-review/), [Imaging Resource — Casio EX-Z1080 Specs](https://www.imaging-resource.com/cameras/casio-ex-z1080-review/specifications/)
@@ -249,7 +257,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 05** (nomor `81`�
   - **Sorotan Memudar & Noise:** Pada menara lonceng kuil yang membelakangi pepohonan terang (sampel 3), cahaya latar langsung memutih memudar (*bleached highlights*) disertai pendaran halus di sela dedaunan; di bayangan beranda gelap (sampel 1) dan bulu gelap dalam ruang (sampel 2) tampak jelas butiran *noise* digital dan sedikit bercak warna halus.
 - **lookTags:** `soft-focus`, `cool-muted`, `jpeg-grain`, `bleached-highlights`, `noisy-high-iso`
 - **Arketipe:** `ccd_dreamy_pastel` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — 3 foto sampel EXIF SOOC `u710,S710` lintas 3 kondisi pencahayaan (teduh penuh warna, dalam ruang pastel, cahaya latar kuat) sepenuhnya mengonfirmasi ulasan CNET, TechRadar, PCMag, dan DPReview Forum.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [6], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Olympus Official Manual PDF — Stylus 710 / µ 700](https://learnandsupport.getolympus.com/sites/default/files/media/files/2018/04/Stylus_710_Mju_710_Stylus_700_Mju_700_Basic_Manual_EN_FR_ES.pdf)
   - *Situs Fotografi / Ulasan:* [CNET — Olympus Stylus 710 Review](https://www.cnet.com/reviews/olympus-stylus-710-digital-camera-review/), [TechRadar — Olympus mju 700 Review](https://www.techradar.com/reviews/cameras-and-camcorders/cameras/compact-cameras/olympus-mju-700-63807/review), [PCMag — Olympus Stylus 710](https://uk.pcmag.com/cameras/25560/olympus-stylus-710)
@@ -277,7 +286,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 05** (nomor `81`�
   - **Sorotan & Pola Grain ISO Tinggi:** Pada koridor berkontras tinggi (sampel 3), kaca jendela yang diterpa cahaya luar cepat penuh putih disertai pendaran halus tipis pada kusen gelap. Selaras dengan ulasan Steve Huff Photo dan The Inspired Eye, saat dinaikkan ke ISO 800–1600 (terutama pada mode monokrom), *noise* luminansnya tampil rapat dan organik menyerupai butiran film *pushed* alih-alih bercak digital yang mengganggu.
 - **lookTags:** `edge-to-edge-sharp`, `gritty-monochrome`, `film-like-grain`, `deep-blacks`, `moody-ccd`
 - **Arketipe:** `pro_ccd_filmic` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — 3 foto sampel SOOC EXIF `GR DIGITAL 3` lintas 3 pencahayaan berbeda (langit biru cerah, jarak dekat hangat, koridor berkontras tinggi) sangat selaras dengan Steve Huff Photo dan The Inspired Eye.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [5], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Ricoh Imaging — GR Digital III Specifications](https://www.ricoh-imaging.co.jp/english/r_dc/gr/gr_digital3/specs.html)
   - *Situs Fotografi / Ulasan:* [Steve Huff Photo — Ricoh GR Digital III Review](https://www.stevehuffphoto.com/2011/01/22/the-ricoh-gr-digital-iii-review/), [The Inspired Eye — Ricoh GRD III Review](https://www.theinspiredeye.net/ricoh/ricoh-grd-iii-review/index.html), [DPReview — Ricoh GR Digital III](https://www.dpreview.com/products/ricoh/compacts/ricoh_grdigital3/)
@@ -304,7 +314,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 05** (nomor `81`�
   - **Batas ISO Tinggi:** Selaras dengan pengujian Imaging Resource, PetaPixel, dan Vieri Bottazzini, kinerja sensor 3 lapis ini sangat menuntut cahaya cukup di ISO 100–200; melewati ISO 400 kualitas warna dan bayangan cepat menurun dengan munculnya bercak *noise* warna kasar (yang kerap diakali fotografer dengan konversi monokrom bergradasi dalam).
 - **lookTags:** `razor-sharp`, `extreme-micro-contrast`, `3d-depth`, `rich-monochrome`, `harsh-high-iso`
 - **Arketipe:** `pro_ccd_filmic` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — 3 foto sampel terverifikasi `SIGMA DP1 Merrill` (termasuk *Quality Image* Wikimedia dan hasil olahan SPP langsung) sangat konsisten dengan Imaging Resource, PetaPixel, dan Vieri Bottazzini.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [5], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Sigma Global — DP1 Merrill](https://www.sigma-global.com/en/cameras/dp1-merrill/), [Sigma Catalog PDF](https://www.sigma-global.com/en/support/download/DP3Merrill_Catalog2013_EN_PrinterRes.pdf)
   - *Situs Fotografi / Ulasan:* [Imaging Resource — Sigma DP1 Merrill Review](https://www.imaging-resource.com/cameras/sigma-dp1-merrill-review/), [PetaPixel — Sigma DP1 Merrill Review](https://petapixel.com/2012/10/27/review-sigma-dp1-merrill-is-slow-and-clunky-but-its-photos-are-amazing/), [Vieri Bottazzini — DP1 Merrill & DP2 Merrill Review](https://www.vieribottazzini.com/2013/01/sigma-dp1-merrill-sigma-dp2-merrill-review.html)
@@ -331,7 +342,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 05** (nomor `81`�
   - **Transisi Sorotan & Grain ISO Tinggi:** Langit mendung di atas vila (sampel 1) dan pantulan kilau permukaan air (sampel 3) meluruh lembut tanpa batas patah kasar; konsisten dengan pengujian DPReview, Imaging Resource, Photography Life, dan Camera Labs, pada ISO 1600–6400 pola *noise*-nya tampil rapat, seragam, dan monokromatik menyerupai butiran film.
 - **lookTags:** `x-trans-organic`, `film-sim`, `natural-skin`, `film-like-grain`, `crisp-micro-contrast`
 - **Arketipe:** `filmic_digital_mirrorless` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — 3 foto sampel lintas 2 platform (Wikimedia Commons EXIF `X-Pro1` + Flickr CC) konsisten sepenuhnya dengan DPReview, Imaging Resource, Photography Life, dan Camera Labs.
+- **confidenceLook:** **`medium`** *(diaudit ketat dari `high` → `medium`)* — Kamera mirrorless berlensa tukar (mount Fujifilm X); karakter optik bervariasi antar lensa sampel walau sensor X-Trans intrinsik.
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Fujifilm Hong Kong — X-Pro1 Specifications](https://www.fujifilm.com.hk/products/digital_cameras/x/fujifilm_x_pro1/specifications/), [Fujifilm X-Pro1 Manual PDF](https://dl.fujifilm-x.com/support/manual/x/fujifilm_xpro1_manual_en.pdf)
   - *Situs Fotografi / Ulasan:* [DPReview — Fujifilm X-Pro1 Review](https://www.dpreview.com/reviews/4019317027/fujifilm-x-pro1/), [Imaging Resource — Fujifilm X-Pro1 Review](https://www.imaging-resource.com/cameras/fujifilm-x-pro1-review/), [Photography Life — Fuji X-Pro1 Review](https://photographylife.com/reviews/fuji-x-pro1/2), [Camera Labs — Fujifilm X-Pro1](https://www.cameralabs.com/fujifilm_x-pro1/2/)
@@ -358,7 +370,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 05** (nomor `81`�
   - **Cahaya Redup & Noise:** Pada interior gereja redup tanpa *flash* (sampel 3, SOOC `DSC-RX100 v1.00`), lampu kristal menyala terang namun detail kain beludru merah marun, emas, dan marmer lantai tetap bersih dengan butiran *noise* halus yang terkendali rapi; baru pada ISO 3200–6400 peredaman *noise* JPEG BIONZ mulai menghaluskan detail mikro secara kentara.
 - **lookTags:** `wide-dr`, `crisp-center`, `natural-color`, `clean-iso1600`, `soft-tele-edges`
 - **Arketipe:** `early_cmos_gritty` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — 3 foto sampel EXIF `DSC-RX100` (bukan varian M2–M7) lintas mendung basah, siang terik, dan interior sangat redup SOOC konsisten sepenuhnya dengan DPReview, Imaging Resource, Steve Huff Photo, dan Ming Thein.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [6], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Sony Support — DSC-RX100 Specifications](https://www.sony.co.id/en/electronics/support/compact-cameras-dsc-rx-series/dsc-rx100/specifications)
   - *Situs Fotografi / Ulasan:* [DPReview — Sony Cyber-shot DSC-RX100 Review](https://www.dpreview.com/reviews/2079759241/sony-cybershot-dsc-rx100/), [Imaging Resource — Sony RX100 Review](https://www.imaging-resource.com/cameras/sony-rx100-review/), [Steve Huff Photo — Sony RX100 Review](https://www.stevehuffphoto.com/2012/07/26/the-sony-rx100-digital-camera-review/), [Ming Thein — Sony RX100 Comparative Review](https://blog.mingthein.com/2012/08/06/the-sony-rx100-a-somewhat-comparative-review/)
@@ -386,7 +399,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 05** (nomor `81`�
     - Sampel 3 (Penanda Hutan Pinus Becici — pemindaian lab Noritsu EZ Controller, *jenis film tidak dicantumkan*): nuansa bayangan sedikit kehijauan-sejuk dan butiran 35mm yang cukup tegas berasal dari emulsi negatif warna serta setelan pemindai Noritsu.
 - **lookTags:** `classic-film`, `rich-smc-contrast`, `soft-wide-open`, `crisp-stopped-down`, `neutral-body`
 - **Arketipe:** `classic_35mm_slr` *(dikonfirmasi)*
-- **confidenceLook:** **`medium`** — 3 foto film 35mm lintas pengunggah telah diperiksa visual dan konsisten dengan Casual Photophile, Lomography, dan Shoot It With Film, namun tetap `medium` karena bodi SLR lensa-tukar bersifat netral dan hasil akhir sangat bergantung pada lensa K-mount serta roll film yang dipasang.
+- **confidenceLook:** **`medium`** *(terkonfirmasi pada audit ketat)* — Contoh campur: bodi kamera film berlensa tukar dengan lensa dan emulsi film berbeda-beda/sebagian tidak tercatat.
+- **Tidak ditemukan:** halaman spesifikasi resmi produsen aktif; halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Lab / Arsip Fotografi:* [Pentax K-Mount Page — K1000](http://kmp.pentaxians.eu/bodies/film_k/k1000/)
   - *Situs Fotografi / Ulasan:* [Casual Photophile — Pentax K1000 Review](https://casualphotophile.com/2016/11/07/pentax-k1000-camera-review/), [Shoot It With Film — 5 Great 35mm Film Cameras](https://shootitwithfilm.com/5-great-35mm-film-cameras-for-beginners/), [Ken Rockwell — Pentax K1000](https://www.kenrockwell.com/pentax/k1000.htm)
@@ -415,7 +429,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 05** (nomor `81`�
     - Sampel 3 (Kubah tembaga di Tama Zoo — *jenis film tidak dicantumkan*): hijau pepohonan organik agak kalem dan butiran 35mm lembut berasal dari negatif warna 35mm di bawah langit mendung.
 - **lookTags:** `classic-film`, `sharp-zuiko`, `crisp-contrast`, `smooth-bokeh`, `organic-tones`
 - **Arketipe:** `classic_35mm_slr` *(dikonfirmasi)*
-- **confidenceLook:** **`medium`** — 3 foto film 35mm autentik Olympus OM-1 (termasuk slide Ektachrome 1994) konsisten dengan Casual Photophile, 35mmc, dan Shoot It With Film, namun tetap `medium` karena bodi SLR film bersifat netral dan hasil akhir bergantung pasangan lensa OM serta emulsi film.
+- **confidenceLook:** **`medium`** *(terkonfirmasi pada audit ketat)* — Contoh campur: bodi kamera film berlensa tukar dengan lensa dan emulsi film berbeda-beda/sebagian tidak tercatat.
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Olympus Technology Museum — OM-1](https://www.olympus-global.com/technology/museum/lecture/vol2_03/?page=technology_museum)
   - *Lab / Arsip Fotografi:* [MIR Archive — Olympus OM-1](https://www.mir.com.my/rb/photography/hardwares/classics/olympusom1n2/om1/index.htm)
@@ -444,7 +459,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 05** (nomor `81`�
     - Sampel 3 (Fajar Sungai Merced, Yosemite — **lensa: Zeiss Planar 80mm f/2.8; film: Kodak Portra 400**): rona langit persik-merah jambu lembut berpadu bayangan lembah biru-nila dalam berasal dari negatif warna Kodak Portra 400 saat senja/fajar berkabut asap.
 - **lookTags:** `square-format`, `creamy-bokeh`, `3d-pop`, `smooth-tonality`, `biting-center`
 - **Arketipe:** `medium_format_tlr_slr` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Lensa tetap Planar/Xenotar 80mm f/2.8 + 3 foto sampel 6×6 terverifikasi lintas 3 emulsi (B&W Arista 400, negatif warna pastel, Kodak Portra 400) selaras sepenuhnya dengan Shoot It With Film dan dua ulasan terpisah di 35mmc.
+- **confidenceLook:** **`medium`** *(diaudit ketat dari `high` → `medium`)* — Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **Tidak ditemukan:** halaman spesifikasi resmi produsen aktif; halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Situs Fotografi / Ulasan:* [Shoot It With Film — Rolleiflex Guide](https://shootitwithfilm.com/rolleiflex-cameras-get-to-know-these-iconic-film-cameras/), [35mmc — 5 Frames Rolleiflex 2.8F (Takeuchi)](https://www.35mmc.com/28/08/2021/5-frames-with-a-rolleiflex-2-8f-a-lifetime-partner-by-floyd-takeuchi/), [35mmc — Rolleiflex 2.8F Reflections (Foale)](https://www.35mmc.com/09/02/2023/rolleiflex-2-8f-reflections-on-a-brief-period-of-ownership-by-simon-foale/)
   - *Foto Sampel Diperiksa Visual (3, format persegi 6×6):*
@@ -471,7 +487,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 05** (nomor `81`�
     - Sampel 3 (Tembok batu pegunungan — **lensa: 80mm @ f/4.0; film: Kodak T-Max 400**): kontras hitam-putih pekat, ketajaman tinggi, dan *grain* amat rapi berasal dari emulsi T-grain Kodak T-Max 400.
 - **lookTags:** `ultra-sharp`, `clean-modern-film`, `micro-contrast`, `fine-grain`, `natural-perspective`
 - **Arketipe:** `medium_format_tlr_slr` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — 3 foto sampel 6×7 terverifikasi dari 3 pengunggah dan 3 emulsi berbeda (Portra 400, Portra 160NC, T-Max 400) termasuk lensa standar 80mm f/4 sangat konsisten dengan Caleb Knueven, PhotoThinking, dan Ken Rockwell.
+- **confidenceLook:** **`medium`** *(diaudit ketat dari `high` → `medium`)* — Contoh campur: bodi kamera film berlensa tukar dengan lensa dan emulsi film berbeda-beda/sebagian tidak tercatat.
+- **Tidak ditemukan:** halaman spesifikasi resmi produsen aktif; halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Lab / Arsip Fotografi:* [Manual Instruksi Mamiya 7 PDF via Focale22](https://www.focale22.com/pdf/mamiya_7_instructions_manual.pdf)
   - *Situs Fotografi / Ulasan:* [Caleb Knueven — 5 Years with the Mamiya 7](https://www.calebknueven.com/post/5-years-with-the-mamiya-7-why-this-medium-format-rangefinder-is-my-ride-or-die), [PhotoThinking — Mamiya 7 First Impressions](https://photothinking.com/2019-01-11-mamiya-7-first-impressions/), [Japan Camera Hunter — Mamiya 7](https://www.japancamerahunter.com/2021/09/camera-geekery-mamiya-7/), [Ken Rockwell — Mamiya 7](https://www.kenrockwell.com/mamiya/7.htm)
@@ -499,7 +516,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 05** (nomor `81`�
     - Sampel 3 (Salib batu Rock of Cashel — *jenis film warna 120 tidak dicantumkan*): hijau rumput cerah dan kontras siang hari segar berasal dari emulsi warna 120.
 - **lookTags:** `3d-pop`, `shallow-dof`, `creamy-bokeh`, `vintage-glow`, `rich-tonality`
 - **Arketipe:** `medium_format_tlr_slr` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — 3 foto sampel 6×7 terverifikasi `Pentax 67` lintas 3 pengunggah dan 3 gaya pemotretan (arsitektur Portra 160, lanskap kota slide, ruang tajam dangkal *3D pop*) sangat konsisten dengan EMULSIVE, Casual Photophile, Kamerastore, dan Peter Jeffrey Photography.
+- **confidenceLook:** **`medium`** *(diaudit ketat dari `high` → `medium`)* — Contoh campur: bodi kamera film berlensa tukar dengan lensa dan emulsi film berbeda-beda/sebagian tidak tercatat.
+- **Tidak ditemukan:** halaman spesifikasi resmi produsen aktif; halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Situs Fotografi / Ulasan:* [EMULSIVE — Pentax 6x7 Review](https://emulsive.org/reviews/camera-reviews/pentax-camera-reviews/camera-review-me-and-my-pentax-6x7-by-daniel-j-schneider), [Casual Photophile — Pentax 67 Review](https://casualphotophile.com/2020/10/05/pentax-67-review-its-a-big-camera/), [Kamerastore — Ultimate Pentax 67 Guide](https://kamerastore.com/en-int/blogs/posts/the-ultimate-pentax-67-guide-history-iconic-lenses-and-real-world-review), [Peter Jeffrey Photography — Pentax 67 Review](https://www.peterjeffrey.photography/film-photography-blog/pentax-67-review)
   - *Foto Sampel Diperiksa Visual (3, format 6×7 Wikimedia Commons):*
@@ -525,7 +543,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 05** (nomor `81`�
   - **Karakter Gerak Video:** Selaras dengan ulasan Jenkem Magazine, EOSHD, dan arsip teknis DTV Group, perekaman *interlaced* 60i/50i memberi gerak video sangat luwes (berlawanan dengan irama sinematik 24p), ditambah tekstur kompresi pita MiniDV yang menjadi tolok ukur estetika video *skate* klasik.
 - **lookTags:** `rich-3ccd-color`, `warm-contrast`, `interlaced-4x3`, `highlight-bloom`, `minidv-skate`
 - **Arketipe:** `camcorder_mini_dv_vhs` *(dikonfirmasi)*
-- **confidenceLook:** **`medium`** *(diturunkan jujur dari `high` di `batch_05.md`)* — Tidak ditemukan *still frame* berlisensi CC/PD langsung dari kamera di Wikimedia Commons maupun Openverse; penilaian visual bertumpu pada **2 *frame* video 4:3 bersih bebas-wajah** yang diperiksa sementara dari Internet Archive ditambah konsistensi 3 sumber teks/ulasan independen (Jenkem Magazine, EOSHD, DTV Group Archive), sementara karakter gerak *interlaced* diverifikasi dari ulasan teknis.
+- **confidenceLook:** **`low`** *(diaudit ketat dari `medium` → `low`)* — 0 foto CC/PD; hanya 2 frame still sementara dari 1 arsip (Internet Archive) untuk camcorder video tanpa inspeksi gerak interlaced.
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan; foto hasil bidikan berlisensi CC/PD di Wikimedia Commons/Openverse (bukti visual hanya dari inspeksi sementara galeri ulasan); foto contoh bebas-wajah ke-3 (baru 2 foto bersih diperiksa visual); inspeksi pemutaran video bergerak (interlaced/24p hanya diverifikasi dari literatur teknis).
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Sony Design Gallery — DCR-VX1000](https://www.sony.com/en/SonyInfo/design/gallery/DCR-VX1000/)
   - *Lab / Arsip Teknis:* [DTV Group Archive — Sony DCR-VX1000](https://www.dtvgroup.com/DigVideo/DVC/Sony/dcr_vx1000.html), [UrbanFox Manual Archive — Sony VX1000](http://www.urbanfox.tv/workbooks/sonyvx1000/vx1000manual.htm)
@@ -552,7 +571,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 05** (nomor `81`�
   - **Irama Gerak 24p:** Sesuai ulasan Videomaker, CNET, dan Adam Wilt, mode progresif 24p sejati menggantikan kelicinan video *interlaced* 60i dengan irama gerak dan *motion blur* khas film seluloid.
 - **lookTags:** `24p-filmic-motion`, `cine-gamma`, `soft-highlights`, `warm-muted-3ccd`, `minidv-indie`
 - **Arketipe:** `camcorder_mini_dv_vhs` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual langsung **7 *frame* asli lintas 2 sumber independen** (5 *frame* perbandingan gamma langsung Normal vs Cine-Like/Cine-D/Cine-V di Adam Wilt 24p Guide + 2 *frame* bebas-wajah dari rekaman *Japan 05* di Internet Archive) yang sepenuhnya selaras dengan ulasan teknis Videomaker, CNET, dan Adam Wilt *(catatan: irama gerak 24p diverifikasi dari ulasan teks teknis, bukan pemutaran video)*.
+- **confidenceLook:** **`medium`** *(diaudit ketat dari `high` → `medium`)* — 0 foto CC/PD lokal; bukti visual hanya dari 7 frame sementara lintas 2 arsip (Adam Wilt & Internet Archive) tanpa pemutaran video 24p.
+- **Tidak ditemukan:** halaman Flickr Camera Finder khusus model ini tidak terverifikasi/tidak digunakan; foto hasil bidikan berlisensi CC/PD di Wikimedia Commons/Openverse (bukti visual hanya dari inspeksi sementara galeri ulasan); inspeksi pemutaran video bergerak (interlaced/24p hanya diverifikasi dari literatur teknis).
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Panasonic Pro-AV News — Seri AG-DVX100](https://pro-av.panasonic.net/en/sales_o/news_info/ibc/132.html)
   - *Lab / Arsip Teknis (dengan inspeksi visual sampel):* [Adam Wilt — 24p: The AG-DVX100 and Digital Filmmaking](https://www.adamwilt.com/24p/)
@@ -563,28 +583,35 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 05** (nomor `81`�
 
 ---
 
-## Ringkasan Laporan Batch 05
+---
 
-### 1. Jumlah Kamera per `confidenceLook`
+## Ringkasan Laporan Batch 05 *(Diperbarui Audit Ketat)*
+
+### 1. Jumlah Kamera per `confidenceLook` (Setelah Audit Ketat — Lihat [AUDIT.md](AUDIT.md))
 
 | Tingkat `confidenceLook` | Jumlah | Daftar Kamera |
 |---|---:|---|
-| **`high`** | **17** | `sony_cyber_shot_dsc_w55`, `sony_cyber_shot_dsc_t7`, `sony_mavica_mvc_fd7`, `canon_powershot_g10`, `canon_ixy_digital_110_is`, `fujifilm_finepix_f10`, `nikon_coolpix_s3300`, `casio_exilim_ex_z1080`, `olympus_mju_700`, `ricoh_gr_digital_iii`, `sigma_dp1_merrill`, `fujifilm_x_pro1`, `sony_cyber_shot_dsc_rx100`, `rollei_rolleiflex_2_8f`, `mamiya_7`, `pentax_67`, `panasonic_ag_dvx100` |
-| **`medium`** | **3** | `pentax_k1000`, `olympus_om_1`, `sony_handycam_dcr_vx1000` |
-| **`low`** | **0** | — |
-| **`tidak ditemukan`** | **0** | *(Tidak ada kamera tanpa sumber sama sekali)* |
-| **Total** | **20** | **66 foto/*frame* contoh diperiksa visual langsung** (52 berlisensi CC/PD di `docs/references/manifest_batch_05.json` + 14 foto/*frame* arsip & ulasan independen diperiksa sementara lalu dihapus) |
-
-*(Perbandingan terhadap `docs/catalog/batch_05.md`: `nikon_coolpix_s3300` naik dari `medium` ke `high` berkat inspeksi visual langsung 3 foto SOOC EXIF `COOLPIX S3300V1.0`; `sony_handycam_dcr_vx1000` diturunkan jujur dari `high` ke `medium` karena ketiadaan sampel CC/PD dan keterbatasan 2 *frame* arsip bebas-wajah; serta arketipe `fujifilm_finepix_f10` diperbarui dari `ccd_dreamy_pastel` ke `pro_ccd_filmic` agar konsisten dengan arsitektur Super CCD HR 1/1,7" milik FinePix F31fd di `archetypes.md`.)*
+| **`high`** | **11** | `sony_cyber_shot_dsc_w55`, `sony_cyber_shot_dsc_t7`, `canon_powershot_g10`, `canon_ixy_digital_110_is`, `fujifilm_finepix_f10`, `nikon_coolpix_s3300`, `casio_exilim_ex_z1080`, `olympus_mju_700`, `ricoh_gr_digital_iii`, `sigma_dp1_merrill`, `sony_cyber_shot_dsc_rx100` |
+| **`medium`** | **8** | `sony_mavica_mvc_fd7`, `fujifilm_x_pro1`, `pentax_k1000`, `olympus_om_1`, `rollei_rolleiflex_2_8f`, `mamiya_7`, `pentax_67`, `panasonic_ag_dvx100` |
+| **`low`** | **1** | `sony_handycam_dcr_vx1000` |
+| **`tidak ditemukan`** | **0** | — |
+| **Total** | **20** | **66 foto/frame diperiksa visual** (52 berlisensi CC/PD lokal di `docs/references/manifest.md`) |
 
 ### 2. Kamera dengan Sumber Lemah / Perlu Perhatian Saat Kalibrasi
 
-1. **`pentax_k1000` dan `olympus_om_1` (`medium`):** Masing-masing telah diperiksa visual 3 foto film 35mm terverifikasi dan dipisahkan sifat optik lensa vs emulsi filmnya, namun tetap `medium` karena bodi SLR mekanis bersifat netral secara warna sehingga tampilan akhir sangat dipengaruhi lensa K-mount/OM dan jenis roll film (sebagian sampel arsip tidak mencantumkan nama emulsi spesifik).
-2. **`sony_handycam_dcr_vx1000` (`medium`):** Tidak tersedia *still frame* berlisensi terbuka di Wikimedia Commons maupun Openverse; kalibrasi bertumpu pada 2 *frame* video 4:3 bebas-wajah dari Internet Archive serta ulasan teknis (gerak *interlaced* diverifikasi dari literatur teknis, bukan pemutaran klip).
-3. **`panasonic_ag_dvx100` (`high` untuk kurva gamma & warna 3-CCD, catatan khusus untuk gerak 24p):** Tidak tersedia *still frame* CC/PD di Wikimedia/Openverse, tetapi telah diverifikasi langsung melalui 5 *frame* perbandingan gamma sejajar (Normal vs Cine-Like/Cine-D/Cine-V) di Adam Wilt 24p Guide plus 2 *frame* Internet Archive; irama gerak 24p tetap bersandar pada literatur teknis.
-4. **`sony_mavica_mvc_fd7` (`high`, catatan jumlah sampel CC lokal):** Hanya 1 karya kolase 100 bidikan 1997 yang berlisensi CC di Wikimedia Commons (`manifest_batch_05.json`), sehingga karakter detail 640×480 asli, blok kompresi JPEG, dan gerigi *interlace* dilengkapi melalui inspeksi sementara 5 berkas 640×480 asli di Wrotniak Archive dan Stanford Mavica Notes.
+- **`sony_mavica_mvc_fd7` (`medium`):** 0 foto tunggal 640x480 CC/PD lokal (hanya 1 kolase grid 100 foto CC di Wikimedia + 5 sampel sementara lintas 2 arsip).
+- **`fujifilm_x_pro1` (`medium`):** Kamera mirrorless berlensa tukar (mount Fujifilm X); karakter optik bervariasi antar lensa sampel walau sensor X-Trans intrinsik.
+- **`pentax_k1000` (`medium`):** Contoh campur: bodi kamera film berlensa tukar dengan lensa dan emulsi film berbeda-beda/sebagian tidak tercatat.
+- **`olympus_om_1` (`medium`):** Contoh campur: bodi kamera film berlensa tukar dengan lensa dan emulsi film berbeda-beda/sebagian tidak tercatat.
+- **`rollei_rolleiflex_2_8f` (`medium`):** Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan.
+- **`mamiya_7` (`medium`):** Contoh campur: bodi kamera film berlensa tukar dengan lensa dan emulsi film berbeda-beda/sebagian tidak tercatat.
+- **`pentax_67` (`medium`):** Contoh campur: bodi kamera film berlensa tukar dengan lensa dan emulsi film berbeda-beda/sebagian tidak tercatat.
+- **`sony_handycam_dcr_vx1000` (`low`):** 0 foto CC/PD; hanya 2 frame still sementara dari 1 arsip (Internet Archive) untuk camcorder video tanpa inspeksi gerak interlaced.
+- **`panasonic_ag_dvx100` (`medium`):** 0 foto CC/PD lokal; bukti visual hanya dari 7 frame sementara lintas 2 arsip (Adam Wilt & Internet Archive) tanpa pemutaran video 24p.
 
-### 3. Hal yang Tidak Ditemukan
+### 3. Ringkasan Hal yang Tidak Ditemukan (Detail Per Kamera Tercatat di Masing-Masing Entri)
 
-- **Sampel foto/*frame* berlisensi CC/PD di Wikimedia Commons & Openverse Flickr CC:** Tidak ditemukan *still frame* hasil rekaman (non-foto-produk-kamera) berlisensi CC/PD untuk `Sony Handycam DCR-VX1000` dan `Panasonic AG-DVX100`, serta tidak ditemukan berkas tunggal 640×480 non-kolase yang pasti berasal dari `Sony Mavica MVC-FD7` di Wikimedia (kategori umum Sony Mavica mayoritas berisi foto beresolusi lebih tinggi dari seri CD Mavica / Mavica lanjut).
-- **Halaman spesifikasi resmi produsen aktif:** Tidak ditemukan untuk `Fujifilm FinePix F10`, `Pentax K1000`, `Rolleiflex 2.8F`, `Mamiya 7` (hanya tersedia arsip PDF manual instruksi via pihak ketiga), dan `Pentax 67` versi asli 1989 (arsip resmi Ricoh hanya menampilkan penerusnya `Pentax 67II`).
+- **Tanpa halaman spesifikasi resmi produsen aktif (5):** `fujifilm_finepix_f10`, `pentax_k1000`, `rollei_rolleiflex_2_8f`, `mamiya_7`, `pentax_67`
+- **Tanpa foto contoh tunggal berlisensi CC/PD lokal (3):** `sony_mavica_mvc_fd7`, `sony_handycam_dcr_vx1000`, `panasonic_ag_dvx100`
+- **Foto contoh diperiksa visual < 3 (1):** `sony_handycam_dcr_vx1000`
+- Rincian lengkap kekurangan per kamera (termasuk status Flickr Camera Finder dan mode khusus) tercantum pada baris **`Tidak ditemukan`** di setiap entri kamera di atas serta tabel menyeluruh di [AUDIT.md](AUDIT.md).

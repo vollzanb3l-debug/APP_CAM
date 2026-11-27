@@ -29,7 +29,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 02** (No. `21`–`
   - **Vignette & Flash:** Vignette optik sangat tipis dan hampir tak terasa pada bukaan menengah; flash internal yang dekat lensa menghasilkan cahaya langsung berkontras kuat untuk *snapshot*, sedangkan dudukan *hot shoe* memungkinkan kilat pantul lebih lembut.
 - **lookTags:** `crisp-ccd-detail`, `natural-canon-color`, `punchy-daylight-contrast`, `gritty-high-iso`, `subtle-purple-fringing`
 - **Arketipe:** `ccd_compact_2000s` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual 3 foto EXIF SOOC lintas pengunggah independen (ISO 100, 400, 800; luar dan dalam ruang) serta konsisten dengan ulasan DPReview, Imaging Resource, CNET, dan Luminous Landscape.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [7], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** halaman Flickr Camera Finder (404/500 saat diperiksa).
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Canon Camera Museum — PowerShot G9](https://global.canon/en/c-museum/product/dcc548.html), [Canon USA Support — PowerShot G9](https://support.usa.canon.com/kb/s/article/ART123834)
   - *Situs Fotografi / Ulasan:* [DPReview — Canon PowerShot G9 Review](https://www.dpreview.com/reviews/3881329841/canong9/), [Imaging Resource — Canon G9 Test](https://www.imaging-resource.com/cameras/canon-g9-review/test/), [CNET — Canon PowerShot G9 Review](https://www.cnet.com/reviews/canon-powershot-g9-review/), [Luminous Landscape — Canon PowerShot G9 Review](https://luminous-landscape.com/canon-powershot-g9-review/)
@@ -58,7 +59,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 02** (No. `21`–`
   - **Vignette & Flash:** Vignette optik lembut dan hampir tidak terlihat pada jarak normal; *pop-up flash* internal menghasilkan kilat langsung yang dapat diturunkan kompensasinya untuk pengisi lembut.
 - **lookTags:** `warm-filmic-ccd`, `rich-golden-tones`, `organic-micro-contrast`, `graceful-night-halation`, `clean-lowlight-ccd`
 - **Arketipe:** `pro_ccd_filmic` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual 3 foto EXIF terverifikasi lintas kondisi cahaya (mendung siang, malam ISO 800, senja keemasan) serta selaras dengan ulasan Imaging Resource, CNET, dan Photo Thinking.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [7], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** Tidak ada kekurangan sumber utama (spesifikasi resmi, referensi ulasan/Camera Finder, dan >= 3 foto contoh CC/PD tersedia).
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Canon Indonesia Support — PowerShot S95](https://id.canon/id/support/6200085300)
   - *Situs Fotografi / Ulasan:* [DPReview — Canon PowerShot S95](https://www.dpreview.com/articles/2660341179/canonpowershots95/), [Imaging Resource — Canon S95 Review](https://www.imaging-resource.com/cameras/canon-s95-review/), [CNET — Canon PowerShot S95 Review](https://www.cnet.com/reviews/canon-powershot-s95-review/), [Photo Thinking — Canon PowerShot S95](https://photothinking.com/2024-07-22-canon-powershot-s95-pocket-power/)
@@ -88,7 +90,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 02** (No. `21`–`
   - **Vignette & Flash:** Vignette sudut ringan kadang tampak tipis di langit biru sudut lebar 28mm; flash depan dekat lensa menghasilkan kilat langsung kontras tegas khas *party snapshot* 2006.
 - **lookTags:** `vibrant-2000s-ccd`, `warm-canon-palette`, `soft-wide-corners`, `clean-base-iso`, `smeared-high-iso`
 - **Arketipe:** `ccd_compact_2000s` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual 3 foto EXIF terverifikasi dari 3 fotografer lintas platform (Geograph & Flickr; mencakup varian SD800 IS dan IXUS 850 IS) serta konsisten dengan DPReview, CNET, dan Imaging Resource.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [5], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** halaman Flickr Camera Finder (404/500 saat diperiksa).
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Canon Camera Museum — IXY Digital 900 IS / SD800 IS](https://global.canon/en/c-museum/product/dcc534.html)
   - *Situs Fotografi / Ulasan:* [DPReview — Canon PowerShot SD800 IS Review](https://www.dpreview.com/reviews/6039752007/canonsd800is/), [CNET — Canon PowerShot ELPH SD800 IS Review](https://www.cnet.com/reviews/canon-powershot-elph-sd800-is-review/), [Imaging Resource — Canon PowerShot SD800 IS](https://www.imaging-resource.com/news/full-review-update-posted-for-canon-powershot-sd800-is/)
@@ -117,7 +120,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 02** (No. `21`–`
   - **Vignette & Flash:** Vignette optik nyaris tidak terasa; flash internal langsung memberi sorotan depan tegas dengan jatuh gelap cepat di latar ruang dalam.
 - **lookTags:** `punchy-snapshot-ccd`, `warm-nostalgic-color`, `crisp-low-iso`, `clipped-bright-highlights`, `muddy-high-iso`
 - **Arketipe:** `ccd_compact_2000s` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual 3 foto EXIF terverifikasi dari 3 fotografer berbeda (ISO 80 sore hangat, ISO 80 siang teduh, ISO 320 bawah pohon) serta konsisten dengan Imaging Resource, CNET, dan PCMag AU.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [6], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** halaman Flickr Camera Finder (404/500 saat diperiksa).
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Canon Indonesia Support — PowerShot A590 IS](https://id.canon/id/support/6200005700)
   - *Situs Fotografi / Ulasan:* [DPReview — Canon PowerShot A590 IS](https://www.dpreview.com/products/canon/compacts/canon_a590is/), [Imaging Resource — Canon A590 IS Test](https://www.imaging-resource.com/cameras/canon-a590-is-review/test/), [CNET — Canon PowerShot A590 IS Review](https://www.cnet.com/reviews/canon-powershot-a590-is-review/), [PCMag AU — Canon PowerShot A590 IS](https://au.pcmag.com/electronics/3137/canon-powershot-a590-is)
@@ -146,7 +150,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 02** (No. `21`–`
   - **Vignette & Flash:** Sedikit gelap tipis di sudut langit biru cerah; kilat internal langsung cenderung datar dan terang pada jarak dekat, mempertegas gaya kasual lo-fi.
 - **lookTags:** `soft-pastel-ccd`, `muted-desaturated-color`, `airy-highlight-bloom`, `gentle-contrast`, `soft-corner-optics`
 - **Arketipe:** `ccd_dreamy_pastel` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual 3 foto EXIF murni SOOC firmware `1.01` lintas 3 fotografer & 2 platform (Direct & Flickr; luar ruang cerah, dermaga terik, dalam ruang ISO 200) serta konsisten dengan Imaging Resource, Reviewed, dan CNET.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [6], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** halaman Flickr Camera Finder (404/500 saat diperiksa).
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Casio Archive — EX-Z75 Specifications](http://arch.casio-intl.com/asia-mea/en/dc/past/ex_z75/spec.html)
   - *Situs Fotografi / Ulasan:* [Imaging Resource — Casio EX-Z75 Review](http://old.imaging-resource.com/PRODS/Z75/Z75A.HTM), [Reviewed — Casio Exilim EX-Z75 Review](https://www.reviewed.com/cameras/content/casio-exilim-ex-z75-digital-camera-review-14929), [CNET — Casio Exilim EX-Z75 Review](https://www.cnet.com/reviews/casio-exilim-ex-z75-review/), [DPReview — Casio EX-Z75 Specs](https://www.dpreview.com/products/casio/compacts/casio_exz75/)
@@ -175,7 +180,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 02** (No. `21`–`
   - **Vignette & Flash:** Vignette sangat ringan; flash langsung pada bodi sangat tipis memancarkan cahaya keras dari dekat lensa yang mudah menerangi subjek depan sambil menjatuhkan latar gelap pada suasana dalam ruang.
 - **lookTags:** `soft-slim-optics`, `warm-y2k-casual`, `airy-sky-bloom`, `smoothed-fine-texture`, `dreamy-snapshot-tone`
 - **Arketipe:** `ccd_dreamy_pastel` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual 3 foto EXIF terverifikasi dari 3 fotografer & 2 platform (Direct & Flickr; termasuk 2 SOOC firmware `1.02S`) serta selaras dengan ulasan Imaging Resource dan CNET.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [6], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** Tidak ada kekurangan sumber utama (spesifikasi resmi, referensi ulasan/Camera Finder, dan >= 3 foto contoh CC/PD tersedia).
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Casio Archive — EX-S10 Specifications](http://arch.casio-intl.com/asia-mea/en/dc/ex_s10/spec/)
   - *Situs Fotografi / Ulasan:* [Imaging Resource — Casio EX-S10 Test](https://www.imaging-resource.com/cameras/casio-ex-s10-review/test/), [CNET — Casio Exilim EX-S10 Review](https://www.cnet.com/reviews/casio-exilim-ex-s10-review/), [DPReview — Casio EX-S10 Specs](https://www.dpreview.com/products/casio/compacts/casio_exs10/)
@@ -205,7 +211,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 02** (No. `21`–`
   - **Vignette & Flash:** Vignette sangat minim di cahaya terang; kilat langsung bawaan yang dipadukan *Glamour Mode* (berdasarkan konsensus ulasan Digital Camera World, TechRadar, dan PhotoWorkout; potret wajah dikecualikan dari sampel visual demi aturan privasi) meratakan bayangan wajah dan menghasilkan efek kulit halus berpendar.
 - **lookTags:** `milky-highlight-glow`, `glamour-soft-skin`, `warm-pastel-haze`, `vibrant-sooc-color`, `smoothed-cmos-texture`
 - **Arketipe:** `ccd_dreamy_pastel` *(dikonfirmasi — catatan: perangkat keras BSI CMOS, dipetakan berdasarkan keselarasan karakter visual)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual 3 foto EXIF murni SOOC (`COOLPIX S6900V1.1`) lintas 3 fotografer independen (ISO 125 & 800) ditambah 3 sumber ulasan independen (Digital Camera World, TechRadar, PhotoWorkout) yang konsisten menjelaskan perilaku *Glamour Mode* & kilat.
+- **confidenceLook:** **`medium`** *(diaudit ketat dari `high` → `medium`)* — 3 foto luar ruang SOOC bebas wajah; mode potret Glamour khasnya belum diverifikasi visual karena aturan privasi.
+- **Tidak ditemukan:** halaman Flickr Camera Finder (404/500 saat diperiksa); sampel visual mode potret Glamour/Beauty bebas-wajah (tidak diambil demi aturan privasi).
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Nikon Global News — Coolpix S6900](https://www.nikon.com/company/news/2014/0912_cpx_02/), [Nikon Reference Manual — Coolpix S6900 (PDF)](https://download.nikonimglib.com/archive2/R9bPp00WTnuX01xldjA83DQHes41/S6900RM_%28En%2904.pdf)
   - *Situs Fotografi / Ulasan:* [Imaging Resource — Nikon S6900 Review](https://www.imaging-resource.com/cameras/nikon-s6900-review/), [Digital Camera World — Nikon Coolpix S6900](https://www.digitalcameraworld.com/cameras/compact-cameras/this-unremarkable-nikon-coolpix-s6900-compact-camera-is-trending-heres-why-and-what-id-buy-instead), [TechRadar — Nikon Coolpix S6900 Review](https://www.techradar.com/reviews/cameras-and-camcorders/cameras/compact-cameras/nikon-coolpix-s6900-1265200/review/5), [PhotoWorkout — Nikon Coolpix S6900](https://www.photoworkout.com/camera/nikon-coolpix-s6900/)
@@ -234,7 +241,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 02** (No. `21`–`
   - **Vignette & Flash:** Vignette sangat rendah berkat koreksi optik; *pop-up flash* bawaan (dan dukungan *hot shoe* i-TTL) menghasilkan eksposur kilat seimbang dengan warna tetap tajam.
 - **lookTags:** `crisp-nikon-ccd`, `clean-low-iso-detail`, `accurate-punchy-color`, `solid-shadow-contrast`, `softened-high-iso`
 - **Arketipe:** `ccd_compact_2000s` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual 3 foto EXIF terverifikasi `COOLPIX P7000` (1 SOOC murni, 1 lewat ViewNX 2.3, 1 bawah air dengan flash lewat Photoshop CS4) ditambah konsistensi uji CNET, Amateur Photographer, DPReview, dan Imaging Resource.
+- **confidenceLook:** **`medium`** *(diaudit ketat dari `high` → `medium`)* — Contoh campur pemrosesan/kondisi (1 SOOC, 1 ViewNX, 1 foto bawah air olahan Photoshop CS4).
+- **Tidak ditemukan:** Tidak ada kekurangan sumber utama (spesifikasi resmi, referensi ulasan/Camera Finder, dan >= 3 foto contoh CC/PD tersedia).
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Nikon Global News — Coolpix P7000](https://www.nikon.com/company/news/2010/0908_coolpixp7000_01/)
   - *Situs Fotografi / Ulasan:* [DPReview — Nikon Coolpix P7000](https://www.dpreview.com/articles/3148282345/nikonp7000/), [Imaging Resource — Nikon P7000 Specs](https://www.imaging-resource.com/cameras/nikon-p7000-review/specifications/), [CNET — Nikon Coolpix P7000 Review](https://www.cnet.com/reviews/nikon-coolpix-p7000-review/), [Amateur Photographer — Nikon Coolpix P7000 Review](https://amateurphotographer.com/review/nikon-coolpix-p7000/)
@@ -264,7 +272,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 02** (No. `21`–`
   - **Vignette & Flash:** Vignette optik nyaris tak terlihat; flash internal di dekat bagian putar lensa memberi kilat langsung tegas yang cocok untuk dokumentasi jarak dekat maupun gaya *snapshot* tahun 2000.
 - **lookTags:** `early-2000s-ccd`, `deep-blues-and-reds`, `stark-highlight-clip`, `honest-optical-sharpness`, `gritty-early-grain`
 - **Arketipe:** `ccd_compact_2000s` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual 3 foto EXIF `E990` dari 3 fotografer lintas platform (Flickr & Direct; lanskap musim gugur, makro museum SOOC, lokomotif siang SOOC) ditambah ulasan DPReview, PetaPixel, dan Camera Labs.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [6], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** Tidak ada kekurangan sumber utama (spesifikasi resmi, referensi ulasan/Camera Finder, dan >= 3 foto contoh CC/PD tersedia).
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Nikon Field Test Guide — Coolpix 990 (PDF)](http://cdn-10.nikon-cdn.com/pdf/cp990ftg.pdf)
   - *Situs Fotografi / Ulasan:* [DPReview — Nikon Coolpix 990 Review](https://www.dpreview.com/reviews/9276144772/nikoncp990/), [PetaPixel — Revisiting Nikon Coolpix 990](https://petapixel.com/2022/02/08/revisiting-the-unique-nikon-coolpix-990-swivel-camera-22-years-later/), [Camera Labs — Nikon Coolpix 990 Retro Review](https://www.cameralabs.com/nikon-coolpix-990-retro-review/)
@@ -294,7 +303,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 02** (No. `21`–`
   - **Vignette & Flash:** Vignette optik alami sangat tipis di sudut bingkai 24mm; *pop-up flash* internal dan *hot shoe* menyediakan fleksibilitas kilat langsung maupun pantul.
 - **lookTags:** `filmic-leica-ccd`, `deep-shadow-contrast`, `rich-slide-colors`, `smooth-highlight-rolloff`, `multi-aspect-wide`
 - **Arketipe:** `pro_ccd_filmic` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual 3 foto EXIF murni SOOC lintas 3 fotografer & 2 platform (Flickr & Direct; 16:9 dan 3:2) serta selaras dengan ulasan DPReview, Imaging Resource, 35mmc, 35hunter, dan Luminous Landscape.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [8], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** Tidak ada kekurangan sumber utama (spesifikasi resmi, referensi ulasan/Camera Finder, dan >= 3 foto contoh CC/PD tersedia).
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Panasonic Operating Manual — DMC-LX3 (PDF)](https://av.jpn.support.panasonic.com/share/eww/en/dsc/lx3/DMC-LX3_eng.pdf)
   - *Situs Fotografi / Ulasan:* [DPReview — Panasonic DMC-LX3 Review](https://www.dpreview.com/reviews/8089991700/panasonicdmclx3/), [Imaging Resource — Panasonic DMC-LX3 Review](https://www.imaging-resource.com/cameras/panasonic-dmc-lx3-review/), [35mmc — Panasonic LX3](https://www.35mmc.com/20/07/2023/panasonic-lx3-8-months-with-a-14-year-old-point-and-shoot/), [35hunter — Panasonic Lumix LX3](https://35hunter.blog/2019/12/02/one-month-one-camera-december-2019-i-panasonic-lumix-lx3/), [Luminous Landscape — Panasonic LX3 Review](https://luminous-landscape.com/panasonic-lx-3-review/)
@@ -324,7 +334,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 02** (No. `21`–`
   - **Vignette & Flash:** Vignette sangat tipis di 28mm; flash depan langsung menghasilkan pencahayaan snapshot kasual berkontras tinggi pada jarak dekat.
 - **lookTags:** `painterly-nr-texture`, `warm-ochre-daylight`, `soft-fine-foliage`, `nostalgic-28mm-snap`, `gentle-pastel-sky`
 - **Arketipe:** `ccd_dreamy_pastel` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual 3 foto EXIF terverifikasi `DMC-FX01` dari 3 fotografer lintas platform (Flickr & Direct; 2 SOOC firmware `Ver.1.0`) serta konsisten dengan DPReview, Popular Photography, dan Imaging Resource.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [6], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** halaman spesifikasi resmi produsen aktif.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Situs Fotografi / Ulasan:* [DPReview — Panasonic Lumix DMC-FX01 Review](https://www.dpreview.com/reviews/3985055873/panasonicfx01/), [Imaging Resource — Panasonic DMC-FX01 Review](https://www.imaging-resource.com/cameras/panasonic-dmc-fx01-review/), [Popular Photography — Panasonic Lumix DMC-FX01 Review](https://www.popphoto.com/gear/2008/12/camera-review-panasonic-lumix-dmc-fx01/), [Techeblog — Panasonic DMC-FX01 Reviewed](https://www.techeblog.com/panasonic-dmc-fx01-reviewed/)
   - *Flickr Camera Finder:* [Flickr — Panasonic Lumix DMC-FX01](https://www.flickr.com/cameras/panasonic/dmc-fx01)
@@ -353,7 +364,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 02** (No. `21`–`
   - **Vignette & Flash:** Vignette halus terasa di sudut lensa ultralebar 23mm; pada sampel interior dengan flash (`Flash=25`), kilat internal mengisi bagian depan altar dan karpet dengan warna hangat tanpa terlalu mematikan suasana cahaya jendela.
 - **lookTags:** `warm-kodak-color`, `soft-ultrawide-optics`, `tight-luminance-grain`, `gentle-indoor-flare`, `vintage-dual-lens`
 - **Arketipe:** `ccd_compact_2000s` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual 3 foto EXIF murni SOOC lintas 3 fotografer berbeda (ISO 64 siang mendung, ISO 160 senja, ISO 200 interior ultralebar + flash) serta selaras dengan Imaging Resource, Reviewed, DPReview, dan CNET.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [5], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** halaman spesifikasi resmi produsen aktif; halaman Flickr Camera Finder (404/500 saat diperiksa).
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Situs Fotografi / Ulasan:* [DPReview — Kodak EasyShare V570 Throwback](https://www.dpreview.com/articles/0532135808/throwback-thursday-the-dual-lens-kodak-easyshare-v570/), [Imaging Resource — Kodak V570 Review](https://www.imaging-resource.com/cameras/kodak-v570-review/), [Reviewed — Kodak EasyShare V570 Review](https://www.reviewed.com/cameras/content/kodak-easyshare-v570-digital-camera-review), [CNET — Kodak EasyShare V570 Review](https://www.cnet.com/reviews/kodak-easyshare-v570-review/)
   - *Foto Sampel Diperiksa Visual (3, EXIF SOOC KODAK V570 DUAL LENS):*
@@ -381,7 +393,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 02** (No. `21`–`
   - **Vignette & Flash:** Vignette optik nyaris tidak terlihat; *pop-up flash* internal menghasilkan kilat langsung bertenaga yang membuat kayu gelap mengilap, dinding merah menyala, dan objek terang dekat kamera cepat terbakar putih.
 - **lookTags:** `organic-kodak-matte`, `warm-early-ccd`, `bright-metering-tendency`, `crisp-10x-daylight`, `punchy-direct-flash`
 - **Arketipe:** `ccd_compact_2000s` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual 3 foto EXIF murni SOOC dari 3 fotografer & 3 platform berbeda (Geograph, Panoramio, Direct; hutan mendung, interior pub ber-flash, lembah cerah) serta konsisten dengan Imaging Resource, PCMag UK, Reviewed, dan CNET.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [7], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** halaman spesifikasi resmi produsen aktif; halaman Flickr Camera Finder (404/500 saat diperiksa).
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Situs Fotografi / Ulasan:* [DPReview — Kodak EasyShare DX6490](https://www.dpreview.com/products/kodak/compacts/kodak_dx6490/), [Imaging Resource — Kodak EasyShare DX6490 Review](https://www.imaging-resource.com/news/review-posted-for-kodak-easyshare-dx6490/), [PCMag UK — Kodak EasyShare DX6490](https://uk.pcmag.com/cameras/80120/kodak-easyshare-dx6490), [Reviewed — Kodak EasyShare DX6490](https://www.reviewed.com/cameras/content/digital-camera-review-kodak-easyshare-dx6490), [CNET — Kodak EasyShare DX6490](https://www.cnet.com/reviews/kodak-easyshare-dx-review/)
   - *Arsip Manual:* [Internet Archive — Kodak EasyShare DX6490 Manual](https://archive.org/details/manualzilla-id-7018200)
@@ -410,7 +423,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 02** (No. `21`–`
   - **Vignette & Flash:** Vignette optik minim; *pop-up flash* unik di sisi atas menghasilkan kilat langsung kontras tegas khas kompak gaya hidup 2006.
 - **lookTags:** `punchy-high-contrast`, `vivid-consumer-ccd`, `clipped-bright-highlights`, `slightly-soft-10mp`, `gritty-iso400-noise`
 - **Arketipe:** `ccd_compact_2000s` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual 3 foto EXIF murni SOOC firmware `701121` lintas 2 platform (Direct & Flickr; luar ruang hujan ISO 400 dan 2 interior hanggar ISO 200) serta selaras dengan DPReview, CNET, dan TechRadar.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [6], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** halaman Flickr Camera Finder (404/500 saat diperiksa).
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Samsung UK Support — NV10](https://www.samsung.com/uk/support/model/EC-NV10ZTBA/GB/)
   - *Situs Fotografi / Ulasan:* [DPReview — Samsung NV10 Review](https://www.dpreview.com/reviews/3213703532/samsungnv10/), [Imaging Resource — Samsung NV10 Review](https://www.imaging-resource.com/cameras/samsung-nv10-review/), [CNET — Samsung NV10 Review](https://www.cnet.com/reviews/samsung-nv10-review/), [TechRadar — Samsung NV10 Review](https://www.techradar.com/reviews/cameras-and-camcorders/cameras/compact-cameras/samsung-nv10-68326/review)
@@ -439,7 +453,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 02** (No. `21`–`
   - **Vignette & Flash:** Sedikit gelap sudut tipis pada langit lapang 27mm (tampak lembut di sudut atas foto awan Laos); flash internal langsung mendukung swafoto layar depan dengan kulit cerah merata saat *Beauty Shot* aktif.
 - **lookTags:** `vivid-blue-red-pop`, `soft-nr-smoothing`, `airy-pastel-overcast`, `airbrushed-beauty-mode`, `nostalgic-dual-screen`
 - **Arketipe:** `ccd_dreamy_pastel` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual 3 foto EXIF murni SOOC dari 3 fotografer & 2 platform (Direct & Panoramio) ditambah ulasan Imaging Resource, Reviewed, dan forum DPReview (catatan: perilaku *Beauty Shot* pada wajah diverifikasi dari ulasan karena foto wajah dikecualikan demi privasi).
+- **confidenceLook:** **`medium`** *(diaudit ketat dari `high` → `medium`)* — 3 foto luar ruang SOOC bebas wajah; mode Beauty Shot khasnya belum diverifikasi visual karena aturan privasi.
+- **Tidak ditemukan:** sampel visual mode potret Glamour/Beauty bebas-wajah (tidak diambil demi aturan privasi).
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Samsung CA Support — ST550](https://www.samsung.com/ca/support/model/EC-ST550ZBPGCA/)
   - *Situs Fotografi / Ulasan:* [DPReview — Samsung ST550 Specs](https://www.dpreview.com/products/samsung/compacts/samsung_st550/), [Imaging Resource — Samsung TL225 Review](https://www.imaging-resource.com/cameras/samsung-tl225-review/), [Reviewed — Samsung TL225 Review](https://www.reviewed.com/cameras/content/samsung-tl225-digital-camera-review-21286-2)
@@ -470,7 +485,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 02** (No. `21`–`
   - **Vignette & Flash:** Pada foto langit biru cerah Gießen terlihat sedikit **vignette alami yang khas** di sudut atas bingkai, memperkuat nuansa lo-fi retro awal 2000-an; kilat mini depan memberi pencahayaan langsung jarak dekat.
 - **lookTags:** `dreamy-early-ccd`, `soft-wide-edges`, `warm-midtone-color`, `subtle-sky-vignette`, `mild-purple-fringing`
 - **Arketipe:** `ccd_dreamy_pastel` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual 3 foto EXIF murni SOOC (`Optio S V1.00/V1.01`) dari 2 fotografer independen (mendung, langit biru cerah, panorama kota) ditambah ulasan DPReview, Imaging Resource, dan Panorama Circle.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [6], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** Tidak ada kekurangan sumber utama (spesifikasi resmi, referensi ulasan/Camera Finder, dan >= 3 foto contoh CC/PD tersedia).
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Ricoh Imaging / Pentax — Optio S Manual (PDF)](https://www.ricoh-imaging.co.jp/english/support/man-pdf/optio-s.pdf)
   - *Situs Fotografi / Ulasan:* [DPReview — Pentax Optio S Review](https://www.dpreview.com/reviews/5027066227/pentaxoptios/), [Imaging Resource — Pentax Optio S Review](https://old.imaging-resource.com/PRODS/OPTS/OSA.HTM), [Panorama Circle — Pentax Optio S 15-Year Review](https://panoramacircle.com/2018/08/10/pentax-optio-s-15-year-old-camera-review/)
@@ -500,7 +516,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 02** (No. `21`–`
   - **Vignette & Flash:** Vignette optik sangat tipis; flash langsung bawaan cukup kuat untuk makro/jarak dekat sehingga mudah menghasilkan pantulan kilap tajam pada air dan logam.
 - **lookTags:** `lively-outdoor-ccd`, `crisp-1cm-macro`, `soft-periscope-corners`, `intense-closeup-flash`, `noisy-low-light-ccd`
 - **Arketipe:** `ccd_compact_2000s` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual 3 foto EXIF terverifikasi `PENTAX Optio W60` lintas 3 fotografer & 2 platform (Flickr & Direct; ISO 50 lanskap kota, ISO 200 makro bunga, ISO 400 makro + flash) serta konsisten dengan Camera Labs dan Reviewed.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [6], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** Tidak ada kekurangan sumber utama (spesifikasi resmi, referensi ulasan/Camera Finder, dan >= 3 foto contoh CC/PD tersedia).
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Ricoh Imaging — Optio W60 Specifications](https://www.ricoh-imaging.co.jp/english/products/digital/optio-w60/spec.html), [Ricoh Imaging News — Optio W60](https://www.ricoh-imaging.co.jp/english/news/2008/200813.html)
   - *Situs Fotografi / Ulasan:* [DPReview — Pentax Optio W60 Specs](https://www.dpreview.com/products/pentax/compacts/pentax_optiow60/), [Camera Labs — Pentax Optio W60 Review](https://www.cameralabs.com/pentax_optio_w60/2/), [Reviewed — Pentax Optio W60 Review](https://www.reviewed.com/cameras/content/pentax-optio-w60-digital-camera-review-19041)
@@ -530,7 +547,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 02** (No. `21`–`
   - **Vignette & Flash:** Vignette optik sangat halus dan alami pada bukaan f/1.8; *pop-up flash* internal dan *hot shoe* mendukung kontrol kilat yang rapi untuk potret malam.
 - **lookTags:** `filmic-olympus-ccd`, `warm-rich-jpegs`, `bright-f18-bokeh`, `graceful-highlight-curve`, `cinematic-night-glow`
 - **Arketipe:** `pro_ccd_filmic` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual 3 foto EXIF terverifikasi `XZ-1` dari 3 fotografer independen (malam f/1.8 SOOC, arsitektur batu f/2.0 SOOC, *still life* mengilap f/2.5) serta selaras dengan DPReview, Imaging Resource, dan Digital Photography School.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [6], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** Tidak ada kekurangan sumber utama (spesifikasi resmi, referensi ulasan/Camera Finder, dan >= 3 foto contoh CC/PD tersedia).
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Resmi Produsen:* [Olympus Official Manual — XZ-1 (PDF)](https://learnandsupport.getolympus.com/sites/default/files/media/files/2018/04/XZ-1_Instruction_Manual_EN.pdf)
   - *Situs Fotografi / Ulasan:* [DPReview — Olympus XZ-1 Review](https://www.dpreview.com/reviews/1683963493/olympusxz1/), [Imaging Resource — Olympus XZ-1 Review](https://www.imaging-resource.com/cameras/olympus-xz-1-review/), [Digital Photography School — Olympus XZ-1 Review](https://digital-photography-school.com/olympus-xz-1-review/)
@@ -560,7 +578,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 02** (No. `21`–`
   - **Vignette & Flash:** Vignette optik sangat ringan; *pop-up flash* langsung plus *hot shoe* memberi opsi kilat kuat untuk pemotretan malam.
 - **lookTags:** `rich-early-olympus-ccd`, `punchy-default-sharpness`, `deep-shadow-contrast`, `fast-f18-separation`, `fine-sky-grain`
 - **Arketipe:** `ccd_compact_2000s` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual 3 foto EXIF terverifikasi `C5050Z` dari 3 fotografer independen (ISO 64 jalanan, ISO 64 makro SOOC, ISO 100 langit cerah SOOC) serta selaras dengan DPReview, Shutterbug, Arsip Wrotniak/Mike Eckman, dan Olympus Passion.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [7], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** halaman spesifikasi resmi produsen aktif.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Situs Fotografi / Ulasan:* [DPReview — Olympus C-5050 Zoom Review](https://www.dpreview.com/reviews/8418153953/olympusc5050z/), [Imaging Resource — Olympus C-5050 Zoom](https://www.imaging-resource.com/news/olympus-europe-announces-c-5050zoom/), [Shutterbug — Olympus Camedia C-5050 Zoom](https://www.shutterbug.com/content/olympus-camedia-c5050-zoom), [Mike Eckman / Wrotniak Archive — C-5050 Noise](https://mikeeckman.com/wrotniak/photo/c/c5050-noise.html), [Olympus Passion — Olympus C-5050](https://www.olympuspassion.com/2025/10/27/premium-olympus-throwback-c-5050-the-compact-premium-from-a-past-era-video/)
   - *Flickr Camera Finder:* [Flickr — Olympus Camedia C-5050 Zoom](https://www.flickr.com/cameras/olympus/c5050z)
@@ -589,7 +608,8 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 02** (No. `21`–`
   - **Vignette & Flash:** Vignette optik hampir tak terasa di siang hari; flash internal *Intelligent Flash* dirancang menyeimbangkan subjek dekat (terutama wajah) agar tidak terlalu putih terbakar dibanding kompak murah sezamannya.
 - **lookTags:** `warm-fuji-superccd`, `flattering-natural-skin`, `soft-periscope-detail`, `dreamy-night-halation`, `soft-lowlight-smoothing`
 - **Arketipe:** `ccd_dreamy_pastel` *(dikonfirmasi)*
-- **confidenceLook:** **`high`** — Didukung inspeksi visual 3 foto EXIF terverifikasi `FinePix Z5fd` lintas 3 fotografer & 2 platform (Flickr & Direct; ISO 100 makanan/warna hangat, ISO 100 arsitektur mendung SOOC, ISO 1600 malam SOOC) serta selaras dengan Imaging Resource, PCMag UK, CNET, dan Reviewed.
+- **confidenceLook:** **`high`** *(terkonfirmasi pada audit ketat)* — Memenuhi syarat ketat (>= 2 domain independen [7], >= 3 foto diperiksa [3], konsisten, tanpa campuran film/lensa).
+- **Tidak ditemukan:** halaman spesifikasi resmi produsen aktif.
 - **Sumber & Foto Sampel yang Diperiksa:**
   - *Situs Fotografi / Ulasan:* [DPReview — Fujifilm FinePix Z5fd](https://www.dpreview.com/articles/5816595002/finepixz5fd/), [Imaging Resource — Fujifilm Z5fd Test](https://www.imaging-resource.com/cameras/fujifilm-z5fd-review/test/), [PCMag UK — Fuji FinePix Z5fd](https://uk.pcmag.com/cameras/57982/fuji-finepix-z5fd), [CNET — Fujifilm FinePix Z5fd Review](https://www.cnet.com/reviews/fujifilm-finepix-z5fd-review/), [Reviewed — Fujifilm FinePix Z5fd](https://www.reviewed.com/cameras/content/fujifilm-finepix-z5fd-first-impressions-review)
   - *Flickr Camera Finder:* [Flickr — Fujifilm FinePix Z5fd](https://www.flickr.com/cameras/fujifilm/finepix_z5fd)
@@ -600,27 +620,29 @@ Pendalaman karakter visual kualitatif untuk **20 kamera Batch 02** (No. `21`–`
 
 ---
 
-## Ringkasan Laporan Batch 02
+---
 
-### 1. Jumlah Kamera per `confidenceLook`
+## Ringkasan Laporan Batch 02 *(Diperbarui Audit Ketat)*
+
+### 1. Jumlah Kamera per `confidenceLook` (Setelah Audit Ketat — Lihat [AUDIT.md](AUDIT.md))
 
 | Tingkat `confidenceLook` | Jumlah | Daftar Kamera |
 |---|---:|---|
-| **`high`** | **20** | `canon_powershot_g9`, `canon_powershot_s95`, `canon_ixy_digital_900_is`, `canon_powershot_a590_is`, `casio_exilim_ex_z75`, `casio_exilim_ex_s10`, `nikon_coolpix_s6900`, `nikon_coolpix_p7000`, `nikon_coolpix_990`, `panasonic_lumix_dmc_lx3`, `panasonic_lumix_dmc_fx01`, `kodak_easyshare_v570`, `kodak_easyshare_dx6490`, `samsung_nv10`, `samsung_st550`, `pentax_optio_s`, `pentax_optio_w60`, `olympus_xz_1`, `olympus_camedia_c_5050_zoom`, `fujifilm_finepix_z5fd` |
-| **`medium`** | **0** | — |
+| **`high`** | **17** | `canon_powershot_g9`, `canon_powershot_s95`, `canon_ixy_digital_900_is`, `canon_powershot_a590_is`, `casio_exilim_ex_z75`, `casio_exilim_ex_s10`, `nikon_coolpix_990`, `panasonic_lumix_dmc_lx3`, `panasonic_lumix_dmc_fx01`, `kodak_easyshare_v570`, `kodak_easyshare_dx6490`, `samsung_nv10`, `pentax_optio_s`, `pentax_optio_w60`, `olympus_xz_1`, `olympus_camedia_c_5050_zoom`, `fujifilm_finepix_z5fd` |
+| **`medium`** | **3** | `nikon_coolpix_s6900`, `nikon_coolpix_p7000`, `samsung_st550` |
 | **`low`** | **0** | — |
-| **`tidak ditemukan`** | **0** | *(Tidak ada kamera tanpa sumber sama sekali)* |
-| **Total** | **20** | **60 foto contoh CC/PD diperiksa visual langsung** (tepat 3 foto EXIF terverifikasi per kamera, bebas wajah & bebas anak, tercatat di `docs/references/manifest_batch_02.json`) |
+| **`tidak ditemukan`** | **0** | — |
+| **Total** | **20** | **60 foto/frame diperiksa visual** (60 berlisensi CC/PD lokal di `docs/references/manifest.md`) |
 
-*(Seluruh 20 kamera mempertahankan `confidenceLook = high` seperti pada `docs/catalog/batch_02.md`, kini diperkuat inspeksi visual langsung terhadap 60 foto sampel nyata terverifikasi EXIF.)*
+### 2. Kamera dengan Sumber Lemah / Perlu Perhatian Saat Kalibrasi
 
-### 2. Kamera dengan Catatan Khusus / Perlu Perhatian Saat Kalibrasi
+- **`nikon_coolpix_s6900` (`medium`):** 3 foto luar ruang SOOC bebas wajah; mode potret Glamour khasnya belum diverifikasi visual karena aturan privasi.
+- **`nikon_coolpix_p7000` (`medium`):** Contoh campur pemrosesan/kondisi (1 SOOC, 1 ViewNX, 1 foto bawah air olahan Photoshop CS4).
+- **`samsung_st550` (`medium`):** 3 foto luar ruang SOOC bebas wajah; mode Beauty Shot khasnya belum diverifikasi visual karena aturan privasi.
 
-1. **`nikon_coolpix_s6900` & `samsung_st550` (Mode Kecantikan / *Glamour* vs Privasi Sampel):** Ketiga foto sampel visual yang disimpan pada kedua kamera ini merupakan bidikan luar ruang bebas wajah dalam mode warna standar SOOC demi mematuhi aturan privasi ketat (tanpa wajah manusia yang dapat dikenali). Oleh karena itu, sifat khusus penghalusan kulit (*Glamour Mode* pada S6900 dan *Beauty Shot* pada ST550) didokumentasikan dari konsensus ulasan fotografi independen, bukan dari potret wajah. Selain itu, perlu dicatat bahwa secara perangkat keras `nikon_coolpix_s6900` bersensor **BSI CMOS** (2014), namun tetap cocok dipetakan ke `ccd_dreamy_pastel` karena estetika sorotan susu dan kelembutan kulitnya.
-2. **`nikon_coolpix_p7000` (Variasi Perangkat Lunak Sampel):** Dari 3 foto EXIF asli `COOLPIX P7000` (setelah menyaring dan menghapus foto ponsel *Elephone P7000* yang keliru masuk kategori), 1 foto murni SOOC (`COOLPIX P7000V1.1`), 1 foto melewati perangkat lunak resmi Nikon (`ViewNX 2.3 W`), dan 1 foto bawah air dengan kilat melewati `Adobe Photoshop CS4`. Karakter utama warna dan ketajaman tetap konsisten dengan uji lab independen.
-3. **`samsung_nv10` & `pentax_optio_s` (Keberagaman Pengunggah):** Pada masing-masing kamera ini, 2 dari 3 foto sampel CC yang lolos penyaringan privasi berasal dari fotografer yang sama (ditambah 1 fotografer independen lain pada kondisi cahaya berbeda). Keduanya tetap `high` karena telah dikroscek dengan 3–4 situs ulasan fotografi independen.
+### 3. Ringkasan Hal yang Tidak Ditemukan (Detail Per Kamera Tercatat di Masing-Masing Entri)
 
-### 3. Hal yang Tidak Ditemukan
-
-- **Flickr Camera Finder 404/500:** Saat dicek langsung, 8 URL Flickr Camera Finder mengembalikan galat HTTP 500 atau 404 sehingga tidak dicantumkan sebagai tautan aktif: `Canon PowerShot G9`, `Canon PowerShot SD800 IS`, `Canon PowerShot A590 IS`, `Casio Exilim EX-Z75`, `Nikon Coolpix S6900`, `Kodak EasyShare V570`, `Kodak EasyShare DX6490`, dan `Samsung NV10` (12 kamera lainnya merespons HTTP 200 dan dicantumkan lengkap).
-- **Halaman spesifikasi resmi produsen yang tidak ditemukan aktif (5 model):** `Panasonic Lumix DMC-FX01`, `Kodak EasyShare V570`, `Kodak EasyShare DX6490`, `Olympus Camedia C-5050 Zoom`, dan `Fujifilm FinePix Z5fd`. (Pada `Samsung NV10` dan `Samsung ST550 / TL225`, tautan resmi yang masih aktif berupa portal dukungan model Samsung.)
+- **Tanpa halaman spesifikasi resmi produsen aktif (5):** `panasonic_lumix_dmc_fx01`, `kodak_easyshare_v570`, `kodak_easyshare_dx6490`, `olympus_camedia_c_5050_zoom`, `fujifilm_finepix_z5fd`
+- **Tanpa foto contoh tunggal berlisensi CC/PD lokal (0):** —
+- **Foto contoh diperiksa visual < 3 (0):** —
+- Rincian lengkap kekurangan per kamera (termasuk status Flickr Camera Finder dan mode khusus) tercantum pada baris **`Tidak ditemukan`** di setiap entri kamera di atas serta tabel menyeluruh di [AUDIT.md](AUDIT.md).
