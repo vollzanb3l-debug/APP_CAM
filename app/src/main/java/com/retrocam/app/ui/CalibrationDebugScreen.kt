@@ -9,9 +9,11 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
@@ -20,6 +22,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.systemBarsPadding
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
@@ -37,6 +41,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -44,13 +49,17 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.retrocam.app.camera.FrameTransform
 import com.retrocam.app.effects.CaptureProcessor
+import com.retrocam.app.recipe.ArchetypeSpec
 import com.retrocam.app.recipe.CameraSpec
 import com.retrocam.app.recipe.FilmSpec
 import com.retrocam.app.recipe.FinalRecipe
 import com.retrocam.app.recipe.RecipeCatalog
+import com.retrocam.app.storage.CalibrationExporter
+import com.retrocam.app.storage.CalibrationJsonBuilder
 import com.retrocam.app.ui.theme.RetroAmber
 import com.retrocam.app.ui.theme.RetroDarkBackground
 import com.retrocam.app.ui.theme.RetroError
@@ -60,6 +69,7 @@ import com.retrocam.app.ui.theme.RetroTextPrimary
 import com.retrocam.app.ui.theme.RetroTextSecondary
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.util.Locale
 
@@ -75,13 +85,43 @@ fun CalibrationDebugScreen(
     onBack: () -> Unit,
 ) {
     val context = LocalContext.current
+    val scope = rememberCoroutineScope()
     val captureProcessor = remember(context) { CaptureProcessor(context) }
+    val calibrationExporter = remember(context) { CalibrationExporter(context) }
 
-    var draftRecipe by remember(currentRecipe) { mutableStateOf(currentRecipe) }
+    val cameraArchetypes = remember(catalog.archetypes) {
+        catalog.archetypes
+            .filter { it.cameraDefaults != null }
+            .sortedBy { it.displayName }
+    }
+
+    // null = calibrating active camera recipe; non-null = calibrating a specific camera archetype
+    var selectedArchetypeId by remember { mutableStateOf<String?>(null) }
+    val activeArchetype: ArchetypeSpec? = remember(selectedArchetypeId, cameraArchetypes) {
+        cameraArchetypes.firstOrNull { it.id == selectedArchetypeId }
+    }
+    val resetBaselineRecipe = remember(activeArchetype, baseRecipe) {
+        if (activeArchetype != null) {
+            CalibrationJsonBuilder.archetypeToPreviewRecipe(activeArchetype)
+        } else {
+            baseRecipe
+        }
+    }
+
+    var draftRecipe by remember(selectedArchetypeId, currentRecipe, activeArchetype) {
+        mutableStateOf(
+            if (activeArchetype != null) {
+                CalibrationJsonBuilder.archetypeToPreviewRecipe(activeArchetype)
+            } else {
+                currentRecipe
+            },
+        )
+    }
     var referenceBitmap by remember { mutableStateOf<Bitmap?>(null) }
     var simulatedBitmap by remember { mutableStateOf<Bitmap?>(null) }
     var loadError by remember { mutableStateOf<String?>(null) }
     var statusNote by remember { mutableStateOf<String?>(null) }
+    var isExporting by remember { mutableStateOf(false) }
 
     val galleryPicker = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.GetContent(),
@@ -161,7 +201,42 @@ fun CalibrationDebugScreen(
 
             Spacer(modifier = Modifier.height(8.dp))
 
-            // Camera & Film calibration metadata card
+            // Target selector: Active Camera Recipe OR any of the 15 Camera Archetypes
+            Text(
+                text = "Target Kalibrasi (${cameraArchetypes.size} Arketipe + Resep Aktif)",
+                style = MaterialTheme.typography.titleSmall,
+                color = RetroTextPrimary,
+            )
+            Spacer(modifier = Modifier.height(6.dp))
+            LazyRow(
+                contentPadding = PaddingValues(end = 8.dp),
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+            ) {
+                item(key = "__active_recipe__") {
+                    TargetChip(
+                        label = "Resep Aktif",
+                        selected = selectedArchetypeId == null,
+                        onClick = {
+                            selectedArchetypeId = null
+                            statusNote = null
+                        },
+                    )
+                }
+                items(cameraArchetypes, key = { it.id }) { arch ->
+                    TargetChip(
+                        label = arch.displayName,
+                        selected = selectedArchetypeId == arch.id,
+                        onClick = {
+                            selectedArchetypeId = arch.id
+                            statusNote = null
+                        },
+                    )
+                }
+            }
+
+            Spacer(modifier = Modifier.height(10.dp))
+
+            // Active target metadata card
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -170,54 +245,91 @@ fun CalibrationDebugScreen(
                     .border(1.dp, RetroSurfaceBorder, RoundedCornerShape(12.dp))
                     .padding(12.dp),
             ) {
-                Text(
-                    text = "Kamera Aktif: ${selectedCamera?.displayName ?: "-"}",
-                    style = MaterialTheme.typography.titleSmall,
-                    color = RetroAmber,
-                )
-                Spacer(modifier = Modifier.height(4.dp))
-                Text(
-                    text = "Archetype: ${selectedCamera?.archetype ?: "-"} · " +
-                        "Look: ${selectedCamera?.confidenceLook ?: "-"} · " +
-                        "Specs: ${selectedCamera?.confidenceSpecs ?: "-"} · " +
-                        "Status: ${selectedCamera?.calibrationStatus ?: "-"}",
-                    style = MaterialTheme.typography.bodySmall,
-                    color = RetroTextPrimary,
-                )
-                Spacer(modifier = Modifier.height(4.dp))
-                selectedCamera?.sources?.forEach { sourceNote ->
+                if (activeArchetype != null) {
                     Text(
-                        text = "• $sourceNote",
+                        text = "Arketipe: ${activeArchetype.displayName}",
+                        style = MaterialTheme.typography.titleSmall,
+                        color = RetroAmber,
+                    )
+                    Spacer(modifier = Modifier.height(4.dp))
+                    Text(
+                        text = "ID: ${activeArchetype.id} · Era: ${activeArchetype.era} · " +
+                            "Status: ${activeArchetype.calibrationStatus}",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = RetroTextPrimary,
+                    )
+                    Spacer(modifier = Modifier.height(4.dp))
+                    Text(
+                        text = activeArchetype.summary,
                         style = MaterialTheme.typography.bodySmall,
                         color = RetroTextSecondary,
                     )
-                }
-                Spacer(modifier = Modifier.height(8.dp))
-                Text(
-                    text = "Film Aktif: ${selectedFilm?.displayName ?: "-"}",
-                    style = MaterialTheme.typography.titleSmall,
-                    color = RetroAmber,
-                )
-                Spacer(modifier = Modifier.height(4.dp))
-                Text(
-                    text = "Archetype: ${selectedFilm?.archetype ?: "-"} · " +
-                        "Look: ${selectedFilm?.confidenceLook ?: "-"} · " +
-                        "Specs: ${selectedFilm?.confidenceSpecs ?: "-"} · " +
-                        "Status: ${selectedFilm?.calibrationStatus ?: "-"}",
-                    style = MaterialTheme.typography.bodySmall,
-                    color = RetroTextPrimary,
-                )
-                Spacer(modifier = Modifier.height(4.dp))
-                selectedFilm?.sources?.forEach { sourceNote ->
+                    if (activeArchetype.lookTags.isNotEmpty()) {
+                        Spacer(modifier = Modifier.height(4.dp))
+                        Text(
+                            text = "lookTags: ${activeArchetype.lookTags.joinToString(", ")}",
+                            style = MaterialTheme.typography.labelSmall,
+                            color = RetroAmber,
+                        )
+                    }
+                    Spacer(modifier = Modifier.height(4.dp))
+                    activeArchetype.typicalTraits.forEach { trait ->
+                        Text(
+                            text = "• $trait",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = RetroTextSecondary,
+                        )
+                    }
+                } else {
                     Text(
-                        text = "• $sourceNote",
-                        style = MaterialTheme.typography.bodySmall,
-                        color = RetroTextSecondary,
+                        text = "Kamera Aktif: ${selectedCamera?.displayName ?: "-"}",
+                        style = MaterialTheme.typography.titleSmall,
+                        color = RetroAmber,
                     )
+                    Spacer(modifier = Modifier.height(4.dp))
+                    Text(
+                        text = "Archetype: ${selectedCamera?.archetype ?: "-"} · " +
+                            "Look: ${selectedCamera?.confidenceLook ?: "-"} · " +
+                            "Specs: ${selectedCamera?.confidenceSpecs ?: "-"} · " +
+                            "Status: ${selectedCamera?.calibrationStatus ?: "-"}",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = RetroTextPrimary,
+                    )
+                    Spacer(modifier = Modifier.height(4.dp))
+                    selectedCamera?.sources?.forEach { sourceNote ->
+                        Text(
+                            text = "• $sourceNote",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = RetroTextSecondary,
+                        )
+                    }
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Text(
+                        text = "Film Aktif: ${selectedFilm?.displayName ?: "-"}",
+                        style = MaterialTheme.typography.titleSmall,
+                        color = RetroAmber,
+                    )
+                    Spacer(modifier = Modifier.height(4.dp))
+                    Text(
+                        text = "Archetype: ${selectedFilm?.archetype ?: "-"} · " +
+                            "Look: ${selectedFilm?.confidenceLook ?: "-"} · " +
+                            "Specs: ${selectedFilm?.confidenceSpecs ?: "-"} · " +
+                            "Status: ${selectedFilm?.calibrationStatus ?: "-"}",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = RetroTextPrimary,
+                    )
+                    Spacer(modifier = Modifier.height(4.dp))
+                    selectedFilm?.sources?.forEach { sourceNote ->
+                        Text(
+                            text = "• $sourceNote",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = RetroTextSecondary,
+                        )
+                    }
                 }
                 Spacer(modifier = Modifier.height(6.dp))
                 Text(
-                    text = "Catatan: nilai JSON adalah perkiraan awal (draft), disetel lewat layar kalibrasi.",
+                    text = "Ekspor \"Simpan sebagai calibrated\" menulis JSON ke Documents/RetroCam/export/.",
                     style = MaterialTheme.typography.labelSmall,
                     color = RetroTextSecondary,
                 )
@@ -262,7 +374,7 @@ fun CalibrationDebugScreen(
                         modifier = Modifier.weight(1f),
                     )
                     ComparisonPane(
-                        title = "Simulasi Shader",
+                        title = "Simulasi Resep",
                         bitmap = simBmp ?: refBmp,
                         modifier = Modifier.weight(1f),
                     )
@@ -295,7 +407,7 @@ fun CalibrationDebugScreen(
 
             // Color grade parameter sliders
             Text(
-                text = "Parameter Color Grade",
+                text = "Parameter Color Grade & Sensor",
                 style = MaterialTheme.typography.titleSmall,
                 color = RetroTextPrimary,
             )
@@ -334,13 +446,13 @@ fun CalibrationDebugScreen(
             ParameterSlider(
                 label = "Shadow Lift",
                 value = draftRecipe.shadowLift,
-                range = 0.0f..0.3f,
+                range = 0.0f..0.4f,
                 onValueChange = { draftRecipe = draftRecipe.copy(shadowLift = it) },
             )
             ParameterSlider(
                 label = "Black Lift",
                 value = draftRecipe.blackLift,
-                range = 0.0f..0.25f,
+                range = 0.0f..0.3f,
                 onValueChange = { draftRecipe = draftRecipe.copy(blackLift = it) },
             )
             ParameterSlider(
@@ -349,23 +461,39 @@ fun CalibrationDebugScreen(
                 range = 0.0f..0.5f,
                 onValueChange = { draftRecipe = draftRecipe.copy(tintStrength = it) },
             )
+            ParameterSlider(
+                label = "Sharpen",
+                value = draftRecipe.sharpen,
+                range = 0.0f..1.0f,
+                onValueChange = { draftRecipe = draftRecipe.copy(sharpen = it) },
+            )
 
             Spacer(modifier = Modifier.height(8.dp))
             Text(
-                text = "Parameter Optik",
+                text = "Parameter Geometri & Optik",
                 style = MaterialTheme.typography.titleSmall,
                 color = RetroTextPrimary,
             )
             Spacer(modifier = Modifier.height(4.dp))
             Row(
                 modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(6.dp),
+                horizontalArrangement = Arrangement.spacedBy(4.dp),
             ) {
-                listOf("4:3", "3:4", "3:2", "1:1", "16:9").forEach { ratio ->
+                listOf("4:3", "3:4", "3:2", "2:3", "1:1", "16:9").forEach { ratio ->
                     val selected = draftRecipe.aspectRatio == ratio
-                    OutlinedButton(
-                        modifier = Modifier.weight(1f),
-                        onClick = { draftRecipe = draftRecipe.copy(aspectRatio = ratio) },
+                    Box(
+                        modifier = Modifier
+                            .weight(1f)
+                            .clip(RoundedCornerShape(8.dp))
+                            .background(RetroSurface)
+                            .border(
+                                width = 1.dp,
+                                color = if (selected) RetroAmber else RetroSurfaceBorder,
+                                shape = RoundedCornerShape(8.dp),
+                            )
+                            .clickable { draftRecipe = draftRecipe.copy(aspectRatio = ratio) }
+                            .padding(vertical = 8.dp),
+                        contentAlignment = Alignment.Center,
                     ) {
                         Text(
                             text = ratio,
@@ -375,7 +503,7 @@ fun CalibrationDebugScreen(
                     }
                 }
             }
-            Spacer(modifier = Modifier.height(4.dp))
+            Spacer(modifier = Modifier.height(6.dp))
             ParameterSlider(
                 label = "Lens Distortion (k1)",
                 value = draftRecipe.distortionK1,
@@ -420,6 +548,12 @@ fun CalibrationDebugScreen(
                 onValueChange = { draftRecipe = draftRecipe.copy(halationIntensity = it) },
             )
             ParameterSlider(
+                label = "Flare",
+                value = draftRecipe.flare,
+                range = 0.0f..1.0f,
+                onValueChange = { draftRecipe = draftRecipe.copy(flare = it) },
+            )
+            ParameterSlider(
                 label = "Vignette Strength",
                 value = draftRecipe.vignetteStrength,
                 range = 0.0f..1.0f,
@@ -440,7 +574,7 @@ fun CalibrationDebugScreen(
             )
             Spacer(modifier = Modifier.height(4.dp))
             ParameterSlider(
-                label = "Grain Amount",
+                label = "Grain / Sensor Noise Amount",
                 value = draftRecipe.combinedNoiseAmount,
                 range = 0.0f..0.7f,
                 onValueChange = { draftRecipe = draftRecipe.copy(combinedNoiseAmount = it) },
@@ -512,7 +646,7 @@ fun CalibrationDebugScreen(
                 onValueChange = { draftRecipe = draftRecipe.copy(lightLeakSeed = it) },
             )
 
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(10.dp))
 
             Row(
                 modifier = Modifier.fillMaxWidth(),
@@ -521,9 +655,13 @@ fun CalibrationDebugScreen(
                 OutlinedButton(
                     modifier = Modifier.weight(1f),
                     onClick = {
-                        draftRecipe = baseRecipe
+                        draftRecipe = resetBaselineRecipe
                         onResetOverride()
-                        statusNote = "Direset ke resep JSON aktif"
+                        statusNote = if (activeArchetype != null) {
+                            "Direset ke nilai awal arketipe ${activeArchetype.id}"
+                        } else {
+                            "Direset ke resep JSON aktif"
+                        }
                     },
                 ) {
                     Text(text = "Reset", color = RetroTextPrimary)
@@ -535,12 +673,56 @@ fun CalibrationDebugScreen(
                         statusNote = "Diterapkan ke preview kamera"
                     },
                     colors = ButtonDefaults.buttonColors(
-                        containerColor = RetroAmber,
-                        contentColor = RetroDarkBackground,
+                        containerColor = RetroSurface,
+                        contentColor = RetroAmber,
                     ),
                 ) {
                     Text(text = "Terapkan ke Preview")
                 }
+            }
+
+            Spacer(modifier = Modifier.height(8.dp))
+
+            Button(
+                modifier = Modifier.fillMaxWidth(),
+                enabled = !isExporting && (activeArchetype != null || selectedCamera != null),
+                onClick = {
+                    val targetArch = activeArchetype
+                    val targetCam = selectedCamera
+                    if (targetArch == null && targetCam == null) return@Button
+                    isExporting = true
+                    statusNote = "Menyimpan JSON ke Documents/RetroCam/export/..."
+                    scope.launch {
+                        val result = withContext(Dispatchers.IO) {
+                            if (targetArch != null) {
+                                calibrationExporter.exportCalibratedArchetype(targetArch, draftRecipe)
+                            } else {
+                                val cam = targetCam!!
+                                val matchingArch = catalog.archetypes.firstOrNull { it.id == cam.archetype }
+                                calibrationExporter.exportCalibratedCamera(cam, draftRecipe, matchingArch)
+                            }
+                        }
+                        isExporting = false
+                        result.fold(
+                            onSuccess = { exported ->
+                                statusNote = "Tersimpan (calibrated): ${exported.displayPath}"
+                                loadError = null
+                            },
+                            onFailure = { err ->
+                                loadError = err.localizedMessage ?: "Gagal mengekspor JSON kalibrasi"
+                                statusNote = null
+                            },
+                        )
+                    }
+                },
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = RetroAmber,
+                    contentColor = RetroDarkBackground,
+                ),
+            ) {
+                Text(
+                    text = if (isExporting) "Menyimpan..." else "Simpan sebagai calibrated",
+                )
             }
 
             statusNote?.let { note ->
@@ -586,6 +768,34 @@ fun CalibrationDebugScreen(
 
             Spacer(modifier = Modifier.height(16.dp))
         }
+    }
+}
+
+@Composable
+private fun TargetChip(
+    label: String,
+    selected: Boolean,
+    onClick: () -> Unit,
+) {
+    Box(
+        modifier = Modifier
+            .clip(RoundedCornerShape(16.dp))
+            .background(if (selected) RetroAmber else RetroSurface)
+            .border(
+                width = 1.dp,
+                color = if (selected) RetroAmber else RetroSurfaceBorder,
+                shape = RoundedCornerShape(16.dp),
+            )
+            .clickable(onClick = onClick)
+            .padding(horizontal = 12.dp, vertical = 7.dp),
+    ) {
+        Text(
+            text = label,
+            style = MaterialTheme.typography.labelSmall,
+            color = if (selected) RetroDarkBackground else RetroTextPrimary,
+            maxLines = 1,
+            overflow = TextOverflow.Ellipsis,
+        )
     }
 }
 
