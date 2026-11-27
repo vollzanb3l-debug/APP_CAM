@@ -123,6 +123,7 @@ class MainActivity : ComponentActivity() {
                         onOpenSettings = { currentScreen = AppScreen.Settings },
                     )
                     AppScreen.Gallery -> GalleryScreen(
+                        catalog = catalog,
                         onBack = { currentScreen = AppScreen.Camera },
                     )
                     AppScreen.Settings -> SettingsScreen(
