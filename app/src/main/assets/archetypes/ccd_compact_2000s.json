@@ -1,29 +1,51 @@
 {
   "schemaVersion": 2,
   "id": "ccd_compact_2000s",
-  "displayName": "Kompak CCD Awal 2000-an",
+  "displayName": "Kompak Digital CCD Awal 2000-an",
   "era": "2000s",
-  "summary": "Perkiraan awal karakter kamera saku digital bersensor CCD kecil: kontras sedang-tinggi, highlight cenderung cepat matang, warna hangat ringan.",
+  "summary": "Perkiraan awal (draft) kamera saku digital CCD kecil awal 2000-an: kontras tegas, warna siang punchy, highlight mudah matang, dan noise kromatik digital.",
   "typicalTraits": [
-    "Nada warna sedikit hangat atau kekuningan",
-    "Roll-off highlight sedang dan kontras punchy",
-    "Noise kromatik ringan pada area gelap"
+    "Kontras tegas dan warna siang hangat-punchy",
+    "Rentang dinamis sempit sehingga highlight cepat matang",
+    "Noise kromatik CCD dan sedikit purple fringing"
   ],
   "calibrationStatus": "draft",
   "lookTags": [
     "high-contrast",
     "punchy-daylight",
     "clipped-highlights",
-    "digital-noise"
+    "digital-noise",
+    "purple-fringing"
   ],
   "cameraDefaults": {
     "aspectRatio": "4:3",
-    "whiteBalance": { "temp": 0.08, "tint": 0.02 },
-    "tone": { "contrast": 1.10, "highlightRolloff": 0.22, "shadowLift": 0.02 },
-    "saturation": 1.08,
-    "sensorNoise": { "amount": 0.20, "chroma": 0.42 },
-    "sharpen": 0.35,
-    "dateStamp": { "available": true, "defaultOn": false, "format": "yy MM dd", "color": "#FF8C1A" },
-    "bodyOptics": { "softness": 0.00, "vignetteStrength": 0.00, "bloomIntensity": 0.00, "chromaticAberration": 0.00, "lightLeakIntensity": 0.00 }
+    "whiteBalance": {
+      "temp": 0.04,
+      "tint": 0.0
+    },
+    "tone": {
+      "contrast": 1.15,
+      "highlightRolloff": 0.18,
+      "shadowLift": 0.01
+    },
+    "saturation": 1.06,
+    "sensorNoise": {
+      "amount": 0.14,
+      "chroma": 0.28
+    },
+    "sharpen": 0.15,
+    "dateStamp": {
+      "available": true,
+      "defaultOn": false,
+      "format": "yy MM dd",
+      "color": "#FF8C1A"
+    },
+    "bodyOptics": {
+      "softness": 0.0,
+      "vignetteStrength": 0.0,
+      "bloomIntensity": 0.0,
+      "chromaticAberration": 0.05,
+      "lightLeakIntensity": 0.0
+    }
   }
 }

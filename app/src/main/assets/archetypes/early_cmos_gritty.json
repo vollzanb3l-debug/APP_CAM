@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 2,
+  "id": "early_cmos_gritty",
+  "displayName": "Compact CMOS Street Berkontras Tinggi",
+  "era": "2010s-2020s",
+  "summary": "Perkiraan awal (draft) kamera street CMOS berkontras tegas: ketajaman tinggi dari pusat ke tepi dengan rentang dinamis lebar dan mikrokontras kuat.",
+  "typicalTraits": [
+    "Ketajaman sangat tinggi dan tekstur mikro tegas",
+    "Kontras street tegas namun rentang dinamis lega",
+    "Siap dipasangkan dengan film B&W atau warna slide"
+  ],
+  "calibrationStatus": "draft",
+  "lookTags": [
+    "razor-sharp",
+    "micro-contrast",
+    "high-contrast",
+    "wide-dr"
+  ],
+  "cameraDefaults": {
+    "aspectRatio": "3:2",
+    "whiteBalance": {
+      "temp": 0.0,
+      "tint": 0.0
+    },
+    "tone": {
+      "contrast": 1.15,
+      "highlightRolloff": 0.38,
+      "shadowLift": 0.03
+    },
+    "saturation": 1.0,
+    "sensorNoise": {
+      "amount": 0.06,
+      "chroma": 0.14
+    },
+    "sharpen": 0.33,
+    "dateStamp": {
+      "available": true,
+      "defaultOn": false,
+      "format": "yy MM dd",
+      "color": "#FF8C1A"
+    },
+    "bodyOptics": {
+      "softness": 0.0,
+      "vignetteStrength": 0.0,
+      "bloomIntensity": 0.0,
+      "chromaticAberration": 0.0,
+      "lightLeakIntensity": 0.0
+    }
+  }
+}

@@ -1,28 +1,51 @@
 {
   "schemaVersion": 2,
   "id": "ccd_dreamy_pastel",
-  "displayName": "Kompak CCD Lembut / Pastel",
+  "displayName": "Kompak Digital CCD Lembut / Periskop",
   "era": "2000s",
-  "summary": "Perkiraan awal karakter kamera saku CCD lembut/periskop akhir 2000-an: rona kulit halus, warna pastel cerah, tepi agak lembut, dan sorotan sedikit berpendar (docs/catalog/archetypes.md).",
+  "summary": "Perkiraan awal (draft) digicam saku CCD lembut/periskop akhir 2000-an: detail halus, warna pastel hangat, dan pendaran sorotan ringan.",
   "typicalTraits": [
-    "Warna cerah lembut dengan rona kulit halus",
-    "Detail tepi agak lembut dan sorotan mudah berpendar",
-    "Kontras tidak sekeras CCD awal 2000-an"
+    "Detail agak lembut dengan peredaman noise ringan",
+    "Warna pastel hangat dan bayangan sedikit terangkat",
+    "Sorotan terang berpendar halus"
   ],
   "calibrationStatus": "draft",
   "lookTags": [
     "soft-detail",
     "pastel-tone",
-    "warm-indoor"
+    "warm-indoor",
+    "highlight-bloom",
+    "noise-smoothing"
   ],
   "cameraDefaults": {
     "aspectRatio": "4:3",
-    "whiteBalance": { "temp": 0.05, "tint": 0.04 },
-    "tone": { "contrast": 0.95, "highlightRolloff": 0.42, "shadowLift": 0.06 },
-    "saturation": 1.03,
-    "sensorNoise": { "amount": 0.14, "chroma": 0.22 },
-    "sharpen": 0.10,
-    "dateStamp": { "available": true, "defaultOn": false, "format": "yy MM dd", "color": "#FF9830" },
-    "bodyOptics": { "softness": 0.00, "vignetteStrength": 0.00, "bloomIntensity": 0.00, "chromaticAberration": 0.00, "lightLeakIntensity": 0.00 }
+    "whiteBalance": {
+      "temp": 0.06,
+      "tint": 0.04
+    },
+    "tone": {
+      "contrast": 0.95,
+      "highlightRolloff": 0.4,
+      "shadowLift": 0.06
+    },
+    "saturation": 1.0,
+    "sensorNoise": {
+      "amount": 0.04,
+      "chroma": 0.14
+    },
+    "sharpen": 0.02,
+    "dateStamp": {
+      "available": true,
+      "defaultOn": false,
+      "format": "yy MM dd",
+      "color": "#FF9830"
+    },
+    "bodyOptics": {
+      "softness": 0.09,
+      "vignetteStrength": 0.0,
+      "bloomIntensity": 0.06,
+      "chromaticAberration": 0.0,
+      "lightLeakIntensity": 0.0
+    }
   }
 }

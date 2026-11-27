@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 2,
+  "id": "instant_integral_vintage",
+  "displayName": "Instan Integral Klasik",
+  "era": "1970s-1990s",
+  "summary": "Perkiraan awal (draft) kamera instan integral klasik: format 1:1, palet warna kalem-hangat, kontras organik lembut, dan vignette halus.",
+  "typicalTraits": [
+    "Format cetak bujur sangkar 1:1",
+    "Palet warna lembut-kalem dan kontras rendah organik",
+    "Tepi dan sudut melunak lembut"
+  ],
+  "calibrationStatus": "draft",
+  "lookTags": [
+    "square-instant",
+    "soft-vignette",
+    "muted-vintage",
+    "low-contrast",
+    "soft-edges"
+  ],
+  "cameraDefaults": {
+    "aspectRatio": "1:1",
+    "whiteBalance": {
+      "temp": 0.04,
+      "tint": 0.03
+    },
+    "tone": {
+      "contrast": 0.93,
+      "highlightRolloff": 0.28,
+      "shadowLift": 0.13
+    },
+    "saturation": 0.91,
+    "sensorNoise": {
+      "amount": 0.06,
+      "chroma": 0.14
+    },
+    "sharpen": 0.09,
+    "dateStamp": {
+      "available": true,
+      "defaultOn": false,
+      "format": "yy MM dd",
+      "color": "#FF8C1A"
+    },
+    "bodyOptics": {
+      "softness": 0.08,
+      "vignetteStrength": 0.08,
+      "bloomIntensity": 0.0,
+      "chromaticAberration": 0.0,
+      "lightLeakIntensity": 0.0
+    }
+  }
+}

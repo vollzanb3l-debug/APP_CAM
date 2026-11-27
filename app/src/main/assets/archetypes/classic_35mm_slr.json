@@ -1,28 +1,50 @@
 {
   "schemaVersion": 2,
   "id": "classic_35mm_slr",
-  "displayName": "SLR / Rangefinder 35mm Klasik",
+  "displayName": "SLR / Rangefinder 35mm Klasik Beroptik Kaca",
   "era": "1970s-1990s",
-  "summary": "Perkiraan awal badan kamera mekanis 35mm dengan karakter netral sehingga warna dan grain sangat ditentukan oleh kombinasi lensa dan film.",
+  "summary": "Perkiraan awal (draft) bodi mekanis 35mm klasik bernuansa netral sehingga karakter warna dan grain ditentukan oleh kombinasi lensa dan emulsi film.",
   "typicalTraits": [
-    "Rasio klasik 3:2",
-    "White balance mendekati netral",
-    "Roll-off highlight halus dan noise sensor minimal"
+    "Rasio klasik 3:2 dengan bodi netral",
+    "Kontras mikro seimbang khas optik kaca klasik",
+    "Roll-off sorotan halus dan noise sensor minimal"
   ],
   "calibrationStatus": "draft",
   "lookTags": [
     "natural-color",
-    "film-like-grain",
-    "clean-optics"
+    "neutral-body",
+    "smooth-rolloff",
+    "micro-contrast"
   ],
   "cameraDefaults": {
     "aspectRatio": "3:2",
-    "whiteBalance": { "temp": 0.02, "tint": 0.00 },
-    "tone": { "contrast": 1.02, "highlightRolloff": 0.30, "shadowLift": 0.01 },
-    "saturation": 1.00,
-    "sensorNoise": { "amount": 0.04, "chroma": 0.10 },
-    "sharpen": 0.15,
-    "dateStamp": { "available": true, "defaultOn": false, "format": "yy MM dd", "color": "#FF8C1A" },
-    "bodyOptics": { "softness": 0.00, "vignetteStrength": 0.00, "bloomIntensity": 0.00, "chromaticAberration": 0.00, "lightLeakIntensity": 0.00 }
+    "whiteBalance": {
+      "temp": 0.01,
+      "tint": 0.0
+    },
+    "tone": {
+      "contrast": 1.04,
+      "highlightRolloff": 0.4,
+      "shadowLift": 0.02
+    },
+    "saturation": 1.0,
+    "sensorNoise": {
+      "amount": 0.04,
+      "chroma": 0.1
+    },
+    "sharpen": 0.21,
+    "dateStamp": {
+      "available": true,
+      "defaultOn": false,
+      "format": "yy MM dd",
+      "color": "#FF8C1A"
+    },
+    "bodyOptics": {
+      "softness": 0.0,
+      "vignetteStrength": 0.0,
+      "bloomIntensity": 0.0,
+      "chromaticAberration": 0.0,
+      "lightLeakIntensity": 0.0
+    }
   }
 }

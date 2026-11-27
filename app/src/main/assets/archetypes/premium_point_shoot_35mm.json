@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 2,
+  "id": "premium_point_shoot_35mm",
+  "displayName": "Point-and-Shoot 35mm Premium",
+  "era": "1990s",
+  "summary": "Perkiraan awal (draft) point-and-shoot 35mm premium berlensa prima kaca: tajam, berkontras tegas, dan memperlihatkan vignette sudut halus.",
+  "typicalTraits": [
+    "Lensa prima kaca tajam dengan kontras snapshot 90-an",
+    "Mikrokontras kuat untuk potret dan jalanan",
+    "Vignette sudut tipis yang alami"
+  ],
+  "calibrationStatus": "draft",
+  "lookTags": [
+    "sharp",
+    "high-contrast",
+    "micro-contrast",
+    "subtle-vignette"
+  ],
+  "cameraDefaults": {
+    "aspectRatio": "3:2",
+    "whiteBalance": {
+      "temp": 0.0,
+      "tint": 0.0
+    },
+    "tone": {
+      "contrast": 1.12,
+      "highlightRolloff": 0.28,
+      "shadowLift": 0.01
+    },
+    "saturation": 1.0,
+    "sensorNoise": {
+      "amount": 0.06,
+      "chroma": 0.14
+    },
+    "sharpen": 0.29,
+    "dateStamp": {
+      "available": true,
+      "defaultOn": false,
+      "format": "yy MM dd",
+      "color": "#FF8C1A"
+    },
+    "bodyOptics": {
+      "softness": 0.0,
+      "vignetteStrength": 0.05,
+      "bloomIntensity": 0.0,
+      "chromaticAberration": 0.0,
+      "lightLeakIntensity": 0.0
+    }
+  }
+}

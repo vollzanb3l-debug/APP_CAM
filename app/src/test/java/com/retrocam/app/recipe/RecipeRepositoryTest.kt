@@ -25,7 +25,7 @@ class RecipeRepositoryTest {
         assertEquals(3, catalog.cameras.size)
         assertEquals(3, catalog.lenses.size)
         assertEquals(3, catalog.films.size)
-        assertEquals(7, catalog.archetypes.size)
+        assertEquals(18, catalog.archetypes.size)
 
         val archetypeIds = catalog.archetypes.map { it.id }.toSet()
         val cameraIds = catalog.cameras.map { it.id }.toSet()

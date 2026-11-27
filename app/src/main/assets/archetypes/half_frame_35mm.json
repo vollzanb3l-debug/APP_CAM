@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 2,
+  "id": "half_frame_35mm",
+  "displayName": "Half-Frame 35mm",
+  "era": "1960s-2020s",
+  "summary": "Perkiraan awal (draft) kamera half-frame 35mm: bingkai bawaan vertikal 3:4, butiran terasa lebih kasar karena luas negatif separuh, serta sudut sedikit lembut.",
+  "typicalTraits": [
+    "Bingkai vertikal bawaan 3:4",
+    "Butiran lebih terasa saat diperbesar",
+    "Nuansa nostalgia hangat dengan sudut agak melunak"
+  ],
+  "calibrationStatus": "draft",
+  "lookTags": [
+    "vertical-frame",
+    "coarse-grain",
+    "warm-nostalgic",
+    "soft-corners"
+  ],
+  "cameraDefaults": {
+    "aspectRatio": "3:4",
+    "whiteBalance": {
+      "temp": 0.05,
+      "tint": 0.03
+    },
+    "tone": {
+      "contrast": 1.0,
+      "highlightRolloff": 0.28,
+      "shadowLift": 0.05
+    },
+    "saturation": 1.0,
+    "sensorNoise": {
+      "amount": 0.16,
+      "chroma": 0.1
+    },
+    "sharpen": 0.08,
+    "dateStamp": {
+      "available": true,
+      "defaultOn": false,
+      "format": "yy MM dd",
+      "color": "#FF8C1A"
+    },
+    "bodyOptics": {
+      "softness": 0.06,
+      "vignetteStrength": 0.04,
+      "bloomIntensity": 0.0,
+      "chromaticAberration": 0.0,
+      "lightLeakIntensity": 0.0
+    }
+  }
+}

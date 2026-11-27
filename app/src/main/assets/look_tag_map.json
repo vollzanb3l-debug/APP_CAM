@@ -1,0 +1,237 @@
+{
+  "schemaVersion": 1,
+  "calibrationStatus": "draft",
+  "disclaimer": "Seluruh nilai penyesuaian di bawah ini adalah perkiraan awal (draft) berskala kecil untuk membangun titik awal 15 arketipe dari lookTags katalog, BUKAN klaim pengukuran akurat. Penyetelan akhir dilakukan secara visual terhadap foto referensi nyata di CalibrationDebugScreen.",
+  "tags": {
+    "soft-edges": {
+      "sharpenDelta": -0.06,
+      "softnessDelta": 0.08,
+      "note": "Tepi bingkai sedikit lebih lembut khas lensa sederhana atau optik vintage."
+    },
+    "soft-corners": {
+      "sharpenDelta": -0.04,
+      "softnessDelta": 0.06,
+      "vignetteStrengthDelta": 0.04,
+      "note": "Sudut bingkai melunak ringan dibanding pusat."
+    },
+    "soft-detail": {
+      "sharpenDelta": -0.08,
+      "softnessDelta": 0.05,
+      "note": "Detail keseluruhan agak halus khas periskop/digicam kompak akhir 2000-an."
+    },
+    "dv-softness": {
+      "sharpenDelta": -0.08,
+      "softnessDelta": 0.09,
+      "note": "Kelembutan definisi standar camcorder MiniDV."
+    },
+    "heavy-vignette": {
+      "vignetteStrengthDelta": 0.18,
+      "contrastDelta": 0.04,
+      "note": "Penggelapan sudut menonjol khas kamera mainan/lo-fi."
+    },
+    "corner-vignette": {
+      "vignetteStrengthDelta": 0.10,
+      "note": "Vignette sudut alami yang terlihat pada bukaan lebar."
+    },
+    "light-vignette": {
+      "vignetteStrengthDelta": 0.09,
+      "note": "Vignette ringan khas lensa plastik kamera sekali pakai."
+    },
+    "soft-vignette": {
+      "vignetteStrengthDelta": 0.08,
+      "shadowLiftDelta": 0.02,
+      "note": "Falloff tepi lembut khas film instan integral."
+    },
+    "subtle-vignette": {
+      "vignetteStrengthDelta": 0.05,
+      "note": "Vignette halus khas lensa prima point-and-shoot."
+    },
+    "film-like-grain": {
+      "sensorNoiseAmountDelta": 0.06,
+      "sensorNoiseChromaDelta": -0.06,
+      "note": "Butiran organik yang lebih monokromatik dibanding noise warna digital."
+    },
+    "coarse-grain": {
+      "sensorNoiseAmountDelta": 0.10,
+      "sensorNoiseChromaDelta": -0.04,
+      "sharpenDelta": -0.03,
+      "note": "Butiran lebih kasar khas pembesaran negatif half-frame 35mm."
+    },
+    "fine-grain": {
+      "sensorNoiseAmountDelta": -0.03,
+      "sensorNoiseChromaDelta": -0.06,
+      "note": "Butiran sangat halus khas format medium atau sensor modern."
+    },
+    "digital-noise": {
+      "sensorNoiseAmountDelta": 0.08,
+      "sensorNoiseChromaDelta": 0.14,
+      "note": "Noise sensor digital dengan komponen kromatik khas CCD kecil."
+    },
+    "fine-noise": {
+      "sensorNoiseAmountDelta": 0.05,
+      "sensorNoiseChromaDelta": 0.08,
+      "note": "Noise halus tanpa peredaman berlebihan khas CMOS ponsel awal."
+    },
+    "noise-smoothing": {
+      "sensorNoiseAmountDelta": -0.02,
+      "sharpenDelta": -0.05,
+      "softnessDelta": 0.04,
+      "note": "Peredaman noise internal ringan yang menghaluskan tekstur mikro."
+    },
+    "clipped-highlights": {
+      "highlightRolloffDelta": -0.10,
+      "contrastDelta": 0.04,
+      "note": "Rentang dinamis sempit sehingga sorotan terang lebih cepat matang."
+    },
+    "smooth-rolloff": {
+      "highlightRolloffDelta": 0.12,
+      "note": "Transisi sorotan terang ke putih yang lembut dan tidak patah."
+    },
+    "highlight-bloom": {
+      "bloomIntensityDelta": 0.06,
+      "highlightRolloffDelta": 0.04,
+      "note": "Pendaran ringan di sekitar sumber cahaya terang."
+    },
+    "subtle-glow": {
+      "bloomIntensityDelta": 0.04,
+      "note": "Kilau halus pada sorotan tanpa menghilangkan ketajaman."
+    },
+    "high-contrast": {
+      "contrastDelta": 0.08,
+      "shadowLiftDelta": -0.01,
+      "note": "Kontras lebih tegas antara bayangan dan sorotan."
+    },
+    "punchy-contrast": {
+      "contrastDelta": 0.07,
+      "saturationDelta": 0.04,
+      "note": "Kontras hidup dan langsung siap pakai."
+    },
+    "low-contrast": {
+      "contrastDelta": -0.07,
+      "shadowLiftDelta": 0.04,
+      "note": "Kontras lembut dengan bayangan lebih terbuka."
+    },
+    "micro-contrast": {
+      "contrastDelta": 0.04,
+      "sharpenDelta": 0.06,
+      "note": "Separasi tekstur mikro tegas khas optik kaca prima."
+    },
+    "punchy-daylight": {
+      "tempDelta": 0.04,
+      "saturationDelta": 0.06,
+      "contrastDelta": 0.03,
+      "note": "Warna siang hari cerah-hangat khas digicam 2000-an."
+    },
+    "crisp-daylight": {
+      "contrastDelta": 0.04,
+      "sharpenDelta": 0.07,
+      "saturationDelta": 0.03,
+      "note": "Ketajaman dan kecerahan tegas di bawah sinar matahari."
+    },
+    "vivid": {
+      "saturationDelta": 0.08,
+      "note": "Saturasi warna sedikit lebih tinggi."
+    },
+    "rich-3ccd-color": {
+      "saturationDelta": 0.10,
+      "tempDelta": 0.03,
+      "sensorNoiseChromaDelta": -0.04,
+      "note": "Warna pekat dan bersih khas pemisahan 3-CCD camcorder."
+    },
+    "bright-color": {
+      "saturationDelta": 0.06,
+      "tempDelta": 0.02,
+      "note": "Palet warna cerah khas film instan modern."
+    },
+    "natural-color": {
+      "tempDelta": 0.01,
+      "saturationDelta": 0.00,
+      "note": "Reproduksi warna mendekati alami dan seimbang."
+    },
+    "muted-warm": {
+      "tempDelta": 0.05,
+      "saturationDelta": -0.05,
+      "highlightRolloffDelta": 0.06,
+      "note": "Nuansa hangat yang tenang dan sedikit kalem."
+    },
+    "muted-vintage": {
+      "tempDelta": 0.04,
+      "tintDelta": 0.03,
+      "saturationDelta": -0.09,
+      "shadowLiftDelta": 0.05,
+      "note": "Palet warna lembut-kalem khas cetakan instan lawas."
+    },
+    "warm-indoor": {
+      "tempDelta": 0.06,
+      "tintDelta": 0.02,
+      "note": "Kecenderungan hangat pada cahaya ruangan."
+    },
+    "warm-nostalgic": {
+      "tempDelta": 0.05,
+      "tintDelta": 0.03,
+      "shadowLiftDelta": 0.03,
+      "note": "Nuansa nostalgia hangat dengan bayangan sedikit terangkat."
+    },
+    "pastel-tone": {
+      "tintDelta": 0.02,
+      "contrastDelta": -0.05,
+      "shadowLiftDelta": 0.04,
+      "highlightRolloffDelta": 0.08,
+      "note": "Rona pastel lembut dengan sorotan halus."
+    },
+    "purple-fringing": {
+      "chromaticAberrationDelta": 0.05,
+      "note": "Aberasi kromatik ringan di tepi berkontras tinggi."
+    },
+    "light-leak": {
+      "lightLeakIntensityDelta": 0.08,
+      "note": "Bocoran cahaya tepi tipis khas bodi plastik lo-fi."
+    },
+    "sharp": {
+      "sharpenDelta": 0.08,
+      "note": "Ketajaman optik/JPEG cukup tinggi."
+    },
+    "razor-sharp": {
+      "sharpenDelta": 0.12,
+      "contrastDelta": 0.03,
+      "note": "Ketajaman tinggi dari pusat hingga tepi bingkai."
+    },
+    "radial-blur": {
+      "softnessDelta": 0.07,
+      "chromaticAberrationDelta": 0.04,
+      "note": "Kelembutan optik mengarah ke sudut bingkai."
+    },
+    "dreamy": {
+      "bloomIntensityDelta": 0.05,
+      "softnessDelta": 0.04,
+      "contrastDelta": -0.04,
+      "note": "Tampilan agak lembut berpendar."
+    },
+    "neutral-body": {
+      "sensorNoiseAmountDelta": -0.02,
+      "sensorNoiseChromaDelta": -0.04,
+      "note": "Bodi film netral sehingga warna dan grain ditentukan lensa dan film."
+    },
+    "wide-dr": {
+      "highlightRolloffDelta": 0.10,
+      "shadowLiftDelta": 0.02,
+      "note": "Rentang dinamis lebih lega di sorotan dan bayangan."
+    },
+    "vertical-frame": {
+      "aspectRatioHint": "3:4",
+      "note": "Rasio bingkai bawaan vertikal 3:4 (half-frame)."
+    },
+    "vertical-mini": {
+      "aspectRatioHint": "3:4",
+      "note": "Format cetak instan mini vertikal 3:4."
+    },
+    "square-format": {
+      "aspectRatioHint": "1:1",
+      "note": "Format bingkai bujur sangkar 1:1 (6x6 / medium format / Holga)."
+    },
+    "square-instant": {
+      "aspectRatioHint": "1:1",
+      "note": "Format cetak instan integral klasik 1:1."
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 2,
+  "id": "filmic_digital_mirrorless",
+  "displayName": "Digital Modern Berkarakter Simulasi Film",
+  "era": "2010s-2020s",
+  "summary": "Perkiraan awal (draft) kamera mirrorless/compact modern berkarakter film: detail tajam, rentang dinamis lebar, nuansa hangat kalem, dan grain halus.",
+  "typicalTraits": [
+    "Detail tajam dengan roll-off sorotan mulus",
+    "Nuansa hangat tenang sedikit muted",
+    "Butiran halus dan rentang dinamis lebar"
+  ],
+  "calibrationStatus": "draft",
+  "lookTags": [
+    "sharp",
+    "smooth-rolloff",
+    "muted-warm",
+    "wide-dr",
+    "fine-grain"
+  ],
+  "cameraDefaults": {
+    "aspectRatio": "3:2",
+    "whiteBalance": {
+      "temp": 0.05,
+      "tint": 0.0
+    },
+    "tone": {
+      "contrast": 1.0,
+      "highlightRolloff": 0.56,
+      "shadowLift": 0.04
+    },
+    "saturation": 0.95,
+    "sensorNoise": {
+      "amount": 0.03,
+      "chroma": 0.08
+    },
+    "sharpen": 0.23,
+    "dateStamp": {
+      "available": true,
+      "defaultOn": false,
+      "format": "yy MM dd",
+      "color": "#FF8C1A"
+    },
+    "bodyOptics": {
+      "softness": 0.0,
+      "vignetteStrength": 0.0,
+      "bloomIntensity": 0.0,
+      "chromaticAberration": 0.0,
+      "lightLeakIntensity": 0.0
+    }
+  }
+}

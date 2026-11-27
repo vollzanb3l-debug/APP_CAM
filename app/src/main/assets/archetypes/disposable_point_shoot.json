@@ -1,29 +1,51 @@
 {
   "schemaVersion": 2,
   "id": "disposable_point_shoot",
-  "displayName": "Kamera Sekali Pakai / Lensa Plastik",
-  "era": "1990s-2000s",
-  "summary": "Perkiraan awal karakter kamera saku sekali pakai: bayangan sedikit terangkat, saturasi sedang, dan sentuhan kontras lembut.",
+  "displayName": "Kamera Film Sekali Pakai",
+  "era": "1980s-2000s",
+  "summary": "Perkiraan awal (draft) kamera sekali pakai berlensa plastik: tepi lembut, vignette ringan, kontras rendah, dan nuansa nostalgia hangat.",
   "typicalTraits": [
-    "Shadow lift ringan dengan nuansa sedikit pudar",
-    "Sedikit pergeseran warna kehijauan/hangat",
-    "Ketajaman rendah dan karakter kasual"
+    "Tepi lembut dan vignette ringan khas lensa plastik",
+    "Kontras lebih rendah dengan bayangan sedikit terangkat",
+    "Pendaran ringan pada sorotan terang"
   ],
   "calibrationStatus": "draft",
   "lookTags": [
     "soft-edges",
-    "mild-vignette",
-    "film-like-grain",
-    "low-contrast"
+    "light-vignette",
+    "low-contrast",
+    "warm-nostalgic",
+    "highlight-bloom"
   ],
   "cameraDefaults": {
     "aspectRatio": "3:2",
-    "whiteBalance": { "temp": 0.04, "tint": 0.05 },
-    "tone": { "contrast": 0.94, "highlightRolloff": 0.36, "shadowLift": 0.07 },
-    "saturation": 0.98,
-    "sensorNoise": { "amount": 0.14, "chroma": 0.18 },
-    "sharpen": 0.05,
-    "dateStamp": { "available": true, "defaultOn": false, "format": "yy MM dd", "color": "#FF8C1A" },
-    "bodyOptics": { "softness": 0.08, "vignetteStrength": 0.14, "bloomIntensity": 0.04, "chromaticAberration": 0.04, "lightLeakIntensity": 0.00 }
+    "whiteBalance": {
+      "temp": 0.05,
+      "tint": 0.03
+    },
+    "tone": {
+      "contrast": 0.93,
+      "highlightRolloff": 0.32,
+      "shadowLift": 0.09
+    },
+    "saturation": 1.0,
+    "sensorNoise": {
+      "amount": 0.06,
+      "chroma": 0.14
+    },
+    "sharpen": 0.09,
+    "dateStamp": {
+      "available": true,
+      "defaultOn": false,
+      "format": "yy MM dd",
+      "color": "#FF8C1A"
+    },
+    "bodyOptics": {
+      "softness": 0.08,
+      "vignetteStrength": 0.09,
+      "bloomIntensity": 0.06,
+      "chromaticAberration": 0.0,
+      "lightLeakIntensity": 0.0
+    }
   }
 }

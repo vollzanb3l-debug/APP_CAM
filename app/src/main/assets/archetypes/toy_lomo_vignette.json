@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 2,
+  "id": "toy_lomo_vignette",
+  "displayName": "Kamera Mainan / Lo-Fi",
+  "era": "1980s-2000s",
+  "summary": "Perkiraan awal (draft) kamera mainan/lo-fi: vignette sudut pekat, kelembutan radial ke arah tepi, warna hidup, dan bocoran cahaya tipis opsional.",
+  "typicalTraits": [
+    "Vignette gelap mencolok di sudut bingkai",
+    "Tepi lembut dan blur radial menuju sudut",
+    "Warna jenuh serta sentuhan light leak tipis"
+  ],
+  "calibrationStatus": "draft",
+  "lookTags": [
+    "square-format",
+    "heavy-vignette",
+    "soft-edges",
+    "radial-blur",
+    "light-leak",
+    "vivid"
+  ],
+  "cameraDefaults": {
+    "aspectRatio": "1:1",
+    "whiteBalance": {
+      "temp": 0.0,
+      "tint": 0.0
+    },
+    "tone": {
+      "contrast": 1.04,
+      "highlightRolloff": 0.28,
+      "shadowLift": 0.02
+    },
+    "saturation": 1.08,
+    "sensorNoise": {
+      "amount": 0.06,
+      "chroma": 0.14
+    },
+    "sharpen": 0.09,
+    "dateStamp": {
+      "available": true,
+      "defaultOn": false,
+      "format": "yy MM dd",
+      "color": "#FF8C1A"
+    },
+    "bodyOptics": {
+      "softness": 0.15,
+      "vignetteStrength": 0.18,
+      "bloomIntensity": 0.0,
+      "chromaticAberration": 0.04,
+      "lightLeakIntensity": 0.08
+    }
+  }
+}

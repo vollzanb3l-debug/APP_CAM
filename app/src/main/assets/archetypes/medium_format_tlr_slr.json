@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 2,
+  "id": "medium_format_tlr_slr",
+  "displayName": "Format Medium 120",
+  "era": "1950s-1990s",
+  "summary": "Perkiraan awal (draft) kamera format medium 120 (6x6): rasio 1:1, grain sangat halus, gradasi sorotan panjang, mikrokontras bersih, dan kilau halus.",
+  "typicalTraits": [
+    "Format bujur sangkar 1:1 klasik 6x6",
+    "Butiran sangat halus dan gradasi tonal panjang",
+    "Mikrokontras bersih dengan sedikit glow alami"
+  ],
+  "calibrationStatus": "draft",
+  "lookTags": [
+    "square-format",
+    "fine-grain",
+    "smooth-rolloff",
+    "micro-contrast",
+    "subtle-glow"
+  ],
+  "cameraDefaults": {
+    "aspectRatio": "1:1",
+    "whiteBalance": {
+      "temp": 0.0,
+      "tint": 0.0
+    },
+    "tone": {
+      "contrast": 1.04,
+      "highlightRolloff": 0.4,
+      "shadowLift": 0.02
+    },
+    "saturation": 1.0,
+    "sensorNoise": {
+      "amount": 0.03,
+      "chroma": 0.08
+    },
+    "sharpen": 0.21,
+    "dateStamp": {
+      "available": true,
+      "defaultOn": false,
+      "format": "yy MM dd",
+      "color": "#FF8C1A"
+    },
+    "bodyOptics": {
+      "softness": 0.0,
+      "vignetteStrength": 0.0,
+      "bloomIntensity": 0.04,
+      "chromaticAberration": 0.0,
+      "lightLeakIntensity": 0.0
+    }
+  }
+}

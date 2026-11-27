@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 2,
+  "id": "early_camera_phone",
+  "displayName": "Kamera Ponsel Awal Ber-CMOS Mini",
+  "era": "2000s-2010s",
+  "summary": "Perkiraan awal (draft) kamera ponsel awal bersensor CMOS kecil: tajam dan cerah di cahaya terang, noise halus organik, namun highlight cepat terbakar putih.",
+  "typicalTraits": [
+    "Cerah dan tajam di siang hari dengan warna hidup",
+    "Rentang dinamis sempit sehingga langit/sorotan mudah matang",
+    "Butiran noise halus khas sensor ponsel awal"
+  ],
+  "calibrationStatus": "draft",
+  "lookTags": [
+    "clipped-highlights",
+    "crisp-daylight",
+    "fine-noise",
+    "vivid"
+  ],
+  "cameraDefaults": {
+    "aspectRatio": "4:3",
+    "whiteBalance": {
+      "temp": 0.0,
+      "tint": 0.0
+    },
+    "tone": {
+      "contrast": 1.08,
+      "highlightRolloff": 0.18,
+      "shadowLift": 0.02
+    },
+    "saturation": 1.11,
+    "sensorNoise": {
+      "amount": 0.11,
+      "chroma": 0.22
+    },
+    "sharpen": 0.22,
+    "dateStamp": {
+      "available": true,
+      "defaultOn": false,
+      "format": "yy MM dd",
+      "color": "#FF8C1A"
+    },
+    "bodyOptics": {
+      "softness": 0.0,
+      "vignetteStrength": 0.0,
+      "bloomIntensity": 0.0,
+      "chromaticAberration": 0.0,
+      "lightLeakIntensity": 0.0
+    }
+  }
+}

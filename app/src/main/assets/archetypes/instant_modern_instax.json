@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 2,
+  "id": "instant_modern_instax",
+  "displayName": "Instan Modern",
+  "era": "2010s-2020s",
+  "summary": "Perkiraan awal (draft) kamera instan modern: rasio cetak vertikal 3:4, warna cerah, kontras lebih hidup dibanding instan klasik, dengan vignette tipis.",
+  "typicalTraits": [
+    "Format cetak vertikal mini 3:4",
+    "Warna cerah dan kontras punchy",
+    "Vignette tepi sangat halus"
+  ],
+  "calibrationStatus": "draft",
+  "lookTags": [
+    "vertical-mini",
+    "bright-color",
+    "punchy-contrast",
+    "subtle-vignette"
+  ],
+  "cameraDefaults": {
+    "aspectRatio": "3:4",
+    "whiteBalance": {
+      "temp": 0.02,
+      "tint": 0.0
+    },
+    "tone": {
+      "contrast": 1.07,
+      "highlightRolloff": 0.28,
+      "shadowLift": 0.02
+    },
+    "saturation": 1.1,
+    "sensorNoise": {
+      "amount": 0.06,
+      "chroma": 0.14
+    },
+    "sharpen": 0.15,
+    "dateStamp": {
+      "available": true,
+      "defaultOn": false,
+      "format": "yy MM dd",
+      "color": "#FF8C1A"
+    },
+    "bodyOptics": {
+      "softness": 0.0,
+      "vignetteStrength": 0.05,
+      "bloomIntensity": 0.0,
+      "chromaticAberration": 0.0,
+      "lightLeakIntensity": 0.0
+    }
+  }
+}

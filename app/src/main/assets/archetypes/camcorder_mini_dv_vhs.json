@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 2,
+  "id": "camcorder_mini_dv_vhs",
+  "displayName": "Camcorder Pita MiniDV / 3-CCD",
+  "era": "1990s-2000s",
+  "summary": "Perkiraan awal (draft) camcorder 3-CCD MiniDV: rasio 4:3, warna 3-CCD pekat, kelembutan definisi standar, dan sorotan mudah terbakar.",
+  "typicalTraits": [
+    "Rasio 4:3 khas televisi/MiniDV",
+    "Warna 3-CCD jenuh namun bersih dari noise warna berlebih",
+    "Kelembutan definisi standar dan highlight cepat matang"
+  ],
+  "calibrationStatus": "draft",
+  "lookTags": [
+    "rich-3ccd-color",
+    "dv-softness",
+    "clipped-highlights",
+    "warm-indoor"
+  ],
+  "cameraDefaults": {
+    "aspectRatio": "4:3",
+    "whiteBalance": {
+      "temp": 0.09,
+      "tint": 0.02
+    },
+    "tone": {
+      "contrast": 1.04,
+      "highlightRolloff": 0.18,
+      "shadowLift": 0.02
+    },
+    "saturation": 1.1,
+    "sensorNoise": {
+      "amount": 0.06,
+      "chroma": 0.1
+    },
+    "sharpen": 0.07,
+    "dateStamp": {
+      "available": true,
+      "defaultOn": false,
+      "format": "yy MM dd",
+      "color": "#FF8C1A"
+    },
+    "bodyOptics": {
+      "softness": 0.09,
+      "vignetteStrength": 0.0,
+      "bloomIntensity": 0.0,
+      "chromaticAberration": 0.0,
+      "lightLeakIntensity": 0.0
+    }
+  }
+}
