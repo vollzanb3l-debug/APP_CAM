@@ -29,3 +29,19 @@ Checklist pengujian manual yang dijalankan setiap kali satu tahap (`M0`–`M6`) 
   - [ ] **Date Stamp Orisinal (`'YY.MM.DD`)**: tombol `DATE ON/OFF` langsung menghidupkan/mematikan stempel oranye di kanan bawah pada preview maupun foto hasil
   - [ ] **Light Leak Opsional**: uji slider *Light Leak Intensity* & *Seed* di Layar Debug & Kalibrasi lalu klik **Terapkan ke Preview**
 - [ ] Performa & panas dengan semua efek M4 aktif (terutama `50mm f1.4` + `Surya 200` yang memakai softness + bloom/halation + grain): 5 menit preview tetap lancar dan tidak terlalu panas *(uji di M4)*
+- [ ] **Exposure Compensation (`-2..+2 EV`)** *(uji di M5)*:
+  - [ ] Slider EV tampil sesuai rentang perangkat (dibatasi maksimal `-2..+2 EV`); geser ke negatif/positif langsung menggelapkan/menerangkan preview
+  - [ ] Ambil foto pada EV negatif (mis. `-1.5`) dan EV positif (mis. `+1.5`): kecerahan hasil foto cocok dengan preview
+  - [ ] Ketuk label nilai EV di tengah bar untuk reset ke `0.0 EV`; balik kamera belakang ↔ depan menjaga rentang EV sesuai kamera aktif
+- [ ] **Grid Viewfinder (Aturan Sepertiga)** *(uji di M5)*:
+  - [ ] Tombol `GRID` menghidupkan/mematikan garis aturan sepertiga di viewfinder, dan garis grid tidak ikut tercetak pada hasil foto
+  - [ ] Tutup lalu buka kembali aplikasi: pilihan `GRID` (ON/OFF) tetap tersimpan
+- [ ] **Metadata EXIF `UserComment` & `GalleryScreen`** *(uji di M5)*:
+  - [ ] Saat folder `Pictures/RetroCam` kosong: `GalleryScreen` menampilkan kondisi kosong dengan rapi tanpa crash
+  - [ ] Ambil beberapa foto dengan kombinasi Camera/Lens/Film berbeda lalu buka `Galeri`: label `"Kamera - Lensa - Film"` tampil sesuai resep saat memotret
+  - [ ] Ketuk foto untuk melihat ukuran penuh (label resep dan info versi EXIF tampil), uji tombol **Bagikan** ke aplikasi lain, lalu kembali ke daftar grid
+  - [ ] Foto tanpa metadata EXIF RetroCam (mis. foto lama M1–M4 di `Pictures/RetroCam`): tetap tampil tanpa crash dengan label cadangan
+  - [ ] Hapus satu foto dari luar aplikasi (galeri bawaan/file manager), lalu ketuk atau segarkan di `GalleryScreen`: aplikasi tidak crash, item yang hilang dibersihkan dari daftar, dan muncul pemberitahuan
+  - [ ] Pengujian jumlah foto besar (> 24 foto): foto dimuat berkala saat digulir ke bawah / lewat tombol **Muat lebih banyak** tanpa lag berat atau OOM
+- [ ] **Favorit (Lapisan Data & Pengurutan Picker)** *(uji di M5)*:
+  - [ ] Buka `PickerSheet`: daftar Camera, Lens, dan Film tampil normal tanpa crash saat favorit masih kosong; pengurutan favorit di bagian awal daftar dan penyimpanan ID-only tervalidasi oleh unit test `FavoritesTest` (ikon bintang UI di picker masuk tahap tampilan berikutnya)
