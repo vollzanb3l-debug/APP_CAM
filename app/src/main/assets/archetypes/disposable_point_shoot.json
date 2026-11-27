@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "disposable_point_shoot",
   "displayName": "Kamera Sekali Pakai / Lensa Plastik",
   "era": "1990s-2000s",
@@ -8,5 +8,22 @@
     "Shadow lift ringan dengan nuansa sedikit pudar",
     "Sedikit pergeseran warna kehijauan/hangat",
     "Ketajaman rendah dan karakter kasual"
-  ]
+  ],
+  "calibrationStatus": "draft",
+  "lookTags": [
+    "soft-edges",
+    "mild-vignette",
+    "film-like-grain",
+    "low-contrast"
+  ],
+  "cameraDefaults": {
+    "aspectRatio": "3:2",
+    "whiteBalance": { "temp": 0.04, "tint": 0.05 },
+    "tone": { "contrast": 0.94, "highlightRolloff": 0.36, "shadowLift": 0.07 },
+    "saturation": 0.98,
+    "sensorNoise": { "amount": 0.14, "chroma": 0.18 },
+    "sharpen": 0.05,
+    "dateStamp": { "available": true, "defaultOn": false, "format": "yy MM dd", "color": "#FF8C1A" },
+    "bodyOptics": { "softness": 0.08, "vignetteStrength": 0.14, "bloomIntensity": 0.04, "chromaticAberration": 0.04, "lightLeakIntensity": 0.00 }
+  }
 }

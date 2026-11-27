@@ -24,12 +24,6 @@
   "iconType": "compact_digital",
   "icon": "icons/cameras/dreamy_compact.png",
   "aspectRatio": "3:4",
-  "whiteBalance": { "temp": 0.05, "tint": 0.04 },
-  "tone": { "contrast": 0.95, "highlightRolloff": 0.42, "shadowLift": 0.06 },
-  "saturation": 1.03,
-  "sensorNoise": { "amount": 0.14, "chroma": 0.22 },
-  "sharpen": 0.10,
-  "dateStamp": { "available": true, "defaultOn": false, "format": "yy MM dd", "color": "#FF9830" },
-  "notes": "Perkiraan awal: bingkai vertikal 3:4 lembut-pastel dengan bayangan terangkat ringan dan highlight halus.",
-  "tuning_notes": "Perkiraan awal starter M3/M4 kelompok ccd_dreamy_pastel; bingkai vertikal 3:4."
+  "notes": "Perkiraan awal: mewarisi ccd_dreamy_pastel dengan override bingkai vertikal 3:4.",
+  "tuning_notes": "Mewarisi arketipe ccd_dreamy_pastel; bingkai vertikal 3:4."
 }

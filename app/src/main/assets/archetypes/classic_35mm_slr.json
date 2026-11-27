@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "classic_35mm_slr",
   "displayName": "SLR / Rangefinder 35mm Klasik",
   "era": "1970s-1990s",
@@ -8,5 +8,21 @@
     "Rasio klasik 3:2",
     "White balance mendekati netral",
     "Roll-off highlight halus dan noise sensor minimal"
-  ]
+  ],
+  "calibrationStatus": "draft",
+  "lookTags": [
+    "natural-color",
+    "film-like-grain",
+    "clean-optics"
+  ],
+  "cameraDefaults": {
+    "aspectRatio": "3:2",
+    "whiteBalance": { "temp": 0.02, "tint": 0.00 },
+    "tone": { "contrast": 1.02, "highlightRolloff": 0.30, "shadowLift": 0.01 },
+    "saturation": 1.00,
+    "sensorNoise": { "amount": 0.04, "chroma": 0.10 },
+    "sharpen": 0.15,
+    "dateStamp": { "available": true, "defaultOn": false, "format": "yy MM dd", "color": "#FF8C1A" },
+    "bodyOptics": { "softness": 0.00, "vignetteStrength": 0.00, "bloomIntensity": 0.00, "chromaticAberration": 0.00, "lightLeakIntensity": 0.00 }
+  }
 }

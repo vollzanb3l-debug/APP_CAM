@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "warm_golden_film",
   "displayName": "Film Hangat Keemasan",
   "era": "1990s-2000s",
@@ -8,5 +8,6 @@
     "Nuansa warna keemasan/madu yang hangat",
     "Bayangan gelap sedikit terangkat dengan fade lembut",
     "Sorotan matahari cenderung krem hangat"
-  ]
+  ],
+  "calibrationStatus": "draft"
 }

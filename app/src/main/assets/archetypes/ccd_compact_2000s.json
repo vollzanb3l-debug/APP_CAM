@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "ccd_compact_2000s",
   "displayName": "Kompak CCD Awal 2000-an",
   "era": "2000s",
@@ -8,5 +8,22 @@
     "Nada warna sedikit hangat atau kekuningan",
     "Roll-off highlight sedang dan kontras punchy",
     "Noise kromatik ringan pada area gelap"
-  ]
+  ],
+  "calibrationStatus": "draft",
+  "lookTags": [
+    "high-contrast",
+    "punchy-daylight",
+    "clipped-highlights",
+    "digital-noise"
+  ],
+  "cameraDefaults": {
+    "aspectRatio": "4:3",
+    "whiteBalance": { "temp": 0.08, "tint": 0.02 },
+    "tone": { "contrast": 1.10, "highlightRolloff": 0.22, "shadowLift": 0.02 },
+    "saturation": 1.08,
+    "sensorNoise": { "amount": 0.20, "chroma": 0.42 },
+    "sharpen": 0.35,
+    "dateStamp": { "available": true, "defaultOn": false, "format": "yy MM dd", "color": "#FF8C1A" },
+    "bodyOptics": { "softness": 0.00, "vignetteStrength": 0.00, "bloomIntensity": 0.00, "chromaticAberration": 0.00, "lightLeakIntensity": 0.00 }
+  }
 }

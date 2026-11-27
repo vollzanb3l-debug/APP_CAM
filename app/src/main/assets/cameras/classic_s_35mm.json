@@ -23,13 +23,6 @@
   "calibrationStatus": "draft",
   "iconType": "slr_film",
   "icon": "icons/cameras/classic_35mm.png",
-  "aspectRatio": "3:2",
-  "whiteBalance": { "temp": 0.02, "tint": 0.00 },
-  "tone": { "contrast": 1.02, "highlightRolloff": 0.30, "shadowLift": 0.01 },
-  "saturation": 1.00,
-  "sensorNoise": { "amount": 0.04, "chroma": 0.10 },
-  "sharpen": 0.15,
-  "dateStamp": { "available": true, "defaultOn": false, "format": "yy MM dd", "color": "#FF8C1A" },
-  "notes": "Perkiraan awal: bodi 35mm netral agar karakter lensa dan film tampil dominan.",
-  "tuning_notes": "Perkiraan awal starter M3/M4 kelompok classic_35mm_slr; bodi 35mm netral."
+  "notes": "Perkiraan awal: mewarisi penuh arketipe classic_35mm_slr tanpa override agar karakter lensa dan film tampil dominan.",
+  "tuning_notes": "Mewarisi penuh arketipe classic_35mm_slr; bodi 35mm netral."
 }

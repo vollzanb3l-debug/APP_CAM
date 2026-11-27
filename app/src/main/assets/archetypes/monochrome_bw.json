@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "monochrome_bw",
   "displayName": "Film Hitam Putih / Monokrom",
   "era": "1970s-2000s",
@@ -8,5 +8,6 @@
     "Skala abu-abu netral tanpa warna",
     "Kontras tegas namun gradasi midtone tetap terbaca",
     "Butiran grain terasa pada area abu-abu gelap dan langit"
-  ]
+  ],
+  "calibrationStatus": "draft"
 }

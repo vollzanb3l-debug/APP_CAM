@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "soft_portrait_pastel",
   "displayName": "Film Potret Lembut & Pastel",
   "era": "1990s-2000s",
@@ -8,5 +8,6 @@
     "Rona kulit cerah bersih dan sedikit krem",
     "Kontras lembut tanpa hitam terlalu keras",
     "Sorotan putih melunak halus dan terasa lapang"
-  ]
+  ],
+  "calibrationStatus": "draft"
 }

@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "ccd_dreamy_pastel",
   "displayName": "Kompak CCD Lembut / Pastel",
   "era": "2000s",
@@ -8,5 +8,21 @@
     "Warna cerah lembut dengan rona kulit halus",
     "Detail tepi agak lembut dan sorotan mudah berpendar",
     "Kontras tidak sekeras CCD awal 2000-an"
-  ]
+  ],
+  "calibrationStatus": "draft",
+  "lookTags": [
+    "soft-detail",
+    "pastel-tone",
+    "warm-indoor"
+  ],
+  "cameraDefaults": {
+    "aspectRatio": "4:3",
+    "whiteBalance": { "temp": 0.05, "tint": 0.04 },
+    "tone": { "contrast": 0.95, "highlightRolloff": 0.42, "shadowLift": 0.06 },
+    "saturation": 1.03,
+    "sensorNoise": { "amount": 0.14, "chroma": 0.22 },
+    "sharpen": 0.10,
+    "dateStamp": { "available": true, "defaultOn": false, "format": "yy MM dd", "color": "#FF9830" },
+    "bodyOptics": { "softness": 0.00, "vignetteStrength": 0.00, "bloomIntensity": 0.00, "chromaticAberration": 0.00, "lightLeakIntensity": 0.00 }
+  }
 }

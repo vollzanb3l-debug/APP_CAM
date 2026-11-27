@@ -6,6 +6,7 @@ package com.retrocam.app.recipe
 object RecipeValidator {
 
     const val CURRENT_CAMERA_SCHEMA_VERSION = CameraSchemaMigrator.CURRENT_SCHEMA_VERSION
+    const val CURRENT_ARCHETYPE_SCHEMA_VERSION = 2
 
     val allowedIconTypes = setOf(
         "compact_digital",
@@ -53,21 +54,46 @@ object RecipeValidator {
         if (spec.sources.isEmpty() || spec.sources.any { it.isBlank() }) {
             add("camera.sources must contain at least one non-blank entry")
         }
-        if (spec.aspectRatio !in allowedAspectRatios) {
-            add("camera.aspectRatio unsupported: ${spec.aspectRatio}")
+        spec.aspectRatio?.let { ratio ->
+            if (ratio !in allowedAspectRatios) {
+                add("camera.aspectRatio unsupported: $ratio")
+            }
         }
-        if (spec.whiteBalance.temp !in -1f..1f) add("camera.whiteBalance.temp out of -1..1")
-        if (spec.whiteBalance.tint !in -1f..1f) add("camera.whiteBalance.tint out of -1..1")
-        if (spec.tone.contrast !in 0.5f..2.0f) add("camera.tone.contrast out of 0.5..2.0")
-        if (spec.tone.highlightRolloff !in 0f..1f) add("camera.tone.highlightRolloff out of 0..1")
-        if (spec.tone.shadowLift !in 0f..0.4f) add("camera.tone.shadowLift out of 0..0.4")
-        if (spec.saturation !in 0f..2.5f) add("camera.saturation out of 0..2.5")
-        if (spec.sensorNoise.amount !in 0f..1f) add("camera.sensorNoise.amount out of 0..1")
-        if (spec.sensorNoise.chroma !in 0f..1f) add("camera.sensorNoise.chroma out of 0..1")
-        if (spec.sharpen !in 0f..1f) add("camera.sharpen out of 0..1")
-        if (!HexColorParser.isValidHex(spec.dateStamp.color)) {
-            add("camera.dateStamp.color invalid hex: ${spec.dateStamp.color}")
+        spec.whiteBalance?.let { wb ->
+            if (wb.temp !in -1f..1f) add("camera.whiteBalance.temp out of -1..1")
+            if (wb.tint !in -1f..1f) add("camera.whiteBalance.tint out of -1..1")
         }
+        spec.tone?.let { tone ->
+            if (tone.contrast !in 0.5f..2.0f) add("camera.tone.contrast out of 0.5..2.0")
+            if (tone.highlightRolloff !in 0f..1f) add("camera.tone.highlightRolloff out of 0..1")
+            if (tone.shadowLift !in 0f..0.4f) add("camera.tone.shadowLift out of 0..0.4")
+        }
+        spec.saturation?.let { sat ->
+            if (sat !in 0f..2.5f) add("camera.saturation out of 0..2.5")
+        }
+        spec.sensorNoise?.let { noise ->
+            if (noise.amount !in 0f..1f) add("camera.sensorNoise.amount out of 0..1")
+            if (noise.chroma !in 0f..1f) add("camera.sensorNoise.chroma out of 0..1")
+        }
+        spec.sharpen?.let { sharpen ->
+            if (sharpen !in 0f..1f) add("camera.sharpen out of 0..1")
+        }
+        spec.dateStamp?.let { ds ->
+            if (!HexColorParser.isValidHex(ds.color)) {
+                add("camera.dateStamp.color invalid hex: ${ds.color}")
+            }
+        }
+        spec.bodyOptics?.let { optics ->
+            addAll(validateBodyOptics("camera.bodyOptics", optics))
+        }
+    }
+
+    private fun validateBodyOptics(prefix: String, optics: CameraBodyOpticsSpec): List<String> = buildList {
+        if (optics.softness !in 0f..1f) add("$prefix.softness out of 0..1")
+        if (optics.vignetteStrength !in 0f..1f) add("$prefix.vignetteStrength out of 0..1")
+        if (optics.bloomIntensity !in 0f..1f) add("$prefix.bloomIntensity out of 0..1")
+        if (optics.chromaticAberration !in 0f..1f) add("$prefix.chromaticAberration out of 0..1")
+        if (optics.lightLeakIntensity !in 0f..1f) add("$prefix.lightLeakIntensity out of 0..1")
     }
 
     fun validateLens(spec: LensSpec): List<String> = buildList {
@@ -125,13 +151,36 @@ object RecipeValidator {
     }
 
     fun validateArchetype(spec: ArchetypeSpec): List<String> = buildList {
-        if (spec.schemaVersion != 1) add("archetype.schemaVersion must be 1")
+        if (spec.schemaVersion != CURRENT_ARCHETYPE_SCHEMA_VERSION) {
+            add("archetype.schemaVersion must be $CURRENT_ARCHETYPE_SCHEMA_VERSION")
+        }
         if (spec.id.isBlank()) add("archetype.id must not be blank")
         if (spec.displayName.isBlank()) add("archetype.displayName must not be blank")
         if (spec.era.isBlank()) add("archetype.era must not be blank")
         if (spec.summary.isBlank()) add("archetype.summary must not be blank")
         if (spec.typicalTraits.isEmpty() || spec.typicalTraits.any { it.isBlank() }) {
             add("archetype.typicalTraits must not be empty")
+        }
+        if (spec.calibrationStatus !in allowedCalibrationStatus) {
+            add("archetype.calibrationStatus must be draft/calibrated")
+        }
+        spec.cameraDefaults?.let { defaults ->
+            if (defaults.aspectRatio !in allowedAspectRatios) {
+                add("archetype.cameraDefaults.aspectRatio unsupported: ${defaults.aspectRatio}")
+            }
+            if (defaults.whiteBalance.temp !in -1f..1f) add("archetype.cameraDefaults.whiteBalance.temp out of -1..1")
+            if (defaults.whiteBalance.tint !in -1f..1f) add("archetype.cameraDefaults.whiteBalance.tint out of -1..1")
+            if (defaults.tone.contrast !in 0.5f..2.0f) add("archetype.cameraDefaults.tone.contrast out of 0.5..2.0")
+            if (defaults.tone.highlightRolloff !in 0f..1f) add("archetype.cameraDefaults.tone.highlightRolloff out of 0..1")
+            if (defaults.tone.shadowLift !in 0f..0.4f) add("archetype.cameraDefaults.tone.shadowLift out of 0..0.4")
+            if (defaults.saturation !in 0f..2.5f) add("archetype.cameraDefaults.saturation out of 0..2.5")
+            if (defaults.sensorNoise.amount !in 0f..1f) add("archetype.cameraDefaults.sensorNoise.amount out of 0..1")
+            if (defaults.sensorNoise.chroma !in 0f..1f) add("archetype.cameraDefaults.sensorNoise.chroma out of 0..1")
+            if (defaults.sharpen !in 0f..1f) add("archetype.cameraDefaults.sharpen out of 0..1")
+            if (!HexColorParser.isValidHex(defaults.dateStamp.color)) {
+                add("archetype.cameraDefaults.dateStamp.color invalid hex: ${defaults.dateStamp.color}")
+            }
+            addAll(validateBodyOptics("archetype.cameraDefaults.bodyOptics", defaults.bodyOptics))
         }
     }
 }

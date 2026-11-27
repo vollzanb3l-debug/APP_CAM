@@ -94,7 +94,7 @@ class CameraSchemaMigratorTest {
         assertTrue(compact.aliases.isEmpty())
         assertEquals("compact_digital", compact.iconType)
         assertEquals("ccd_compact_2000s", compact.archetype)
-        assertEquals(1.10f, compact.tone.contrast, 1e-5f)
+        assertEquals(1.10f, compact.tone!!.contrast, 1e-5f)
 
         val slr = catalog.cameras.first { it.id == "classic_s_35mm" }
         assertEquals(4, slr.schemaVersion)

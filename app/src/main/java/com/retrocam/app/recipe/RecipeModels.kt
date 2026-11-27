@@ -31,6 +31,27 @@ data class DateStampSpec(
 )
 
 @Serializable
+data class CameraBodyOpticsSpec(
+    val softness: Float = 0f,
+    val vignetteStrength: Float = 0f,
+    val bloomIntensity: Float = 0f,
+    val chromaticAberration: Float = 0f,
+    val lightLeakIntensity: Float = 0f,
+)
+
+@Serializable
+data class CameraParameterDefaults(
+    val aspectRatio: String,
+    val whiteBalance: WhiteBalanceSpec,
+    val tone: ToneSpec,
+    val saturation: Float,
+    val sensorNoise: SensorNoiseSpec,
+    val sharpen: Float,
+    val dateStamp: DateStampSpec,
+    val bodyOptics: CameraBodyOpticsSpec = CameraBodyOpticsSpec(),
+)
+
+@Serializable
 data class CameraSpec(
     val schemaVersion: Int,
     val id: String,
@@ -49,13 +70,14 @@ data class CameraSpec(
     val calibrationStatus: String,
     val iconType: String,
     val icon: String = "",
-    val aspectRatio: String,
-    val whiteBalance: WhiteBalanceSpec,
-    val tone: ToneSpec,
-    val saturation: Float,
-    val sensorNoise: SensorNoiseSpec,
-    val sharpen: Float,
-    val dateStamp: DateStampSpec,
+    val aspectRatio: String? = null,
+    val whiteBalance: WhiteBalanceSpec? = null,
+    val tone: ToneSpec? = null,
+    val saturation: Float? = null,
+    val sensorNoise: SensorNoiseSpec? = null,
+    val sharpen: Float? = null,
+    val dateStamp: DateStampSpec? = null,
+    val bodyOptics: CameraBodyOpticsSpec? = null,
     val notes: String = "",
     @SerialName("tuning_notes")
     val tuningNotes: String = "",
@@ -146,6 +168,9 @@ data class ArchetypeSpec(
     val era: String,
     val summary: String,
     val typicalTraits: List<String>,
+    val calibrationStatus: String = "draft",
+    val lookTags: List<String> = emptyList(),
+    val cameraDefaults: CameraParameterDefaults? = null,
 )
 
 data class RecipeLoadError(

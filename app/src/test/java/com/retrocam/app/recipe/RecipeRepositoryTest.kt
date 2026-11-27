@@ -51,6 +51,21 @@ class RecipeRepositoryTest {
             )
             assertEquals("draft", film.calibrationStatus)
         }
+
+        val lens = catalog.lenses.first()
+        val film = catalog.films.first()
+        val compact = catalog.cameras.first { it.id == "compact_2003_ccd" }
+        val dreamy = catalog.cameras.first { it.id == "dreamy_ccd_2008" }
+        val classic = catalog.cameras.first { it.id == "classic_s_35mm" }
+
+        val compactRecipe = RecipeCompositor.compose(compact, lens, film, catalog.archetypes)
+        val dreamyRecipe = RecipeCompositor.compose(dreamy, lens, film, catalog.archetypes)
+        val classicRecipe = RecipeCompositor.compose(classic, lens, film, catalog.archetypes)
+
+        assertEquals("4:3", compactRecipe.aspectRatio)
+        assertTrue(compactRecipe.dateStampDefaultOn)
+        assertEquals("3:4", dreamyRecipe.aspectRatio)
+        assertEquals("3:2", classicRecipe.aspectRatio)
     }
 
     @Test

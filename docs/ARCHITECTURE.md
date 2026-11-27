@@ -136,7 +136,7 @@ Semua file punya `schemaVersion`. Mengubah skema = naikkan versi + migrasi + per
 }
 ```
 
-> Migrasi otomatis `v3 -> v4` ditangani oleh `CameraSchemaMigrator` saat pemuatan JSON tanpa mengubah `id` yang sudah ada. Field `iconType` menggunakan 10 jenis siluet standar dari `docs/catalog/json/catalog_index.json`.
+> Migrasi otomatis `v3 -> v4` ditangani oleh `CameraSchemaMigrator` saat pemuatan JSON tanpa mengubah `id` yang sudah ada. Field `iconType` menggunakan 10 jenis siluet standar dari `docs/catalog/json/catalog_index.json`. Seluruh parameter numerik kamera (`aspectRatio`, `whiteBalance`, `tone`, `saturation`, `sensorNoise`, `sharpen`, `dateStamp`, `bodyOptics`) bersifat **opsional (*override*)**: bila tidak ditulis di file kamera, nilainya diwarisi otomatis dari `ArchetypeSpec.cameraDefaults` (`assets/archetypes/<archetype>.json`, `schemaVersion: 2`) oleh `RecipeCompositor`. Field `tuning_notes` hanya catatan manusia dan tidak pernah dibaca oleh mesin.
 
 ### 7.2 Lens (`assets/lenses/<id>.json`)
 

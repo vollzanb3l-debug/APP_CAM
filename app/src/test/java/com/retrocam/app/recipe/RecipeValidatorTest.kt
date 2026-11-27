@@ -113,4 +113,51 @@ class RecipeValidatorTest {
         assertTrue(errors.any { it.contains("calibrationStatus") })
         assertTrue(errors.any { it.contains("sources") })
     }
+
+    @Test
+    fun pureInheritedCameraAndArchetypeV2_validateCleanly() {
+        val pureInheritedCamera = CameraSpec(
+            schemaVersion = 4,
+            id = "canon_powershot_sd1000",
+            brand = "Canon",
+            model = "PowerShot SD1000",
+            aliases = listOf("Digital IXUS 70"),
+            displayName = "PowerShot SD1000",
+            era = "2000s",
+            category = "digital_compact",
+            archetype = "ccd_compact_2000s",
+            confidenceLook = "high",
+            confidenceSpecs = "high",
+            sources = listOf("https://global.canon/en/c-museum/product/dcc539.html"),
+            calibrationStatus = "draft",
+            iconType = "compact_digital",
+        )
+        assertTrue(RecipeValidator.validateCamera(pureInheritedCamera).isEmpty())
+
+        val validArchetype = ArchetypeSpec(
+            schemaVersion = 2,
+            id = "ccd_compact_2000s",
+            displayName = "Kompak CCD",
+            era = "2000s",
+            summary = "Draft",
+            typicalTraits = listOf("high contrast"),
+            calibrationStatus = "draft",
+            cameraDefaults = RecipeCompositor.FALLBACK_CAMERA_DEFAULTS,
+        )
+        assertTrue(RecipeValidator.validateArchetype(validArchetype).isEmpty())
+
+        val brokenArchetype = validArchetype.copy(
+            schemaVersion = 1,
+            calibrationStatus = "invalid",
+            cameraDefaults = RecipeCompositor.FALLBACK_CAMERA_DEFAULTS.copy(
+                aspectRatio = "21:9",
+                bodyOptics = CameraBodyOpticsSpec(vignetteStrength = 2.0f),
+            ),
+        )
+        val archErrors = RecipeValidator.validateArchetype(brokenArchetype)
+        assertTrue(archErrors.any { it.contains("schemaVersion") })
+        assertTrue(archErrors.any { it.contains("calibrationStatus") })
+        assertTrue(archErrors.any { it.contains("aspectRatio") })
+        assertTrue(archErrors.any { it.contains("vignetteStrength") })
+    }
 }

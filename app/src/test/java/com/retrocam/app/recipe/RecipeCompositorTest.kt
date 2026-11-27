@@ -145,4 +145,128 @@ class RecipeCompositorTest {
         assertEquals(2.5f, result.saturation, eps)
         assertEquals(1.0f, result.combinedNoiseAmount, eps)
     }
+
+    private fun sampleArchetype() = ArchetypeSpec(
+        schemaVersion = 2,
+        id = "disposable_point_shoot",
+        displayName = "Disposable",
+        era = "1990s-2000s",
+        summary = "Draft archetype",
+        typicalTraits = listOf("soft edges", "mild vignette"),
+        calibrationStatus = "draft",
+        cameraDefaults = CameraParameterDefaults(
+            aspectRatio = "3:2",
+            whiteBalance = WhiteBalanceSpec(temp = 0.04f, tint = 0.05f),
+            tone = ToneSpec(contrast = 0.94f, highlightRolloff = 0.36f, shadowLift = 0.07f),
+            saturation = 0.98f,
+            sensorNoise = SensorNoiseSpec(amount = 0.14f, chroma = 0.18f),
+            sharpen = 0.05f,
+            dateStamp = DateStampSpec(available = true, defaultOn = false, format = "yy MM dd", color = "#FF8C1A"),
+            bodyOptics = CameraBodyOpticsSpec(
+                softness = 0.08f,
+                vignetteStrength = 0.14f,
+                bloomIntensity = 0.04f,
+                chromaticAberration = 0.04f,
+                lightLeakIntensity = 0.06f,
+            ),
+        ),
+    )
+
+    private fun inheritedCamera(
+        aspectRatio: String? = null,
+        tone: ToneSpec? = null,
+        tuningNotes: String = "",
+    ) = CameraSpec(
+        schemaVersion = 4,
+        id = "fujifilm_quicksnap_flash_400",
+        brand = "Fujifilm",
+        model = "QuickSnap Flash 400",
+        aliases = emptyList(),
+        displayName = "QuickSnap Flash 400",
+        era = "1980s-present",
+        category = "disposable_35mm",
+        archetype = "disposable_point_shoot",
+        confidenceLook = "high",
+        confidenceSpecs = "high",
+        sources = listOf("test"),
+        calibrationStatus = "draft",
+        iconType = "disposable",
+        aspectRatio = aspectRatio,
+        tone = tone,
+        tuningNotes = tuningNotes,
+    )
+
+    @Test
+    fun compose_inheritsAllArchetypeDefaultsAndDeterministicForFixedInputs() {
+        val archetype = sampleArchetype()
+        val cam = inheritedCamera()
+        val lens = sampleLens()
+        val film = sampleFilm()
+
+        val first = RecipeCompositor.compose(cam, lens, film, listOf(archetype))
+        val second = RecipeCompositor.compose(cam, lens, film, archetype)
+
+        assertEquals(first, second)
+        assertEquals("3:2", first.aspectRatio)
+        assertEquals(0.04f + 0.05f, first.temp, eps)
+        assertEquals(0.05f - 0.01f, first.tint, eps)
+        assertEquals(0.94f * 1.20f, first.contrast, eps)
+        assertEquals(0.98f * 1.25f, first.saturation, eps)
+        assertEquals(0.36f, first.highlightRolloff, eps)
+        assertEquals(0.07f, first.shadowLift, eps)
+        assertEquals(hypot(0.24f, 0.14f), first.combinedNoiseAmount, eps)
+        assertEquals(0.18f, first.sensorNoiseChroma, eps)
+        assertEquals(0.05f, first.sharpen, eps)
+        assertEquals(0.08f + 0.14f, first.softness, eps)
+        assertEquals(0.14f + 0.22f, first.vignetteStrength, eps)
+        assertEquals(0.04f + 0.12f, first.bloomIntensity, eps)
+        assertEquals(0.04f + 0.07f, first.chromaticAberration, eps)
+        assertEquals(0.06f, first.lightLeakIntensity, eps)
+    }
+
+    @Test
+    fun compose_appliesOptionalPerCameraOverridesOnTopOfArchetype() {
+        val archetype = sampleArchetype()
+        val cam = inheritedCamera(
+            aspectRatio = "3:4",
+            tone = ToneSpec(contrast = 1.15f, highlightRolloff = 0.20f, shadowLift = 0.02f),
+        )
+        val lens = sampleLens()
+        val film = sampleFilm()
+
+        val result = RecipeCompositor.compose(cam, lens, film, archetype)
+
+        // Overridden fields come from camera
+        assertEquals("3:4", result.aspectRatio)
+        assertEquals(1.15f * 1.20f, result.contrast, eps)
+        assertEquals(0.20f, result.highlightRolloff, eps)
+        assertEquals(0.02f, result.shadowLift, eps)
+
+        // Unspecified fields remain inherited from archetype
+        assertEquals(0.04f + 0.05f, result.temp, eps)
+        assertEquals(0.98f * 1.25f, result.saturation, eps)
+        assertEquals(0.14f + 0.22f, result.vignetteStrength, eps)
+    }
+
+    @Test
+    fun compose_ignoresTuningNotesCompletelyAndRejectsMismatchedArchetype() {
+        val archetype = sampleArchetype()
+        val lens = sampleLens()
+        val film = sampleFilm()
+
+        val plain = inheritedCamera(tuningNotes = "")
+        val withNoisyNotes = inheritedCamera(
+            tuningNotes = "contrast=2.0 saturation=0.0 heavy-vignette light-leak=1.0 temp=-1.0",
+        )
+
+        assertEquals(
+            RecipeCompositor.compose(plain, lens, film, archetype),
+            RecipeCompositor.compose(withNoisyNotes, lens, film, archetype),
+        )
+
+        val wrongArchetype = archetype.copy(id = "different_archetype")
+        val fallbackResult = RecipeCompositor.compose(plain, lens, film, wrongArchetype)
+        assertEquals(RecipeCompositor.FALLBACK_CAMERA_DEFAULTS.aspectRatio, fallbackResult.aspectRatio)
+        assertEquals(1.0f * 1.20f, fallbackResult.contrast, eps)
+    }
 }
