@@ -13,16 +13,25 @@ object RecipeRepository {
     private const val TAG = "RecipeRepository"
 
     fun loadFromAssets(assets: AssetManager): RecipeCatalog {
+        val totalStartNs = System.nanoTime()
         val camerasRaw = readJsonFolder(assets, "cameras")
         val lensesRaw = readJsonFolder(assets, "lenses")
         val filmsRaw = readJsonFolder(assets, "films")
         val archetypesRaw = readJsonFolder(assets, "archetypes")
 
-        val catalog = RecipeCatalogLoader.loadFromRaw(
+        val loaded = RecipeCatalogLoader.loadFromRaw(
             camerasRaw = camerasRaw,
             lensesRaw = lensesRaw,
             filmsRaw = filmsRaw,
             archetypesRaw = archetypesRaw,
+        )
+        val totalMs = ((System.nanoTime() - totalStartNs).coerceAtLeast(0L)) / 1_000_000L
+        val catalog = loaded.copy(loadTimeMs = totalMs)
+        Log.i(
+            TAG,
+            "Loaded catalog in ${totalMs}ms (${catalog.cameras.size} cameras, " +
+                "${catalog.lenses.size} lenses, ${catalog.films.size} films, " +
+                "${catalog.archetypes.size} archetypes, ${catalog.loadErrors.size} errors)",
         )
         for (err in catalog.loadErrors) {
             Log.w(TAG, "Skipped invalid recipe ${err.assetPath}: ${err.message}")

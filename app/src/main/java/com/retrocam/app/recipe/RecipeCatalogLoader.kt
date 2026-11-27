@@ -23,6 +23,7 @@ object RecipeCatalogLoader {
         filmsRaw: Map<String, String>,
         archetypesRaw: Map<String, String>,
     ): RecipeCatalog {
+        val startNs = System.nanoTime()
         val errors = mutableListOf<RecipeLoadError>()
 
         val archetypes = parseEntries(
@@ -51,12 +52,14 @@ object RecipeCatalogLoader {
             validate = RecipeValidator::validateFilm,
         ).sortedBy { it.displayName }
 
+        val elapsedMs = ((System.nanoTime() - startNs).coerceAtLeast(0L)) / 1_000_000L
         return RecipeCatalog(
             cameras = cameras,
             lenses = lenses,
             films = films,
             archetypes = archetypes,
             loadErrors = errors,
+            loadTimeMs = elapsedMs,
         )
     }
 

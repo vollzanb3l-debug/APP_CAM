@@ -190,4 +190,5 @@ data class RecipeCatalog(
     val films: List<FilmSpec>,
     val archetypes: List<ArchetypeSpec>,
     val loadErrors: List<RecipeLoadError>,
+    val loadTimeMs: Long = 0L,
 )

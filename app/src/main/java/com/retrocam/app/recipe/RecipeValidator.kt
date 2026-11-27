@@ -35,6 +35,9 @@ object RecipeValidator {
         if (spec.aliases.any { it.isBlank() }) {
             add("camera.aliases must not contain blank entries")
         }
+        if (spec.lookTags.any { it.isBlank() }) {
+            add("camera.lookTags must not contain blank entries")
+        }
         if (spec.displayName.isBlank()) add("camera.displayName must not be blank")
         if (spec.iconType !in allowedIconTypes) {
             add("camera.iconType unsupported: ${spec.iconType}")
@@ -181,6 +184,74 @@ object RecipeValidator {
                 add("archetype.cameraDefaults.dateStamp.color invalid hex: ${defaults.dateStamp.color}")
             }
             addAll(validateBodyOptics("archetype.cameraDefaults.bodyOptics", defaults.bodyOptics))
+        }
+    }
+
+    /**
+     * Cross-entry catalog validator checking unique IDs, valid archetype references,
+     * and absence of blank required fields across the entire loaded catalog.
+     */
+    fun validateCatalog(
+        catalog: RecipeCatalog,
+        expectedCameraCount: Int? = null,
+    ): List<String> = buildList {
+        if (expectedCameraCount != null && catalog.cameras.size != expectedCameraCount) {
+            add("catalog.cameras count expected $expectedCameraCount but was ${catalog.cameras.size}")
+        }
+
+        val archetypeById = linkedMapOf<String, ArchetypeSpec>()
+        for (arch in catalog.archetypes) {
+            val archErrors = validateArchetype(arch)
+            for (err in archErrors) {
+                add("archetype[${arch.id}]: $err")
+            }
+            if (arch.id in archetypeById) {
+                add("duplicate archetype id: ${arch.id}")
+            } else {
+                archetypeById[arch.id] = arch
+            }
+        }
+
+        val seenCameraIds = hashSetOf<String>()
+        for (camera in catalog.cameras) {
+            val camErrors = validateCamera(camera)
+            for (err in camErrors) {
+                add("camera[${camera.id}]: $err")
+            }
+            if (!seenCameraIds.add(camera.id)) {
+                add("duplicate camera id: ${camera.id}")
+            }
+            val linkedArchetype = archetypeById[camera.archetype]
+            if (linkedArchetype == null) {
+                add("camera[${camera.id}] references unknown archetype: ${camera.archetype}")
+            } else if (linkedArchetype.cameraDefaults == null) {
+                add("camera[${camera.id}] references non-camera archetype without cameraDefaults: ${camera.archetype}")
+            }
+        }
+
+        val seenLensIds = hashSetOf<String>()
+        for (lens in catalog.lenses) {
+            val lensErrors = validateLens(lens)
+            for (err in lensErrors) {
+                add("lens[${lens.id}]: $err")
+            }
+            if (!seenLensIds.add(lens.id)) {
+                add("duplicate lens id: ${lens.id}")
+            }
+        }
+
+        val seenFilmIds = hashSetOf<String>()
+        for (film in catalog.films) {
+            val filmErrors = validateFilm(film)
+            for (err in filmErrors) {
+                add("film[${film.id}]: $err")
+            }
+            if (!seenFilmIds.add(film.id)) {
+                add("duplicate film id: ${film.id}")
+            }
+            if (film.archetype !in archetypeById) {
+                add("film[${film.id}] references unknown archetype: ${film.archetype}")
+            }
         }
     }
 }
