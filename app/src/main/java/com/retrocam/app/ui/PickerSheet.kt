@@ -16,19 +16,27 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import com.retrocam.app.recipe.CameraSearchFilter
 import com.retrocam.app.recipe.CameraSpec
 import com.retrocam.app.recipe.FavoriteIds
 import com.retrocam.app.recipe.FavoritesSorter
@@ -55,8 +63,16 @@ fun PickerSheet(
     modifier: Modifier = Modifier,
     favoriteIds: FavoriteIds = FavoriteIds(),
 ) {
+    var searchQuery by rememberSaveable { mutableStateOf("") }
+
     val orderedCameras = remember(catalog.cameras, favoriteIds.cameraIds) {
         FavoritesSorter.sortCameras(catalog.cameras, favoriteIds)
+    }
+    val filteredCameras = remember(orderedCameras, searchQuery) {
+        CameraSearchFilter.filterCameras(orderedCameras, searchQuery)
+    }
+    val suggestedTags = remember(catalog.cameras) {
+        CameraSearchFilter.topSuggestedTags(catalog.cameras, limit = 8)
     }
     val orderedLenses = remember(catalog.lenses, favoriteIds.lensIds) {
         FavoritesSorter.sortLenses(catalog.lenses, favoriteIds)
@@ -99,26 +115,125 @@ fun PickerSheet(
                 }
             }
 
-            val camIndex = orderedCameras.indexOfFirst { it.id == selectedCamera?.id }.let {
+            // Search bar for 100-camera catalog (name, brand, alias, lookTags)
+            OutlinedTextField(
+                value = searchQuery,
+                onValueChange = { searchQuery = it },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp),
+                singleLine = true,
+                placeholder = {
+                    Text(
+                        text = "Cari kamera, brand, alias, atau lookTag...",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = RetroTextSecondary,
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis,
+                    )
+                },
+                trailingIcon = {
+                    if (searchQuery.isNotEmpty()) {
+                        Text(
+                            text = "Hapus",
+                            style = MaterialTheme.typography.labelSmall,
+                            color = RetroAmber,
+                            modifier = Modifier
+                                .clickable { searchQuery = "" }
+                                .padding(horizontal = 10.dp, vertical = 6.dp),
+                        )
+                    }
+                },
+                textStyle = MaterialTheme.typography.bodySmall.copy(color = RetroTextPrimary),
+                shape = RoundedCornerShape(12.dp),
+                colors = OutlinedTextFieldDefaults.colors(
+                    focusedBorderColor = RetroAmber,
+                    unfocusedBorderColor = RetroSurfaceBorder,
+                    focusedContainerColor = RetroSurface,
+                    unfocusedContainerColor = RetroSurface,
+                    cursorColor = RetroAmber,
+                ),
+            )
+
+            if (suggestedTags.isNotEmpty()) {
+                Spacer(modifier = Modifier.height(6.dp))
+                LazyRow(
+                    contentPadding = PaddingValues(horizontal = 16.dp),
+                    horizontalArrangement = Arrangement.spacedBy(6.dp),
+                ) {
+                    items(suggestedTags, key = { it }) { tag ->
+                        val active = searchQuery.trim().equals(tag, ignoreCase = true)
+                        Box(
+                            modifier = Modifier
+                                .clip(RoundedCornerShape(12.dp))
+                                .background(if (active) RetroAmber else RetroSurface)
+                                .border(
+                                    width = 1.dp,
+                                    color = if (active) RetroAmber else RetroSurfaceBorder,
+                                    shape = RoundedCornerShape(12.dp),
+                                )
+                                .clickable {
+                                    searchQuery = if (active) "" else tag
+                                }
+                                .padding(horizontal = 8.dp, vertical = 4.dp),
+                        ) {
+                            Text(
+                                text = "#$tag",
+                                style = MaterialTheme.typography.labelSmall,
+                                color = if (active) RetroDarkBackground else RetroTextSecondary,
+                            )
+                        }
+                    }
+                }
+            }
+
+            Spacer(modifier = Modifier.height(6.dp))
+
+            val camIndex = filteredCameras.indexOfFirst { it.id == selectedCamera?.id }.let {
                 if (it >= 0) it + 1 else 0
             }
+            val camTitle = if (searchQuery.isBlank()) {
+                "CAMERA"
+            } else {
+                "CAMERA (${filteredCameras.size}/${orderedCameras.size})"
+            }
             PickerSectionHeader(
-                title = "CAMERA",
+                title = camTitle,
                 current = camIndex,
-                total = orderedCameras.size,
+                total = filteredCameras.size,
             )
-            LazyRow(
-                contentPadding = PaddingValues(horizontal = 16.dp),
-                horizontalArrangement = Arrangement.spacedBy(10.dp),
-            ) {
-                itemsIndexed(orderedCameras, key = { _, item -> item.id }) { _, camera ->
-                    val isSelected = camera.id == selectedCamera?.id
-                    PickerCard(
-                        label = camera.displayName,
-                        selected = isSelected,
-                        onClick = { onSelectCamera(camera) },
-                    ) { tint ->
-                        CameraGlyph(tint = tint, modifier = Modifier.size(30.dp))
+            if (filteredCameras.isEmpty()) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 16.dp, vertical = 10.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    Text(
+                        text = "Tidak ada kamera cocok untuk \"$searchQuery\".",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = RetroTextSecondary,
+                        modifier = Modifier.weight(1f),
+                    )
+                    TextButton(onClick = { searchQuery = "" }) {
+                        Text(text = "Reset", color = RetroAmber)
+                    }
+                }
+            } else {
+                LazyRow(
+                    contentPadding = PaddingValues(horizontal = 16.dp),
+                    horizontalArrangement = Arrangement.spacedBy(10.dp),
+                ) {
+                    itemsIndexed(filteredCameras, key = { _, item -> item.id }) { _, camera ->
+                        val isSelected = camera.id == selectedCamera?.id
+                        PickerCard(
+                            label = camera.displayName,
+                            subtitle = camera.brand,
+                            selected = isSelected,
+                            onClick = { onSelectCamera(camera) },
+                        ) { tint ->
+                            CameraGlyph(tint = tint, modifier = Modifier.size(28.dp))
+                        }
                     }
                 }
             }
@@ -209,6 +324,7 @@ private fun PickerCard(
     label: String,
     selected: Boolean,
     onClick: () -> Unit,
+    subtitle: String? = null,
     icon: @Composable (tint: androidx.compose.ui.graphics.Color) -> Unit,
 ) {
     val borderColor = if (selected) RetroAmber else RetroSurfaceBorder
@@ -217,16 +333,25 @@ private fun PickerCard(
 
     Column(
         modifier = Modifier
-            .width(104.dp)
+            .width(110.dp)
             .clip(RoundedCornerShape(12.dp))
             .background(RetroSurface)
             .border(width = if (selected) 1.5.dp else 1.dp, color = borderColor, shape = RoundedCornerShape(12.dp))
             .clickable(onClick = onClick)
-            .padding(horizontal = 8.dp, vertical = 10.dp),
+            .padding(horizontal = 8.dp, vertical = 9.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         icon(iconTint)
-        Spacer(modifier = Modifier.height(6.dp))
+        Spacer(modifier = Modifier.height(5.dp))
+        if (subtitle != null) {
+            Text(
+                text = subtitle,
+                style = MaterialTheme.typography.labelSmall,
+                color = RetroTextSecondary,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+            )
+        }
         Text(
             text = label,
             style = MaterialTheme.typography.labelSmall,
