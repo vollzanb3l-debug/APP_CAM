@@ -45,3 +45,15 @@ Checklist pengujian manual yang dijalankan setiap kali satu tahap (`M0`–`M6`) 
   - [ ] Pengujian jumlah foto besar (> 24 foto): foto dimuat berkala saat digulir ke bawah / lewat tombol **Muat lebih banyak** tanpa lag berat atau OOM
 - [ ] **Favorit (Lapisan Data & Pengurutan Picker)** *(uji di M5)*:
   - [ ] Buka `PickerSheet`: daftar Camera, Lens, dan Film tampil normal tanpa crash saat favorit masih kosong; pengurutan favorit di bagian awal daftar dan penyimpanan ID-only tervalidasi oleh unit test `FavoritesTest` (ikon bintang UI di picker masuk tahap tampilan berikutnya)
+- [ ] **M6 Gerbang 1 — Skema v4, Pewarisan, & 15 Arketipe (`draft`)** *(uji di M6 Gerbang 1)*:
+  - [ ] Buka `Pengaturan -> Debug & Kalibrasi`: bagian **Status Validasi JSON** menunjukkan **0 error** (`3 camera, 3 lens, 3 film, 18 archetype` = 15 arketipe kamera + 3 arketipe film)
+  - [ ] Pilihan terakhir kamera starter (`Kompak CCD 2003`, `Saku Lembut 2008`, `Klasik 35mm`) tetap pulih tanpa reset/crash setelah migrasi skema `v3 -> v4` (ID lama tidak berubah)
+  - [ ] Pewarisan arketipe bekerja: `Saku Lembut 2008` tetap berasio `3:4`, `Kompak CCD 2003` tetap berasio `4:3` dengan `DATE` aktif bawaan, `Klasik 35mm` tetap berasio `3:2`
+- [ ] **M6 Gerbang 1 — Layar Kalibrasi & Ekspor `calibrated`** *(uji di M6 Gerbang 1)*:
+  - [ ] Pilih beberapa target di bar **Target Kalibrasi** (Resep Aktif dan beberapa dari **15 Arketipe Kamera**): ringkasan arketipe & `lookTags` tampil sesuai
+  - [ ] Pilih foto referensi dari galeri HP: perbandingan berdampingan (**Referensi** vs **Simulasi Resep**) tampil dan langsung berubah saat slider digeser (termasuk *Sharpen*, *Flare*, dan rasio `2:3`)
+  - [ ] Uji tombol **Reset**: seluruh slider kembali ke nilai awal arketipe / resep aktif
+  - [ ] Uji tombol **"Simpan sebagai calibrated"**: muncul path tujuan `Documents/RetroCam/export/<nama>.json` tanpa error; buka file tersebut lewat File Manager dan pastikan berformat JSON rapi dengan `"calibrationStatus": "calibrated"`
+- [ ] **M6 Gerbang 1 — Performa Preview & Penurunan Kualitas Otomatis** *(uji di M6 Gerbang 1)*:
+  - [ ] Di `CameraScreen`, perhatikan angka waktu frame (`ms`) di samping judul `RetroCam` saat kombinasi efek berat aktif (mis. `50mm f1.4` + `Surya 200` dengan softness + bloom/halation + grain): catat kisaran `ms` pada kondisi normal dan setelah 3–5 menit preview
+  - [ ] Jika HP mulai panas atau frame melambat (`> 28 ms`), indikator berubah menjadi `...ms · ECO` (mode `PREVIEW_LOW`): pastikan preview tetap lancar, karakter warna/tampilan tetap konsisten, dan **foto hasil jepretan tetap beresolusi & berkualitas penuh (`PHOTO`)**
