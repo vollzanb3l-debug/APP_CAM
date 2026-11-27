@@ -9,6 +9,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import com.retrocam.app.recipe.FavoritesStore
 import com.retrocam.app.recipe.FinalRecipe
 import com.retrocam.app.recipe.RecipeCompositor
 import com.retrocam.app.recipe.RecipeRepository
@@ -34,7 +35,9 @@ class MainActivity : ComponentActivity() {
             RetroCamTheme {
                 val catalog = remember { RecipeRepository.loadFromAssets(applicationContext.assets) }
                 val selectionStore = remember { SelectionStore(applicationContext) }
+                val favoritesStore = remember { FavoritesStore(applicationContext) }
                 val initialSelection = remember { selectionStore.load() }
+                val favoriteIds = remember { favoritesStore.load() }
 
                 var selectedCameraId by rememberSaveable {
                     mutableStateOf(
@@ -121,6 +124,7 @@ class MainActivity : ComponentActivity() {
                         },
                         onOpenGallery = { currentScreen = AppScreen.Gallery },
                         onOpenSettings = { currentScreen = AppScreen.Settings },
+                        favoriteIds = favoriteIds,
                     )
                     AppScreen.Gallery -> GalleryScreen(
                         catalog = catalog,

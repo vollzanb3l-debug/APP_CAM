@@ -23,12 +23,15 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.retrocam.app.recipe.CameraSpec
+import com.retrocam.app.recipe.FavoriteIds
+import com.retrocam.app.recipe.FavoritesSorter
 import com.retrocam.app.recipe.FilmSpec
 import com.retrocam.app.recipe.LensSpec
 import com.retrocam.app.recipe.RecipeCatalog
@@ -50,7 +53,18 @@ fun PickerSheet(
     onSelectFilm: (FilmSpec) -> Unit,
     onDismiss: () -> Unit,
     modifier: Modifier = Modifier,
+    favoriteIds: FavoriteIds = FavoriteIds(),
 ) {
+    val orderedCameras = remember(catalog.cameras, favoriteIds.cameraIds) {
+        FavoritesSorter.sortCameras(catalog.cameras, favoriteIds)
+    }
+    val orderedLenses = remember(catalog.lenses, favoriteIds.lensIds) {
+        FavoritesSorter.sortLenses(catalog.lenses, favoriteIds)
+    }
+    val orderedFilms = remember(catalog.films, favoriteIds.filmIds) {
+        FavoritesSorter.sortFilms(catalog.films, favoriteIds)
+    }
+
     Surface(
         modifier = modifier.fillMaxWidth(),
         color = RetroDarkBackground.copy(alpha = 0.96f),
@@ -85,19 +99,19 @@ fun PickerSheet(
                 }
             }
 
-            val camIndex = catalog.cameras.indexOfFirst { it.id == selectedCamera?.id }.let {
+            val camIndex = orderedCameras.indexOfFirst { it.id == selectedCamera?.id }.let {
                 if (it >= 0) it + 1 else 0
             }
             PickerSectionHeader(
                 title = "CAMERA",
                 current = camIndex,
-                total = catalog.cameras.size,
+                total = orderedCameras.size,
             )
             LazyRow(
                 contentPadding = PaddingValues(horizontal = 16.dp),
                 horizontalArrangement = Arrangement.spacedBy(10.dp),
             ) {
-                itemsIndexed(catalog.cameras, key = { _, item -> item.id }) { _, camera ->
+                itemsIndexed(orderedCameras, key = { _, item -> item.id }) { _, camera ->
                     val isSelected = camera.id == selectedCamera?.id
                     PickerCard(
                         label = camera.displayName,
@@ -111,19 +125,19 @@ fun PickerSheet(
 
             Spacer(modifier = Modifier.height(10.dp))
 
-            val lensIndex = catalog.lenses.indexOfFirst { it.id == selectedLens?.id }.let {
+            val lensIndex = orderedLenses.indexOfFirst { it.id == selectedLens?.id }.let {
                 if (it >= 0) it + 1 else 0
             }
             PickerSectionHeader(
                 title = "LENS",
                 current = lensIndex,
-                total = catalog.lenses.size,
+                total = orderedLenses.size,
             )
             LazyRow(
                 contentPadding = PaddingValues(horizontal = 16.dp),
                 horizontalArrangement = Arrangement.spacedBy(10.dp),
             ) {
-                itemsIndexed(catalog.lenses, key = { _, item -> item.id }) { _, lens ->
+                itemsIndexed(orderedLenses, key = { _, item -> item.id }) { _, lens ->
                     val isSelected = lens.id == selectedLens?.id
                     PickerCard(
                         label = lens.displayName,
@@ -137,19 +151,19 @@ fun PickerSheet(
 
             Spacer(modifier = Modifier.height(10.dp))
 
-            val filmIndex = catalog.films.indexOfFirst { it.id == selectedFilm?.id }.let {
+            val filmIndex = orderedFilms.indexOfFirst { it.id == selectedFilm?.id }.let {
                 if (it >= 0) it + 1 else 0
             }
             PickerSectionHeader(
                 title = "FILM",
                 current = filmIndex,
-                total = catalog.films.size,
+                total = orderedFilms.size,
             )
             LazyRow(
                 contentPadding = PaddingValues(horizontal = 16.dp),
                 horizontalArrangement = Arrangement.spacedBy(10.dp),
             ) {
-                itemsIndexed(catalog.films, key = { _, item -> item.id }) { _, film ->
+                itemsIndexed(orderedFilms, key = { _, item -> item.id }) { _, film ->
                     val isSelected = film.id == selectedFilm?.id
                     PickerCard(
                         label = film.displayName,

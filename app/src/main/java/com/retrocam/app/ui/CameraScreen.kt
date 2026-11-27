@@ -70,6 +70,7 @@ import com.retrocam.app.camera.FrameTransform
 import com.retrocam.app.effects.CaptureProcessor
 import com.retrocam.app.effects.EffectEngine
 import com.retrocam.app.recipe.CameraSpec
+import com.retrocam.app.recipe.FavoriteIds
 import com.retrocam.app.recipe.FilmSpec
 import com.retrocam.app.recipe.FinalRecipe
 import com.retrocam.app.recipe.LensSpec
@@ -101,6 +102,7 @@ fun CameraScreen(
     onSelectFilm: (FilmSpec) -> Unit,
     onOpenGallery: () -> Unit,
     onOpenSettings: () -> Unit,
+    favoriteIds: FavoriteIds = FavoriteIds(),
 ) {
     val context = LocalContext.current
     val configuration = LocalConfiguration.current
@@ -546,6 +548,7 @@ fun CameraScreen(
                     selectedCamera = selectedCamera,
                     selectedLens = selectedLens,
                     selectedFilm = selectedFilm,
+                    favoriteIds = favoriteIds,
                     onSelectCamera = onSelectCamera,
                     onSelectLens = onSelectLens,
                     onSelectFilm = onSelectFilm,
