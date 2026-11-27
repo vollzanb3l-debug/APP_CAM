@@ -3,22 +3,28 @@ package com.retrocam.app.storage
 import android.content.ContentValues
 import android.content.Context
 import android.graphics.Bitmap
+import android.media.ExifInterface
 import android.net.Uri
 import android.os.Build
 import android.os.Environment
 import android.provider.MediaStore
+import android.util.Log
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
 /**
- * Saves processed photos to the Android MediaStore gallery.
+ * Saves processed photos to the Android MediaStore gallery with RetroCam EXIF recipe metadata.
  */
 class PhotoSaver(context: Context) {
 
     private val resolver = context.applicationContext.contentResolver
 
-    fun saveJpeg(bitmap: Bitmap, quality: Int = 95): Result<Uri> {
+    fun saveJpeg(
+        bitmap: Bitmap,
+        quality: Int = 95,
+        metadata: RecipeExifMetadata? = null,
+    ): Result<Uri> {
         val timestamp = SimpleDateFormat("yyyyMMdd_HHmmss_SSS", Locale.US).format(Date())
         val displayName = "RetroCam_$timestamp.jpg"
 
@@ -45,6 +51,10 @@ class PhotoSaver(context: Context) {
                 out.flush()
             }
 
+            if (metadata != null) {
+                writeRecipeExif(uri, metadata)
+            }
+
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                 val publish = ContentValues().apply {
                     put(MediaStore.Images.Media.IS_PENDING, 0)
@@ -56,5 +66,22 @@ class PhotoSaver(context: Context) {
             runCatching { resolver.delete(uri, null, null) }
             Result.failure(t)
         }
+    }
+
+    private fun writeRecipeExif(uri: Uri, metadata: RecipeExifMetadata) {
+        try {
+            val encoded = RecipeExifMetadata.encode(metadata)
+            resolver.openFileDescriptor(uri, "rw")?.use { pfd ->
+                val exif = ExifInterface(pfd.fileDescriptor)
+                exif.setAttribute(ExifInterface.TAG_USER_COMMENT, encoded)
+                exif.saveAttributes()
+            }
+        } catch (t: Throwable) {
+            Log.w(TAG, "Failed writing EXIF UserComment for $uri", t)
+        }
+    }
+
+    companion object {
+        private const val TAG = "PhotoSaver"
     }
 }

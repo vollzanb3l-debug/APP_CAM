@@ -23,6 +23,7 @@ import androidx.lifecycle.LifecycleOwner
 import com.retrocam.app.effects.CaptureProcessor
 import com.retrocam.app.effects.EffectEngine
 import com.retrocam.app.storage.PhotoSaver
+import com.retrocam.app.storage.RecipeExifMetadata
 import java.util.concurrent.Executors
 
 /**
@@ -127,6 +128,7 @@ class CameraController(context: Context) {
         effectEngine: EffectEngine,
         captureProcessor: CaptureProcessor,
         photoSaver: PhotoSaver,
+        metadata: RecipeExifMetadata? = null,
         onComplete: (Result<Uri>) -> Unit,
     ) {
         val capture = imageCapture
@@ -167,7 +169,10 @@ class CameraController(context: Context) {
                             viewportHeight = viewport.height,
                             recipe = recipe,
                         )
-                        val result = photoSaver.saveJpeg(processedBitmap)
+                        val result = photoSaver.saveJpeg(
+                            bitmap = processedBitmap,
+                            metadata = metadata,
+                        )
                         mainExecutor.execute { onComplete(result) }
                     } catch (t: Throwable) {
                         Log.e(TAG, "Photo capture processing failed", t)

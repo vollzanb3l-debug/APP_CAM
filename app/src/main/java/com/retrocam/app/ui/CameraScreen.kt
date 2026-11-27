@@ -75,6 +75,7 @@ import com.retrocam.app.recipe.FinalRecipe
 import com.retrocam.app.recipe.LensSpec
 import com.retrocam.app.recipe.RecipeCatalog
 import com.retrocam.app.storage.PhotoSaver
+import com.retrocam.app.storage.RecipeExifMetadata
 import com.retrocam.app.ui.theme.RetroAmber
 import com.retrocam.app.ui.theme.RetroDarkBackground
 import com.retrocam.app.ui.theme.RetroError
@@ -489,10 +490,16 @@ fun CameraScreen(
                             .clickable(enabled = !isCapturing) {
                                 isCapturing = true
                                 cameraError = null
+                                val metadata = RecipeExifMetadata.fromSpecs(
+                                    camera = selectedCamera,
+                                    lens = selectedLens,
+                                    film = selectedFilm,
+                                )
                                 cameraController.capturePhoto(
                                     effectEngine = effectEngine,
                                     captureProcessor = captureProcessor,
                                     photoSaver = photoSaver,
+                                    metadata = metadata,
                                 ) { result ->
                                     isCapturing = false
                                     result.fold(
