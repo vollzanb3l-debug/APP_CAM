@@ -1,10 +1,15 @@
 package com.retrocam.app.recipe
 
 import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonArray
+import kotlinx.serialization.json.jsonObject
 
 /**
  * Pure-Kotlin JSON parser and validator for RecipeCatalog so JVM unit tests can
  * validate all asset files and malformed-JSON resilience without Android stubs.
+ *
+ * Supports both single-index camera bundles (`CameraCatalogBundle`, fast startup for 100+ cameras)
+ * and standalone per-camera JSON files (e.g. legacy v3 files or calibrated overrides).
  */
 object RecipeCatalogLoader {
 
@@ -27,14 +32,9 @@ object RecipeCatalogLoader {
             validate = RecipeValidator::validateArchetype,
         ).sortedBy { it.displayName }
 
-        val cameras = parseEntries(
+        val cameras = parseCameras(
             entries = camerasRaw,
             errors = errors,
-            decode = { raw ->
-                val migrated = CameraSchemaMigrator.migrateIfNeeded(raw)
-                json.decodeFromString(CameraSpec.serializer(), migrated.jsonText)
-            },
-            validate = RecipeValidator::validateCamera,
         ).sortedBy { it.displayName }
 
         val lenses = parseEntries(
@@ -58,6 +58,60 @@ object RecipeCatalogLoader {
             archetypes = archetypes,
             loadErrors = errors,
         )
+    }
+
+    private fun parseCameras(
+        entries: Map<String, String>,
+        errors: MutableList<RecipeLoadError>,
+    ): List<CameraSpec> {
+        val bundledById = linkedMapOf<String, CameraSpec>()
+        val standaloneById = linkedMapOf<String, CameraSpec>()
+
+        for ((path, raw) in entries.entries.sortedBy { it.key }) {
+            try {
+                val rootObj = json.parseToJsonElement(raw).jsonObject
+                if (rootObj["cameras"] is JsonArray) {
+                    val bundle = json.decodeFromString(CameraCatalogBundle.serializer(), raw)
+                    if (bundle.schemaVersion != CameraSchemaMigrator.CURRENT_SCHEMA_VERSION) {
+                        errors += RecipeLoadError(
+                            path,
+                            "cameraBundle.schemaVersion must be ${CameraSchemaMigrator.CURRENT_SCHEMA_VERSION}",
+                        )
+                        continue
+                    }
+                    for ((idx, camera) in bundle.cameras.withIndex()) {
+                        val entryPath = "$path#${camera.id.ifBlank { idx.toString() }}"
+                        val validationErrors = RecipeValidator.validateCamera(camera)
+                        if (validationErrors.isNotEmpty()) {
+                            errors += RecipeLoadError(entryPath, validationErrors.joinToString("; "))
+                        } else if (camera.id in bundledById) {
+                            errors += RecipeLoadError(entryPath, "Duplicate camera id in bundle: ${camera.id}")
+                        } else {
+                            bundledById[camera.id] = camera
+                        }
+                    }
+                } else {
+                    val migrated = CameraSchemaMigrator.migrateIfNeeded(raw)
+                    val parsed = json.decodeFromString(CameraSpec.serializer(), migrated.jsonText)
+                    val validationErrors = RecipeValidator.validateCamera(parsed)
+                    if (validationErrors.isNotEmpty()) {
+                        errors += RecipeLoadError(path, validationErrors.joinToString("; "))
+                    } else if (parsed.id in standaloneById) {
+                        errors += RecipeLoadError(path, "Duplicate standalone camera id: ${parsed.id}")
+                    } else {
+                        standaloneById[parsed.id] = parsed
+                    }
+                }
+            } catch (t: Throwable) {
+                errors += RecipeLoadError(path, t.message ?: t::class.simpleName.orEmpty())
+            }
+        }
+
+        // Standalone per-camera files override bundled entries with the same ID (for calibrated drop-ins).
+        val merged = LinkedHashMap<String, CameraSpec>(bundledById.size + standaloneById.size)
+        merged.putAll(bundledById)
+        merged.putAll(standaloneById)
+        return merged.values.toList()
     }
 
     private fun <T> parseEntries(

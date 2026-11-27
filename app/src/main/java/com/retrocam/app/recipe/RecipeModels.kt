@@ -84,6 +84,12 @@ data class CameraSpec(
 )
 
 @Serializable
+data class CameraCatalogBundle(
+    val schemaVersion: Int,
+    val cameras: List<CameraSpec>,
+)
+
+@Serializable
 data class BloomSpec(
     val intensity: Float,
     val threshold: Float,

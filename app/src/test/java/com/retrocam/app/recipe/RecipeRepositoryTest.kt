@@ -8,7 +8,7 @@ import java.io.File
 class RecipeRepositoryTest {
 
     @Test
-    fun starterAssets_loadCleanlyWithoutErrorsAndReferenceExistingArchetypes() {
+    fun bundled100CamerasAndAssets_loadCleanlyWithoutErrorsAndInheritArchetypes() {
         val camerasRaw = readAssetsDir("cameras")
         val lensesRaw = readAssetsDir("lenses")
         val filmsRaw = readAssetsDir("films")
@@ -22,17 +22,15 @@ class RecipeRepositoryTest {
         )
 
         assertTrue("Unexpected load errors: ${catalog.loadErrors}", catalog.loadErrors.isEmpty())
-        assertEquals(3, catalog.cameras.size)
+        assertEquals(100, catalog.cameras.size)
         assertEquals(3, catalog.lenses.size)
         assertEquals(3, catalog.films.size)
         assertEquals(18, catalog.archetypes.size)
 
         val archetypeIds = catalog.archetypes.map { it.id }.toSet()
-        val cameraIds = catalog.cameras.map { it.id }.toSet()
-        assertEquals(
-            setOf("compact_2003_ccd", "dreamy_ccd_2008", "classic_s_35mm"),
-            cameraIds,
-        )
+        val uniqueCameraIds = catalog.cameras.map { it.id }.toSet()
+        assertEquals(100, uniqueCameraIds.size)
+
         for (camera in catalog.cameras) {
             assertEquals(CameraSchemaMigrator.CURRENT_SCHEMA_VERSION, camera.schemaVersion)
             assertTrue(camera.brand.isNotBlank())
@@ -52,32 +50,47 @@ class RecipeRepositoryTest {
             assertEquals("draft", film.calibrationStatus)
         }
 
+        // Verify archetype inheritance resolves cleanly across distinct camera formats
         val lens = catalog.lenses.first()
         val film = catalog.films.first()
-        val compact = catalog.cameras.first { it.id == "compact_2003_ccd" }
-        val dreamy = catalog.cameras.first { it.id == "dreamy_ccd_2008" }
-        val classic = catalog.cameras.first { it.id == "classic_s_35mm" }
+        val sd1000 = catalog.cameras.first { it.id == "canon_powershot_sd1000" }
+        val penEe3 = catalog.cameras.first { it.id == "olympus_pen_ee_3" }
+        val holga = catalog.cameras.first { it.id == "holga_120n" }
+        val ae1 = catalog.cameras.first { it.id == "canon_ae_1" }
 
-        val compactRecipe = RecipeCompositor.compose(compact, lens, film, catalog.archetypes)
-        val dreamyRecipe = RecipeCompositor.compose(dreamy, lens, film, catalog.archetypes)
-        val classicRecipe = RecipeCompositor.compose(classic, lens, film, catalog.archetypes)
-
-        assertEquals("4:3", compactRecipe.aspectRatio)
-        assertTrue(compactRecipe.dateStampDefaultOn)
-        assertEquals("3:4", dreamyRecipe.aspectRatio)
-        assertEquals("3:2", classicRecipe.aspectRatio)
+        assertEquals("4:3", RecipeCompositor.compose(sd1000, lens, film, catalog.archetypes).aspectRatio)
+        assertEquals("3:4", RecipeCompositor.compose(penEe3, lens, film, catalog.archetypes).aspectRatio)
+        assertEquals("1:1", RecipeCompositor.compose(holga, lens, film, catalog.archetypes).aspectRatio)
+        assertEquals("3:2", RecipeCompositor.compose(ae1, lens, film, catalog.archetypes).aspectRatio)
     }
 
     @Test
     fun brokenJsonAndInvalidValues_areSkippedWithoutCrashing() {
-        val validCameraRaw = readAssetsDir("cameras").entries.first()
+        val validSingleCamera = """
+            {
+              "schemaVersion": 4,
+              "id": "valid_single_cam",
+              "brand": "Canon",
+              "model": "PowerShot SD1000",
+              "aliases": [],
+              "displayName": "PowerShot SD1000",
+              "era": "2000s",
+              "category": "digital_compact",
+              "archetype": "ccd_compact_2000s",
+              "confidenceLook": "high",
+              "confidenceSpecs": "high",
+              "sources": ["https://global.canon/en/c-museum/product/dcc539.html"],
+              "calibrationStatus": "draft",
+              "iconType": "compact_digital"
+            }
+        """.trimIndent()
         val validLensRaw = readAssetsDir("lenses").entries.first()
         val validFilmRaw = readAssetsDir("films").entries.first()
 
         val camerasRaw = mapOf(
-            validCameraRaw.key to validCameraRaw.value,
+            "cameras/valid_single_cam.json" to validSingleCamera,
             "cameras/corrupt.json" to "{ not valid json ",
-            "cameras/bad_schema.json" to validCameraRaw.value.replaceFirst(
+            "cameras/bad_schema.json" to validSingleCamera.replaceFirst(
                 Regex("\"schemaVersion\"\\s*:\\s*\\d+"),
                 "\"schemaVersion\": 99",
             ),

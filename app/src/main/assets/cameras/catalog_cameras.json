@@ -1,0 +1,3521 @@
+{
+  "schemaVersion": 4,
+  "cameras": [
+    {
+      "schemaVersion": 4,
+      "id": "canon_powershot_sd1000",
+      "brand": "Canon",
+      "model": "PowerShot SD1000",
+      "aliases": [
+        "Digital IXUS 70",
+        "IXY Digital 10"
+      ],
+      "displayName": "PowerShot SD1000 (Digital IXUS 70 / IXY Digital 10)",
+      "era": "2000s",
+      "category": "digital_compact",
+      "archetype": "ccd_compact_2000s",
+      "lookTags": [
+        "high-contrast",
+        "punchy-daylight",
+        "clipped-highlights",
+        "digital-noise",
+        "harsh-flash",
+        "purple-fringing"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://global.canon/en/c-museum/product/dcc539.html",
+        "https://www.imaging-resource.com/cameras/canon-sd1000-review/gallery/",
+        "https://www.dpreview.com/articles/2520296423/canonsd750sd1000/",
+        "https://www.flickr.com/cameras/canon/powershot_sd1000",
+        "https://commons.wikimedia.org/wiki/File:%22Heiliger_Sand%22,_j%C3%BCdischer_Friedhof_in_Worms.jpg",
+        "https://commons.wikimedia.org/wiki/File:%22L%22_Caisson_at_Night_-_panoramio.jpg",
+        "https://commons.wikimedia.org/wiki/File:%22T%22_Ford_from_South_Dakota.jpg"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Karakter nostalgia CCD muncul langsung pada pengaturan bawaan (default JPEG / Auto); kamera juga menyediakan mode My Colors (Vivid, Positive Film, Color Accent, Neutral) yang dapat mendorong saturasi lebih tinggi, namun foto sampel yang diperiksa berasal dari JPEG bawaan tanpa olah lanjut."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "fujifilm_finepix_f31fd",
+      "brand": "Fujifilm",
+      "model": "FinePix F31fd",
+      "aliases": [
+        "F31fd"
+      ],
+      "displayName": "FinePix F31fd",
+      "era": "2000s",
+      "category": "digital_compact",
+      "archetype": "pro_ccd_filmic",
+      "lookTags": [
+        "natural-color",
+        "film-like-grain",
+        "clean-high-iso",
+        "smooth-midtones",
+        "purple-fringing"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "medium",
+      "sources": [
+        "https://www.imaging-resource.com/PRODS/F31FD/F31FDGALLERY.HTM",
+        "https://www.dpreview.com/products/fuji/compacts/fuji_finepixf31fd",
+        "https://www.flickr.com/cameras/fujifilm/finepix_f31fd",
+        "https://www.dpreview.com/forums/threads/fujifilm-finepix-f31fd-review.3408748/",
+        "https://commons.wikimedia.org/wiki/File:-Drosera_intermedia-Enallagma.jpg",
+        "https://commons.wikimedia.org/wiki/File:051_Guided_missile_destroyer_Jinan_20080711.jpg",
+        "https://www.flickr.com/photos/11076844@N00/1878323080"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Tampilan alami dan butiran rapi berasal dari mode bawaan (F-Standard JPEG); kamera juga memiliki mode F-Chrome (warna lebih jenuh ala slide) dan B&W, tetapi ciri khas pemisahan warna organik serta ISO tinggi bersih sudah terlihat langsung di setelan standar. Fokus kalibrasi (Warna & White Balance): Reproduksi warna tampak hidup namun tetap wajar — merah tua dan biru terang pada objek alam terpisah tegas tanpa terlihat buatan, sementara pemandangan laut mendung tampil bersih bernuansa sejuk-sian yang tenang."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "sony_cyber_shot_dsc_t70",
+      "brand": "Sony",
+      "model": "Cyber-shot DSC-T70",
+      "aliases": [
+        "DSC-T70",
+        "Sony T70"
+      ],
+      "displayName": "Cyber-shot DSC-T70",
+      "era": "2000s",
+      "category": "digital_compact",
+      "archetype": "ccd_dreamy_pastel",
+      "lookTags": [
+        "warm-indoor",
+        "soft-detail",
+        "noise-smoothing",
+        "vivid-flash",
+        "highlight-bloom"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://www.sony.co.id/en/electronics/support/compact-cameras-dsct-series/dsc-t70/specifications",
+        "https://www.imaging-resource.com/PRODS/T70/T70GALLERY.HTM",
+        "https://www.dpreview.com/articles/6948762998/sonyt200t70/",
+        "https://www.pbase.com/cameras/sony/cyber-shot_dsc_t70",
+        "https://commons.wikimedia.org/wiki/File:%22SARCH%22.JPG",
+        "https://commons.wikimedia.org/wiki/File:2009_4041502095_card_catalog.jpg",
+        "https://www.flickr.com/photos/22256255@N05/2234797788"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Karakter lembut-hangat dalam ruang serta gaya snapshot flash pekat berasal dari pengaturan bawaan (Auto/Normal JPEG); kamera menyediakan mode warna Vivid/Natural/Sepia/B&W dan Scene Selection, namun ciri optik periskop dan peredaman noise tampak langsung pada mode standar."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "leica_m9",
+      "brand": "Leica",
+      "model": "Leica M9",
+      "aliases": [
+        "M9"
+      ],
+      "displayName": "Leica M9",
+      "era": "2000s",
+      "category": "digital_rangefinder",
+      "archetype": "pro_ccd_filmic",
+      "lookTags": [
+        "crisp-micro-contrast",
+        "rich-ccd-color",
+        "filmic-midtones",
+        "deep-shadows",
+        "smooth-bokeh"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://leica-camera.com/sites/default/files/pm-29341-Leica-M-9--M-9-P_Technical-Data_en.pdf",
+        "https://www.stevehuffphoto.com/2010/08/04/my-updated-big-bad-ass-leica-m9-review/",
+        "https://www.imaging-resource.com/PRODS/M9P/M9PGALLERY.HTM",
+        "https://www.dpreview.com/articles/3013742516/leicam9/",
+        "https://www.flickr.com/cameras/leica/m9",
+        "https://commons.wikimedia.org/wiki/File:Alfa_Romeo_(14502944080",
+        "https://commons.wikimedia.org/wiki/File:Alley_off_Tan_Quee_Lan_Street_Singapore.jpg",
+        "https://www.flickr.com/photos/61368956@N00/3909101094"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Karakter warna pekat organik merupakan sifat dasar sensor Kodak CCD pada profil warna bawaan (Standard JPEG maupun DNG dasar) tanpa memerlukan simulasi film khusus; karakter ketajaman tepi, vignette, dan bokeh turut dipengaruhi lensa M yang dipasang. Catatan audit (medium): Kamera digital berlensa tukar (mount Leica M); karakter optik (vignette, bokeh, flare) bervariasi antar lensa sampel."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "ricoh_gr_iii",
+      "brand": "Ricoh",
+      "model": "Ricoh GR III",
+      "aliases": [
+        "GR III",
+        "GR3"
+      ],
+      "displayName": "Ricoh GR III",
+      "era": "2010s",
+      "category": "digital_compact",
+      "archetype": "early_cmos_gritty",
+      "lookTags": [
+        "razor-sharp",
+        "micro-contrast",
+        "wide-dr",
+        "punchy-slide",
+        "gritty-bw"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://www.ricoh-imaging.co.jp/english/products/gr-3/",
+        "https://www.imaging-resource.com/cameras/ricoh-gr-iii-review/gallery/",
+        "https://www.dpreview.com/reviews/8690273264/ricoh-gr-iii/",
+        "https://www.flickr.com/cameras/ricoh/gr_iii",
+        "https://www.dpreview.com/forums/threads/gr-iii-sooc-with-high-contrast-b-w.4379111/",
+        "https://commons.wikimedia.org/wiki/File:2021-68_-_Flickr_-_biosfear.jpg",
+        "https://commons.wikimedia.org/wiki/File:Wagnersee_bei_Pusselsheim_7.jpg",
+        "https://commons.wikimedia.org/wiki/File:Blick_auf_Vorbach_von_S%C3%BCdosten.jpg"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Sangat bergantung pada profil Image Control bawaan. Fokus kalibrasi (Ketajaman & Geometri): Ketajaman lensa 28mm ekuiv."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "fujifilm_x100v",
+      "brand": "Fujifilm",
+      "model": "Fujifilm X100V",
+      "aliases": [
+        "X100V"
+      ],
+      "displayName": "Fujifilm X100V",
+      "era": "2020s",
+      "category": "digital_compact",
+      "archetype": "filmic_digital_mirrorless",
+      "lookTags": [
+        "sharp",
+        "film-sim",
+        "smooth-rolloff",
+        "muted-warm",
+        "wide-dr",
+        "fine-grain"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://www.fujifilm-x.com/global/products/cameras/x100v/",
+        "https://www.fujifilm-x.com/global/news/introducing-the-fujifilm-x100v/",
+        "https://www.imaging-resource.com/cameras/fujifilm-x100v-review/gallery/",
+        "https://www.dpreview.com/reviews/7990558355/fujifilm-x100v-review/",
+        "https://www.flickr.com/cameras/fujifilm/x100v",
+        "https://commons.wikimedia.org/wiki/File:Abandoned_pedestrian_sidewalk_sign_in_Finland,_2020.jpg",
+        "https://commons.wikimedia.org/wiki/File:Bennetts_Beach_Hawks_Nest_captured_by_Kate_Branch.jpg",
+        "https://www.flickr.com/photos/55208341@N06/52425515845"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Sangat bergantung pada Film Simulation dan resep JPEG kustom. Fokus kalibrasi (Warna & Gradasi): Pada setelan standar, biru, hijau, dan gradasi langit senja merah muda-lavender tampil sangat halus tanpa pita warna (banding) dengan warna yang hidup namun sopan; pada resep simulasi film, warna bergeser hangat krem dengan rona papan dan cat yang lembut (muted)."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "canon_ae_1",
+      "brand": "Canon",
+      "model": "Canon AE-1",
+      "aliases": [
+        "AE-1"
+      ],
+      "displayName": "Canon AE-1",
+      "era": "1970s",
+      "category": "film_slr_35mm",
+      "archetype": "classic_35mm_slr",
+      "lookTags": [
+        "classic-film",
+        "clean-geometry",
+        "balanced-contrast",
+        "sharp-center",
+        "shallow-dof"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://global.canon/en/c-museum/product/film93.html",
+        "http://www.mir.com.my/rb/photography/companies/canon/fdresources/SLRs/ae1/spec.htm",
+        "https://shootitwithfilm.com/canon-ae-1-program-review/",
+        "https://www.lomography.com/cameras/3315294-canon-ae-1/photos",
+        "https://commons.wikimedia.org/wiki/File:1985_Toyota_Celica_Supra.jpg",
+        "https://commons.wikimedia.org/wiki/File:Stone_%26_Webster_headquarters.jpg",
+        "https://commons.wikimedia.org/wiki/File:20177,_20045_%26_47587_at_Saltley_(5482915895"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "slr_film",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Bodi kamera tidak memberi warna sendiri. Catatan audit (medium): Contoh campur: bodi kamera film berlensa tukar dengan lensa dan emulsi film berbeda-beda/sebagian tidak tercatat."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "nikon_fm2",
+      "brand": "Nikon",
+      "model": "Nikon FM2",
+      "aliases": [
+        "FM2",
+        "Nikon FM2n",
+        "New FM2"
+      ],
+      "displayName": "Nikon FM2",
+      "era": "1980s",
+      "category": "film_slr_35mm",
+      "archetype": "classic_35mm_slr",
+      "lookTags": [
+        "neutral-body",
+        "sharp-glass",
+        "clean-contrast",
+        "minimal-distortion",
+        "smooth-bokeh"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://www.nikonmuseum.com/post/nikon-fm2",
+        "https://www.35mmc.com/28/12/2022/nikon-fm2-camera-review/",
+        "https://commons.wikimedia.org/wiki/File:2%E7%95%AA%E7%9B%AE%E3%81%AB_(22035861012",
+        "https://commons.wikimedia.org/wiki/File:Abbazia_Grottaferrata02.jpg",
+        "https://commons.wikimedia.org/wiki/File:Church_of_the_Ascension_of_Christ_(Novocherkassk"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "slr_film",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Bodi sepenuhnya mekanis dan netral. Catatan audit (medium): Contoh campur: bodi kamera film berlensa tukar dengan lensa dan emulsi film berbeda-beda/sebagian tidak tercatat."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "leica_m6",
+      "brand": "Leica",
+      "model": "Leica M6",
+      "aliases": [
+        "M6 Classic",
+        "Leica M6 TTL",
+        "Leica M6 (Reissue 2022)"
+      ],
+      "displayName": "Leica M6",
+      "era": "1980s",
+      "category": "film_rangefinder_35mm",
+      "archetype": "classic_35mm_slr",
+      "lookTags": [
+        "micro-contrast",
+        "edge-sharpness",
+        "clean-geometry",
+        "subtle-flare",
+        "smooth-midtones"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://leica-camera.com/fr-CH/technical-specs-leica-m6",
+        "https://shootitwithfilm.com/leica-m6-35mm-film-camera-review/",
+        "https://reddotcamera.net/leica/m6/",
+        "https://commons.wikimedia.org/wiki/File:A_Graffiti_in_Taichung.jpg",
+        "https://commons.wikimedia.org/wiki/File:Abandoned_(43450058494",
+        "https://www.flickr.com/photos/70121625@N00/16163564829"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "slr_film",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Bodi mekanis tidak menambahkan warna. Catatan audit (medium): Contoh campur: bodi kamera film berlensa tukar dengan lensa dan emulsi film berbeda-beda/sebagian tidak tercatat."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "contax_t2",
+      "brand": "Contax (Kyocera)",
+      "model": "Contax T2",
+      "aliases": [
+        "T2"
+      ],
+      "displayName": "Contax T2",
+      "era": "1990s",
+      "category": "film_compact_35mm",
+      "archetype": "premium_point_shoot_35mm",
+      "lookTags": [
+        "sharp",
+        "micro-contrast",
+        "clean-flare",
+        "subtle-vignette",
+        "direct-flash",
+        "90s-snapshot"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "medium",
+      "sources": [
+        "https://mrleica.com/contax-t2-review/",
+        "https://afistfullofbolts.com/film/contax-t2-review",
+        "https://www.lomography.com/cameras/3333919-contax-t2/photos",
+        "https://commons.wikimedia.org/wiki/File:A_Gate_in_Taichung.jpg",
+        "https://commons.wikimedia.org/wiki/File:Tiantai_Temple_Kaohsiung_Taiwan.jpeg",
+        "https://commons.wikimedia.org/wiki/File:Railway_bridges_over_the_Guoguang_Rd.,_Taichung_20090517.jpg"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_film",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Karena lensanya tetap, karakter optik sangat konsisten di semua sampel: ketajaman dan kontras mikro luar biasa tinggi untuk ukuran kamera saku (urat karat gerbang besi, ukiran atap emas, paku keling jembatan baja terbaca sangat tegas hingga tepi), distorsi geometris nyaris tak terasa pada bingkai lurus, pengendalian flare sangat bersih pada pantulan logam berkat lapisan multi-coating Zeiss T, serta sedikit penggelapan alami tipis di sudut paling ujung."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "olympus_mju_ii",
+      "brand": "Olympus",
+      "model": "Olympus µ[mju:]-II",
+      "aliases": [
+        "Olympus Stylus Epic",
+        "Olympus mju II",
+        "Olympus µ-II"
+      ],
+      "displayName": "Olympus µ[mju:]-II (Stylus Epic)",
+      "era": "1990s",
+      "category": "film_compact_35mm",
+      "archetype": "premium_point_shoot_35mm",
+      "lookTags": [
+        "sharp-center",
+        "corner-vignette",
+        "harsh-flash",
+        "high-contrast",
+        "night-glow"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "medium",
+      "sources": [
+        "https://shootitwithfilm.com/olympus-stylus-epic-review/",
+        "https://casualphotophile.com/2018/09/27/olympus-mju-ii-film-camera-review/",
+        "https://www.lomography.com/cameras/3324333-olympus-mju-ii/photos",
+        "https://commons.wikimedia.org/wiki/File:Fell_Engine_Museum_-_2002-03-20.jpg",
+        "https://commons.wikimedia.org/wiki/File:Jubilat,_Krak%C3%B3w_-_Olympus_mju_II_01.jpg",
+        "https://www.flickr.com/photos/42639139@N08/8744176246"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_film",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Ketajaman tengah sangat menggigit untuk lensa 4 elemen (sampel lokomotif museum dalam ruang), disertai pelunakan ringan menuju tepi jauh. Catatan audit (medium): Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "olympus_pen_ee_3",
+      "brand": "Olympus",
+      "model": "Olympus Pen EE-3",
+      "aliases": [
+        "PEN EE-3",
+        "Pen EE3"
+      ],
+      "displayName": "Olympus Pen EE-3",
+      "era": "1970s",
+      "category": "half_frame_35mm",
+      "archetype": "half_frame_35mm",
+      "lookTags": [
+        "coarse-grain",
+        "vertical-frame",
+        "deep-dof",
+        "fixed-focus-soft-close",
+        "nostalgic"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "medium",
+      "sources": [
+        "https://kosmofoto.com/2023/10/olympus-pen-ee3-review/",
+        "https://www.35mmc.com/08/05/2020/olympus-pen-ee-3-review-weekend-in-prague-john-hanson/",
+        "https://www.lomography.com/cameras/3323369-olympus-pen-ee-3/photos",
+        "https://commons.wikimedia.org/wiki/File:%E7%84%A1%E6%96%99%E3%81%A7%E7%A9%BA%E6%B0%97%E5%85%A5%E3%82%8C_%E3%81%88%E3%81%82%E3%81%9E%E3%81%86%E3%81%8F%E3%82%93_(3829746890",
+        "https://www.flickr.com/photos/32469353@N04/3828937921"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "half_frame",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Karena luas negatif hanya separuh 35mm standar, perbesaran cetak/pindai membuat butiran film tampak jauh lebih besar dan bertekstur kasar dibanding kamera full-frame pada roll yang sama — sangat nyata terlihat pada tembok batu Oxford, langit mendung, papan logam, dan tembok plester di seluruh sampel. Catatan audit (medium): Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "fujifilm_quicksnap_flash_400",
+      "brand": "Fujifilm",
+      "model": "QuickSnap Flash 400",
+      "aliases": [
+        "Utsurundesu",
+        "写ルンです",
+        "QuickSnap Smart Flash",
+        "QuickSnap 400"
+      ],
+      "displayName": "QuickSnap Flash 400",
+      "era": "1980s-present",
+      "category": "disposable_35mm",
+      "archetype": "disposable_point_shoot",
+      "lookTags": [
+        "soft-edges",
+        "light-vignette",
+        "highlight-bloom",
+        "grainy-green-shadows",
+        "harsh-flash"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://quicksnap.fujifilm.com/en/spec.html",
+        "https://thedarkroom.com/film/fujifilm-quicksnap-single-use-disposable-camera/",
+        "https://www.lomography.com/cameras/3336027-fujifilm-quicksnap-flash-400-disposable-35mm-camera/photos",
+        "https://www.flickr.com/photos/37089490@N06/6319845791",
+        "https://www.flickr.com/photos/75144752@N00/5094339935"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "disposable",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Lensa plastik elemen tunggal menghasilkan kelembutan mencolok di pinggir dan sudut bingkai (sangat jelas pada mobil depan sudut kanan bawah dan pepohonan samping di sampel salju The Darkroom), sedikit lengkungan distorsi barel pada bingkai jendela, vignette gelap ringan-sedang di keempat sudut yang tampak nyata pada langit senja maupun langit salju mendung, kontras mikro lebih rendah dibanding lensa kaca, serta pendaran (bloom/halation) kabut lembut ketika cahaya terang menembus tirai jendela (sampel 1)."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "holga_120n",
+      "brand": "Holga",
+      "model": "Holga 120N",
+      "aliases": [
+        "120N"
+      ],
+      "displayName": "Holga 120N",
+      "era": "unspecified",
+      "category": "toy_camera_120",
+      "archetype": "toy_lomo_vignette",
+      "lookTags": [
+        "heavy-vignette",
+        "soft-edges",
+        "radial-blur",
+        "dreamy",
+        "square-format",
+        "light-leak"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "medium",
+      "sources": [
+        "https://www.myfavouritelens.com/holga-120n-camera-review/",
+        "https://emulsive.org/reviews/camera-reviews/holga-camera-reviews/holga-120n-by-sandeep-sumal",
+        "https://www.lomography.com/cameras/3331797-holga-120-n/photos",
+        "https://commons.wikimedia.org/wiki/File:A_corner_of_the_Rang_Mahal_-_Red_Fort.jpg",
+        "https://commons.wikimedia.org/wiki/File:Gelatt_Lake_(Holga,_Medium_Format_Film,_Fuji_400H",
+        "https://www.flickr.com/photos/82603448@N00/2662019429"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "toy_lens",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Sangat dominan dan langsung dikenali pada semua sampel lintas jenis film! Catatan audit (medium): Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "lomo_lc_a",
+      "brand": "LOMO / Lomography",
+      "model": "Lomo LC-A",
+      "aliases": [
+        "LOMO Kompakt Automat",
+        "LC-A"
+      ],
+      "displayName": "Lomo LC-A",
+      "era": "1980s",
+      "category": "toy_camera_35mm",
+      "archetype": "toy_lomo_vignette",
+      "lookTags": [
+        "heavy-vignette",
+        "high-contrast",
+        "vivid",
+        "strong-flare",
+        "soft-edges"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://www.lomography.com/magazine/311143-introducing-the-lomo-lca-minitar-1-art-lens",
+        "https://bluemooncameracodex.com/technical-reviews/lomo-lc-a-minitar-1-32mm-28-review",
+        "https://commons.wikimedia.org/wiki/File:Ecosse_(34341841756",
+        "https://www.flickr.com/photos/92438116@N00/23400337432",
+        "https://www.flickr.com/photos/92438116@N00/25300640833"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "toy_lens",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Pada ketiga sampel (pantai siang, jalan berkabut, dan jalan kota backlight), vignette gelap di keempat sudut sangat tegas dan konsisten bahkan di siang hari terang. Catatan audit (medium): Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "polaroid_sx_70",
+      "brand": "Polaroid",
+      "model": "Polaroid SX-70",
+      "aliases": [
+        "SX-70 Land Camera",
+        "SX-70 Alpha 1"
+      ],
+      "displayName": "Polaroid SX-70",
+      "era": "1970s",
+      "category": "instant_film",
+      "archetype": "instant_integral_vintage",
+      "lookTags": [
+        "muted-vintage",
+        "low-contrast",
+        "sharp-center",
+        "square-instant",
+        "organic-chemical-shift"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "low",
+      "sources": [
+        "https://shootitwithfilm.com/polaroid-sx-70-land-camera-review/",
+        "https://casualphotophile.com/2017/06/02/polaroid-sx-70-instant-film-camera-review-the-pinnacle-of-polaroid/",
+        "https://emulsive.org/reviews/film-reviews/polaroid-originals-sx70-film-review-and-user-guide",
+        "https://www.lomography.com/cameras/3315377-polaroid-sx-70/photos",
+        "https://commons.wikimedia.org/wiki/File:City_Of_Portland_Emergency_Dispatching_Center_Tower.jpg",
+        "https://commons.wikimedia.org/wiki/File:1946_rocket_ship_-_Flickr_-_thart2009.jpg",
+        "https://commons.wikimedia.org/wiki/File:Polaroid_sx_70_-_foto_di_Augusto_De_Luca_(4"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "instant",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Jauh lebih tajam di bidang fokus dibanding kamera instan berlensa plastik — kisi baja menara radio (sampel 1), deretan pipa knalpot & paku keling (sampel 2), serta garis nat ubin (sampel 3) tampak tegas dan rapi, disertai pelunakan organik halus di luar bidang fokus serta tepi bingkai. Catatan audit (medium): Contoh campur kimia emulsi instan lintas era (Polaroid Time-Zero 1985 vs Polaroid Originals SX-70 modern)."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "fujifilm_instax_mini_90_neo_classic",
+      "brand": "Fujifilm",
+      "model": "Instax Mini 90 Neo Classic",
+      "aliases": [
+        "instax mini 90",
+        "Cheki instax mini 90"
+      ],
+      "displayName": "Instax Mini 90 Neo Classic",
+      "era": "2010s",
+      "category": "instant_film",
+      "archetype": "instant_modern_instax",
+      "lookTags": [
+        "bright-color",
+        "punchy-contrast",
+        "crisp-instant",
+        "vertical-mini",
+        "balanced-flash"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://asset.fujifilm.com/www/ca/files/2020-12/5e51c23b70d831f1adccc629b2ddb593/instax_mini_90_catalogue.pdf",
+        "https://au.pcmag.com/digital-cameras/59124/fujifilm-instax-mini-90-neo-classic",
+        "https://www.popphoto.com/gear/2013/12/review-fujifilm-instax-mini-90-neo-classic-instant-camera/",
+        "https://www.lomography.com/magazine/256704-sample-snapshots-taken-with-the-fuji-instax-mini-90-neo-classic",
+        "https://www.flickr.com/photos/11028609@N05/48020641076",
+        "https://www.flickr.com/photos/29411712@N06/14927221837",
+        "https://www.flickr.com/photos/29411712@N06/14454689752"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "instant",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Untuk ukuran cetak mini, ketajaman fokus dekat (mode Macro pada sampel 2–3) dan jarak normal tampak sangat bersih serta rapi, hanya melunak lembut di luar rentang fokus atau di tepi paling ujung; vignette optik ringan."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "hasselblad_500c_m",
+      "brand": "Hasselblad",
+      "model": "Hasselblad 500C/M",
+      "aliases": [
+        "500 C/M",
+        "500CM"
+      ],
+      "displayName": "Hasselblad 500C/M",
+      "era": "1970s",
+      "category": "medium_format_120",
+      "archetype": "medium_format_tlr_slr",
+      "lookTags": [
+        "fine-grain",
+        "3d-pop",
+        "smooth-rolloff",
+        "square-format",
+        "subtle-glow",
+        "zero-distortion"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "medium",
+      "sources": [
+        "https://emulsive.org/reviews/camera-reviews/hasselblad-camera-reviews/camera-review-a-love-letter-to-my-hasselblad-500cm",
+        "https://shootitwithfilm.com/hasselblad-500-cm-film-camera-review/",
+        "https://www.lomography.com/cameras/3352762-hasselblad-500c-m/photos",
+        "https://commons.wikimedia.org/wiki/File:14_Fuji_RTP_-_Flickr_-_BobvdK.jpg",
+        "https://commons.wikimedia.org/wiki/File:Bernd_G%C3%B6bel_Denkmal_f%C3%BCr_Herzogin_Luise_Dorothea_an_der_Wasserkunst_in_Gotha.jpg",
+        "https://www.flickr.com/photos/8534722@N04/9308777426"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "medium_format",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Luas negatif medium format 6×6 membuat butiran film tampil sangat halus dengan gradasi tonal panjang yang mulus. Catatan audit (medium): Contoh campur: bodi kamera film berlensa tukar dengan lensa dan emulsi film berbeda-beda/sebagian tidak tercatat."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "sony_handycam_dcr_trv900",
+      "brand": "Sony",
+      "model": "Handycam DCR-TRV900",
+      "aliases": [
+        "DCR-TRV900",
+        "DCR-TRV900E",
+        "TRV900"
+      ],
+      "displayName": "Handycam DCR-TRV900",
+      "era": "1990s",
+      "category": "camcorder",
+      "archetype": "camcorder_mini_dv_vhs",
+      "lookTags": [
+        "rich-3ccd-color",
+        "low-res",
+        "clipped-highlights",
+        "dv-softness",
+        "interlaced-video"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://www.sony.com/en/SonyInfo/News/Press/199807/98-068/",
+        "http://www.bealecorner.com/trv900/bnotes/brief.html",
+        "http://www.bealecorner.com/trv900/trv-comp.html",
+        "https://www.videomaker.com/article/c5/7530-sony-three-ccd-camcorder-review-dcr-trv900-mini-dv-camcorder/",
+        "https://commons.wikimedia.org/wiki/File:Skyvan.jpg"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "camcorder",
+      "tuning_notes": "Ciri utama berasal dari arsitektur 3-CCD standar bawaan dalam mode video interlaced (60i/50i) atau progressive still; tidak mengandalkan filter warna kustom, namun pada cahaya redup penguatan otomatis (AGC/gain) cepat memunculkan noise video. Catatan audit (medium): 4 frame still diperiksa lintas 2 domain (Wikimedia + BealeCorner), namun karakter gerak video interlaced hanya dari ulasan teknis."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "apple_iphone_4",
+      "brand": "Apple",
+      "model": "iPhone 4",
+      "aliases": [
+        "Apple iPhone 4"
+      ],
+      "displayName": "iPhone 4",
+      "era": "2010s",
+      "category": "camera_phone",
+      "archetype": "early_camera_phone",
+      "lookTags": [
+        "crisp-daylight",
+        "vivid",
+        "clipped-highlights",
+        "fine-noise",
+        "low-dr"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://support.apple.com/en-us/112562",
+        "https://www.imaging-resource.com/cameras/apple-iphone-4-review/gallery/",
+        "https://www.gsmarena.com/apple_iphone_4-review-490p8.php",
+        "https://www.engadget.com/2010-06-22-iphone-4-review.html",
+        "https://commons.wikimedia.org/wiki/File:%22Artisan_carreleur%22_-_ghost_sign_-_Miribel.jpg",
+        "https://commons.wikimedia.org/wiki/File:%22Camelot%22_(5786377041",
+        "https://commons.wikimedia.org/wiki/File:%22Chapeau_Claque%22.JPG"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "camera_phone",
+      "tuning_notes": "Karakter utama berasal dari kamera bawaan iOS default (JPEG otomatis tanpa filter); iOS 4.1+ menambahkan opsi HDR untuk sedikit menahan langit terang, namun seluruh sampel yang diperiksa adalah bidikan standar bawaan. Fokus kalibrasi (Warna & Kontras): Di cahaya terang maupun teduh siang hari, warna tampil cerah dan agak jenuh (merah cat kayu, kuning mencolok, merah muda pastel, dan hijau rimbun) dengan kontras tegas khas ponsel kamera awal Apple."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "canon_powershot_g9",
+      "brand": "Canon",
+      "model": "PowerShot G9",
+      "aliases": [
+        "Canon G9"
+      ],
+      "displayName": "Canon PowerShot G9",
+      "era": "2000s",
+      "category": "digital_compact",
+      "archetype": "ccd_compact_2000s",
+      "lookTags": [
+        "crisp-ccd-detail",
+        "natural-canon-color",
+        "punchy-daylight-contrast",
+        "gritty-high-iso",
+        "subtle-purple-fringing"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://global.canon/en/c-museum/product/dcc548.html",
+        "https://support.usa.canon.com/kb/s/article/ART123834",
+        "https://www.dpreview.com/reviews/3881329841/canong9/",
+        "https://www.imaging-resource.com/cameras/canon-g9-review/test/",
+        "https://www.cnet.com/reviews/canon-powershot-g9-review/",
+        "https://luminous-landscape.com/canon-powershot-g9-review/",
+        "https://commons.wikimedia.org/wiki/File:%22A_compact_car%22.jpg",
+        "https://commons.wikimedia.org/wiki/File:%22Balcone_di_Giulietta%22_-_Verona_(2009",
+        "https://commons.wikimedia.org/wiki/File:%22Janezove_stopnice%22_zalite_do_vrha,_pasti_po_teh_stopnicah,_%C4%8Deprav_*nalit*,_ne_bi_bilo_mo%C5%BEno!_***R.I.P._Janez_!***_(5005775915"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Karakter warna alami yang hidup dan kontras tegas muncul langsung pada setelan bawaan (default SOOC JPEG / My Colors Off). Fokus kalibrasi (Warna & White Balance): Pada sampel luar ruang dedaunan musim gugur dan aliran air, merah-jingga daun serta hijau basah tampil kaya, alami, dan pekat khas sains warna Canon akhir 2000-an tanpa terasa berlebihan."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "canon_powershot_s95",
+      "brand": "Canon",
+      "model": "PowerShot S95",
+      "aliases": [
+        "Canon S95"
+      ],
+      "displayName": "Canon PowerShot S95",
+      "era": "2010s",
+      "category": "digital_compact",
+      "archetype": "pro_ccd_filmic",
+      "lookTags": [
+        "warm-filmic-ccd",
+        "rich-golden-tones",
+        "organic-micro-contrast",
+        "graceful-night-halation",
+        "clean-lowlight-ccd"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://id.canon/id/support/6200085300",
+        "https://www.dpreview.com/articles/2660341179/canonpowershots95/",
+        "https://www.imaging-resource.com/cameras/canon-s95-review/",
+        "https://www.cnet.com/reviews/canon-powershot-s95-review/",
+        "https://photothinking.com/2024-07-22-canon-powershot-s95-pocket-power/",
+        "https://www.flickr.com/cameras/canon/powershot_s95",
+        "https://commons.wikimedia.org/wiki/File:%22_Dogsbody%22_,_The_Broadleys_,_Claycross_(6331958120",
+        "https://commons.wikimedia.org/wiki/File:1._trolejbuss_T%C4%93rbatas_iel%C4%81_2011.jpg",
+        "https://commons.wikimedia.org/wiki/File:%22%D0%91%D0%B5%D0%BB%D1%8B%D0%B9_%D0%B4%D0%BE%D0%BC%22.JPG"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Palet hangat-organik dan kedalaman mikro-kontras CCD hadir langsung pada mode bawaan (default JPEG / My Colors Off) maupun konversi RAW standar (Canon DPP). Fokus kalibrasi (Warna & White Balance): Reproduksi merah bata, papan hijau zamrud, dan biru bodi bus malam tampil kaya, padat, dan berkarakter hangat-emas yang sangat menyenangkan."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "canon_ixy_digital_900_is",
+      "brand": "Canon",
+      "model": "IXY Digital 900 IS",
+      "aliases": [
+        "PowerShot SD800 IS",
+        "Digital IXUS 850 IS"
+      ],
+      "displayName": "Canon IXY Digital 900 IS / PowerShot SD800 IS / Digital IXUS 850 IS",
+      "era": "2000s",
+      "category": "digital_compact",
+      "archetype": "ccd_compact_2000s",
+      "lookTags": [
+        "vibrant-2000s-ccd",
+        "warm-canon-palette",
+        "soft-wide-corners",
+        "clean-base-iso",
+        "smeared-high-iso"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://global.canon/en/c-museum/product/dcc534.html",
+        "https://www.dpreview.com/reviews/6039752007/canonsd800is/",
+        "https://www.cnet.com/reviews/canon-powershot-elph-sd800-is-review/",
+        "https://www.imaging-resource.com/news/full-review-update-posted-for-canon-powershot-sd800-is/",
+        "https://commons.wikimedia.org/wiki/File:%22New%22_DIY_Store,_Emscote_-_geograph.org.uk_-_1210410.jpg",
+        "https://commons.wikimedia.org/wiki/File:%22The_Big_Wall%22_B%26O_Warehouse.jpg",
+        "https://commons.wikimedia.org/wiki/File:%27Greater_Manchester_Challenge%27_-_geograph.org.uk_-_496649.jpg"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Tampilan warna segar khas Canon era DIGIC III muncul langsung pada JPEG bawaan (default Auto / My Colors Off). Fokus kalibrasi (Warna & White Balance): Di bawah matahari cerah (sampel gudang logam & stadion bata), langit biru tampil jenuh dan bersih khas biru kobalt Canon 2000-an, dengan hijau rumput dan pintu limau mencolok serta rona bata yang hangat keemasan."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "canon_powershot_a590_is",
+      "brand": "Canon",
+      "model": "PowerShot A590 IS",
+      "aliases": [
+        "Canon A590 IS"
+      ],
+      "displayName": "Canon PowerShot A590 IS",
+      "era": "2000s",
+      "category": "digital_compact",
+      "archetype": "ccd_compact_2000s",
+      "lookTags": [
+        "punchy-snapshot-ccd",
+        "warm-nostalgic-color",
+        "crisp-low-iso",
+        "clipped-bright-highlights",
+        "muddy-high-iso"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://id.canon/id/support/6200005700",
+        "https://www.dpreview.com/products/canon/compacts/canon_a590is/",
+        "https://www.imaging-resource.com/cameras/canon-a590-is-review/test/",
+        "https://www.cnet.com/reviews/canon-powershot-a590-is-review/",
+        "https://au.pcmag.com/electronics/3137/canon-powershot-a590-is",
+        "https://commons.wikimedia.org/wiki/File:%22The_Corner_Pin%22_Claycross_(3636847510",
+        "https://commons.wikimedia.org/wiki/File:(UBC",
+        "https://commons.wikimedia.org/wiki/File:%22%D0%9D%D0%BE%D1%87%D0%BD%D0%BE%D0%B9_%D0%B4%D0%BE%D0%B7%D0%BE%D1%80_3D%22.2.JPG"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Karakter warna hangat-nostalgik dan kontras langsung yang cerah merupakan ciri JPEG bawaan standar (My Colors Off). Fokus kalibrasi (Warna & White Balance): Pada sampel sore keemasan (The Corner Pin, ISO 80) dan dinding bata merah (ISO 80), rona hangat kuning-amber, terakota bata, serta cokelat kayu tampil hangat, cerah, dan penuh rasa nostalgia."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "casio_exilim_ex_z75",
+      "brand": "Casio",
+      "model": "Exilim EX-Z75",
+      "aliases": [
+        "EX-Z75",
+        "Casio Z75"
+      ],
+      "displayName": "Casio Exilim EX-Z75",
+      "era": "2000s",
+      "category": "digital_compact",
+      "archetype": "ccd_dreamy_pastel",
+      "lookTags": [
+        "soft-pastel-ccd",
+        "muted-desaturated-color",
+        "airy-highlight-bloom",
+        "gentle-contrast",
+        "soft-corner-optics"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "high",
+      "sources": [
+        "http://arch.casio-intl.com/asia-mea/en/dc/past/ex_z75/spec.html",
+        "http://old.imaging-resource.com/PRODS/Z75/Z75A.HTM",
+        "https://www.reviewed.com/cameras/content/casio-exilim-ex-z75-digital-camera-review-14929",
+        "https://www.cnet.com/reviews/casio-exilim-ex-z75-review/",
+        "https://www.dpreview.com/products/casio/compacts/casio_exz75/",
+        "https://commons.wikimedia.org/wiki/File:20091226ExMarconi02.JPG",
+        "https://commons.wikimedia.org/wiki/File:3_Outlet_Extension.JPG",
+        "https://commons.wikimedia.org/wiki/File:A_Marina_de_Salvador.jpg"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Nuansa pastel teredam dan kontras lunak muncul langsung pada setelan bawaan SOOC JPEG (seluruh 3 sampel memakai firmware 1.01 langsung dari kamera). Fokus kalibrasi (Warna & White Balance): Berbeda dari Canon atau Samsung yang jenuh tegas, sampel EX-Z75 menunjukkan palet yang lebih tenang, sedikit teredam (muted), dan lapang."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "casio_exilim_ex_s10",
+      "brand": "Casio",
+      "model": "Exilim EX-S10",
+      "aliases": [
+        "EX-S10",
+        "Exilim Card EX-S10"
+      ],
+      "displayName": "Casio Exilim EX-S10",
+      "era": "2000s",
+      "category": "digital_compact",
+      "archetype": "ccd_dreamy_pastel",
+      "lookTags": [
+        "soft-slim-optics",
+        "warm-y2k-casual",
+        "airy-sky-bloom",
+        "smoothed-fine-texture",
+        "dreamy-snapshot-tone"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "high",
+      "sources": [
+        "http://arch.casio-intl.com/asia-mea/en/dc/ex_s10/spec/",
+        "https://www.imaging-resource.com/cameras/casio-ex-s10-review/test/",
+        "https://www.cnet.com/reviews/casio-exilim-ex-s10-review/",
+        "https://www.dpreview.com/products/casio/compacts/casio_exs10/",
+        "https://www.flickr.com/cameras/casio/ex-s10",
+        "https://commons.wikimedia.org/wiki/File:1-5_Blenheim_Place.JPG",
+        "https://commons.wikimedia.org/wiki/File:Agence_IDElib_et_IDEcycles_Pau_Porte_des_Pyr%C3%A9n%C3%A9es.jpg",
+        "https://commons.wikimedia.org/wiki/File:Akko_Clock_Tower-2833842770.jpg"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Tampilan lembut-hangat dengan pendaran langit terang hadir langsung pada JPEG bawaan standar (SOOC firmware 1.02S). Fokus kalibrasi (Warna & White Balance): Di cahaya siang hari (sampel Edinburgh, Pau, dan menara jam Akko, seluruhnya ISO 50), warna tampil alami dengan kecenderungan hangat ringan pada batu pasir dan dinding krem, sementara aksen merah toko dan hijau papan tetap muncul tegas tanpa terlihat neon berlebihan."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "nikon_coolpix_s6900",
+      "brand": "Nikon",
+      "model": "Coolpix S6900",
+      "aliases": [
+        "COOLPIX S6900",
+        "Nikon S6900"
+      ],
+      "displayName": "Nikon Coolpix S6900",
+      "era": "2010s",
+      "category": "digital_compact",
+      "archetype": "ccd_dreamy_pastel",
+      "lookTags": [
+        "milky-highlight-glow",
+        "glamour-soft-skin",
+        "warm-pastel-haze",
+        "vibrant-sooc-color",
+        "smoothed-cmos-texture"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://www.nikon.com/company/news/2014/0912_cpx_02/",
+        "https://download.nikonimglib.com/archive2/R9bPp00WTnuX01xldjA83DQHes41/S6900RM_%28En%2904.pdf",
+        "https://www.imaging-resource.com/cameras/nikon-s6900-review/",
+        "https://www.digitalcameraworld.com/cameras/compact-cameras/this-unremarkable-nikon-coolpix-s6900-compact-camera-is-trending-heres-why-and-what-id-buy-instead",
+        "https://www.techradar.com/reviews/cameras-and-camcorders/cameras/compact-cameras/nikon-coolpix-s6900-1265200/review/5",
+        "https://www.photoworkout.com/camera/nikon-coolpix-s6900/",
+        "https://commons.wikimedia.org/wiki/File:-%E7%89%AF%E5%B6%BA%E8%A1%97%E9%AB%98%E7%AD%89%E5%AE%98%E8%88%8D%E7%BE%A4.jpg",
+        "https://commons.wikimedia.org/wiki/File:Bliss_of_Denwa.jpg",
+        "https://commons.wikimedia.org/wiki/File:Fontanalba_-_Chanvrair%C3%A9e_-_795.jpg"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Sangat bergantung pada kombinasi mode untuk tampilan potret tren modern. Fokus kalibrasi (Warna & White Balance): Pada sampel luar ruang SOOC (gerbang kayu hijau Taipei ISO 800, danau berkabut pagi ISO 125, dan pegunungan Alpen ISO 125), warna dasar tampil cerah dan hidup langsung dari kamera — biru langit Alpen dan hijau pinus mencolok, sementara kabut pagi di danau dirender hangat-susu dengan saturasi lembut yang tenang."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "nikon_coolpix_p7000",
+      "brand": "Nikon",
+      "model": "Coolpix P7000",
+      "aliases": [
+        "COOLPIX P7000",
+        "Nikon P7000"
+      ],
+      "displayName": "Nikon Coolpix P7000",
+      "era": "2010s",
+      "category": "digital_compact",
+      "archetype": "ccd_compact_2000s",
+      "lookTags": [
+        "crisp-nikon-ccd",
+        "clean-low-iso-detail",
+        "accurate-punchy-color",
+        "solid-shadow-contrast",
+        "softened-high-iso"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://www.nikon.com/company/news/2010/0908_coolpixp7000_01/",
+        "https://www.dpreview.com/articles/3148282345/nikonp7000/",
+        "https://www.imaging-resource.com/cameras/nikon-p7000-review/specifications/",
+        "https://www.cnet.com/reviews/nikon-coolpix-p7000-review/",
+        "https://amateurphotographer.com/review/nikon-coolpix-p7000/",
+        "https://www.flickr.com/cameras/nikon/coolpix_p7000",
+        "https://commons.wikimedia.org/wiki/File:%22Mis_st%C3%BCndli_stoht_in_diner_hand%22_-_Inschrift_oberhalb_der_Sonnenuhr_an_der_S%C3%BCdseite_des_Rathauses_Rapperswil_2012-09-20_17-17-32_(P7000",
+        "https://commons.wikimedia.org/wiki/File:02-EastTimor-Dive_Bobs-Rock_13_(Clown_Fish",
+        "https://commons.wikimedia.org/wiki/File:Stolperstein_seit_2014_in_L%C3%BCnen_Eduard_Petrat.JPG"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Ketajaman bersih dan warna alami-bertenaga hadir langsung pada COOLPIX Picture Control standar (default JPEG); pengguna dapat memilih profil Standard, Neutral, Vivid, dan Monochrome (serta pengaturan bertingkat ketajaman, kontras, dan saturasi) maupun Active D-Lighting untuk membuka bayangan. Catatan audit (medium): Contoh campur pemrosesan/kondisi (1 SOOC, 1 ViewNX, 1 foto bawah air olahan Photoshop CS4)."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "nikon_coolpix_990",
+      "brand": "Nikon",
+      "model": "Coolpix 990",
+      "aliases": [
+        "Nikon E990",
+        "COOLPIX 990"
+      ],
+      "displayName": "Nikon Coolpix 990",
+      "era": "2000s",
+      "category": "digital_compact",
+      "archetype": "ccd_compact_2000s",
+      "lookTags": [
+        "early-2000s-ccd",
+        "deep-blues-and-reds",
+        "stark-highlight-clip",
+        "honest-optical-sharpness",
+        "gritty-early-grain"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "high",
+      "sources": [
+        "http://cdn-10.nikon-cdn.com/pdf/cp990ftg.pdf",
+        "https://www.dpreview.com/reviews/9276144772/nikoncp990/",
+        "https://petapixel.com/2022/02/08/revisiting-the-unique-nikon-coolpix-990-swivel-camera-22-years-later/",
+        "https://www.cameralabs.com/nikon-coolpix-990-retro-review/",
+        "https://www.flickr.com/cameras/nikon/coolpix_990",
+        "https://commons.wikimedia.org/wiki/File:-Users-ddb-Desktop-maine-Maine_-_11_-_Flickr_-_ddb_and_kdw.jpg",
+        "https://commons.wikimedia.org/wiki/File:01592_Bodegon_Puntal_2.JPG",
+        "https://commons.wikimedia.org/wiki/File:1040_selzthal_1.jpg"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Karakter digital jujur awal milenium berasal langsung dari setelan standar bawaan (default JPEG, Image Adjustment Auto/Normal) tanpa simulasi film modern. Fokus kalibrasi (Warna & White Balance): Pada sampel lokomotif listrik merah ÖBB di Selzthal (ISO 100 SOOC) dan bukit musim gugur Maine (ISO 100), terlihat palet awal 2000-an yang amat ikonik: merah-jingga menyala penuh tenaga berpadu biru-hijau pegunungan yang pekat dan sedikit dingin (cyan-blue)."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "panasonic_lumix_dmc_lx3",
+      "brand": "Panasonic",
+      "model": "Lumix DMC-LX3",
+      "aliases": [
+        "DMC-LX3",
+        "Lumix LX3",
+        "Panasonic LX3"
+      ],
+      "displayName": "Panasonic Lumix DMC-LX3",
+      "era": "2000s",
+      "category": "digital_compact",
+      "archetype": "pro_ccd_filmic",
+      "lookTags": [
+        "filmic-leica-ccd",
+        "deep-shadow-contrast",
+        "rich-slide-colors",
+        "smooth-highlight-rolloff",
+        "multi-aspect-wide"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://av.jpn.support.panasonic.com/share/eww/en/dsc/lx3/DMC-LX3_eng.pdf",
+        "https://www.dpreview.com/reviews/8089991700/panasonicdmclx3/",
+        "https://www.imaging-resource.com/cameras/panasonic-dmc-lx3-review/",
+        "https://www.35mmc.com/20/07/2023/panasonic-lx3-8-months-with-a-14-year-old-point-and-shoot/",
+        "https://35hunter.blog/2019/12/02/one-month-one-camera-december-2019-i-panasonic-lumix-lx3/",
+        "https://luminous-landscape.com/panasonic-lx-3-review/",
+        "https://www.flickr.com/cameras/panasonic/dmc-lx3",
+        "https://commons.wikimedia.org/wiki/File:(PARIS,FR75",
+        "https://commons.wikimedia.org/wiki/File:10-Westkapelle.jpg",
+        "https://commons.wikimedia.org/wiki/File:016_Dr%C3%A1%C5%BE%C4%8Fany_P%C5%99estupn%C3%AD_zast%C3%A1vka_bus_tram_vlak2.JPG"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Tampilan filmis berkarakter kuat sudah muncul pada setelan JPEG standar (Film Mode Standard) berkat sensor CCD besar dan lensa Leica cepat (ketiga sampel SOOC firmware Ver.1.2/Ver.2.1 merepresentasikan profil warna standar-hidup siang hari)."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "panasonic_lumix_dmc_fx01",
+      "brand": "Panasonic",
+      "model": "Lumix DMC-FX01",
+      "aliases": [
+        "DMC-FX01",
+        "Lumix FX01",
+        "Panasonic FX01"
+      ],
+      "displayName": "Panasonic Lumix DMC-FX01",
+      "era": "2000s",
+      "category": "digital_compact",
+      "archetype": "ccd_dreamy_pastel",
+      "lookTags": [
+        "painterly-nr-texture",
+        "warm-ochre-daylight",
+        "soft-fine-foliage",
+        "nostalgic-28mm-snap",
+        "gentle-pastel-sky"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "medium",
+      "sources": [
+        "https://www.dpreview.com/reviews/3985055873/panasonicfx01/",
+        "https://www.imaging-resource.com/cameras/panasonic-dmc-fx01-review/",
+        "https://www.popphoto.com/gear/2008/12/camera-review-panasonic-lumix-dmc-fx01/",
+        "https://www.techeblog.com/panasonic-dmc-fx01-reviewed/",
+        "https://www.flickr.com/cameras/panasonic/dmc-fx01",
+        "https://commons.wikimedia.org/wiki/File:...ci_sono_cose_(dal_finestrino_del_loco",
+        "https://commons.wikimedia.org/wiki/File:0_Pla%C3%A7a_de_Sant_Josep_Oriol_num_10.JPG",
+        "https://commons.wikimedia.org/wiki/File:08-11_v_d_Falegnami_1230728.JPG"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Karakter tekstur lembut mirip cat air (painterly NR) dan palet hangat-nostalgik berasal langsung dari setelan JPEG bawaan (Color Effect Off / Normal, firmware Ver.1.0). Fokus kalibrasi (Warna & White Balance): Pada ketiga sampel ISO 80 (kastel bata Italia & ladang gandum, fasad Gotik Barcelona, dan gang bangunan oker Roma), rona hangat aprikot, krem batu, dan terakota tampil sangat enak dipandang dan nostalgik, dipadukan langit biru-sian cerah yang sedikit pucat."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "kodak_easyshare_v570",
+      "brand": "Kodak",
+      "model": "EasyShare V570",
+      "aliases": [
+        "Kodak V570",
+        "KODAK V570 DUAL LENS"
+      ],
+      "displayName": "Kodak EasyShare V570",
+      "era": "2000s",
+      "category": "digital_compact",
+      "archetype": "ccd_compact_2000s",
+      "lookTags": [
+        "warm-kodak-color",
+        "soft-ultrawide-optics",
+        "tight-luminance-grain",
+        "gentle-indoor-flare",
+        "vintage-dual-lens"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "medium",
+      "sources": [
+        "https://www.dpreview.com/articles/0532135808/throwback-thursday-the-dual-lens-kodak-easyshare-v570/",
+        "https://www.imaging-resource.com/cameras/kodak-v570-review/",
+        "https://www.reviewed.com/cameras/content/kodak-easyshare-v570-digital-camera-review",
+        "https://www.cnet.com/reviews/kodak-easyshare-v570-review/",
+        "https://commons.wikimedia.org/wiki/File:1_3_Bleidenberg.JPG",
+        "https://commons.wikimedia.org/wiki/File:1003157moulayidrissmausole.jpg",
+        "https://commons.wikimedia.org/wiki/File:1villalor00_2528.JPG"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Palet hangat khas Kodak Color Science hadir langsung pada mode warna bawaan (Natural Color / High Color default SOOC JPEG); kamera juga menyediakan pilihan Color Mode (High Color, Natural Color, Low Color, B&W, Sepia) serta 22 mode adegan, namun seluruh 3 sampel SOOC langsung mencerminkan karakter bawaan Kodak."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "kodak_easyshare_dx6490",
+      "brand": "Kodak",
+      "model": "EasyShare DX6490",
+      "aliases": [
+        "Kodak DX6490",
+        "KODAK DX6490 ZOOM"
+      ],
+      "displayName": "Kodak EasyShare DX6490",
+      "era": "2000s",
+      "category": "digital_compact",
+      "archetype": "ccd_compact_2000s",
+      "lookTags": [
+        "organic-kodak-matte",
+        "warm-early-ccd",
+        "bright-metering-tendency",
+        "crisp-10x-daylight",
+        "punchy-direct-flash"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "medium",
+      "sources": [
+        "https://www.dpreview.com/products/kodak/compacts/kodak_dx6490/",
+        "https://www.imaging-resource.com/news/review-posted-for-kodak-easyshare-dx6490/",
+        "https://uk.pcmag.com/cameras/80120/kodak-easyshare-dx6490",
+        "https://www.reviewed.com/cameras/content/digital-camera-review-kodak-easyshare-dx6490",
+        "https://www.cnet.com/reviews/kodak-easyshare-dx-review/",
+        "https://archive.org/details/manualzilla-id-7018200",
+        "https://commons.wikimedia.org/wiki/File:%22Glenkin%22_house_-_geograph.org.uk_-_31040.jpg",
+        "https://commons.wikimedia.org/wiki/File:%22The_Case_Is_Altered%22_Pub_from_the_1400s_-_panoramio.jpg",
+        "https://commons.wikimedia.org/wiki/File:100_1632.JPG"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Karakter warna organik agak matte dan hangat khas Kodak awal 2000-an muncul langsung pada setelan JPEG bawaan standar (Color normal). Fokus kalibrasi (Warna & White Balance): Pada sampel lembah Pyrenees cerah dan hutan pinus Skotlandia, warna hijau padang rumput, coklat semak, dan langit biru cerah tampil organik, seimbang, dan sedikit matte seperti cetak film konsumen Kodak awal 2000-an."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "samsung_nv10",
+      "brand": "Samsung",
+      "model": "NV10",
+      "aliases": [
+        "Samsung VLUU NV10",
+        "Samsung Digimax NV10"
+      ],
+      "displayName": "Samsung NV10",
+      "era": "2000s",
+      "category": "digital_compact",
+      "archetype": "ccd_compact_2000s",
+      "lookTags": [
+        "punchy-high-contrast",
+        "vivid-consumer-ccd",
+        "clipped-bright-highlights",
+        "slightly-soft-10mp",
+        "gritty-iso400-noise"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://www.samsung.com/uk/support/model/EC-NV10ZTBA/GB/",
+        "https://www.dpreview.com/reviews/3213703532/samsungnv10/",
+        "https://www.imaging-resource.com/cameras/samsung-nv10-review/",
+        "https://www.cnet.com/reviews/samsung-nv10-review/",
+        "https://www.techradar.com/reviews/cameras-and-camcorders/cameras/compact-cameras/samsung-nv10-68326/review",
+        "https://commons.wikimedia.org/wiki/File:Aeropuerto_Internacional_de_El_Alto_jdb01.JPG",
+        "https://commons.wikimedia.org/wiki/File:Avro_Tutor,_The_Shuttleworth_Collection._(12020059705",
+        "https://commons.wikimedia.org/wiki/File:DH.60_Cirrus_Moth,_The_Shuttleworth_Collection._(12059308165"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Tampilan sangat cerah, jenuh, dan berkontras tegas muncul langsung pada JPEG bawaan standar (SOOC firmware 701121). Fokus kalibrasi (Warna & White Balance): Ketiga sampel SOOC (VLUU NV10, NV10, ISO 200 dalam hanggar dan ISO 400 luar ruang mendung) memperlihatkan dorongan warna khas Samsung 2006 yang sangat bertenaga: garis merah-putih sayap biplan, biru-ungu tua badan pesawat DH.60 Moth, dan kuning cerah pesawat di latar belakang tampil luar biasa jenuh dan mencolok di bawah cahaya campuran hanggar."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "samsung_st550",
+      "brand": "Samsung",
+      "model": "ST550",
+      "aliases": [
+        "TL225",
+        "VLUU ST550",
+        "DualView ST550"
+      ],
+      "displayName": "Samsung ST550 / TL225",
+      "era": "2000s",
+      "category": "digital_compact",
+      "archetype": "ccd_dreamy_pastel",
+      "lookTags": [
+        "vivid-blue-red-pop",
+        "soft-nr-smoothing",
+        "airy-pastel-overcast",
+        "airbrushed-beauty-mode",
+        "nostalgic-dual-screen"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://www.samsung.com/ca/support/model/EC-ST550ZBPGCA/",
+        "https://www.dpreview.com/products/samsung/compacts/samsung_st550/",
+        "https://www.imaging-resource.com/cameras/samsung-tl225-review/",
+        "https://www.reviewed.com/cameras/content/samsung-tl225-digital-camera-review-21286-2",
+        "https://www.flickr.com/cameras/samsung/st550",
+        "https://www.dpreview.com/forums/threads/samsung-st550.2648332/",
+        "https://commons.wikimedia.org/wiki/File:30%EB%B2%88_SAM_3121.JPG",
+        "https://commons.wikimedia.org/wiki/File:Abri_de_quai_%C3%A0_la_gare_de_Dang%C3%A9.jpg",
+        "https://commons.wikimedia.org/wiki/File:Pa_ngoy_in_Phoukaokuay_NBCA_-_panoramio.jpg"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Pada mode bawaan (default SOOC JPEG) yang diperiksa di 3 sampel luar ruang, kamera sudah menonjolkan dorongan biru-merah cerah berpadu kontras agak lapang dan peredaman noise yang melembutkan tekstur halus. Catatan audit (medium): 3 foto luar ruang SOOC bebas wajah; mode Beauty Shot khasnya belum diverifikasi visual karena aturan privasi."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "pentax_optio_s",
+      "brand": "Pentax",
+      "model": "Optio S",
+      "aliases": [
+        "PENTAX Optio S"
+      ],
+      "displayName": "Pentax Optio S",
+      "era": "2000s",
+      "category": "digital_compact",
+      "archetype": "ccd_dreamy_pastel",
+      "lookTags": [
+        "dreamy-early-ccd",
+        "soft-wide-edges",
+        "warm-midtone-color",
+        "subtle-sky-vignette",
+        "mild-purple-fringing"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://www.ricoh-imaging.co.jp/english/support/man-pdf/optio-s.pdf",
+        "https://www.dpreview.com/reviews/5027066227/pentaxoptios/",
+        "https://old.imaging-resource.com/PRODS/OPTS/OSA.HTM",
+        "https://panoramacircle.com/2018/08/10/pentax-optio-s-15-year-old-camera-review/",
+        "https://www.flickr.com/cameras/pentax/optio_s",
+        "https://commons.wikimedia.org/wiki/File:14_nothelfer_kapelle_ursprung.jpg",
+        "https://commons.wikimedia.org/wiki/File:2003-10_Gie%C3%9Fen_Neues_Schloss.jpg",
+        "https://commons.wikimedia.org/wiki/File:2004-04-Ravensburg-Marktstra%C3%9Fe-Kirchstra%C3%9Fe-von-oben.jpg"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Estetika digicam awal 2000-an yang hangat dan melamun tampil langsung pada setelan JPEG bawaan standar (SOOC firmware Optio S V1.00/V1.01)."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "pentax_optio_w60",
+      "brand": "Pentax",
+      "model": "Optio W60",
+      "aliases": [
+        "PENTAX Optio W60",
+        "Optio W60"
+      ],
+      "displayName": "Pentax Optio W60",
+      "era": "2000s",
+      "category": "digital_compact",
+      "archetype": "ccd_compact_2000s",
+      "lookTags": [
+        "lively-outdoor-ccd",
+        "crisp-1cm-macro",
+        "soft-periscope-corners",
+        "intense-closeup-flash",
+        "noisy-low-light-ccd"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://www.ricoh-imaging.co.jp/english/products/digital/optio-w60/spec.html",
+        "https://www.ricoh-imaging.co.jp/english/news/2008/200813.html",
+        "https://www.dpreview.com/products/pentax/compacts/pentax_optiow60/",
+        "https://www.cameralabs.com/pentax_optio_w60/2/",
+        "https://www.reviewed.com/cameras/content/pentax-optio-w60-digital-camera-review-19041",
+        "https://www.flickr.com/cameras/pentax/optio_w60",
+        "https://commons.wikimedia.org/wiki/File:%22HUBER_Turny%22_preceding_screen_for_greywater_(5729651009",
+        "https://commons.wikimedia.org/wiki/File:Abanotubani_and_Tbilisi_Mosque.jpg",
+        "https://commons.wikimedia.org/wiki/File:Accent_2.jpg"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Karakter warna luar ruang yang segar dan jernih berasal langsung dari JPEG bawaan standar (SOOC firmware Ver 1.00). Fokus kalibrasi (Warna & White Balance): Pada sampel kota tua Tbilisi (ISO 50 SOOC) dan makro bunga bakung/daffodil (ISO 200), warna tampil cerah, bersih, dan segar tanpa terasa buatan — terakota kubah pemandian, biru pucat fasad masjid, hijau bukit, serta kelopak putih dan koral-aprikot bunga tergambar menyenangkan dan seimbang."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "olympus_xz_1",
+      "brand": "Olympus",
+      "model": "XZ-1",
+      "aliases": [
+        "Olympus Stylus XZ-1"
+      ],
+      "displayName": "Olympus XZ-1",
+      "era": "2010s",
+      "category": "digital_compact",
+      "archetype": "pro_ccd_filmic",
+      "lookTags": [
+        "filmic-olympus-ccd",
+        "warm-rich-jpegs",
+        "bright-f18-bokeh",
+        "graceful-highlight-curve",
+        "cinematic-night-glow"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://learnandsupport.getolympus.com/sites/default/files/media/files/2018/04/XZ-1_Instruction_Manual_EN.pdf",
+        "https://www.dpreview.com/reviews/1683963493/olympusxz1/",
+        "https://www.imaging-resource.com/cameras/olympus-xz-1-review/",
+        "https://digital-photography-school.com/olympus-xz-1-review/",
+        "https://www.flickr.com/cameras/olympus/xz-1",
+        "https://commons.wikimedia.org/wiki/File:110107Keikyu_Shinagawa_bus_terminal.JPG",
+        "https://commons.wikimedia.org/wiki/File:17Juni_Jena_Holzmarkt.JPG",
+        "https://commons.wikimedia.org/wiki/File:1960s_GEC_New_Gecophone_706_Black_Rotary_Dial_Telephone.JPG"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Karakter warna hangat-kaya bak kartu pos, mikro-kontras tiga dimensi, dan transisi sorotan luwes tampil langsung pada Picture Mode bawaan (Natural / Vivid default JPEG, firmware Version 1.1)."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "olympus_camedia_c_5050_zoom",
+      "brand": "Olympus",
+      "model": "Camedia C-5050 Zoom",
+      "aliases": [
+        "Olympus C-5050Z",
+        "C5050Z",
+        "C-5050 Zoom"
+      ],
+      "displayName": "Olympus Camedia C-5050 Zoom",
+      "era": "2000s",
+      "category": "digital_compact",
+      "archetype": "ccd_compact_2000s",
+      "lookTags": [
+        "rich-early-olympus-ccd",
+        "punchy-default-sharpness",
+        "deep-shadow-contrast",
+        "fast-f18-separation",
+        "fine-sky-grain"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "medium",
+      "sources": [
+        "https://www.dpreview.com/reviews/8418153953/olympusc5050z/",
+        "https://www.imaging-resource.com/news/olympus-europe-announces-c-5050zoom/",
+        "https://www.shutterbug.com/content/olympus-camedia-c5050-zoom",
+        "https://mikeeckman.com/wrotniak/photo/c/c5050-noise.html",
+        "https://www.olympuspassion.com/2025/10/27/premium-olympus-throwback-c-5050-the-compact-premium-from-a-past-era-video/",
+        "https://www.flickr.com/cameras/olympus/c5050z",
+        "https://commons.wikimedia.org/wiki/File:060813_DO_Gartenstadt_010.JPG",
+        "https://commons.wikimedia.org/wiki/File:071-v-p4181822.jpg",
+        "https://commons.wikimedia.org/wiki/File:08-07-01_Christuskirche_Dahlem_01.JPG"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Kedalaman warna pekat, kontras hitam dalam, dan ketajaman tegas merupakan ciri langsung JPEG bawaan standar (SOOC firmware v558-77/78)."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "fujifilm_finepix_z5fd",
+      "brand": "Fujifilm",
+      "model": "FinePix Z5fd",
+      "aliases": [
+        "FinePix Z5fd",
+        "Fuji Z5fd"
+      ],
+      "displayName": "Fujifilm FinePix Z5fd",
+      "era": "2000s",
+      "category": "digital_compact",
+      "archetype": "ccd_dreamy_pastel",
+      "lookTags": [
+        "warm-fuji-superccd",
+        "flattering-natural-skin",
+        "soft-periscope-detail",
+        "dreamy-night-halation",
+        "soft-lowlight-smoothing"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "medium",
+      "sources": [
+        "https://www.dpreview.com/articles/5816595002/finepixz5fd/",
+        "https://www.imaging-resource.com/cameras/fujifilm-z5fd-review/test/",
+        "https://uk.pcmag.com/cameras/57982/fuji-finepix-z5fd",
+        "https://www.cnet.com/reviews/fujifilm-finepix-z5fd-review/",
+        "https://www.reviewed.com/cameras/content/fujifilm-finepix-z5fd-first-impressions-review",
+        "https://www.flickr.com/cameras/fujifilm/finepix_z5fd",
+        "https://commons.wikimedia.org/wiki/File:*this*_is_a_bagel.jpg",
+        "https://commons.wikimedia.org/wiki/File:10th_Street_Bypass_flood_(2112138746",
+        "https://commons.wikimedia.org/wiki/File:19_May%C4%B1s_Saat_Kulesi.jpg"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Reproduksi warna hangat-menyenangkan dan penghalusan cahaya redup sudah muncul langsung pada mode standar bawaan (F-Standard SOOC JPEG, firmware Ver1.01). Fokus kalibrasi (Warna & White Balance): Pada sampel close-up bagel salmon asap (ISO 100), sains warna Fujifilm Super CCD langsung bersinar: jingga-koral salmon tampil lezat dan hangat, keju krim putih bersih, serta rona jari tangan alami dan menyanjung."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "yashica_t4",
+      "brand": "Yashica (Kyocera)",
+      "model": "Yashica T4",
+      "aliases": [
+        "Yashica T4 Super",
+        "Yashica T5",
+        "Kyocera Slim T",
+        "Kyocera T Proof",
+        "Yashica T4D",
+        "T4 Super D"
+      ],
+      "displayName": "Yashica T4 / T4 Super (T5)",
+      "era": "1990s",
+      "category": "film_compact_35mm",
+      "archetype": "premium_point_shoot_35mm",
+      "lookTags": [
+        "sharp",
+        "high-contrast",
+        "clean-geometry",
+        "direct-flash",
+        "90s-snapshot"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "medium",
+      "sources": [
+        "https://www.35mmc.com/22/02/2020/yashica-t4-review-2-goodbye/",
+        "https://casualphotophile.com/2015/08/17/5-best-point-and-shoot-film-cameras-part-2-5/",
+        "https://emulsive.org/reviews/camera-reviews/compact-camera-megatest-12-high-mid-and-low-end-35mm-point-and-shoot-head-to-head",
+        "https://www.flickr.com/photos/25797459@N06/29193750443",
+        "https://www.flickr.com/photos/25797459@N06/29192325474",
+        "https://www.flickr.com/photos/34323101@N00/4702444992"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_film",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Lensa tetap Carl Zeiss Tessar T 35mm f/3.5 menampilkan ketajaman sangat tegas dari tengah hingga tepi bingkai — tampak nyata pada kisi jendela gedung bertingkat (sampel 1), marka jalan dan papan penunjuk lalu lintas (sampel 2), serta garis diagonal dinding bergaris interior (sampel 3). Catatan audit (medium): Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "yashica_electro_35_gsn",
+      "brand": "Yashica",
+      "model": "Yashica Electro 35 GSN",
+      "aliases": [
+        "Electro 35 GSN",
+        "Yashica Electro 35 GTN"
+      ],
+      "displayName": "Yashica Electro 35 GSN",
+      "era": "1970s",
+      "category": "film_rangefinder_35mm",
+      "archetype": "classic_35mm_slr",
+      "lookTags": [
+        "sharp-stopped-down",
+        "smooth-bokeh",
+        "classic-contrast",
+        "vintage-flare",
+        "shallow-dof"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "medium",
+      "sources": [
+        "https://kosmofoto.com/2020/02/yashica-electro-35-gsn-review/",
+        "https://www.35mmc.com/25/08/2019/5-frames-on-the-beach-with-a-yashica-electro-35-gsn-by-lee-webb/",
+        "https://emulsive.org/articles/5-frames-from-a-walk-around-cape-pond-massachusetts-on-kodak-tri-x-400-35mm-format-ei-400-yashica-electro-35-gsn-by-bob-harrison",
+        "https://www.flickr.com/photos/10129161@N04/2694612118",
+        "https://www.flickr.com/photos/10129161@N04/2694608534",
+        "https://www.flickr.com/photos/72173451@N00/3432700297"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_film",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Lensa tetap 45mm f/1.7 menawarkan dua karakter jelas bergantung bukaan. Catatan audit (medium): Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "minolta_tc_1",
+      "brand": "Minolta",
+      "model": "Minolta TC-1",
+      "aliases": [
+        "TC-1",
+        "TC1"
+      ],
+      "displayName": "Minolta TC-1",
+      "era": "1990s",
+      "category": "film_compact_35mm",
+      "archetype": "premium_point_shoot_35mm",
+      "lookTags": [
+        "razor-sharp",
+        "micro-contrast",
+        "wide-28mm",
+        "circular-bokeh",
+        "minimal-distortion"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "medium",
+      "sources": [
+        "https://www.35mmc.com/27/09/2014/minolta-tc-1-review/",
+        "https://www.japancamerahunter.com/2011/07/a-secret-gem-of-a-compact-camera/",
+        "https://commons.wikimedia.org/wiki/File:DS071207190027_(2092512379",
+        "https://commons.wikimedia.org/wiki/File:CMC_Minicab_LF-0657_on_Zhongzheng_Road_20100221.jpg",
+        "https://www.flickr.com/photos/50704193@N07/6921012844"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_film",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Lensa asferis G-Rokkor 28mm f/3.5 menunjukkan ketajaman ekstrem dan kontras mikro luar biasa dari tengah sampai ujung sudut bingkai — terlihat pada teks papan toko, detail truk iklan, dan permukaan aspal (sampel 2) maupun ubin lantai serta kabel gang sempit (sampel 3). Catatan audit (medium): Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "minolta_hi_matic_7sii",
+      "brand": "Minolta",
+      "model": "Minolta Hi-Matic 7sII",
+      "aliases": [
+        "Hi-Matic 7sII",
+        "Hi-Matic 7s II",
+        "Minolta 7sII"
+      ],
+      "displayName": "Minolta Hi-Matic 7sII",
+      "era": "1970s",
+      "category": "film_rangefinder_35mm",
+      "archetype": "classic_35mm_slr",
+      "lookTags": [
+        "sharp",
+        "micro-contrast",
+        "smooth-bokeh",
+        "classic-40mm",
+        "minimal-distortion"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "medium",
+      "sources": [
+        "https://casualphotophile.com/2017/05/24/minolta-hi-matic-7sii-35mm-film-rangefinder-camera-review/",
+        "https://www.rokkorfiles.com/7SII.htm",
+        "https://www.flickr.com/photos/33329434@N08/7178572870",
+        "https://commons.wikimedia.org/wiki/File:Scene_in_downtown_Taichung_04.jpg"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_film",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Lensa tetap Rokkor 40mm f/1.7 menampilkan ketajaman dan kontras mikro sangat tinggi — terlihat pada tekstur bata, cat grafiti, dan kaca berdebu jendela pabrik (sampel 1), ketegasan huruf papan gerobak jalanan serta pemisahan halus latar gedung jauh (sampel 2), hingga perbesaran uji resolusi jam menara di The Rokkor Files (sampel 3)."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "minolta_freedom_escort",
+      "brand": "Minolta",
+      "model": "Minolta Freedom Escort",
+      "aliases": [
+        "Minolta Riva Mini",
+        "Minolta Pico",
+        "Minolta Freedom Escort Date"
+      ],
+      "displayName": "Minolta Freedom Escort (Riva Mini / Pico)",
+      "era": "1990s",
+      "category": "film_compact_35mm",
+      "archetype": "premium_point_shoot_35mm",
+      "lookTags": [
+        "edge-to-edge-sharp",
+        "crisp-contrast",
+        "low-distortion",
+        "90s-compact",
+        "flash-reliant-lowlight"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "medium",
+      "sources": [
+        "https://www.35mmc.com/02/10/2015/minolta-riva-mini-review/",
+        "https://www.newwavepool.ca/blogs/the-camera-roll-a-blog/minolta-freedom-escort-film-test-notes"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_film",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Berkat konstruksi 4 elemen, lensa 34mm f/3.5 memperlihatkan ketajaman merata yang melampaui kamera saku 3 elemen sezamannya — tampak jelas pada tekstur plester dinding, rangka sepeda, dan angka pintu merah \"21 23\" (sampel 35mmc) serta detail bata, besi pagar balkon, papan klaper, dan rangka kayu garasi di empat bingkai New Wave Pool."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "pentax_espio_mini",
+      "brand": "Pentax",
+      "model": "Pentax Espio Mini",
+      "aliases": [
+        "Pentax UC-1",
+        "Espio Mini",
+        "Espio Mini 75th Anniversary"
+      ],
+      "displayName": "Pentax Espio Mini (UC-1)",
+      "era": "1990s",
+      "category": "film_compact_35mm",
+      "archetype": "premium_point_shoot_35mm",
+      "lookTags": [
+        "sharp-center",
+        "punchy-contrast",
+        "subtle-vignette",
+        "mild-barrel",
+        "flare-resistant"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "medium",
+      "sources": [
+        "https://casualphotophile.com/2018/11/21/pentax-uc-1-espio-mini-camera-review/",
+        "https://www.35mmc.com/30/12/2014/pentax-espio-mini-uc-1/",
+        "https://www.japancamerahunter.com/2012/05/mini-review-the-pentax-espio-mini/",
+        "https://www.flickr.com/photos/68868439@N00/5669902664",
+        "https://www.flickr.com/photos/50483324@N00/16332961451",
+        "https://www.flickr.com/photos/68868439@N00/5784593751"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_film",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Walaupun hanya memakai desain triplet 3 elemen, lensa 32mm f/3.5 tampil mengejutkan tajam di pusat dan mid-frame — terbaca jelas pada papan menu warung di dinding ubin (sampel 1), huruf fasad toko bata merah (sampel 2), serta ranting pohon ek musim dingin (sampel 4). Catatan audit (medium): Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "pentax_pc35af",
+      "brand": "Pentax (Asahi Optical)",
+      "model": "Pentax PC35AF",
+      "aliases": [
+        "PC35AF",
+        "Asahi Pentax PC35AF"
+      ],
+      "displayName": "Pentax PC35AF",
+      "era": "1980s",
+      "category": "film_compact_35mm",
+      "archetype": "premium_point_shoot_35mm",
+      "lookTags": [
+        "sharp",
+        "vintage-80s",
+        "natural-rendering",
+        "rich-contrast",
+        "pop-up-flash"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "medium",
+      "sources": [
+        "https://casualphotophile.com/2026/01/30/pentax-pc35af-camera-review/",
+        "https://www.35mmc.com/15/05/2014/pentax-pc35af-review/",
+        "https://mikeeckman.com/2018/04/pentax-pc35af-1982/",
+        "https://www.flickr.com/photos/29271559@N02/3790097658",
+        "https://www.flickr.com/photos/35257776@N02/6037145048",
+        "https://www.flickr.com/photos/29271559@N02/3790097650"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_film",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Lensa kaca 5 elemen 35mm f/2.8 menghadirkan ketajaman solid dan rendering organik bergaya awal 1980-an yang tidak terlalu klinis — terlihat pada lekukan gerbang logam (sampel 1), detail mural dan bangunan di sepanjang jalan kerikil (sampel 2), serta ukiran kendi kuningan dan punggung buku dalam ruang (sampel 3)."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "pentax_17",
+      "brand": "Pentax (Ricoh Imaging)",
+      "model": "Pentax 17",
+      "aliases": [
+        "PENTAX 17",
+        "Pentax 17 Half-Frame"
+      ],
+      "displayName": "Pentax 17",
+      "era": "2020s",
+      "category": "half_frame_35mm",
+      "archetype": "half_frame_35mm",
+      "lookTags": [
+        "vertical-frame",
+        "prominent-grain",
+        "crisp-hd-optics",
+        "deep-dof",
+        "minimal-flare"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://www.ricoh-imaging.co.jp/english/products/pentax17/spec/",
+        "https://shootitwithfilm.com/pentax-17-review/",
+        "https://www.35mmc.com/17/06/2024/pentax-17-review/",
+        "https://casualphotophile.com/2024/06/17/pentax-17-new-film-camera-review/"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "half_frame",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Pelapisan optik HD modern terasa sangat kentara dibanding kamera half-frame era 1960–1970-an: kontras tinggi, jernih, nyaris bebas flare dan vignette sudut di bawah matahari langsung — tampak pada diptik jalanan dan mural warna, bingkai vertikal penyeberangan kota, serta diptik pintu stiker & pagar kayu (sampel Shoot It With Film)."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "konica_big_mini_bm_201",
+      "brand": "Konica",
+      "model": "Konica Big Mini BM-201",
+      "aliases": [
+        "Big Mini BM-201",
+        "Konica Big Mini 201",
+        "BM-201"
+      ],
+      "displayName": "Konica Big Mini BM-201",
+      "era": "1990s",
+      "category": "film_compact_35mm",
+      "archetype": "premium_point_shoot_35mm",
+      "lookTags": [
+        "sharp",
+        "mild-vignette",
+        "low-distortion",
+        "close-focus-35cm",
+        "direct-flash"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "medium",
+      "sources": [
+        "https://casualphotophile.com/2017/05/06/konica-big-mini-bm-201-point-and-shoot-film-camera-review/",
+        "https://www.35mmc.com/08/07/2013/konica-big-mini-review-yeah-its-not-bad/",
+        "https://emulsive.org/reviews/camera-reviews/konica-film-camera-reviews/compact-camera-mega-test-konica-big-mini-transparent-ambitions",
+        "https://www.flickr.com/photos/143698872@N04/49821472391",
+        "https://commons.wikimedia.org/wiki/File:March_2012,_Saint_Malo,_France_Konica_big_mini_-_expired_Kodak_portra_400VC.jpg"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_film",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Lensa tetap 4 elemen 35mm f/3.5 menghasilkan ketajaman mengesankan sejak bukaan penuh, bahkan pada jarak makro 0,35m (sampel bunga kucai ungu di 35mmc menunjukkan kelopak pusat sangat tajam dengan pemisahan latar lembut) hingga lanskap arsitektur pelabuhan (sampel 2 CC dan sampel perahu layar 35mmc). Catatan audit (medium): Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "konica_hexar_af",
+      "brand": "Konica",
+      "model": "Konica Hexar AF",
+      "aliases": [
+        "Konica Hexar",
+        "Hexar AF",
+        "Hexar Classic",
+        "Hexar Silver",
+        "Hexar Black"
+      ],
+      "displayName": "Konica Hexar AF",
+      "era": "1990s",
+      "category": "film_compact_35mm",
+      "archetype": "premium_point_shoot_35mm",
+      "lookTags": [
+        "razor-sharp",
+        "micro-contrast",
+        "clean-geometry",
+        "rich-midtones",
+        "creamy-bokeh"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "medium",
+      "sources": [
+        "https://www.35mmc.com/16/07/2017/konica-hexar-review/",
+        "https://www.japancamerahunter.com/2011/09/the-konica-hexar-af-the-quietest-camera-in-the-world/",
+        "https://cameralegend.com/tag/konica-hexar-af-review/",
+        "https://commons.wikimedia.org/wiki/File:Bodegas_Ysios,_junio_de_2007_(2",
+        "https://commons.wikimedia.org/wiki/File:Entrada_burgalesa_del_t%C3%BAnel_de_la_Enga%C3%B1a.jpg",
+        "https://commons.wikimedia.org/wiki/File:Bodegas_Ysios,_junio_de_2007_(4"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_film",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Lensa tetap 7 elemen Hexar 35mm f/2 menampilkan standar optik setara lensa rangefinder kelas atas. Catatan audit (medium): Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "nikon_l35af",
+      "brand": "Nikon",
+      "model": "Nikon L35AF",
+      "aliases": [
+        "Nikon Pikaichi",
+        "L35AF",
+        "L35AD",
+        "L35AF (ISO 1000)"
+      ],
+      "displayName": "Nikon L35AF (\"Pikaichi\")",
+      "era": "1980s",
+      "category": "film_compact_35mm",
+      "archetype": "premium_point_shoot_35mm",
+      "lookTags": [
+        "sharp-across-frame",
+        "punchy-contrast",
+        "clean-geometry",
+        "vintage-80s",
+        "pop-up-flash"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://imaging.nikon.com/imaging/information/story/0033/",
+        "https://imaging.nikon.com/imaging/information/chronicle/cousins22-e/",
+        "https://www.35mmc.com/30/01/2016/nikon-l35af-review/",
+        "https://casualphotophile.com/2014/11/30/nikon-l35af-pikaichi-camera-review/",
+        "https://www.flickr.com/photos/64579635@N06/27489378473"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_film",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Lensa 5 elemen berlapis ganda 35mm f/2.8 menampilkan ketajaman merata dari pusat hingga sudut dan kontras yang sangat mantap — terlihat jelas pada guratan perbukitan Lake District (sampel 1 CC) serta pantulan jembatan bata, pagar besi, dan dinding gudang di tepi kanal (sampel 2–3 dari 35mmc). Catatan audit (medium): Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "nikon_35ti",
+      "brand": "Nikon",
+      "model": "Nikon 35Ti",
+      "aliases": [
+        "35Ti",
+        "Nikon 35Ti Quartz Date"
+      ],
+      "displayName": "Nikon 35Ti",
+      "era": "1990s",
+      "category": "film_compact_35mm",
+      "archetype": "premium_point_shoot_35mm",
+      "lookTags": [
+        "corner-to-corner-sharp",
+        "distortion-free",
+        "balanced-exposure",
+        "high-contrast",
+        "smooth-bokeh"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://imaging.nikon.com/imaging/information/products_history/1990/",
+        "https://imaging.nikon.com/imaging/information/story/0001/",
+        "https://emulsive.org/reviews/camera-reviews/compact-camera-mega-test-nikon-35ti-the-worlds-most-sophisticated-compact-camera",
+        "https://www.35mmc.com/21/09/2015/nikon-35ti-review-marc/",
+        "https://www.japancamerahunter.com/2013/05/premium-compact-cameras-a-buyers-guide/",
+        "https://www.flickr.com/photos/41060354@N06/4754828939",
+        "https://www.flickr.com/photos/10816453@N00/3528401832",
+        "https://www.flickr.com/photos/26432632@N08/15320982565"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_film",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Lensa 6 elemen NIKKOR 35mm f/2.8 menghasilkan ketajaman sangat tinggi dari pusat hingga sudut bingkai, nyaris bebas distorsi maupun vignette — terlihat pada detail bulu anjing dan serat denim jarak dekat disertai bokeh latar halus (sampel 1), ketajaman rangka jembatan dan dedaunan teluk Sydney (sampel 2), serta kontur punggung gunung bersalju (sampel 3)."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "canon_canonet_ql17_giii",
+      "brand": "Canon",
+      "model": "Canon Canonet QL17 GIII",
+      "aliases": [
+        "QL17 GIII",
+        "QL17 G-III"
+      ],
+      "displayName": "Canon Canonet QL17 GIII (G-III QL17)",
+      "era": "1970s",
+      "category": "film_rangefinder_35mm",
+      "archetype": "classic_35mm_slr",
+      "lookTags": [
+        "sharp-stopped-down",
+        "classic-40mm",
+        "micro-contrast",
+        "character-bokeh",
+        "vintage-flare"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://global.canon/en/c-museum/product/film84.html",
+        "https://casualphotophile.com/2021/06/16/canon-canonet-ql17-giii/",
+        "https://www.35mmc.com/19/01/2015/canonet-ql17-giii-affordable-fine-reliable/",
+        "https://commons.wikimedia.org/wiki/File:Mac%27s_Caff_door,_luncheon_voucher_sticker,_London_1982.jpg",
+        "https://www.flickr.com/photos/23042180@N00/13113942995"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_film",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Lensa tetap Canon 40mm f/1.7 mencapai ketajaman puncak dan kontras mikro sangat tegas saat ditutup ke bukaan sedang — tampak jelas pada serat renda tirai dan cat kayu mengelupas pintu kafe (sampel 1), detail jembatan serta kubah di seberang sungai berarus deras (sampel 2), hingga tekstur bata dinding gang sempit dari depan ke belakang (sampel 3)."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "canon_sure_shot_max",
+      "brand": "Canon",
+      "model": "Canon Sure Shot Max",
+      "aliases": [
+        "Canon Prima 5",
+        "Canon Autoboy Mini"
+      ],
+      "displayName": "Canon Sure Shot Max (Prima 5 / Autoboy Mini)",
+      "era": "1990s",
+      "category": "film_compact_35mm",
+      "archetype": "premium_point_shoot_35mm",
+      "lookTags": [
+        "crisp-prime",
+        "natural-contrast",
+        "subtle-vignette",
+        "direct-flash",
+        "everyday-snapshot"
+      ],
+      "confidenceLook": "low",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://global.canon/en/c-museum/product/film153.html",
+        "https://www.35mmc.com/07/12/2018/canon-sure-shot-max-review/",
+        "https://kosmofoto.com/2023/12/three-cameras-for-2023/",
+        "https://www.lomography.com/cameras/3334815-canon-sure-shot-max/photos",
+        "https://www.lomography.com/cameras/3345535-canon-prima-5/photos"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_film",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Lensa tetap 3 elemen 38mm f/3.5 menghasilkan ketajaman tengah hingga tepi yang bersih serta lebih hidup dibanding kamera zoom saku awal 1990-an — tampak pada huruf spanduk dan kisi pagar kawat (sampel 1) serta garis tiang lampu dan siluet pegunungan di bawah bendera besar (sampel 2). Catatan audit (low): 0 foto CC/PD; hanya 2 foto B&W sementara dari 1 galeri ulasan (35mmc), tanpa sampel warna."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "olympus_xa",
+      "brand": "Olympus",
+      "model": "Olympus XA",
+      "aliases": [
+        "XA",
+        "Olympus XA (Clamshell Rangefinder)"
+      ],
+      "displayName": "Olympus XA",
+      "era": "1970s",
+      "category": "film_compact_35mm",
+      "archetype": "premium_point_shoot_35mm",
+      "lookTags": [
+        "corner-vignette",
+        "sharp-at-f56",
+        "vintage-flare",
+        "classic-street",
+        "organic-contrast"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://www.olympus-global.com/technology/museum/lecture/vol2/",
+        "https://casualphotophile.com/2018/06/20/olympus-xa-review-35mm-film-camera-rangefinder/",
+        "https://www.35mmc.com/07/07/2016/olympus-xa-review-mighty-micro-machine/",
+        "https://emulsive.org/reviews/camera-reviews/olympus-camera-reviews/the-olympus-xa-how-i-fell-in-love-with-a-tiny-plastic-box",
+        "https://www.japancamerahunter.com/2013/10/olympus-xa-pocket-professional/",
+        "https://commons.wikimedia.org/wiki/File:Teslin_river_1988_01.jpg",
+        "https://commons.wikimedia.org/wiki/File:Teslin-Yukon_river_1988_1.jpg",
+        "https://commons.wikimedia.org/wiki/File:Teslin-Yukon_river_1988_2.jpg"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_film",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Ketiga foto sampel lanskap sungai Teslin–Yukon tahun 1988 memperlihatkan tanda tangan optik F.Zuiko 35mm f/2.8 yang paling ikonik: vignette sudut gelap yang nyata dan alami pada bidang langit biru maupun awan mendung (sangat tampak di sudut kiri atas dan kanan atas sampel 1 dan 2). Catatan audit (medium): Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "ricoh_gr1v",
+      "brand": "Ricoh",
+      "model": "Ricoh GR1v",
+      "aliases": [
+        "GR1v",
+        "Ricoh GR1v Date"
+      ],
+      "displayName": "Ricoh GR1v",
+      "era": "2000s",
+      "category": "film_compact_35mm",
+      "archetype": "premium_point_shoot_35mm",
+      "lookTags": [
+        "edge-to-edge-sharp",
+        "high-contrast",
+        "wide-28mm",
+        "minimal-distortion",
+        "crisp-street"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://www.ricoh-imaging.co.jp/japan/products/ricoh-filmcamera/cameralist/GR1v.html",
+        "https://www.35mmc.com/16/02/2014/ricoh-gr1v-review/",
+        "https://casualphotophile.com/2019/05/17/ricoh-gr1v-film-camera-review/",
+        "https://www.japancamerahunter.com/2012/04/the-ricoh-gr-a-buyers-guide/",
+        "https://www.flickr.com/photos/23899307@N05/10969000854",
+        "https://www.flickr.com/photos/61412481@N06/15958657231",
+        "https://commons.wikimedia.org/wiki/File:Rat_race_-_Flickr_-_Ant_Jackson.jpg"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_film",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Lensa 7 elemen asferis GR 28mm f/2.8 menampilkan ketajaman sudut-ke-sudut dan kontras tinggi yang sangat tegas — nyata terlihat pada tekstur salju, kulit tongkang tua, dan jendela bangunan bata di belakang kanal (sampel 4 di 35mmc), perspektif jalan aspal lebar (sampel 1), siluet menara sungai saat fajar (sampel 2), serta kontras ekstrem penumpang stasiun melawan cahaya balik (sampel 3)."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "rollei_35",
+      "brand": "Rollei",
+      "model": "Rollei 35",
+      "aliases": [
+        "Rollei 35 (Tessar)",
+        "Rollei 35 T",
+        "Rollei 35 Germany",
+        "Singapore"
+      ],
+      "displayName": "Rollei 35",
+      "era": "1960s",
+      "category": "film_slr_35mm",
+      "archetype": "classic_35mm_slr",
+      "lookTags": [
+        "crisp-tessar",
+        "high-contrast",
+        "deep-dof",
+        "clean-geometry",
+        "vintage-character"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "medium",
+      "sources": [
+        "https://photothinking.com/2023-11-11-rollei-35-not-just-small/",
+        "https://www.35mmc.com/06/01/2024/5-frames-with-a-rollei-35-and-kodak-tri-x/",
+        "https://kosmofoto.com/2019/01/rollei-35s-review/",
+        "https://commons.wikimedia.org/wiki/File:Dublin_,_Rollei_35_-_Flickr_-_Bernt_S%C3%B8nvisen.jpg",
+        "https://www.flickr.com/photos/38144390@N04/52249412915",
+        "https://www.flickr.com/photos/95230261@N05/16881113091"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "slr_film",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Lensa lipat Carl Zeiss Tessar 40mm f/3.5 menghasilkan gambar sangat renyah dengan kontras klasik tegas dan garis arsitektur yang lurus rapi — sangat terlihat pada ukiran bola logam dan tekstur granit gedung Dublin (sampel 1), bentang luas kota pelabuhan Bergen dengan ruang tajam dalam dari bukaan fokus zona (sampel 2), serta geometri simetris kubah kaca oktagonal (sampel 3)."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "kodak_ektar_h35",
+      "brand": "Kodak (RETO Production)",
+      "model": "Kodak Ektar H35",
+      "aliases": [
+        "Ektar H35",
+        "H35 Half-Frame"
+      ],
+      "displayName": "Kodak Ektar H35",
+      "era": "2020s",
+      "category": "half_frame_35mm",
+      "archetype": "half_frame_35mm",
+      "lookTags": [
+        "lo-fi",
+        "heavy-vignette",
+        "soft-edges",
+        "coarse-grain",
+        "vertical-frame",
+        "underexposed-indoor"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://www.kodak.com/en/consumer/product/cameras/film/h35-film-camera/",
+        "https://casualphotophile.com/2023/09/11/kodak-ektar-h35-half-frame-film-camera-review/",
+        "https://www.35mmc.com/05/08/2022/kodak-ektar-h35-review-cheap-thrills-with-a-very-simple-camera-by-eric-woods/",
+        "https://shootitwithfilm.com/kodak-ektar-h35-half-frame-film-camera-review/",
+        "https://www.flickr.com/photos/33549575@N04/52741713590",
+        "https://www.flickr.com/photos/200836243@N03/54571259668",
+        "https://www.flickr.com/photos/33549575@N04/52741286916"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "half_frame",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Seluruh ciri lo-fi kamera ini tampak langsung dan ekstrem pada ketiga sampel vertikal 3:4. Catatan audit (medium): Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "olympus_pen_ft",
+      "brand": "Olympus",
+      "model": "Olympus Pen FT",
+      "aliases": [
+        "Olympus PEN-FT",
+        "Pen-FT"
+      ],
+      "displayName": "Olympus Pen FT",
+      "era": "1960s",
+      "category": "half_frame_35mm",
+      "archetype": "half_frame_35mm",
+      "lookTags": [
+        "vertical-diptych",
+        "coarse-grain",
+        "sharp-zuiko",
+        "shallow-dof",
+        "classic-analog"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://www.olympus-global.com/technology/museum/lecture/vol1/?page=technology_museum",
+        "https://casualphotophile.com/2020/08/28/olympus-pen-ft-review/",
+        "https://photothinking.com/2025-05-03-olympus-pen-ft-half-yet-double/",
+        "https://www.flickr.com/photos/98318718@N00/39914941711",
+        "https://www.flickr.com/photos/98318718@N00/40223670082",
+        "https://www.flickr.com/photos/98318718@N00/25043305367"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "half_frame",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Bodi SLR mekanisnya netral terhadap warna, namun menghadirkan dua ciri utama yang kontras dengan kamera half-frame sederhana: format diptik vertikal 18×24mm bersekat garis hitam dengan butiran grain yang jelas lebih besar saat diperbesar (tampak nyata pada bata, permukaan dinding gelap, dan panel kayu di ketiga sampel), dipadukan dengan ketajaman kaca SLR Zuiko serta kendali ruang tajam sempit (shallow DOF) — terbukti sangat jelas pada sampel 2 (irisan jeruk di atas meja dengan latar buram lembut sekaligus daun palem tajam di depan pagar kayu)."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "canon_demi_ee17",
+      "brand": "Canon",
+      "model": "Canon Demi EE17",
+      "aliases": [
+        "Demi EE17",
+        "Canon Demi EE-17"
+      ],
+      "displayName": "Canon Demi EE17",
+      "era": "1960s",
+      "category": "half_frame_35mm",
+      "archetype": "half_frame_35mm",
+      "lookTags": [
+        "vertical-diptych",
+        "dreamy-wideopen",
+        "sharp-stopped-down",
+        "visible-grain",
+        "vintage-1960s"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://global.canon/en/c-museum/product/film64.html",
+        "https://www.35mmc.com/22/02/2019/canon-demi-ee17/",
+        "https://emulsive.org/reviews/camera-reviews/canon-camera-reviews/canon-demi-ee17-the-everyday-diptych-machine",
+        "http://www.alexluyckx.com/blog/2026/07/21/camera-review-blog-no-173-canon-demi-ee17/",
+        "https://www.flickr.com/photos/85202742@N00/5205636727",
+        "https://www.flickr.com/photos/36002603@N00/5057677495",
+        "https://www.flickr.com/photos/36002603@N00/5535365896"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "half_frame",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Ketiga sampel CC memperlihatkan rentang karakter lensa 30mm f/1.7 dengan sangat gamblang. Catatan audit (medium): Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "kodak_funsaver",
+      "brand": "Kodak",
+      "model": "Kodak FunSaver",
+      "aliases": [
+        "Kodak Fun Saver 35",
+        "Kodak FunSaver Single Use Camera",
+        "FunSaver 800"
+      ],
+      "displayName": "Kodak FunSaver",
+      "era": "1980s",
+      "category": "disposable_35mm",
+      "archetype": "disposable_point_shoot",
+      "lookTags": [
+        "warm-nostalgic",
+        "visible-grain",
+        "soft-edges",
+        "punchy-color",
+        "light-vignette",
+        "harsh-flash"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://business.kodakmoments.com/product/kodak-fun-saver-single-use-camera",
+        "https://thedarkroom.com/disposable-cameras-top-cameras-reviewed-compared/kodak-fun-saver-disposable-camera/",
+        "https://casualphotophile.com/2018/10/08/kodak-funsaver-disposable-camera-review-cheap-is-good/",
+        "https://shootitwithfilm.com/fujifilm-quicksnap-and-kodak-funsaver-disposable-cameras/",
+        "https://www.australianphotography.com/gear/review-kodak-funsaver",
+        "https://commons.wikimedia.org/wiki/File:Neshoba_County_General_Hospital_-_16635914310.jpg",
+        "https://commons.wikimedia.org/wiki/File:YLCC_Pigeon_Lake_2015-06-04_001.jpg",
+        "https://www.flickr.com/photos/47717587@N07/4508379823"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "disposable",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Pada ketiga sampel CC luar ruang dan jembatan The Darkroom, ketajaman cukup terbaca di bagian tengah bingkai namun cepat melunak ke arah pinggir dan keempat sudut (tampak jelas pada batang pohon tepi kanan sampel danau, tepi bawah jalan, serta struktur baja tepi jembatan), disertai sedikit aberasi warna tipis pada tepi kontras tinggi dan vignette gelap ringan-sedang di sudut atas pada langit cerah."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "ilford_hp5_plus_single_use_camera",
+      "brand": "Ilford",
+      "model": "Ilford HP5 Plus Single Use Camera",
+      "aliases": [
+        "Harman Ilford HP5 Plus Single Use",
+        "Ilford HP5+ 400 Disposable"
+      ],
+      "displayName": "Ilford HP5 Plus Single Use Camera",
+      "era": "2010s",
+      "category": "disposable_35mm",
+      "archetype": "disposable_point_shoot",
+      "lookTags": [
+        "classic-bw",
+        "smooth-midtones",
+        "textured-grain",
+        "soft-edges",
+        "flash-dependent"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "medium",
+      "sources": [
+        "https://thedarkroom.com/film/harman-ilford-hp5-plus-400-single-use-disposable-camera/",
+        "https://www.australianphotography.com/gear/review-harman-ilford-hp5-plus-single-use-camera",
+        "https://rediscoveranalog.com/camera-review-ilford-hp5-plus-disposable-camera/",
+        "https://www.flickr.com/photos/25955895@N03/9677377234"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "disposable",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Ketiga sampel visual (gedung Art Deco Tomorrowland, belakang mobil klasik perak di terik matahari, dan wastafel berlilin redup di The Darkroom) memperlihatkan ketajaman tengah yang rapi untuk kamera sekali pakai, disertai pelunakan sudut dan distorsi barel halus di tepi bingkai serta pendaran sorotan lembut (glow) di sekitar nyala lilin dan pantulan krom terik."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "ilford_xp2_super_single_use_camera",
+      "brand": "Ilford",
+      "model": "Ilford XP2 Super Single Use Camera",
+      "aliases": [
+        "Ilford XP2 Super 400 Disposable",
+        "Ilford XP2 Single Use C-41"
+      ],
+      "displayName": "Ilford XP2 Super Single Use Camera",
+      "era": "unspecified",
+      "category": "disposable_35mm",
+      "archetype": "disposable_point_shoot",
+      "lookTags": [
+        "fine-grain-bw",
+        "smooth-tonality",
+        "clean-monochrome",
+        "wide-latitude",
+        "muddy-underexposure"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "medium",
+      "sources": [
+        "https://thedarkroom.com/disposable-cameras-top-cameras-reviewed-compared/ilford-xp2-single-use-disposable-camera/",
+        "https://www.artizanimages.com/blog/2017/11/ilford-xp2-super-single-use-camera-review",
+        "https://cameradojo.com/film/ilford-xp2-super/"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "disposable",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Berbagi konstruksi optik sekali pakai yang serupa dengan HP5 Plus Single Use — bagian tengah bingkai terbaca cukup rapi pada sinar matahari penuh (dinding granit tebing dan rangka baja jembatan The Darkroom), namun pinggir serta sudut bingkai melunak lembut dengan sedikit vignette tipis. Catatan audit (medium): 0 foto CC/PD lokal; bukti visual hanya 2 foto sementara (< 3) dari 1 galeri ulasan (The Darkroom), ditopang 3 ulasan konsisten."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "lomography_simple_use_reloadable_film_camera",
+      "brand": "Lomography",
+      "model": "Lomography Simple Use Reloadable Film Camera",
+      "aliases": [
+        "Lomography Simple Use",
+        "Simple Use Film Camera",
+        "Simple Use Color Negative 400"
+      ],
+      "displayName": "Lomography Simple Use Reloadable Film Camera",
+      "era": "2010s",
+      "category": "disposable_35mm",
+      "archetype": "disposable_point_shoot",
+      "lookTags": [
+        "lofi-analog",
+        "soft-corners",
+        "barrel-distortion",
+        "gritty-grain",
+        "color-gel-flash"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://www.lomography.com/magazine/345086-simple-and-reloadable-the-classic-picks",
+        "https://www.pcmag.com/reviews/lomography-simple-use-film-camera-color-negative-400",
+        "https://www.digitalcameraworld.com/reviews/lomography-simple-use-reloadable-film-camera-lomochrome-purple-review",
+        "https://www.tomsguide.com/cameras-photography/lomography-simple-use-reloadable-film-camera-classicolor-review",
+        "https://www.flickr.com/photos/78039748@N07/38219918926",
+        "https://www.flickr.com/photos/79157069@N03/46301836615",
+        "https://www.flickr.com/photos/187288315@N08/49601994546"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "disposable",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Pada ketiga sampel CC Flickr terlihat ciri optik lo-fi yang sangat konsisten: bagian tengah terbaca cukup jelas namun sudut bingkai melunak tajam (tampak nyata pada sudut papan plang parkir dan semak tepi kanan sampel 2), distorsi barel melengkung kentara pada garis lurus dekat bingkai (jelas pada garis horizontal bukaan kayu sampel 3), vignette sudut ringan-sedang, dan pinggiran aberasi kromatik halus di tepi kontras tinggi."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "polaroid_sun_660_autofocus",
+      "brand": "Polaroid",
+      "model": "Polaroid Sun 660 Autofocus",
+      "aliases": [
+        "Sun 660",
+        "Polaroid 660 AF",
+        "Polaroid Supercolor 670 AF"
+      ],
+      "displayName": "Polaroid Sun 660 Autofocus",
+      "era": "1980s",
+      "category": "instant_film",
+      "archetype": "instant_integral_vintage",
+      "lookTags": [
+        "instant-vintage",
+        "sonar-sharp",
+        "pastel-shift",
+        "soft-vignette",
+        "direct-flash",
+        "square-instant"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "medium",
+      "sources": [
+        "https://shootitwithfilm.com/my-love-for-the-vintage-polaroid-sun-660/",
+        "https://casualphotophile.com/2018/08/22/polaroid-sun-660-review/",
+        "https://www.flickr.com/photos/25955895@N03/6942679999"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "instant",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Berkat sistem autofokus ultrasonik Sonar, subjek utama pada seluruh sampel yang diperiksa (menara SPBU Art Deco, jeruji jendela & mural dinding, serta batang pohon tepi jalan) tampil jauh lebih terfokus tajam dan konsisten di area tengah dibanding kamera kotak 600 fokus tetap, lalu perlahan melunak dengan vignette tipis yang halus di keempat sudut."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "polaroid_spectra",
+      "brand": "Polaroid",
+      "model": "Polaroid Spectra",
+      "aliases": [
+        "Polaroid Image System",
+        "Spectra System",
+        "Polaroid Spectra SE"
+      ],
+      "displayName": "Polaroid Spectra (Image System)",
+      "era": "1980s",
+      "category": "instant_film",
+      "archetype": "instant_integral_vintage",
+      "lookTags": [
+        "wide-instant",
+        "crisp-quintic",
+        "moody-pastel",
+        "soft-vignette",
+        "cinematic-frame"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "medium",
+      "sources": [
+        "https://bluemooncameracodex.com/film-fridays/ffpospectra",
+        "https://photothinking.com/2018-05-11-polaroid-spectra-almost-instant/",
+        "https://www.instantphoto.eu/pola/pola_spectra.htm",
+        "https://www.lomography.com/magazine/8159-polaroid-spectra-image-system"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "instant",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Pada kedua pindaian cetak bersih yang diperiksa (sepeda motor Triumph + pengendara berhelm penuh, serta papan nama Sabatino Moped Scooter Vintage dari Blue Moon Camera Codex), perbedaan kualitas optiknya langsung terlihat: proporsi persegi panjang yang lebih lega menghadirkan bingkai sinematik dibanding format persegi 600, ketajaman tengah dari lensa Quintic 3 elemen dan Sonar AF terasa lebih bersih dan rapi pada kisi mesin motor maupun tipografi papan nama, disertai vignette lembut yang nyata di keempat sudut serta pemisahan latar yang halus."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "polaroid_now_gen_2",
+      "brand": "Polaroid",
+      "model": "Polaroid Now Gen 2",
+      "aliases": [
+        "Polaroid Now Generation 2",
+        "Polaroid Now (2nd Gen)"
+      ],
+      "displayName": "Polaroid Now Gen 2",
+      "era": "2020s",
+      "category": "instant_film",
+      "archetype": "instant_integral_vintage",
+      "lookTags": [
+        "dreamy-instant",
+        "muted-warm",
+        "pastel-magenta-cast",
+        "soft-edges",
+        "strong-flash"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://www.polaroid.com/en_nl/products/polaroid-now-generation-2",
+        "https://www.digitalcameraworld.com/reviews/polaroid-now-generation-2-review",
+        "https://chriskendrickphoto.co.uk/blog/gear-review-polaroid-now-gen-2-camera",
+        "https://www.myleskatherine.com/blog/2026/3/1/polaroid-now-generation-2-review-and-how-to-with-sample-photos-the-best-polaroid-camera-for-beginners",
+        "https://www.flickr.com/photos/12836528@N00/52848397955"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "instant",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Pada pindaian cetak gurun Flickr CC (Polaroid Now 2023) dan pengamatan ulasan Polaroid Now Gen 2 (Digital Camera World, Chris Kendrick, Myles Katherine), ketajaman cukup rapi di bidang tengah subjek namun tepi dan keempat sudut tetap terasa lembut berkabut dengan sedikit vignette halus. Catatan audit (medium): Foto contoh diperiksa visual < 3 (hanya 2: 1 Flickr CC + 1 sampel ulasan Myles Katherine)."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "fujifilm_instax_wide_300",
+      "brand": "Fujifilm",
+      "model": "Instax Wide 300",
+      "aliases": [
+        "Fujifilm Instax Wide 300",
+        "Fuji Instax Wide 300"
+      ],
+      "displayName": "Fujifilm Instax Wide 300",
+      "era": "2010s",
+      "category": "instant_film",
+      "archetype": "instant_modern_instax",
+      "lookTags": [
+        "wide-instax",
+        "crisp-contrast",
+        "cool-bright",
+        "narrow-dr",
+        "soft-edges",
+        "organic-print"
+      ],
+      "confidenceLook": "low",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://www.fujifilm.com/us/en/consumer/instax/cameras/wide300/specifications",
+        "https://www.pcmag.com/reviews/fujifilm-instax-wide-300",
+        "https://www.digitalcameraworld.com/reviews/fujifilm-instax-wide-300",
+        "https://danfinnen.com/2015/03/28/new-review-alert-fuji-instax-wide-300-instant-camera/",
+        "https://commons.wikimedia.org/wiki/File:DonaldCousensandHighway701282024.png"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "instant",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Pada pindaian cetak asli CC0 (Donald Cousens Parkway and Highway 7) tampak jelas betapa bingkai lanskap lebar 62×99mm memberi napas komposisi yang lapang dan sinematik. Catatan audit (low): Bukti visual sangat terbatas: hanya 1 pindaian cetak fisik (CC0 Wikimedia) yang diperiksa langsung."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "fujifilm_instax_square_sq6",
+      "brand": "Fujifilm",
+      "model": "Instax Square SQ6",
+      "aliases": [
+        "Fujifilm Instax Square SQ6",
+        "Instax SQ6"
+      ],
+      "displayName": "Fujifilm Instax Square SQ6",
+      "era": "2010s",
+      "category": "instant_film",
+      "archetype": "instant_modern_instax",
+      "lookTags": [
+        "square-instax",
+        "punchy-warm",
+        "deep-shadows",
+        "clipped-highlights",
+        "creative-flash"
+      ],
+      "confidenceLook": "low",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://www.fujifilm.com/uy/en/consumer/instax/cameras/squaresq6/specifications",
+        "https://fstoppers.com/film/fstoppers-reviews-fujifilm-instax-square-sq6-camera-medium-format-your-pocket-273236",
+        "https://www.techradar.com/reviews/fujifilm-instax-sq6-review",
+        "https://www.pcmag.com/reviews/fujifilm-instax-square-sq6",
+        "https://www.dpreview.com/news/0067965594/fujifilm-s-instax-square-sq6-is-a-square-format-analog-instant-camera/"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "instant",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Pada pindaian cetak etalase roti & gandum kering dari Fstoppers, format persegi 62×62mm memberi aura retro klasik Polaroid tetapi dengan ketajaman tengah yang lebih terjaga saat zona fokus sesuai (tangkai gandum dan serat peti kayu tampak jelas), sedikit pendaran/flare lembut pada pantulan kaca etalase di sudut kanan atas, serta pelunakan halus ke tepi bingkai."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "fujifilm_instax_mini_11",
+      "brand": "Fujifilm",
+      "model": "Instax Mini 11",
+      "aliases": [
+        "Fujifilm Instax Mini 11",
+        "Cheki instax mini 11"
+      ],
+      "displayName": "Fujifilm Instax Mini 11",
+      "era": "2020s",
+      "category": "instant_film",
+      "archetype": "instant_modern_instax",
+      "lookTags": [
+        "balanced-instax",
+        "vivid-sky",
+        "soft-vignette",
+        "constant-flash",
+        "dark-background"
+      ],
+      "confidenceLook": "low",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://www.fujifilm.com/uy/en/consumer/instax/cameras/mini11/specifications",
+        "https://www.popphoto.com/gear-reviews/instax-mini-11-review/",
+        "https://www.dpreview.com/reviews/3860122294/fujifilm-instax-mini-11-review-the-best-easy-to-use-instax-mini-model/",
+        "https://www.cameralabs.com/fujifilm-instax-mini-11-review/"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "instant",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Pengamatan langsung atas dinding kumpulan cetakan uji Popular Photography (sekitar 15 cetakan non-wajah meliputi dermaga kayu, pantai, langit berawan, rumah putih, tanaman hias pot, bunga putih, pohon salju, dan anjing hitam di beranda) langsung membuktikan keunggulan utama Mini 11 yang dipuji DPReview dan Camera Labs: eksposur otomatis penuh jauh lebih konsisten dibanding seri Mini lama sehingga cetakan luar ruang maupun interior jarang jatuh gelap total atau terbakar habis."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "lomography_diana_f_plus",
+      "brand": "Lomography",
+      "model": "Diana F+",
+      "aliases": [
+        "Lomography Diana F+",
+        "Diana F Plus"
+      ],
+      "displayName": "Lomography Diana F+",
+      "era": "2000s",
+      "category": "toy_camera_120",
+      "archetype": "toy_lomo_vignette",
+      "lookTags": [
+        "heavy-vignette",
+        "dreamy-soft",
+        "radial-blur",
+        "light-leak",
+        "plastic-distortion",
+        "square-format"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://www.lomography.com/magazine/324365-lomopedia-diana-f",
+        "https://austerityphoto.co.uk/diana-f-review-or-how-i-learned-to-love-the-plastic-bomb/",
+        "https://www.myleskatherine.com/blog/2024/2/12/review-of-the-diana-f-with-sample-photos-using-lomography-lomochrome-purple-and-lomochrome-turquoise-in-st-lucia-teaming-up-with-lomography-to-save-120-film",
+        "https://commons.wikimedia.org/wiki/File:Borne_incendie_(15404264009",
+        "https://www.flickr.com/photos/37089490@N06/4539752958"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "toy_lens",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Karakternya amat dominan dan konsisten lintas seluruh sampel yang diperiksa (hidran merah, hutan inframerah 6×6, meja makan dekat jendela, tembok kawat berduri, eksposur ganda atap rumah, serta sepeda biru di depan pintu garasi): vignette gelap sangat pekat di keempat sudut membingkai gambar seperti terowongan nostalgia, ketajaman hanya berada di area tengah lalu melunak menjadi pendaran kabur radial lembut seperti lukisan dengan lengkungan distorsi barel halus pada garis lurus (tampak jelas pada panel pintu garasi), serta pendaran sorotan (dreamy glow) yang kuat di sekitar jendela dan langit terang."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "lomography_la_sardina",
+      "brand": "Lomography",
+      "model": "La Sardina",
+      "aliases": [
+        "Lomography La Sardina",
+        "La Sardina 8Ball",
+        "La Sardina DIY"
+      ],
+      "displayName": "Lomography La Sardina",
+      "era": "2010s",
+      "category": "toy_camera_35mm",
+      "archetype": "toy_lomo_vignette",
+      "lookTags": [
+        "ultra-wide-lofi",
+        "heavy-vignette",
+        "soft-corners",
+        "dramatic-perspective",
+        "plastic-flare"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://www.lomography.com/magazine/243257-lomopedia-lomography-la-sardina",
+        "https://au.pcmag.com/digital-cameras/5951/lomography-la-sardina-camera-flash-western-edition",
+        "https://cameragocamera.com/2021/10/11/lomography-la-sardina/",
+        "https://commons.wikimedia.org/wiki/File:Nanjing_Memorial_on_film_(12125869446",
+        "https://www.flickr.com/photos/12836528@N00/12125485353",
+        "https://www.flickr.com/photos/27482959@N08/22875620685"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "toy_lens",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Ketiga sampel CC (tangga monumen, menara gedung mendongak, dan danau pepohonan musim gugur) secara gamblang menampilkan tanda tangan optik 22mm La Sardina: perspektif sudut amat lebar yang mendramatisasi garis arsitektur dan kedalaman ruang, vignette sudut gelap yang sangat nyata di keempat pojok (mencolok baik pada langit B&W maupun langit biru cerah sampel 3), ketajaman tengah cukup tegas namun cepat luruh menjadi kabur lembut di pinggir kiri-kanan (sangat jelas pada dedaunan tepi kanan sampel danau), serta sedikit distorsi tepi khas plastik."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "camp_snap_camera",
+      "brand": "Camp Snap",
+      "model": "Camp Snap Camera",
+      "aliases": [
+        "Camp Snap",
+        "Camp Snap 2"
+      ],
+      "displayName": "Camp Snap Camera",
+      "era": "2020s",
+      "category": "toy_camera_digital",
+      "archetype": "toy_lomo_vignette",
+      "lookTags": [
+        "lofi-digital",
+        "vintage-filter",
+        "narrow-dr",
+        "highlight-bloom",
+        "noisy-lowlight",
+        "soft-corners"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://www.campsnapphoto.com/pages/specification",
+        "https://www.35mmc.com/09/02/2026/camp-snap-camera-a-simple-and-fun-everyday-carry/",
+        "https://www.dpreview.com/reviews/2441177946/camp-snap-camera-review-perfect-for-camp-rules-but-what-about-the-photos/",
+        "https://petapixel.com/2025/03/31/camp-snap-camera-review-light-hearted-and-nostalgia-packed/",
+        "https://www.pcmag.com/reviews/camp-snap-2"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "toy_lens",
+      "tuning_notes": "Karakter foto berasal langsung dari profil JPEG bawaan pabrik — revisi awal (v101/v103) terpasang default filter Vintage bernuansa hangat-kehijauan, sementara revisi selanjutnya memungkinkan pengguna mengunggah profil Standard, Vintage, Black & White, atau custom LUT/filter melalui berkas firmware komputer. Catatan audit (medium): 0 foto CC/PD lokal; bukti visual hanya 2 foto sementara (< 3) dari 1 galeri ulasan (35mmc), ditopang 4 ulasan konsisten."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "nintendo_game_boy_camera",
+      "brand": "Nintendo",
+      "model": "Game Boy Camera",
+      "aliases": [
+        "Pocket Camera",
+        "Nintendo Game Boy Camera",
+        "GB Camera"
+      ],
+      "displayName": "Nintendo Game Boy Camera",
+      "era": "1990s",
+      "category": "toy_camera_digital",
+      "archetype": "toy_lomo_vignette",
+      "lookTags": [
+        "pixelated-8bit",
+        "4-shade-mono",
+        "dither-pattern",
+        "extreme-lofi",
+        "stark-contrast"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "medium",
+      "sources": [
+        "https://petapixel.com/2022/05/05/a-review-of-the-nintendo-game-boy-camera-24-years-later/",
+        "https://casualphotophile.com/2021/12/19/game-boy-camera-review/",
+        "https://www.35mmc.com/28/04/2018/game-boy-camera-by-adam-laws/",
+        "https://commons.wikimedia.org/wiki/File:Appreciably_lower_quality_dunedin_tram_in_otago_settlers_museum.png",
+        "https://commons.wikimedia.org/wiki/File:Car_photo_taken_by_gameboy_camera.png",
+        "https://www.flickr.com/photos/68790385@N04/6279768354"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "toy_lens",
+      "tuning_notes": "Tampilan ekstrem 128×112 berpalet 4 tingkat abu-abu berasal secara mutlak dari perangkat keras sensor 2-bit bawaan (tidak dapat diubah ke warna penuh). Fokus kalibrasi (Resolusi Mikro & Piksel 8-Bit): Pada ketiga tangkapan mentah 128×112 CC/CC0 (trem Dunedin, sedan parkir, dan pasangan stereo Subaru 3D Liberty), seluruh citra tersusun atas blok piksel persegi kasar bergaya 8-bit tanpa peredaman atau anti-aliasing sehingga detail halus melebur menjadi siluet grafis ikonik."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "sony_ericsson_k800i",
+      "brand": "Sony Ericsson",
+      "model": "Sony Ericsson K800i",
+      "aliases": [
+        "K800i",
+        "K800a",
+        "K800c",
+        "Cyber-shot K800i"
+      ],
+      "displayName": "Sony Ericsson K800i",
+      "era": "2000s",
+      "category": "camera_phone",
+      "archetype": "early_camera_phone",
+      "lookTags": [
+        "crisp-3mp",
+        "cool-muted-wb",
+        "clipped-highlights",
+        "xenon-flash",
+        "early-mobile"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "medium",
+      "sources": [
+        "https://www.gsmarena.com/sony_ericsson_k800-review-93.php",
+        "https://www.gsmarena.com/sony_ericsson_k800-review-93p2.php",
+        "https://www.techradar.com/reviews/phones/mobile-phones/sony-ericsson-k800i-87823/review",
+        "https://www.mobiletechreview.com/phones/sony-ericsson-K800i.htm",
+        "https://www.dpreview.com/forums/threads/sony-k800i-phone-vs-canon-350d.1679406/",
+        "https://commons.wikimedia.org/wiki/File:%27s-Hertogenbosch_the_bullock.jpg",
+        "https://commons.wikimedia.org/wiki/File:Amazing_sunrise_at_Kuakata_Sea_Beach.jpg",
+        "https://commons.wikimedia.org/wiki/File:%22Checkerboard_Flats%22,_Page_Street,_SW1_-_geograph.org.uk_-_573512.jpg"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "camera_phone",
+      "tuning_notes": "Karakter utama muncul langsung pada setelan bawaan otomatis (default JPEG Cyber-shot) tanpa efek tambahan; ponsel menyediakan efek opsional (Black & white, Negative, Sepia, Solarize) dan pilihan adegan, namun ketiga sampel CC yang diperiksa adalah SOOC langsung dari firmware bawaan Sony Ericsson."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "nokia_n95",
+      "brand": "Nokia",
+      "model": "Nokia N95",
+      "aliases": [
+        "N95",
+        "Nokia N95-1",
+        "Nokia N95 8GB"
+      ],
+      "displayName": "Nokia N95",
+      "era": "2000s",
+      "category": "camera_phone",
+      "archetype": "early_camera_phone",
+      "lookTags": [
+        "detailed-daylight",
+        "oversharpened-edges",
+        "cool-tint",
+        "clipped-sky",
+        "lowlight-noise",
+        "weak-led-flash"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "medium",
+      "sources": [
+        "https://www.gsmarena.com/nokia_n95_camera-review-139p2.php",
+        "https://allaboutsymbian.com/reviews/item/Nokia_N95-part_3_the_Camera.php",
+        "https://www.cnet.com/tech/mobile/living-with-the-n95/",
+        "https://commons.wikimedia.org/wiki/File:%22Odietako_xendetako%22_kartela.jpg",
+        "https://commons.wikimedia.org/wiki/File:%27s-Hertogenbosch_-_Provinciehuis_Noord-Brabant.jpg",
+        "https://commons.wikimedia.org/wiki/File:%22Bolo_de_mel%22_cakes,_Madeira.jpg"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "camera_phone",
+      "tuning_notes": "Karakter foto berasal dari mode otomatis standar JPEG Symbian S60 (tanpa filter Color Tone Sepia/B&W/Vivid); ulasan GSMArena dan All About Symbian mencatat bahwa beberapa mode adegan (Scene Mode) dapat mendorong penajaman tepi lebih agresif, namun ketiga sampel CC yang diperiksa adalah EXIF SOOC Nokia N95."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "nokia_n8",
+      "brand": "Nokia",
+      "model": "Nokia N8",
+      "aliases": [
+        "Nokia N8-00",
+        "N8"
+      ],
+      "displayName": "Nokia N8",
+      "era": "2010s",
+      "category": "camera_phone",
+      "archetype": "early_camera_phone",
+      "lookTags": [
+        "natural-rendering",
+        "crisp-zeiss",
+        "balanced-dr",
+        "organic-texture",
+        "xenon-flash",
+        "compact-like"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "medium",
+      "sources": [
+        "https://www.gsmarena.com/nokia_n8-review-523p6.php",
+        "https://www.dpreview.com/forums/threads/nokia-n8-photo-thread.3153994/",
+        "https://commons.wikimedia.org/wiki/File:%27Adenium_Obesum%27_flowers_and_buds,Gurgaon,India.jpg",
+        "https://commons.wikimedia.org/wiki/File:%27BANOOL%27_Linden.jpg",
+        "https://www.flickr.com/photos/96437548@N00/5341147374"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "camera_phone",
+      "tuning_notes": "Seluruh tampilan alami menyerupai kamera kompak saku muncul langsung pada setelan bawaan otomatis (default JPEG Symbian^3) tanpa filter Color Tone tambahan; ketiga sampel CC yang diperiksa adalah tangkapan standar tanpa olah lanjut."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "nokia_808_pureview",
+      "brand": "Nokia",
+      "model": "Nokia 808 PureView",
+      "aliases": [
+        "808 PureView",
+        "Nokia 808"
+      ],
+      "displayName": "Nokia 808 PureView",
+      "era": "2010s",
+      "category": "camera_phone",
+      "archetype": "early_camera_phone",
+      "lookTags": [
+        "organic-oversampled",
+        "ultra-detailed",
+        "natural-bokeh",
+        "clean-texture",
+        "filmic-grain",
+        "xenon-flash"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "medium",
+      "sources": [
+        "https://www.dpreview.com/reviews/4388245494/nokia-808-pureview-review/",
+        "https://www.gsmarena.com/nokia_808_pureview-review-776p6.php",
+        "https://www.techradar.com/reviews/phones/mobile-phones/nokia-808-pureview-1090241/review/12",
+        "https://allaboutsymbian.com/reviews/item/15115_Nokia_808_PureView_part_2a_cam.php",
+        "https://commons.wikimedia.org/wiki/File:2012-07-19_Leucocoprinus_cretaceus_(Bull.-Fr",
+        "https://commons.wikimedia.org/wiki/File:1981_Tagora_GLS.jpg",
+        "https://commons.wikimedia.org/wiki/File:2013-04-02_Trametes_cingulata_Berk_319725.jpg"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "camera_phone",
+      "tuning_notes": "Karakter paling ikonik berasal dari mode bawaan PureView oversampling (5 MP / 8 MP default JPEG) yang memadatkan beberapa piksel menjadi satu piksel bersih bertekstur organik; mode Creative menyediakan pilihan resolusi penuh 34–38 MP (detail maksimal tetapi butiran lebih terasa) serta setelan saturasi/kontras, namun ketiga sampel CC yang diperiksa adalah EXIF SOOC 808 PureView."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "apple_iphone_3gs",
+      "brand": "Apple",
+      "model": "iPhone 3GS",
+      "aliases": [
+        "Apple iPhone 3GS",
+        "iPhone 3G S"
+      ],
+      "displayName": "Apple iPhone 3GS",
+      "era": "2000s",
+      "category": "camera_phone",
+      "archetype": "early_camera_phone",
+      "lookTags": [
+        "balanced-daylight",
+        "luminance-grain",
+        "modest-3mp",
+        "clipped-highlights",
+        "no-flash-lowlight"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://support.apple.com/en-om/112307",
+        "https://www.gsmarena.com/apple_iphone_3gs-review-369p7.php",
+        "https://www.techradar.com/reviews/phones/mobile-phones/iphone-3gs-610078/review/7",
+        "https://commons.wikimedia.org/wiki/File:%27_98_-_Una_Honda_s2000_nera_con_rollbar_blu.jpg",
+        "https://commons.wikimedia.org/wiki/File:02_NBA_Station_04.jpg",
+        "https://commons.wikimedia.org/wiki/File:00_Mission_Dolores.jpg"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "camera_phone",
+      "tuning_notes": "Aplikasi kamera bawaan iOS 3–4 sangat minimalis tanpa mode adegan, filter warna, maupun HDR (HDR baru hadir mulai iPhone 4 / iOS 4.1), sehingga seluruh ciri khas berasal 100% dari JPEG otomatis bawaan kamera."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "samsung_galaxy_s_ii",
+      "brand": "Samsung",
+      "model": "Galaxy S II",
+      "aliases": [
+        "GT-I9100",
+        "Samsung Galaxy S II",
+        "Galaxy S2",
+        "SC-02C"
+      ],
+      "displayName": "Samsung Galaxy S II (GT-I9100)",
+      "era": "2010s",
+      "category": "camera_phone",
+      "archetype": "early_camera_phone",
+      "lookTags": [
+        "punchy-8mp",
+        "vivid-saturation",
+        "crisp-daylight",
+        "clipped-sky",
+        "smudged-lowlight"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://www.samsungmobilepress.com/media-assets/galaxy-s-ii?tab=specs",
+        "https://www.gsmarena.com/samsung_i9100_galaxy_s_ii-review-588p5.php",
+        "https://www.imaging-resource.com/cameras/samsung-galaxy-s-ii-review/",
+        "https://www.pcmag.com/reviews/samsung-galaxy-s-ii-unlocked",
+        "https://commons.wikimedia.org/wiki/File:%22Brouwershuis%22_of_%22Waterhuis%22_2012-09-25_07-43-27.jpg",
+        "https://commons.wikimedia.org/wiki/File:%22%D7%90%D7%99%D7%A8%D7%95%D7%A1_%D7%96%D7%94%D7%95%D7%91%22.jpg",
+        "https://commons.wikimedia.org/wiki/File:%2717_Ford_Super_Duty_Regular_Cab.jpg"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "camera_phone",
+      "tuning_notes": "Karakter tajam, kontras tegas, dan saturasi warna hidup berasal langsung dari pemrosesan JPEG otomatis bawaan aplikasi kamera TouchWiz Android (tanpa perlu mengaktifkan filter Negative/Sepia/Grayscale maupun mode adegan khusus); sampel 1–2 merupakan SOOC firmware GT-I9100 murni (sampel 3 membawa jejak simpan ulang Aviary, diverifikasi konsisten dengan sampel 1–2 dan ulasan)."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "sony_cyber_shot_dsc_w55",
+      "brand": "Sony",
+      "model": "Cyber-shot DSC-W55",
+      "aliases": [
+        "DSC-W55",
+        "Sony W55"
+      ],
+      "displayName": "Cyber-shot DSC-W55",
+      "era": "2000s",
+      "category": "digital_compact",
+      "archetype": "ccd_compact_2000s",
+      "lookTags": [
+        "warm",
+        "punchy-daylight",
+        "soft-corners",
+        "noise-smoothing",
+        "harsh-flash"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://www.sony.co.id/en/electronics/support/compact-cameras-dscw-series/dsc-w55/specifications",
+        "https://www.imaging-resource.com/cameras/sony-dsc-w55-review/test/",
+        "https://uk.pcmag.com/cameras/24301/sony-cyber-shot-dsc-w55",
+        "https://bling-inc.com/blogs/museum/sony-cyber-shot-dsc-w55",
+        "https://commons.wikimedia.org/wiki/File:159010_at_Woking_(11894600086",
+        "https://commons.wikimedia.org/wiki/File:%27%27Taielet%27%27_de_Tel_Aviv.jpg",
+        "https://commons.wikimedia.org/wiki/File:-babiesgolden.JPG"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Karakter hangat-pekat dan kontras khas CCD 2000-an muncul langsung pada pengaturan bawaan (default SOOC JPEG / Normal); kamera menyediakan mode warna Vivid, Natural, Sepia, dan B&W, tetapi ketiga foto sampel EXIF yang diperiksa berasal dari keluaran JPEG standar kamera."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "sony_cyber_shot_dsc_t7",
+      "brand": "Sony",
+      "model": "Cyber-shot DSC-T7",
+      "aliases": [
+        "DSC-T7",
+        "Sony T7"
+      ],
+      "displayName": "Cyber-shot DSC-T7",
+      "era": "2000s",
+      "category": "digital_compact",
+      "archetype": "ccd_dreamy_pastel",
+      "lookTags": [
+        "natural-color",
+        "soft-detail",
+        "dreamy",
+        "high-iso-noise",
+        "ultra-compact-ccd"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://www.sony.co.uk/electronics/support/compact-cameras-dsc-t-series/dsc-t7/specifications",
+        "https://dpinterface.com/reviews/sony-cybershot-t7/",
+        "https://www.techradar.com/reviews/cameras-and-camcorders/cameras/compact-cameras/sony-cyber-shot-dsc-t7-64361/review",
+        "https://uk.pcmag.com/cameras/26324/sony-cyber-shot-dsc-t7",
+        "https://www.dpreview.com/forums/threads/sony-cyber-shot-dsc-t7-review.3422505/",
+        "https://commons.wikimedia.org/wiki/File:01_EVA_77W_rainbow_detail.jpg",
+        "https://commons.wikimedia.org/wiki/File:1-Eleven_(E",
+        "https://commons.wikimedia.org/wiki/File:100_Fairlight_Beach.jpg"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Karakter warna yang relatif bersih-alami namun bertekstur lembut berasal dari pengaturan bawaan (default SOOC JPEG) pada optik lipat internal; tidak membutuhkan mode warna khusus, meski kamera menyediakan opsi Natural, Vivid, Sepia, dan B&W."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "sony_mavica_mvc_fd7",
+      "brand": "Sony",
+      "model": "Mavica MVC-FD7",
+      "aliases": [
+        "MVC-FD7",
+        "Mavica FD7",
+        "Sony FD7"
+      ],
+      "displayName": "Mavica MVC-FD7",
+      "era": "1990s",
+      "category": "digital_compact",
+      "archetype": "ccd_dreamy_pastel",
+      "lookTags": [
+        "lo-fi",
+        "low-res-vga",
+        "jpeg-artifacts",
+        "dreamy-soft",
+        "clipped-highlights",
+        "harsh-flash"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://www.sony.com/electronics/support/res/manuals/W000/W0007206M.pdf",
+        "https://mikeeckman.com/wrotniak/photo/snap/fd7.html",
+        "https://graphics.stanford.edu/~lucasp/Mavica/",
+        "https://www.digitalkameramuseum.de/en/cameras/item/sony-mvc-fd7",
+        "https://www.mavicazine.com/fd7/",
+        "https://collection.guyjbrown.com/blog/sony-mavica-mvc-fd7-camera/",
+        "https://commons.wikimedia.org/wiki/File:Numbers_in_a_City_New_Haven_1997_SML_(7994149144"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Karakter lo-fi 1997 muncul sepenuhnya dari JPEG bawaan 640×480 langsung ke disket (pilihan Standard vs Fine mengatur tingkat kompresi, serta opsi Picture Effect seperti Sepia/Monotone/Pastel jarang dipakai dibanding warna standar bawaan). Catatan audit (medium): 0 foto tunggal 640x480 CC/PD lokal (hanya 1 kolase grid 100 foto CC di Wikimedia + 5 sampel sementara lintas 2 arsip)."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "canon_powershot_g10",
+      "brand": "Canon",
+      "model": "PowerShot G10",
+      "aliases": [
+        "Canon G10",
+        "G10"
+      ],
+      "displayName": "PowerShot G10",
+      "era": "2000s",
+      "category": "digital_compact",
+      "archetype": "ccd_compact_2000s",
+      "lookTags": [
+        "sharp-base-iso",
+        "punchy-color",
+        "high-contrast",
+        "clipped-highlights",
+        "noisy-high-iso"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://support.usa.canon.com/kb/s/article/ART105000",
+        "https://www.dpreview.com/reviews/5619014799/canong10/",
+        "https://www.imaging-resource.com/cameras/canon-g10-review/",
+        "https://www.cameralabs.com/canon_powershot_g10/5/",
+        "https://commons.wikimedia.org/wiki/File:%22A%22_restaurant_in_Hauz_Khas_Village,_New_Delhi_India_2013.jpg",
+        "https://commons.wikimedia.org/wiki/File:%22Hardwicke%22_-_Flickr_-_James_E._Petts.jpg",
+        "https://commons.wikimedia.org/wiki/File:%22INTOURIST_PALACE%22_(3846213343"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Karakter tajam-kontras dengan warna kaya hadir sejak JPEG standar bawaan (default DIGIC 4); mode My Colors (Vivid, Positive Film, Neutral, B&W) tersedia untuk memodifikasi saturasi, sedangkan pemotretan RAW dapat meredam pemotongan sorotan langit terang dibanding JPEG bawaan."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "canon_ixy_digital_110_is",
+      "brand": "Canon",
+      "model": "IXY Digital 110 IS",
+      "aliases": [
+        "PowerShot SD1200 IS",
+        "Digital IXUS 95 IS"
+      ],
+      "displayName": "IXY Digital 110 IS (PowerShot SD1200 IS / Digital IXUS 95 IS)",
+      "era": "2000s",
+      "category": "digital_compact",
+      "archetype": "ccd_dreamy_pastel",
+      "lookTags": [
+        "warm-skin",
+        "vivid-daylight",
+        "gentle-softness",
+        "noise-smoothing",
+        "direct-flash"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://id.canon/id/support/6200040400",
+        "https://www.cameralabs.com/canon_powershot_sd1200_is_ixus_95_is/3/",
+        "https://www.imaging-resource.com/cameras/canon-sd1200-is-review/",
+        "https://www.dpreview.com/forums/threads/canon-powershot-sd1200-is-digital-ixus-95-is-review.3407472/",
+        "https://commons.wikimedia.org/wiki/File:-_15%C2%B0C_im_Winter_2012.jpg",
+        "https://commons.wikimedia.org/wiki/File:.%D1%86%D0%B5%D1%80%D0%BA%D0%BE%D0%B2%D1%8C_%D0%A1%D0%B2%D1%8F%D1%82%D0%BE%D0%B9_%D0%A2%D1%80%D0%BE%D0%B8%D1%86%D1%8B.JPG",
+        "https://commons.wikimedia.org/wiki/File:0_AR_38_St_Francis_County_AR_2013-08-04_013.jpg"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Palet warna hangat-hidup yang ramah kulit dihasilkan langsung pada mode Auto/Program JPEG bawaan (dengan bantuan i-Contrast opsional untuk menahan bayangan); opsi My Colors tersedia, namun seluruh sampel yang diperiksa adalah keluaran JPEG standar kamera."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "fujifilm_finepix_f10",
+      "brand": "Fujifilm",
+      "model": "FinePix F10",
+      "aliases": [
+        "Fuji F10",
+        "F10"
+      ],
+      "displayName": "FinePix F10",
+      "era": "2000s",
+      "category": "digital_compact",
+      "archetype": "pro_ccd_filmic",
+      "lookTags": [
+        "clean-high-iso",
+        "warm-reds",
+        "film-like-grain",
+        "slight-overexposure",
+        "smooth-lowlight"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "medium",
+      "sources": [
+        "https://www.dpreview.com/reviews/1581648897/fujifilmf10zoom/",
+        "https://www.imaging-resource.com/news/fujifilm-finepix-f10-review-posted/",
+        "https://old.imaging-resource.com/PRODS/F10/F10DAT.HTM",
+        "https://www.reviewed.com/cameras/content/fujifilm-finepix-f10-digital-camera-review",
+        "https://commons.wikimedia.org/wiki/File:%22OMSKIY-133%22_at_Barrow_Havenn.jpg",
+        "https://commons.wikimedia.org/wiki/File:01paluknio_baznycia2010.jpg",
+        "https://commons.wikimedia.org/wiki/File:02._Vista_de_la_muralla_i_el_fossat_del_Castell_de_Sant_Ferran_de_Figueres.JPG"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Karakter warna hangat bernuansa merah kaya dan performa ISO tinggi bersih muncul langsung pada mode bawaan (F-Standard SOOC JPEG); kamera juga menyediakan mode F-Chrome (lebih jenuh ala film slide) dan B&W, tetapi ketiga foto sampel EXIF menunjukkan langsung keluaran khas firmware bawaan F10."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "nikon_coolpix_s3300",
+      "brand": "Nikon",
+      "model": "Coolpix S3300",
+      "aliases": [
+        "COOLPIX S3300",
+        "Nikon S3300"
+      ],
+      "displayName": "Coolpix S3300",
+      "era": "2010s",
+      "category": "digital_compact",
+      "archetype": "ccd_dreamy_pastel",
+      "lookTags": [
+        "accurate-daylight",
+        "soft-edges",
+        "oversharpened-center",
+        "aggressive-nr",
+        "clipped-highlights"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://www.nikonusa.com/p/coolpix-s3300/26309/overview",
+        "https://www.reviewed.com/cameras/content/nikon-coolpix-s3300-review",
+        "https://www.imaging-resource.com/cameras/nikon-s3300-review/",
+        "https://commons.wikimedia.org/wiki/File:%22Zelen%C3%BD_dom%22_na_Hlavnom_n%C3%A1mest%C3%AD_v_Bratislave.JPG",
+        "https://commons.wikimedia.org/wiki/File:%22%D0%91%D0%BE%D0%B6%D0%B0_%D1%81%D1%82%D0%B5%D0%B6%D0%BA%D0%B0%22_%D0%B4%D0%BE_%D0%B4%D0%B6%D0%B5%D1%80%D0%B5%D0%BB%D0%B0.JPG",
+        "https://commons.wikimedia.org/wiki/File:0.5_Atlantic.jpg"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Seluruh ciri visual yang diamati berasal dari setelan bawaan (Auto/Standard SOOC JPEG); kamera memiliki efek Filter Effects (Soft, Nostalgic Sepia, High-Contrast Mono), namun ketiga foto sampel EXIF COOLPIX S3300V1.0 merupakan keluaran standar langsung dari kamera."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "casio_exilim_ex_z1080",
+      "brand": "Casio",
+      "model": "Exilim EX-Z1080",
+      "aliases": [
+        "EX-Z1080",
+        "Casio Z1080"
+      ],
+      "displayName": "Exilim EX-Z1080",
+      "era": "2000s",
+      "category": "digital_compact",
+      "archetype": "ccd_dreamy_pastel",
+      "lookTags": [
+        "warm-vivid",
+        "sharp-center",
+        "clipped-highlights",
+        "soft-corners",
+        "noisy-lowlight"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "high",
+      "sources": [
+        "http://arch.casio-intl.com/asia-mea/en/dc/past/ex_z1080/spec.html",
+        "https://www.cnet.com/reviews/casio-exilim-zoom-ex-z1080-review/",
+        "https://www.imaging-resource.com/cameras/casio-ex-z1080-review/specifications/",
+        "https://www.dpreview.com/forums/threads/casio-exilim-ex-z1080-review.3410440/",
+        "https://commons.wikimedia.org/wiki/File:Alfa_147_rear.jpg",
+        "https://www.flickr.com/photos/28653536@N07/2698587906",
+        "https://www.flickr.com/photos/11502309@N08/5455341289"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Ciri hangat-pekat di siang hari dan kelembutan ber-noise pada malam hari muncul langsung pada JPEG bawaan (Auto / Best Shot standar); kamera menawarkan puluhan adegan Best Shot (termasuk Anti-Shake berbasis ISO tinggi), namun foto sampel yang diperiksa adalah hasil asli sebelum olah efek tambahan."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "olympus_mju_700",
+      "brand": "Olympus",
+      "model": "µ [mju:] 700",
+      "aliases": [
+        "Stylus 710",
+        "µ 700",
+        "mju 700",
+        "u700D,S700D",
+        "u710,S710"
+      ],
+      "displayName": "µ [mju:] 700 (Stylus 710)",
+      "era": "2000s",
+      "category": "digital_compact",
+      "archetype": "ccd_dreamy_pastel",
+      "lookTags": [
+        "soft-focus",
+        "cool-muted",
+        "jpeg-grain",
+        "bleached-highlights",
+        "noisy-high-iso"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://learnandsupport.getolympus.com/sites/default/files/media/files/2018/04/Stylus_710_Mju_710_Stylus_700_Mju_700_Basic_Manual_EN_FR_ES.pdf",
+        "https://www.cnet.com/reviews/olympus-stylus-710-digital-camera-review/",
+        "https://www.techradar.com/reviews/cameras-and-camcorders/cameras/compact-cameras/olympus-mju-700-63807/review",
+        "https://uk.pcmag.com/cameras/25560/olympus-stylus-710",
+        "https://www.dpreview.com/forums/threads/olympus-stylus-700-mju-700-digital-review.3418030/",
+        "https://commons.wikimedia.org/wiki/File:Hippie_Bus_Ferdinanda_Beach_(2082525916",
+        "https://commons.wikimedia.org/wiki/File:6-month-old_Yorkshire_Terrier_on_pink_blanket.jpg",
+        "https://commons.wikimedia.org/wiki/File:AMIDADERA-temple_belfry_(Nachi-Katsuura,_Wakayama"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Karakter lembut-pastel dan sorotan mudah memudar berasal langsung dari JPEG standar bawaan (TruePic TURBO default) tanpa perlu mode efek khusus; mode Digital Image Stabilization mendorong ISO lebih tinggi di cahaya redup sehingga mempertebal butiran noise."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "ricoh_gr_digital_iii",
+      "brand": "Ricoh",
+      "model": "GR Digital III",
+      "aliases": [
+        "GRD III",
+        "GRD3",
+        "GR DIGITAL 3"
+      ],
+      "displayName": "GR Digital III",
+      "era": "2000s",
+      "category": "digital_compact",
+      "archetype": "pro_ccd_filmic",
+      "lookTags": [
+        "edge-to-edge-sharp",
+        "gritty-monochrome",
+        "film-like-grain",
+        "deep-blacks",
+        "moody-ccd"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://www.ricoh-imaging.co.jp/english/r_dc/gr/gr_digital3/specs.html",
+        "https://www.stevehuffphoto.com/2011/01/22/the-ricoh-gr-digital-iii-review/",
+        "https://www.theinspiredeye.net/ricoh/ricoh-grd-iii-review/index.html",
+        "https://www.dpreview.com/products/ricoh/compacts/ricoh_grdigital3/",
+        "https://commons.wikimedia.org/wiki/File:!%3F_%E3%81%B3%E3%81%A3%E3%81%8F%E3%82%8A%E7%AE%B1_(6202724549",
+        "https://commons.wikimedia.org/wiki/File:Combo_of_soba_noodle_and_tempura_(4808586338",
+        "https://commons.wikimedia.org/wiki/File:Corridor_-_Kyoto_Art_Center.jpg"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Ketajaman optik luar biasa dan rona hangat-pekat bernuansa analog sudah tampak langsung pada JPEG standar bawaan (default GR Engine III) seperti pada ketiga sampel warna EXIF; namun sebagian besar reputasi ikonik kamera ini juga bertumpu pada mode JPEG khusus dalam kamera, terutama High Contrast B&W (hitam-putih pekat bertekstur gritty seperti film pushed) dan Positive Film (warna pekat berkontras kuat) — keduanya dapat pula diolah dari DNG RAW."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "sigma_dp1_merrill",
+      "brand": "Sigma",
+      "model": "DP1 Merrill",
+      "aliases": [
+        "DP1M",
+        "Sigma DP1M"
+      ],
+      "displayName": "DP1 Merrill",
+      "era": "2010s",
+      "category": "digital_compact",
+      "archetype": "pro_ccd_filmic",
+      "lookTags": [
+        "razor-sharp",
+        "extreme-micro-contrast",
+        "3d-depth",
+        "rich-monochrome",
+        "harsh-high-iso"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://www.sigma-global.com/en/cameras/dp1-merrill/",
+        "https://www.sigma-global.com/en/support/download/DP3Merrill_Catalog2013_EN_PrinterRes.pdf",
+        "https://www.imaging-resource.com/cameras/sigma-dp1-merrill-review/",
+        "https://petapixel.com/2012/10/27/review-sigma-dp1-merrill-is-slow-and-clunky-but-its-photos-are-amazing/",
+        "https://www.vieribottazzini.com/2013/01/sigma-dp1-merrill-sigma-dp2-merrill-review.html",
+        "https://commons.wikimedia.org/wiki/File:Baudenkmal_Nr._102_Anklam_Heilige-Geist-Str._20.jpg",
+        "https://commons.wikimedia.org/wiki/File:Andromeda_Tower_Vienna_from_SW_on_2014-09-24.png",
+        "https://commons.wikimedia.org/wiki/File:Baudenkmal_Nr._103_Anklam_Heilige-Geist-Stra%C3%9Fe_21.jpg"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Karakter ketajaman ekstrem dan kontras mikro paling optimal berasal dari berkas Foveon X3 RAW (X3F) yang dikembangkan lewat Sigma Photo Pro (SPP) (seperti pada sampel 1 & 3 yang tercatat EXIF SIGMA Photo Pro 6.3.0), meski mode warna bawaan (Standard, Vivid, Landscape, Monochrome) juga mewarisi perincian per-piksel tanpa interpolasi Bayer."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "fujifilm_x_pro1",
+      "brand": "Fujifilm",
+      "model": "X-Pro1",
+      "aliases": [
+        "Fuji X-Pro1",
+        "Fujifilm X-Pro 1"
+      ],
+      "displayName": "X-Pro1",
+      "era": "2010s",
+      "category": "digital_mirrorless",
+      "archetype": "filmic_digital_mirrorless",
+      "lookTags": [
+        "x-trans-organic",
+        "film-sim",
+        "natural-skin",
+        "film-like-grain",
+        "crisp-micro-contrast"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://www.fujifilm.com.hk/products/digital_cameras/x/fujifilm_x_pro1/specifications/",
+        "https://dl.fujifilm-x.com/support/manual/x/fujifilm_xpro1_manual_en.pdf",
+        "https://www.dpreview.com/reviews/4019317027/fujifilm-x-pro1/",
+        "https://www.imaging-resource.com/cameras/fujifilm-x-pro1-review/",
+        "https://photographylife.com/reviews/fuji-x-pro1/2",
+        "https://www.cameralabs.com/fujifilm_x-pro1/2/",
+        "https://commons.wikimedia.org/wiki/File:2016_Grevillia_(30019924205",
+        "https://commons.wikimedia.org/wiki/File:7-Eleven_%C5%8Csaka_S%C5%8Demonch%C5%8D-higashi_in_Ch%C5%AB%C5%8D-ku,_gelegen_aan_de_Sakai-suji_straat,_-16_juli_2016_11%EF%BC%9A44.jpg",
+        "https://www.flickr.com/photos/28914673@N02/18820286291"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Karakter warna organik khas Fujifilm hadir kuat pada JPEG bawaan lewat Film Simulations (Provia/Standard sebagai setelan dasar, Velvia untuk hijau/warna lebih pekat, Astia untuk kulit lembut, serta Pro Neg. Catatan audit (medium): Kamera mirrorless berlensa tukar (mount Fujifilm X); karakter optik bervariasi antar lensa sampel walau sensor X-Trans intrinsik."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "sony_cyber_shot_dsc_rx100",
+      "brand": "Sony",
+      "model": "Cyber-shot DSC-RX100",
+      "aliases": [
+        "DSC-RX100",
+        "RX100 Mark I",
+        "RX100 I",
+        "RX100M1"
+      ],
+      "displayName": "Cyber-shot DSC-RX100 (Mark I)",
+      "era": "2010s",
+      "category": "digital_compact",
+      "archetype": "early_cmos_gritty",
+      "lookTags": [
+        "wide-dr",
+        "crisp-center",
+        "natural-color",
+        "clean-iso1600",
+        "soft-tele-edges"
+      ],
+      "confidenceLook": "high",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://www.sony.co.id/en/electronics/support/compact-cameras-dsc-rx-series/dsc-rx100/specifications",
+        "https://www.dpreview.com/reviews/2079759241/sony-cybershot-dsc-rx100/",
+        "https://www.imaging-resource.com/cameras/sony-rx100-review/",
+        "https://www.stevehuffphoto.com/2012/07/26/the-sony-rx100-digital-camera-review/",
+        "https://blog.mingthein.com/2012/08/06/the-sony-rx100-a-somewhat-comparative-review/",
+        "https://commons.wikimedia.org/wiki/File:%2214_-_ITALIAN_Supercar_-_FERRARI_F12Berlinetta_-_red_coupes_facing_right.jpg",
+        "https://commons.wikimedia.org/wiki/File:$veti_Dimitrija_Skopje_(1",
+        "https://commons.wikimedia.org/wiki/File:$veti_Dimitrija_Skopje_(100"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "compact_digital",
+      "tuning_notes": "Karakter bersih, netral, dan berentang dinamis lega hadir langsung pada JPEG standar bawaan (Creative Style: Standard + DRO) (seperti sampel 2 & 3 EXIF SOOC DSC-RX100 v1.00), sementara pemotretan RAW membuka ruang pemulihan bayangan dan sorotan lebih jauh; kamera juga menyediakan Creative Styles (Vivid, Deep, B&W) dan Picture Effects."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "pentax_k1000",
+      "brand": "Pentax (Asahi Optical)",
+      "model": "K1000",
+      "aliases": [
+        "Asahi Pentax K1000",
+        "Pentax K-1000"
+      ],
+      "displayName": "K1000",
+      "era": "1970s",
+      "category": "film_slr_35mm",
+      "archetype": "classic_35mm_slr",
+      "lookTags": [
+        "classic-film",
+        "rich-smc-contrast",
+        "soft-wide-open",
+        "crisp-stopped-down",
+        "neutral-body"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "medium",
+      "sources": [
+        "http://kmp.pentaxians.eu/bodies/film_k/k1000/",
+        "https://casualphotophile.com/2016/11/07/pentax-k1000-camera-review/",
+        "https://shootitwithfilm.com/5-great-35mm-film-cameras-for-beginners/",
+        "https://www.kenrockwell.com/pentax/k1000.htm",
+        "https://www.lomography.com/magazine/173357-pentax-k1000-my-first-analogue-love",
+        "https://commons.wikimedia.org/wiki/File:Home,_sweet_home_-_Flickr_-_nikiforovpizza.jpg",
+        "https://commons.wikimedia.org/wiki/File:Enduelado_Princess_(85624215",
+        "https://commons.wikimedia.org/wiki/File:Penanda_Pinus_Becici.jpg"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "slr_film",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Sebagai bodi SLR mekanis penuh, K1000 bersifat netral terhadap warna dan grain film; karakter optik hadir dari pasangan lensa Pentax K berpelapis Super-Multi-Coating (SMC). Catatan audit (medium): Contoh campur: bodi kamera film berlensa tukar dengan lensa dan emulsi film berbeda-beda/sebagian tidak tercatat."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "olympus_om_1",
+      "brand": "Olympus",
+      "model": "OM-1",
+      "aliases": [
+        "Olympus M-1",
+        "OM-1MD",
+        "OM-1n"
+      ],
+      "displayName": "OM-1",
+      "era": "1970s",
+      "category": "film_slr_35mm",
+      "archetype": "classic_35mm_slr",
+      "lookTags": [
+        "classic-film",
+        "sharp-zuiko",
+        "crisp-contrast",
+        "smooth-bokeh",
+        "organic-tones"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://www.olympus-global.com/technology/museum/lecture/vol2_03/?page=technology_museum",
+        "https://www.mir.com.my/rb/photography/hardwares/classics/olympusom1n2/om1/index.htm",
+        "https://casualphotophile.com/2016/04/25/olympus-om-1-camera-review/",
+        "https://www.35mmc.com/21/09/2017/5-frames-09-olympus-om-1-zuiko-50mm1-8-toni-skokovic/",
+        "https://shootitwithfilm.com/olympus-om-1-camera-review/",
+        "https://commons.wikimedia.org/wiki/File:1993-1994-Giardino_Giusti_(Verona",
+        "https://commons.wikimedia.org/wiki/File:Alfa_Arna_4d.JPG",
+        "https://commons.wikimedia.org/wiki/File:2009%E5%B9%B4%E7%A7%8B%E3%81%94%E3%82%8D_(13669606424"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "slr_film",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Bodi mekanis OM-1 tidak memberi warna sendiri; seluruh kekuatan optiknya muncul dari lensa-lensa Zuiko yang ringkas namun tajam. Catatan audit (medium): Contoh campur: bodi kamera film berlensa tukar dengan lensa dan emulsi film berbeda-beda/sebagian tidak tercatat."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "rollei_rolleiflex_2_8f",
+      "brand": "Rollei (Franke & Heidecke)",
+      "model": "Rolleiflex 2.8F",
+      "aliases": [
+        "Rolleiflex 2.8 F",
+        "Rollei 2.8F"
+      ],
+      "displayName": "Rolleiflex 2.8F",
+      "era": "1960s",
+      "category": "medium_format_120",
+      "archetype": "medium_format_tlr_slr",
+      "lookTags": [
+        "square-format",
+        "creamy-bokeh",
+        "3d-pop",
+        "smooth-tonality",
+        "biting-center"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "medium",
+      "sources": [
+        "https://shootitwithfilm.com/rolleiflex-cameras-get-to-know-these-iconic-film-cameras/",
+        "https://www.35mmc.com/28/08/2021/5-frames-with-a-rolleiflex-2-8f-a-lifetime-partner-by-floyd-takeuchi/",
+        "https://www.35mmc.com/09/02/2023/rolleiflex-2-8f-reflections-on-a-brief-period-of-ownership-by-simon-foale/",
+        "https://commons.wikimedia.org/wiki/File:Pigeon_-_Flickr_-_walnerz.jpg",
+        "https://www.flickr.com/photos/151965803@N07/35485885385",
+        "https://commons.wikimedia.org/wiki/File:Smokey_Sunrise_-_Flickr_-_walnerz.jpg"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "medium_format",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Karena lensa 80mm f/2.8 terpasang permanen pada format persegi 6×6cm, karakter optiknya sangat konsisten lintas roll film. Catatan audit (medium): Contoh campur emulsi film: lensa tetap konsisten secara optik, namun foto contoh memakai jenis film berbeda atau tidak dicantumkan."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "mamiya_7",
+      "brand": "Mamiya",
+      "model": "Mamiya 7",
+      "aliases": [
+        "Mamiya 7 (6×7)"
+      ],
+      "displayName": "Mamiya 7",
+      "era": "1990s",
+      "category": "medium_format_120",
+      "archetype": "medium_format_tlr_slr",
+      "lookTags": [
+        "ultra-sharp",
+        "clean-modern-film",
+        "micro-contrast",
+        "fine-grain",
+        "natural-perspective"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "medium",
+      "sources": [
+        "https://www.focale22.com/pdf/mamiya_7_instructions_manual.pdf",
+        "https://www.calebknueven.com/post/5-years-with-the-mamiya-7-why-this-medium-format-rangefinder-is-my-ride-or-die",
+        "https://photothinking.com/2019-01-11-mamiya-7-first-impressions/",
+        "https://www.japancamerahunter.com/2021/09/camera-geekery-mamiya-7/",
+        "https://www.kenrockwell.com/mamiya/7.htm",
+        "https://www.flickr.com/photos/37563893@N00/16243896675",
+        "https://www.flickr.com/photos/27360628@N08/5529302490",
+        "https://www.flickr.com/photos/25204075@N08/18814281841"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "medium_format",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Tanpa hentakan cermin SLR dan dengan konstruksi optik modern berformat negatif besar 6×7cm, ketiga sampel memperlihatkan ketajaman luar biasa jernih dari tengah hingga tepi disertai kontras mikro bersih dan distorsi geometris amat rendah. Catatan audit (medium): Contoh campur: bodi kamera film berlensa tukar dengan lensa dan emulsi film berbeda-beda/sebagian tidak tercatat."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "pentax_67",
+      "brand": "Pentax (Asahi Optical)",
+      "model": "Pentax 67",
+      "aliases": [
+        "Pentax 6×7",
+        "Asahi Pentax 6x7",
+        "P67"
+      ],
+      "displayName": "Pentax 67",
+      "era": "1980s",
+      "category": "medium_format_120",
+      "archetype": "medium_format_tlr_slr",
+      "lookTags": [
+        "3d-pop",
+        "shallow-dof",
+        "creamy-bokeh",
+        "vintage-glow",
+        "rich-tonality"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "medium",
+      "sources": [
+        "https://emulsive.org/reviews/camera-reviews/pentax-camera-reviews/camera-review-me-and-my-pentax-6x7-by-daniel-j-schneider",
+        "https://casualphotophile.com/2020/10/05/pentax-67-review-its-a-big-camera/",
+        "https://kamerastore.com/en-int/blogs/posts/the-ultimate-pentax-67-guide-history-iconic-lenses-and-real-world-review",
+        "https://www.peterjeffrey.photography/film-photography-blog/pentax-67-review",
+        "https://commons.wikimedia.org/wiki/File:First_United_Methodist_Church,_Willows_(2025",
+        "https://commons.wikimedia.org/wiki/File:74Skolav%C3%B6rdustigur.jpg",
+        "https://commons.wikimedia.org/wiki/File:Broken_cross,_the_Rock_of_Cashel.jpg"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "medium_format",
+      "tuning_notes": "Pisahkan karakter optik bodi/lensa dari lapisan film: Luas negatif 6×7cm berpadu optik Pentax 67 berbukaan lebar maupun sudut lebar menghasilkan perincian amat kaya dengan butiran film hampir tak terlihat. Catatan audit (medium): Contoh campur: bodi kamera film berlensa tukar dengan lensa dan emulsi film berbeda-beda/sebagian tidak tercatat."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "sony_handycam_dcr_vx1000",
+      "brand": "Sony",
+      "model": "Handycam DCR-VX1000",
+      "aliases": [
+        "DCR-VX1000",
+        "DCR-VX1000E",
+        "VX1000",
+        "VX1k"
+      ],
+      "displayName": "Handycam DCR-VX1000",
+      "era": "1990s",
+      "category": "camcorder",
+      "archetype": "camcorder_mini_dv_vhs",
+      "lookTags": [
+        "rich-3ccd-color",
+        "warm-contrast",
+        "interlaced-4x3",
+        "highlight-bloom",
+        "minidv-skate"
+      ],
+      "confidenceLook": "low",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://www.sony.com/en/SonyInfo/design/gallery/DCR-VX1000/",
+        "https://www.dtvgroup.com/DigVideo/DVC/Sony/dcr_vx1000.html",
+        "http://www.urbanfox.tv/workbooks/sonyvx1000/vx1000manual.htm",
+        "https://www.jenkemmag.com/home/2018/07/13/tracing-history-skateboardings-most-famous-camera/",
+        "https://www.eoshd.com/comments/topic/28892-sony-vx1000-ccd-love-in-2019/",
+        "https://archive.org/details/curved-universe-pt-remaster",
+        "https://archive.org/details/own-little-world-remaster"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "camcorder",
+      "tuning_notes": "Tampilan ikoniknya berasal dari mode video MiniDV 3-CCD interlaced 4:3 standar bawaan (sering disertai sedikit setelan Custom Preset penajaman/warna atau adaptor lensa fisheye Century Optics pada budaya video skate, namun karakter warna hangat-pekat dan pendaran sorotannya melekat pada arsitektur 3-CCD + codec DV-25 bawaan). Catatan audit (low): 0 foto CC/PD; hanya 2 frame still sementara dari 1 arsip (Internet Archive) untuk camcorder video tanpa inspeksi gerak interlaced."
+    },
+    {
+      "schemaVersion": 4,
+      "id": "panasonic_ag_dvx100",
+      "brand": "Panasonic",
+      "model": "AG-DVX100",
+      "aliases": [
+        "DVX100",
+        "AG-DVX100E",
+        "AG-DVX100A",
+        "AG-DVX100B"
+      ],
+      "displayName": "AG-DVX100",
+      "era": "2000s",
+      "category": "camcorder",
+      "archetype": "camcorder_mini_dv_vhs",
+      "lookTags": [
+        "24p-filmic-motion",
+        "cine-gamma",
+        "soft-highlights",
+        "warm-muted-3ccd",
+        "minidv-indie"
+      ],
+      "confidenceLook": "medium",
+      "confidenceSpecs": "high",
+      "sources": [
+        "https://pro-av.panasonic.net/en/sales_o/news_info/ibc/132.html",
+        "https://www.adamwilt.com/24p/",
+        "https://www.videomaker.com/article/c5/9410-panasonic-ag-dvx100-3ccd-24p-mini-dv-camcorder-review/",
+        "https://www.cnet.com/reviews/panasonic-ag-dvx100-review/",
+        "https://archive.org/details/KennyOngJapan05Japan05mov"
+      ],
+      "calibrationStatus": "draft",
+      "iconType": "camcorder",
+      "tuning_notes": "Perbedaan tampilan sangat bergantung pada mode kurva gamma & frame rate: dalam mode Normal 60i, gambar tampak tegas dan kontras seperti video siaran standar; karakter sinematik film independen awal 2000-an baru muncul penuh ketika mengaktifkan mode 24p + kurva Cine-Like Gamma (pada varian lanjut DVX100A/B dibagi menjadi Cine-Like_D untuk rentang dinamis lembut dan Cine-Like_V untuk kontras lebih tegas) bersama matriks warna Cine-Like."
+    }
+  ]
+}
